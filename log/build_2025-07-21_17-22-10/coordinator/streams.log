@@ -1,0 +1,39 @@
+[0.022s] Invoking command in '/home/avees/coordinator/build/coordinator': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator/build/coordinator -- -j6 -l6
+[0.136s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.230s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o[0m
+[0.230s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[4.688s] [01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kstd::vector<int> Coordinator::get_N_alive()[m[K’:
+[4.689s] [01m[K/home/avees/coordinator/src/coordinator.cpp:76:23:[m[K [01;31m[Kerror: [m[K‘[01m[KHB_TIMEOUT_MS[m[K’ was not declared in this scope
+[4.689s]    76 |         if (elapsed < [01;31m[KHB_TIMEOUT_MS[m[K)
+[4.689s]       |                       [01;31m[K^~~~~~~~~~~~~[m[K
+[4.690s] [01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kstd::vector<int> Coordinator::get_N_available()[m[K’:
+[4.690s] [01m[K/home/avees/coordinator/src/coordinator.cpp:103:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kunordered_set[m[K’ is not a member of ‘[01m[Kstd[m[K’
+[4.691s]   103 |     std::[01;31m[Kunordered_set[m[K<int> ready_set(n_ready.begin(), n_ready.end());
+[4.691s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[4.691s] [01m[K/home/avees/coordinator/src/coordinator.cpp:2:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::unordered_set[m[K’ is defined in header ‘[01m[K<unordered_set>[m[K’; did you forget to ‘[01m[K#include <unordered_set>[m[K’?
+[4.691s]     1 | #include "coordinator/coordinator.hpp"
+[4.691s]   +++ |+[32m[K#include <unordered_set>[m[K
+[4.691s]     2 | 
+[4.691s] [01m[K/home/avees/coordinator/src/coordinator.cpp:103:24:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kint[m[K’
+[4.692s]   103 |     std::unordered_set<[01;31m[Kint[m[K> ready_set(n_ready.begin(), n_ready.end());
+[4.692s]       |                        [01;31m[K^~~[m[K
+[4.698s] [01m[K/home/avees/coordinator/src/coordinator.cpp:108:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kready_set[m[K’ was not declared in this scope
+[4.699s]   108 |         if (node_id <= 4 && [01;31m[Kready_set[m[K.count(node_id))
+[4.699s]       |                             [01;31m[K^~~~~~~~~[m[K
+[4.710s] [01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kvoid Coordinator::FrameCallback(const FramePtr&)[m[K’:
+[4.710s] [01m[K/home/avees/coordinator/src/coordinator.cpp:133:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ksplit_scheduling[m[K’ was not declared in this scope
+[4.711s]   133 |     [01;31m[Ksplit_scheduling[m[K();
+[4.711s]       |     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[4.711s] [01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K At global scope:
+[4.711s] [01m[K/home/avees/coordinator/src/coordinator.cpp:137:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Coordinator::split_scheduling()[m[K’
+[4.711s]   137 | void [01;31m[KCoordinator[m[K::split_scheduling()
+[4.711s]       |      [01;31m[K^~~~~~~~~~~[m[K
+[4.711s] [01m[K/home/avees/coordinator/src/coordinator.cpp:137:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Coordinator::split_scheduling()[m[K’
+[4.712s] In file included from [01m[K/home/avees/coordinator/src/coordinator.cpp:1[m[K:
+[4.712s] [01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:25:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Coordinator[m[K’ defined here
+[4.712s]    25 | class [01;36m[KCoordinator[m[K : public rclcpp::Node, public std::enable_shared_from_this<Coordinator>
+[4.712s]       |       [01;36m[K^~~~~~~~~~~[m[K
+[9.657s] make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+[9.658s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+[9.659s] make: *** [Makefile:141: all] Error 2
+[9.664s] Invoked command in '/home/avees/coordinator/build/coordinator' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator/build/coordinator -- -j6 -l6

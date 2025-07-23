@@ -1,0 +1,21 @@
+In file included from [01m[K/home/avees/coordinator/src/coordinator.cpp:1[m[K:
+[01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:61:24:[m[K [01;35m[Kwarning: [m[Kconverting to ‘[01m[Krclcpp::Time[m[K’ from initializer list would use explicit constructor ‘[01m[Krclcpp::Time::Time(int64_t, rcl_clock_type_t)[m[K’
+   61 |         {1, NodeStatus{[01;35m[K}[m[K},
+      |                        [01;35m[K^[m[K
+[01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:61:24:[m[K [01;36m[Knote: [m[Kin C++11 and above a default constructor can be explicit
+[01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:62:24:[m[K [01;35m[Kwarning: [m[Kconverting to ‘[01m[Krclcpp::Time[m[K’ from initializer list would use explicit constructor ‘[01m[Krclcpp::Time::Time(int64_t, rcl_clock_type_t)[m[K’
+   62 |         {2, NodeStatus{[01;35m[K}[m[K},
+      |                        [01;35m[K^[m[K
+[01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:62:24:[m[K [01;36m[Knote: [m[Kin C++11 and above a default constructor can be explicit
+[01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:63:24:[m[K [01;35m[Kwarning: [m[Kconverting to ‘[01m[Krclcpp::Time[m[K’ from initializer list would use explicit constructor ‘[01m[Krclcpp::Time::Time(int64_t, rcl_clock_type_t)[m[K’
+   63 |         {3, NodeStatus{[01;35m[K}[m[K},
+      |                        [01;35m[K^[m[K
+[01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:63:24:[m[K [01;36m[Knote: [m[Kin C++11 and above a default constructor can be explicit
+[01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:64:24:[m[K [01;35m[Kwarning: [m[Kconverting to ‘[01m[Krclcpp::Time[m[K’ from initializer list would use explicit constructor ‘[01m[Krclcpp::Time::Time(int64_t, rcl_clock_type_t)[m[K’
+   64 |         {4, NodeStatus{[01;35m[K}[m[K},
+      |                        [01;35m[K^[m[K
+[01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:64:24:[m[K [01;36m[Knote: [m[Kin C++11 and above a default constructor can be explicit
+[01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:65:24:[m[K [01;35m[Kwarning: [m[Kconverting to ‘[01m[Krclcpp::Time[m[K’ from initializer list would use explicit constructor ‘[01m[Krclcpp::Time::Time(int64_t, rcl_clock_type_t)[m[K’
+   65 |         {5, NodeStatus{[01;35m[K}[m[K}
+      |                        [01;35m[K^[m[K
+[01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:65:24:[m[K [01;36m[Knote: [m[Kin C++11 and above a default constructor can be explicit

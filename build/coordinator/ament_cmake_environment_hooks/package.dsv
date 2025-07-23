@@ -1,0 +1,4 @@
+source;share/coordinator/local_setup.bash
+source;share/coordinator/local_setup.dsv
+source;share/coordinator/local_setup.sh
+source;share/coordinator/local_setup.zsh

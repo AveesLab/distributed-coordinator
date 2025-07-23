@@ -1,0 +1,142 @@
+[0.000000] (-) TimerEvent: {}
+[0.000731] (coordinator) JobQueued: {'identifier': 'coordinator', 'dependencies': OrderedDict()}
+[0.001829] (coordinator) JobStarted: {'identifier': 'coordinator'}
+[0.019105] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'cmake'}
+[0.020623] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'build'}
+[0.022140] (coordinator) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avees/coordinator/build/coordinator', '--', '-j6', '-l6'], 'cwd': '/home/avees/coordinator/build/coordinator', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'avees'), ('SSH_AGENT_PID', '2850'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/local/cuda-11.4/lib64:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/opt/Vimba_6_0/VimbaC/DynamicLib/arm_64bit:/opt/Vimba_6_0/VimbaCPP/DynamicLib/arm_64bit'), ('HOME', '/home/avees'), ('OLDPWD', '/home/avees'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2727'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'avees'), ('JOURNAL_STREAM', '8:60566'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'avees'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.4/bin:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2885,unix/ubuntu:/tmp/.ICE-unix/2885'), ('INVOCATION_ID', '69ee3bc85beb4df0847a36a21c2dc204'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/1b8b0a50_b701_4140_9be4_03b44e0f7f84'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.148'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '103'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/avees/coordinator/build/coordinator'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', ':/opt/Vimba_6_0/VimbaGigETL/CTI/arm_64bit'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[0.100034] (-) TimerEvent: {}
+[0.137186] (coordinator) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target coordinator_node\x1b[0m\n'}
+[0.200200] (-) TimerEvent: {}
+[0.231381] (coordinator) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o\x1b[0m\n'}
+[0.232060] (coordinator) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o\x1b[0m\n'}
+[0.300923] (-) TimerEvent: {}
+[0.401675] (-) TimerEvent: {}
+[0.502397] (-) TimerEvent: {}
+[0.603199] (-) TimerEvent: {}
+[0.703968] (-) TimerEvent: {}
+[0.804761] (-) TimerEvent: {}
+[0.905631] (-) TimerEvent: {}
+[1.006434] (-) TimerEvent: {}
+[1.107818] (-) TimerEvent: {}
+[1.208623] (-) TimerEvent: {}
+[1.309337] (-) TimerEvent: {}
+[1.410011] (-) TimerEvent: {}
+[1.510668] (-) TimerEvent: {}
+[1.611397] (-) TimerEvent: {}
+[1.712111] (-) TimerEvent: {}
+[1.812842] (-) TimerEvent: {}
+[1.913569] (-) TimerEvent: {}
+[2.014274] (-) TimerEvent: {}
+[2.115011] (-) TimerEvent: {}
+[2.215733] (-) TimerEvent: {}
+[2.316464] (-) TimerEvent: {}
+[2.417183] (-) TimerEvent: {}
+[2.517908] (-) TimerEvent: {}
+[2.618639] (-) TimerEvent: {}
+[2.719337] (-) TimerEvent: {}
+[2.820054] (-) TimerEvent: {}
+[2.920771] (-) TimerEvent: {}
+[3.021474] (-) TimerEvent: {}
+[3.122163] (-) TimerEvent: {}
+[3.222889] (-) TimerEvent: {}
+[3.323612] (-) TimerEvent: {}
+[3.424318] (-) TimerEvent: {}
+[3.525035] (-) TimerEvent: {}
+[3.625746] (-) TimerEvent: {}
+[3.726459] (-) TimerEvent: {}
+[3.827204] (-) TimerEvent: {}
+[3.928002] (-) TimerEvent: {}
+[4.028966] (-) TimerEvent: {}
+[4.130682] (-) TimerEvent: {}
+[4.231766] (-) TimerEvent: {}
+[4.332740] (-) TimerEvent: {}
+[4.433772] (-) TimerEvent: {}
+[4.534902] (-) TimerEvent: {}
+[4.635952] (-) TimerEvent: {}
+[4.689776] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::get_N_alive()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.690425] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:76:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KHB_TIMEOUT_MS\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.690665] (coordinator) StderrLine: {'line': b'   76 |         if (elapsed < \x1b[01;31m\x1b[KHB_TIMEOUT_MS\x1b[m\x1b[K)\n'}
+[4.690830] (coordinator) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.691972] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::get_N_available()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.692258] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:103:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kunordered_set\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.692413] (coordinator) StderrLine: {'line': b'  103 |     std::\x1b[01;31m\x1b[Kunordered_set\x1b[m\x1b[K<int> ready_set(n_ready.begin(), n_ready.end());\n'}
+[4.692555] (coordinator) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.692693] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:2:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd::unordered_set\x1b[m\x1b[K\xe2\x80\x99 is defined in header \xe2\x80\x98\x1b[01m\x1b[K<unordered_set>\x1b[m\x1b[K\xe2\x80\x99; did you forget to \xe2\x80\x98\x1b[01m\x1b[K#include <unordered_set>\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.692860] (coordinator) StderrLine: {'line': b'    1 | #include "coordinator/coordinator.hpp"\n'}
+[4.692994] (coordinator) StderrLine: {'line': b'  +++ |+\x1b[32m\x1b[K#include <unordered_set>\x1b[m\x1b[K\n'}
+[4.693123] (coordinator) StderrLine: {'line': b'    2 | \n'}
+[4.693251] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:103:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.693390] (coordinator) StderrLine: {'line': b'  103 |     std::unordered_set<\x1b[01;31m\x1b[Kint\x1b[m\x1b[K> ready_set(n_ready.begin(), n_ready.end());\n'}
+[4.693517] (coordinator) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.699915] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:108:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kready_set\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.700379] (coordinator) StderrLine: {'line': b'  108 |         if (node_id <= 4 && \x1b[01;31m\x1b[Kready_set\x1b[m\x1b[K.count(node_id))\n'}
+[4.700580] (coordinator) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[4.711483] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Coordinator::FrameCallback(const FramePtr&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.712124] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:133:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksplit_scheduling\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.712328] (coordinator) StderrLine: {'line': b'  133 |     \x1b[01;31m\x1b[Ksplit_scheduling\x1b[m\x1b[K();\n'}
+[4.712485] (coordinator) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.712623] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:\x1b[m\x1b[K At global scope:\n'}
+[4.712757] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:137:6:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno declaration matches \xe2\x80\x98\x1b[01m\x1b[Kvoid Coordinator::split_scheduling()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.712893] (coordinator) StderrLine: {'line': b'  137 | void \x1b[01;31m\x1b[KCoordinator\x1b[m\x1b[K::split_scheduling()\n'}
+[4.713021] (coordinator) StderrLine: {'line': b'      |      \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.713147] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:137:6:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kno functions named \xe2\x80\x98\x1b[01m\x1b[Kvoid Coordinator::split_scheduling()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.713299] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avees/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[4.713430] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator/include/coordinator/coordinator.hpp:25:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass Coordinator\x1b[m\x1b[K\xe2\x80\x99 defined here\n'}
+[4.713559] (coordinator) StderrLine: {'line': b'   25 | class \x1b[01;36m\x1b[KCoordinator\x1b[m\x1b[K : public rclcpp::Node, public std::enable_shared_from_this<Coordinator>\n'}
+[4.713688] (coordinator) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.736095] (-) TimerEvent: {}
+[4.836789] (-) TimerEvent: {}
+[4.937537] (-) TimerEvent: {}
+[5.038276] (-) TimerEvent: {}
+[5.138996] (-) TimerEvent: {}
+[5.239690] (-) TimerEvent: {}
+[5.340408] (-) TimerEvent: {}
+[5.441107] (-) TimerEvent: {}
+[5.541797] (-) TimerEvent: {}
+[5.642544] (-) TimerEvent: {}
+[5.743236] (-) TimerEvent: {}
+[5.843930] (-) TimerEvent: {}
+[5.944620] (-) TimerEvent: {}
+[6.045322] (-) TimerEvent: {}
+[6.146030] (-) TimerEvent: {}
+[6.246726] (-) TimerEvent: {}
+[6.347432] (-) TimerEvent: {}
+[6.448152] (-) TimerEvent: {}
+[6.548865] (-) TimerEvent: {}
+[6.649555] (-) TimerEvent: {}
+[6.750228] (-) TimerEvent: {}
+[6.850939] (-) TimerEvent: {}
+[6.951638] (-) TimerEvent: {}
+[7.052350] (-) TimerEvent: {}
+[7.153054] (-) TimerEvent: {}
+[7.253758] (-) TimerEvent: {}
+[7.354461] (-) TimerEvent: {}
+[7.455182] (-) TimerEvent: {}
+[7.555902] (-) TimerEvent: {}
+[7.656647] (-) TimerEvent: {}
+[7.757369] (-) TimerEvent: {}
+[7.858120] (-) TimerEvent: {}
+[7.958899] (-) TimerEvent: {}
+[8.059613] (-) TimerEvent: {}
+[8.160509] (-) TimerEvent: {}
+[8.261329] (-) TimerEvent: {}
+[8.362068] (-) TimerEvent: {}
+[8.463036] (-) TimerEvent: {}
+[8.563784] (-) TimerEvent: {}
+[8.664575] (-) TimerEvent: {}
+[8.765506] (-) TimerEvent: {}
+[8.866239] (-) TimerEvent: {}
+[8.967136] (-) TimerEvent: {}
+[9.067908] (-) TimerEvent: {}
+[9.168655] (-) TimerEvent: {}
+[9.269457] (-) TimerEvent: {}
+[9.370188] (-) TimerEvent: {}
+[9.470941] (-) TimerEvent: {}
+[9.571670] (-) TimerEvent: {}
+[9.658771] (coordinator) StderrLine: {'line': b'make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1\n'}
+[9.659384] (coordinator) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2\n'}
+[9.660831] (coordinator) StderrLine: {'line': b'make: *** [Makefile:141: all] Error 2\n'}
+[9.665767] (coordinator) CommandEnded: {'returncode': 2}
+[9.671768] (-) TimerEvent: {}
+[9.693719] (coordinator) JobEnded: {'identifier': 'coordinator', 'rc': 2}
+[9.705025] (-) EventReactorShutdown: {}
