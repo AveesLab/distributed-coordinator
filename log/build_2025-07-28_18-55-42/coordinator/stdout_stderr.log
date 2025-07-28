@@ -1,0 +1,31 @@
+[35m[1mScanning dependencies of target coordinator_node[0m
+[  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K In lambda function:
+[01m[K/home/avees/coordinator/src/coordinator.cpp:39:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kready_waiting_[m[K’ was not declared in this scope
+   39 |                 if (msg->data && ![01;31m[Kready_waiting_[m[K)
+      |                                   [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:44:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kready_wait_timer_[m[K’ was not declared in this scope
+   44 |         [01;31m[Kready_wait_timer_[m[K = this->create_wall_timer(
+      |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K In lambda function:
+[01m[K/home/avees/coordinator/src/coordinator.cpp:49:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kready_waiting_[m[K’ is not captured
+   49 |                 [01;31m[Kready_waiting_[m[K = false;
+      |                 [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:46:18:[m[K [01;36m[Knote: [m[Kthe lambda has no capture-default
+   46 |             [this[01;36m[K][m[K()
+      |                  [01;36m[K^[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:39:35:[m[K [01;36m[Knote: [m[K‘[01m[K<typeprefixerror>ready_waiting_[m[K’ declared here
+   39 |                 if (msg->data && ![01;36m[Kready_waiting_[m[K)
+      |                                   [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:50:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kready_wait_timer_[m[K’ is not captured
+   50 |                 [01;31m[Kready_wait_timer_[m[K->cancel();
+      |                 [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:46:18:[m[K [01;36m[Knote: [m[Kthe lambda has no capture-default
+   46 |             [this[01;36m[K][m[K()
+      |                  [01;36m[K^[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:44:9:[m[K [01;36m[Knote: [m[K‘[01m[K<typeprefixerror>ready_wait_timer_[m[K’ declared here
+   44 |         [01;36m[Kready_wait_timer_[m[K = this->create_wall_timer(
+      |         [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

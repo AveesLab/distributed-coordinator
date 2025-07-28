@@ -1,0 +1,20 @@
+[0.029s] Invoking command in '/home/avees/coordinator/build/coordinator': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator/build/coordinator -- -j6 -l6
+[0.233s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.340s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[0.340s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o[0m
+[0.774s] In file included from [01m[K/home/avees/coordinator/src/main.cpp:2[m[K:
+[0.775s] [01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:19:10:[m[K [01;31m[Kfatal error: [m[Kpair: No such file or directory
+[0.775s]    19 | #include [01;31m[K<pair>[m[K
+[0.775s]       |          [01;31m[K^~~~~~[m[K
+[0.775s] In file included from [01m[K/home/avees/coordinator/src/coordinator.cpp:1[m[K:
+[0.775s] [01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:19:10:[m[K [01;31m[Kfatal error: [m[Kpair: No such file or directory
+[0.775s]    19 | #include [01;31m[K<pair>[m[K
+[0.775s]       |          [01;31m[K^~~~~~[m[K
+[0.776s] compilation terminated.
+[0.776s] compilation terminated.
+[0.785s] make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+[0.785s] make[2]: *** Waiting for unfinished jobs....
+[0.785s] make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:63: CMakeFiles/coordinator_node.dir/src/main.cpp.o] Error 1
+[0.788s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+[0.788s] make: *** [Makefile:141: all] Error 2
+[0.793s] Invoked command in '/home/avees/coordinator/build/coordinator' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator/build/coordinator -- -j6 -l6

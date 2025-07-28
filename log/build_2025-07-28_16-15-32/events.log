@@ -1,0 +1,202 @@
+[0.000000] (-) TimerEvent: {}
+[0.000389] (coordinator) JobQueued: {'identifier': 'coordinator', 'dependencies': OrderedDict()}
+[0.001097] (coordinator) JobStarted: {'identifier': 'coordinator'}
+[0.025684] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'cmake'}
+[0.027562] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'build'}
+[0.029057] (coordinator) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avees/coordinator/build/coordinator', '--', '-j6', '-l6'], 'cwd': '/home/avees/coordinator/build/coordinator', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'avees'), ('SSH_AGENT_PID', '2660'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/local/cuda-11.4/lib64:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/opt/Vimba_6_0/VimbaC/DynamicLib/arm_64bit:/opt/Vimba_6_0/VimbaCPP/DynamicLib/arm_64bit'), ('HOME', '/home/avees'), ('OLDPWD', '/home/avees'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2534'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3116'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/avees/coordinator/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'avees'), ('JOURNAL_STREAM', '8:56919'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'avees'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.4/bin:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2695,unix/ubuntu:/tmp/.ICE-unix/2695'), ('INVOCATION_ID', '0f21bf03912c4096b1421baddd10669e'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '103'), ('AMENT_PREFIX_PATH', '/home/avees/coordinator/install/coordinator:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:e1bad1e4-dbab-493c-80aa-075228fa5536'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/avees/coordinator/build/coordinator'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', ':/opt/Vimba_6_0/VimbaGigETL/CTI/arm_64bit'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/avees/coordinator/install/coordinator:/opt/ros/foxy')]), 'shell': False}
+[0.099539] (-) TimerEvent: {}
+[0.200246] (-) TimerEvent: {}
+[0.246396] (coordinator) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target coordinator_node\x1b[0m\n'}
+[0.300350] (-) TimerEvent: {}
+[0.341796] (coordinator) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o\x1b[0m\n'}
+[0.400532] (-) TimerEvent: {}
+[0.501165] (-) TimerEvent: {}
+[0.601832] (-) TimerEvent: {}
+[0.702482] (-) TimerEvent: {}
+[0.803136] (-) TimerEvent: {}
+[0.903802] (-) TimerEvent: {}
+[1.004474] (-) TimerEvent: {}
+[1.105157] (-) TimerEvent: {}
+[1.205871] (-) TimerEvent: {}
+[1.306563] (-) TimerEvent: {}
+[1.407240] (-) TimerEvent: {}
+[1.507933] (-) TimerEvent: {}
+[1.608618] (-) TimerEvent: {}
+[1.709314] (-) TimerEvent: {}
+[1.810020] (-) TimerEvent: {}
+[1.910721] (-) TimerEvent: {}
+[2.011396] (-) TimerEvent: {}
+[2.112113] (-) TimerEvent: {}
+[2.212801] (-) TimerEvent: {}
+[2.313489] (-) TimerEvent: {}
+[2.414180] (-) TimerEvent: {}
+[2.514868] (-) TimerEvent: {}
+[2.615566] (-) TimerEvent: {}
+[2.716244] (-) TimerEvent: {}
+[2.816923] (-) TimerEvent: {}
+[2.917612] (-) TimerEvent: {}
+[3.018297] (-) TimerEvent: {}
+[3.119001] (-) TimerEvent: {}
+[3.219682] (-) TimerEvent: {}
+[3.320357] (-) TimerEvent: {}
+[3.421043] (-) TimerEvent: {}
+[3.521748] (-) TimerEvent: {}
+[3.622425] (-) TimerEvent: {}
+[3.723199] (-) TimerEvent: {}
+[3.823942] (-) TimerEvent: {}
+[3.924624] (-) TimerEvent: {}
+[4.025314] (-) TimerEvent: {}
+[4.126007] (-) TimerEvent: {}
+[4.226713] (-) TimerEvent: {}
+[4.327389] (-) TimerEvent: {}
+[4.428078] (-) TimerEvent: {}
+[4.528772] (-) TimerEvent: {}
+[4.629469] (-) TimerEvent: {}
+[4.730166] (-) TimerEvent: {}
+[4.830864] (-) TimerEvent: {}
+[4.931545] (-) TimerEvent: {}
+[5.032225] (-) TimerEvent: {}
+[5.132905] (-) TimerEvent: {}
+[5.233598] (-) TimerEvent: {}
+[5.334266] (-) TimerEvent: {}
+[5.434956] (-) TimerEvent: {}
+[5.535657] (-) TimerEvent: {}
+[5.636335] (-) TimerEvent: {}
+[5.737020] (-) TimerEvent: {}
+[5.837729] (-) TimerEvent: {}
+[5.938391] (-) TimerEvent: {}
+[6.039051] (-) TimerEvent: {}
+[6.139721] (-) TimerEvent: {}
+[6.240400] (-) TimerEvent: {}
+[6.341085] (-) TimerEvent: {}
+[6.441799] (-) TimerEvent: {}
+[6.542464] (-) TimerEvent: {}
+[6.643134] (-) TimerEvent: {}
+[6.743810] (-) TimerEvent: {}
+[6.844489] (-) TimerEvent: {}
+[6.945155] (-) TimerEvent: {}
+[7.045851] (-) TimerEvent: {}
+[7.146518] (-) TimerEvent: {}
+[7.247196] (-) TimerEvent: {}
+[7.347883] (-) TimerEvent: {}
+[7.448568] (-) TimerEvent: {}
+[7.549265] (-) TimerEvent: {}
+[7.649968] (-) TimerEvent: {}
+[7.750639] (-) TimerEvent: {}
+[7.851316] (-) TimerEvent: {}
+[7.952024] (-) TimerEvent: {}
+[8.052715] (-) TimerEvent: {}
+[8.153416] (-) TimerEvent: {}
+[8.254095] (-) TimerEvent: {}
+[8.354757] (-) TimerEvent: {}
+[8.455434] (-) TimerEvent: {}
+[8.556145] (-) TimerEvent: {}
+[8.656825] (-) TimerEvent: {}
+[8.757496] (-) TimerEvent: {}
+[8.858213] (-) TimerEvent: {}
+[8.958893] (-) TimerEvent: {}
+[9.059572] (-) TimerEvent: {}
+[9.160250] (-) TimerEvent: {}
+[9.260910] (-) TimerEvent: {}
+[9.361592] (-) TimerEvent: {}
+[9.462262] (-) TimerEvent: {}
+[9.562927] (-) TimerEvent: {}
+[9.663619] (-) TimerEvent: {}
+[9.764332] (-) TimerEvent: {}
+[9.865001] (-) TimerEvent: {}
+[9.965661] (-) TimerEvent: {}
+[10.066360] (-) TimerEvent: {}
+[10.167062] (-) TimerEvent: {}
+[10.267730] (-) TimerEvent: {}
+[10.368404] (-) TimerEvent: {}
+[10.469078] (-) TimerEvent: {}
+[10.569770] (-) TimerEvent: {}
+[10.670425] (-) TimerEvent: {}
+[10.771078] (-) TimerEvent: {}
+[10.871724] (-) TimerEvent: {}
+[10.972356] (-) TimerEvent: {}
+[11.072977] (-) TimerEvent: {}
+[11.173631] (-) TimerEvent: {}
+[11.274265] (-) TimerEvent: {}
+[11.374887] (-) TimerEvent: {}
+[11.475519] (-) TimerEvent: {}
+[11.576145] (-) TimerEvent: {}
+[11.676777] (-) TimerEvent: {}
+[11.777436] (-) TimerEvent: {}
+[11.878062] (-) TimerEvent: {}
+[11.978714] (-) TimerEvent: {}
+[12.079373] (-) TimerEvent: {}
+[12.180031] (-) TimerEvent: {}
+[12.280696] (-) TimerEvent: {}
+[12.381404] (-) TimerEvent: {}
+[12.482083] (-) TimerEvent: {}
+[12.582748] (-) TimerEvent: {}
+[12.683392] (-) TimerEvent: {}
+[12.784034] (-) TimerEvent: {}
+[12.884706] (-) TimerEvent: {}
+[12.985352] (-) TimerEvent: {}
+[13.085967] (-) TimerEvent: {}
+[13.186616] (-) TimerEvent: {}
+[13.287249] (-) TimerEvent: {}
+[13.387874] (-) TimerEvent: {}
+[13.488497] (-) TimerEvent: {}
+[13.589133] (-) TimerEvent: {}
+[13.689801] (-) TimerEvent: {}
+[13.790415] (-) TimerEvent: {}
+[13.891061] (-) TimerEvent: {}
+[13.991671] (-) TimerEvent: {}
+[14.092293] (-) TimerEvent: {}
+[14.192949] (-) TimerEvent: {}
+[14.293605] (-) TimerEvent: {}
+[14.394267] (-) TimerEvent: {}
+[14.494920] (-) TimerEvent: {}
+[14.595590] (-) TimerEvent: {}
+[14.696264] (-) TimerEvent: {}
+[14.796947] (-) TimerEvent: {}
+[14.897628] (-) TimerEvent: {}
+[14.998323] (-) TimerEvent: {}
+[15.098984] (-) TimerEvent: {}
+[15.193914] (coordinator) StdoutLine: {'line': b'[  6%] \x1b[32m\x1b[1mLinking CXX executable coordinator_node\x1b[0m\n'}
+[15.199091] (-) TimerEvent: {}
+[15.299753] (-) TimerEvent: {}
+[15.400474] (-) TimerEvent: {}
+[15.501180] (-) TimerEvent: {}
+[15.601924] (-) TimerEvent: {}
+[15.702626] (-) TimerEvent: {}
+[15.803805] (-) TimerEvent: {}
+[15.904532] (-) TimerEvent: {}
+[16.005346] (-) TimerEvent: {}
+[16.106087] (-) TimerEvent: {}
+[16.206815] (-) TimerEvent: {}
+[16.307576] (-) TimerEvent: {}
+[16.359444] (coordinator) StdoutLine: {'line': b'[100%] Built target coordinator_node\n'}
+[16.387162] (coordinator) CommandEnded: {'returncode': 0}
+[16.389444] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'install'}
+[16.408015] (-) TimerEvent: {}
+[16.418736] (coordinator) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/avees/coordinator/build/coordinator'], 'cwd': '/home/avees/coordinator/build/coordinator', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'avees'), ('SSH_AGENT_PID', '2660'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/local/cuda-11.4/lib64:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/opt/Vimba_6_0/VimbaC/DynamicLib/arm_64bit:/opt/Vimba_6_0/VimbaCPP/DynamicLib/arm_64bit'), ('HOME', '/home/avees'), ('OLDPWD', '/home/avees'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2534'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3116'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/avees/coordinator/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'avees'), ('JOURNAL_STREAM', '8:56919'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'avees'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.4/bin:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2695,unix/ubuntu:/tmp/.ICE-unix/2695'), ('INVOCATION_ID', '0f21bf03912c4096b1421baddd10669e'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '103'), ('AMENT_PREFIX_PATH', '/home/avees/coordinator/install/coordinator:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:e1bad1e4-dbab-493c-80aa-075228fa5536'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/avees/coordinator/build/coordinator'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', ':/opt/Vimba_6_0/VimbaGigETL/CTI/arm_64bit'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/avees/coordinator/install/coordinator:/opt/ros/foxy')]), 'shell': False}
+[16.451273] (coordinator) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[16.452067] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator/install/coordinator/lib/coordinator/coordinator_node\n'}
+[16.460711] (coordinator) StdoutLine: {'line': b'-- Set runtime path of "/home/avees/coordinator/install/coordinator/lib/coordinator/coordinator_node" to ""\n'}
+[16.461366] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/launch\n'}
+[16.461959] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/launch/coordinator_launch.py\n'}
+[16.462230] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/config\n'}
+[16.462424] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/config/params.yaml\n'}
+[16.462629] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/package_run_dependencies/coordinator\n'}
+[16.462845] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/parent_prefix_path/coordinator\n'}
+[16.463070] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/environment/ament_prefix_path.sh\n'}
+[16.463248] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/environment/ament_prefix_path.dsv\n'}
+[16.463379] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/environment/path.sh\n'}
+[16.463502] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/environment/path.dsv\n'}
+[16.463621] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.bash\n'}
+[16.463839] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.sh\n'}
+[16.464075] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.zsh\n'}
+[16.464247] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.dsv\n'}
+[16.464371] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/package.dsv\n'}
+[16.464489] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/packages/coordinator\n'}
+[16.464607] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/cmake/coordinatorConfig.cmake\n'}
+[16.464723] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/cmake/coordinatorConfig-version.cmake\n'}
+[16.464842] (coordinator) StdoutLine: {'line': b'-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/package.xml\n'}
+[16.469765] (coordinator) CommandEnded: {'returncode': 0}
+[16.508409] (-) TimerEvent: {}
+[16.517062] (coordinator) JobEnded: {'identifier': 'coordinator', 'rc': 0}
+[16.518651] (-) EventReactorShutdown: {}

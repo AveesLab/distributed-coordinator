@@ -1,0 +1,59 @@
+[0.025s] Invoking command in '/home/avees/coordinator/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator/build/coordinator -- -j6 -l6
+[0.128s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.208s] [  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[4.443s] [01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K In constructor ‘[01m[KCoordinator::Coordinator()[m[K’:
+[4.444s] [01m[K/home/avees/coordinator/src/coordinator.cpp:41:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kroi_publishers_[m[K’ was not declared in this scope; did you mean ‘[01m[Kroi_publisher_[m[K’?
+[4.444s]    41 |   [01;31m[Kroi_publishers_[m[K[i] = this->create_publisher<std_msgs::msg::Int32MultiArray>(topic, 10);
+[4.444s]       |   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[4.444s]       |   [32m[Kroi_publisher_[m[K
+[4.496s] [01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kvoid Coordinator::split_scheduling()[m[K’:
+[4.496s] [01m[K/home/avees/coordinator/src/coordinator.cpp:198:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsgs[m[K’ is not a member of ‘[01m[Kstd[m[K’
+[4.496s]   198 |  std::unordered_map<int, std::[01;31m[Kmsgs[m[K::msg::Int32MultiArray> roi_msgs;
+[4.496s]       |                               [01;31m[K^~~~[m[K
+[4.497s] [01m[K/home/avees/coordinator/src/coordinator.cpp:198:57:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[4.497s]   198 |  std::unordered_map<int, std::msgs::msg::Int32MultiArray[01;31m[K>[m[K roi_msgs;
+[4.497s]       |                                                         [01;31m[K^[m[K
+[4.497s] [01m[K/home/avees/coordinator/src/coordinator.cpp:198:57:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[4.497s] [01m[K/home/avees/coordinator/src/coordinator.cpp:213:32:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kint[int][m[K’ for array subscript
+[4.497s]   213 |             roi_msgs[node_index[01;31m[K][m[K = roi_msg;
+[4.497s]       |                                [01;31m[K^[m[K
+[4.500s] [01m[K/home/avees/coordinator/src/coordinator.cpp:227:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kbegin[m[K’ was not declared in this scope; did you mean ‘[01m[Kstd::begin[m[K’?
+[4.500s]   227 |     for (const auto& [node_index, msg] : [01;31m[Kroi_msgs[m[K)
+[4.500s]       |                                          [01;31m[K^~~~~~~~[m[K
+[4.501s]       |                                          [32m[Kstd::begin[m[K
+[4.501s] In file included from [01m[K/usr/include/c++/9/string:54[m[K,
+[4.501s]                  from [01m[K/usr/include/c++/9/stdexcept:39[m[K,
+[4.501s]                  from [01m[K/usr/include/c++/9/array:39[m[K,
+[4.501s]                  from [01m[K/usr/include/c++/9/tuple:39[m[K,
+[4.501s]                  from [01m[K/usr/include/c++/9/bits/unique_ptr.h:37[m[K,
+[4.501s]                  from [01m[K/usr/include/c++/9/memory:80[m[K,
+[4.502s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[4.502s]                  from [01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[4.502s]                  from [01m[K/home/avees/coordinator/src/coordinator.cpp:1[m[K:
+[4.502s] [01m[K/usr/include/c++/9/bits/range_access.h:105:37:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::begin[m[K’ declared here
+[4.502s]   105 |   template<typename _Tp> const _Tp* [01;36m[Kbegin[m[K(const valarray<_Tp>&);
+[4.502s]       |                                     [01;36m[K^~~~~[m[K
+[4.502s] [01m[K/home/avees/coordinator/src/coordinator.cpp:227:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kend[m[K’ was not declared in this scope; did you mean ‘[01m[Kstd::end[m[K’?
+[4.502s]   227 |     for (const auto& [node_index, msg] : [01;31m[Kroi_msgs[m[K)
+[4.503s]       |                                          [01;31m[K^~~~~~~~[m[K
+[4.503s]       |                                          [32m[Kstd::end[m[K
+[4.503s] In file included from [01m[K/usr/include/c++/9/string:54[m[K,
+[4.503s]                  from [01m[K/usr/include/c++/9/stdexcept:39[m[K,
+[4.503s]                  from [01m[K/usr/include/c++/9/array:39[m[K,
+[4.503s]                  from [01m[K/usr/include/c++/9/tuple:39[m[K,
+[4.503s]                  from [01m[K/usr/include/c++/9/bits/unique_ptr.h:37[m[K,
+[4.503s]                  from [01m[K/usr/include/c++/9/memory:80[m[K,
+[4.504s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[4.504s]                  from [01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[4.504s]                  from [01m[K/home/avees/coordinator/src/coordinator.cpp:1[m[K:
+[4.504s] [01m[K/usr/include/c++/9/bits/range_access.h:107:37:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::end[m[K’ declared here
+[4.504s]   107 |   template<typename _Tp> const _Tp* [01;36m[Kend[m[K(const valarray<_Tp>&);
+[4.504s]       |                                     [01;36m[K^~~[m[K
+[4.505s] [01m[K/home/avees/coordinator/src/coordinator.cpp:229:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kroi_publishers_[m[K’ was not declared in this scope; did you mean ‘[01m[Kroi_publisher_[m[K’?
+[4.505s]   229 |         if ([01;31m[Kroi_publishers_[m[K.count(node_index))
+[4.505s]       |             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[4.505s]       |             [32m[Kroi_publisher_[m[K
+[9.439s] make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+[9.440s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+[9.440s] make: *** [Makefile:141: all] Error 2
+[9.447s] Invoked command in '/home/avees/coordinator/build/coordinator' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator/build/coordinator -- -j6 -l6

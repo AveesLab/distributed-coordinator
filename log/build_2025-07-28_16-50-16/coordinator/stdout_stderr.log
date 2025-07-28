@@ -1,0 +1,28 @@
+[35m[1mScanning dependencies of target coordinator_node[0m
+[  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K In constructor ‘[01m[KCoordinator::Coordinator()[m[K’:
+[01m[K/home/avees/coordinator/src/coordinator.cpp:41:17:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Krclcpp::Publisher<std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::SharedPtr[m[K’ {aka ‘[01m[Kstd::shared_ptr<rclcpp::Publisher<std_msgs::msg::Int32MultiArray_<std::allocator<void> > > >[m[K’} and ‘[01m[Kint[m[K’)
+   41 |   roi_publisher_[01;31m[K[[m[Ki] = this->create_publisher<std_msgs::msg::Int32MultiArray>(topic, 10);
+      |                 [01;31m[K^[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kvoid Coordinator::split_scheduling()[m[K’:
+[01m[K/home/avees/coordinator/src/coordinator.cpp:198:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsgs[m[K’ is not a member of ‘[01m[Kstd[m[K’
+  198 |  std::unordered_map<int, std::[01;31m[Kmsgs[m[K::msg::Int32MultiArray> roi_msgs;
+      |                               [01;31m[K^~~~[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:198:57:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+  198 |  std::unordered_map<int, std::msgs::msg::Int32MultiArray[01;31m[K>[m[K roi_msgs;
+      |                                                         [01;31m[K^[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:198:57:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[01m[K/home/avees/coordinator/src/coordinator.cpp:213:32:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kint[int][m[K’ for array subscript
+  213 |             roi_msgs[node_index[01;31m[K][m[K = roi_msg;
+      |                                [01;31m[K^[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:227:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kroi_messages[m[K’ was not declared in this scope; did you mean ‘[01m[Kroi_msgs[m[K’?
+  227 |     for (const auto& [node_index, msg] : [01;31m[Kroi_messages[m[K)
+      |                                          [01;31m[K^~~~~~~~~~~~[m[K
+      |                                          [32m[Kroi_msgs[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:229:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kroi_publishers_[m[K’ was not declared in this scope; did you mean ‘[01m[Kroi_publisher_[m[K’?
+  229 |         if ([01;31m[Kroi_publishers_[m[K.count(node_index))
+      |             [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |             [32m[Kroi_publisher_[m[K
+make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

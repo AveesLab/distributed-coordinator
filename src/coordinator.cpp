@@ -32,10 +32,32 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
             [this, node_id](std_msgs::msg::Bool::SharedPtr msg)
             {
                 node_status_map_[node_id].ready = msg->data;
+                auto time = this->get_clock()->now();
+
+                std::cout << "Node" << node_id << ": ready at " << time.nanoseconds() << std::endl;
+                
+                if (msg->data && !ready_waiting_)
+				{
+				    ready_waiting_ = true;
+				    // 50ms 대기 후 split scheduling 수행
+				    ready_wait_timer_ = this->create_wall_timer(
+				        std::chrono::milliseconds(50),
+				        [this]()
+				        {
+				            split_scheduling();  // 가장 최신 frame 정보 사용
+				            ready_waiting_ = false;
+				            ready_wait_timer_->cancel();
+				        }
+				    );
+				}
             });
     }
 
-    roi_publisher_ = this->create_publisher<std_msgs::msg::Int32MultiArray>("/assigned_roi", 10);
+	for (int i = 1; i <= 4; ++i)
+	{
+		std::string topic = "/assigned_roi/node_" + std::to_string(i);
+		roi_publishers_[i] = this->create_publisher<std_msgs::msg::Int32MultiArray>(topic, 10);
+	}	
     roi_total_publisher_ = this->create_publisher<std_msgs::msg::Int32MultiArray>("/assigned_roi_total", 10);
 
     RCLCPP_INFO(this->get_logger(), "Coordinator node initialized with standard ROS2 messages.");
@@ -76,7 +98,6 @@ std::vector<int> Coordinator::get_N_alive()
         //rclcpp::Time last_hb_time = rclcpp::Time(status.last_hb);
         rclcpp::Time last_hb_time(status.last_hb.nanoseconds(),RCL_SYSTEM_TIME);
 
-        // last_hb_time이 null time일 경우는 제외
         if (last_hb_time.nanoseconds() == 0) continue;
 
         if ((now - last_hb_time) < HB_TIMEOUT_MS)
@@ -119,6 +140,30 @@ std::vector<int> Coordinator::get_N_available()
     return result;
 }
 
+std::pair<int, int> Coordinator::calculate_split_grid(int N)
+{
+    std::vector<int> divisors;
+    for (int i = 1; i <= N; ++i)
+    {
+        if (N % i == 0)
+            divisors.push_back(i);
+    }
+
+    if (divisors.size() == 2)
+    {
+        return {1, N};
+    }
+    else if (divisors.size() % 2 == 1)
+    {
+        int mid = divisors.size() / 2;
+        return {divisors[mid], divisors[mid]};
+    }
+    else
+    {
+        int mid = divisors.size() / 2;
+        return {divisors[mid - 1], divisors[mid]};
+    }
+}
 
 void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
 {
@@ -126,7 +171,7 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
     VmbUint64_t ts;
     vimba_frame_ptr->GetTimestamp(ts);
     rclcpp::Time frame_time = rclcpp::Time(cam_.getTimestampRealTime(ts) * 1e9);
-    RCLCPP_INFO(this->get_logger(), "Frame timestamp: %.6f", frame_time.seconds());
+    //RCLCPP_INFO(this->get_logger(), "Frame timestamp: %.6f", frame_time.seconds());
 
     saved_time_ = frame_time;
 
@@ -143,22 +188,33 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
 void Coordinator::split_scheduling()
 {
     auto avail_nodes = get_N_available();
+    std::sort(avail_nodes.begin(), avail_nodes.end());
 
     if (avail_nodes.empty()) {
-        RCLCPP_WARN(this->get_logger(), "No available nodes for split.");
+        //RCLCPP_WARN(this->get_logger(), "No available nodes for split.");
         return;
     }
 
     int N = static_cast<int>(avail_nodes.size());
-    int rows = static_cast<int>(std::floor(std::sqrt(N)));
-    int cols = static_cast<int>(std::ceil(static_cast<double>(N) / rows));
+    auto [cols,rows] = calculate_split_grid(N);
 
     int crop_w = width_ / cols;
     int crop_h = height_ / rows;
 
+	// rows, cols, crop_w, crop_h 정의 이후
+	std::ostringstream oss;
+	oss << "Available Node: ";
+	for (size_t i = 0; i < avail_nodes.size(); ++i) {
+		oss << avail_nodes[i];
+		if (i != avail_nodes.size() - 1) oss << ", ";
+	}
+	oss << " | Split grid: " << rows << " * " << cols << " (" << crop_w << " * " << crop_h << ")";
+	std::cout << oss.str() << std::endl;
+
     int count = 0;
     std_msgs::msg::Int32MultiArray total_roi_msg;
-
+	std::unordered_map<int, std_msgs::msg::Int32MultiArray> roi_msgs;
+	
     for (int r = 0; r < rows; ++r)
     {
         for (int c = 0; c < cols; ++c)
@@ -171,11 +227,9 @@ void Coordinator::split_scheduling()
 
             std_msgs::msg::Int32MultiArray roi_msg;
             roi_msg.data = {node_index, x_offset, y_offset, crop_w, crop_h};
-            roi_publisher_->publish(roi_msg);
+            
+            roi_msgs[node_index] = roi_msg; 
             total_roi_msg.data.insert(total_roi_msg.data.end(), {node_index, x_offset, y_offset, crop_w, crop_h});
-
-            RCLCPP_INFO(this->get_logger(), "ROI sent to node %d: x=%d y=%d w=%d h=%d",
-                        node_index, x_offset, y_offset, crop_w, crop_h);
 
             //ready flag 초기화
             if (node_status_map_.find(node_index) != node_status_map_.end()) 
@@ -185,8 +239,18 @@ void Coordinator::split_scheduling()
             count++;
         }
     }
+    
+    for (const auto& [node_index, msg] : roi_msgs)
+    {
+        if (roi_publishers_.count(node_index))
+            roi_publishers_[node_index]->publish(msg);
+
+        RCLCPP_INFO(this->get_logger(), "ROI sent to node_%d: x=%d y=%d w=%d h=%d",
+                    msg.data[0], msg.data[1], msg.data[2], msg.data[3], msg.data[4]);
+    }
+    
     roi_total_publisher_->publish(total_roi_msg);
-    RCLCPP_INFO(this->get_logger(), "Total ROI map sent (N=%d regions)", count);
+    //RCLCPP_INFO(this->get_logger(), "Total ROI map sent (N=%d regions)", count);
 
 }
 

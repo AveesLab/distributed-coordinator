@@ -50,10 +50,14 @@ private:
     std::vector<int> get_N_alive();
     std::vector<int> get_N_ready();
     std::vector<int> get_N_available();
+    std::pair<int, int> calculate_split_grid(int N);
     void split_scheduling();
 
 	rclcpp::TimerBase::SharedPtr alive_timer_;
 	rclcpp::Time saved_time_;
+	
+	rclcpp::TimerBase::SharedPtr ready_wait_timer_;
+	std::atomic<bool> ready_waiting_{false};
 	
     // 하트비트 저장: 노드 인덱스 → 시간 로그
     std::unordered_map<int, NodeStatus> node_status_map_;
@@ -64,11 +68,11 @@ private:
     std::map<int, rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr> hb_subscribers_;
     std::map<int, rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr> ready_subscribers_;
 
-    rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr roi_publisher_;
+    std::map<int, rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr> roi_publishers_;
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr roi_total_publisher_;
 
     // 파라미터 설정
-    const rclcpp::Duration HB_TIMEOUT_MS = rclcpp::Duration::from_seconds(0.1);
+    const rclcpp::Duration HB_TIMEOUT_MS = rclcpp::Duration::from_seconds(0.05);
     int width_ = 0;
     int height_ = 0;
 };

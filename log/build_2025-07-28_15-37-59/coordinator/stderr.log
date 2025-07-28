@@ -1,0 +1,15 @@
+In file included from [01m[K/home/avees/coordinator/src/main.cpp:2[m[K:
+[01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:19:10:[m[K [01;31m[Kfatal error: [m[Kpair: No such file or directory
+   19 | #include [01;31m[K<pair>[m[K
+      |          [01;31m[K^~~~~~[m[K
+In file included from [01m[K/home/avees/coordinator/src/coordinator.cpp:1[m[K:
+[01m[K/home/avees/coordinator/include/coordinator/coordinator.hpp:19:10:[m[K [01;31m[Kfatal error: [m[Kpair: No such file or directory
+   19 | #include [01;31m[K<pair>[m[K
+      |          [01;31m[K^~~~~~[m[K
+compilation terminated.
+compilation terminated.
+make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:63: CMakeFiles/coordinator_node.dir/src/main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
