@@ -17,8 +17,9 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
             [this, node_id](std_msgs::msg::Bool::SharedPtr msg)
             {
                 if (msg->data){
-                    node_status_map_[node_id].alive = true;
-                    node_status_map_[node_id].last_hb = this->get_clock()->now(); 
+                    //node_status_map_[node_id].alive = true;
+                    last_hb_map_[node_id] = this->get_clock()->now();
+                    update_available_nodes();
                 }
             });
     }
@@ -31,11 +32,8 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
             ready_topic, 10,
             [this, node_id](std_msgs::msg::Bool::SharedPtr msg)
             {
-                node_status_map_[node_id].ready = msg->data;
-                auto time = this->get_clock()->now();
+                ready_map_[node_id] = msg->data;
 
-                std::cout << "Node" << node_id << ": ready at " << time.nanoseconds() << std::endl;
-                
                 if (msg->data && !ready_waiting_)
 				{
 				    ready_waiting_ = true;
@@ -44,7 +42,7 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
 				        std::chrono::milliseconds(50),
 				        [this]()
 				        {
-				            split_scheduling();  // 가장 최신 frame 정보 사용
+				            update_available_nodes();  // 가장 최신 frame 정보 사용
 				            ready_waiting_ = false;
 				            ready_wait_timer_->cancel();
 				        }
@@ -89,6 +87,36 @@ void Coordinator::Start()
   cam_.startImaging();
 }
 
+void Coordinator::update_available_nodes()
+{
+    rclcpp::Time now = this->get_clock()->now();
+    std::vector<int> result;
+
+    for (int node_id = 1; node_id <= 4; ++node_id)
+    {
+        auto it_hb = last_hb_map_.find(node_id);
+        auto it_ready = ready_map_.find(node_id);
+
+        bool is_ready = (it_ready != ready_map_.end()) && it_ready->second;
+        bool is_alive = false;
+
+        if (it_hb != last_hb_map_.end())
+        {
+            rclcpp::Duration delta = now - it_hb->second;
+            if (delta < HB_TIMEOUT_NS)
+                is_alive = true;
+                //std::cout << "Delta: " << delta << " HB_TIMEOUT_NS: " << HB_TIMEOUT_NS << std::endl;
+        }
+
+        if (is_ready && is_alive)
+            result.push_back(node_id);
+    }
+
+    std::sort(result.begin(), result.end());
+    cached_available_nodes_ = result;
+}
+
+/*
 std::vector<int> Coordinator::get_N_alive()
 {
     std::vector<int> result;
@@ -138,7 +166,7 @@ std::vector<int> Coordinator::get_N_available()
         }
     }
     return result;
-}
+}*/
 
 std::pair<int, int> Coordinator::calculate_split_grid(int N)
 {
@@ -149,19 +177,13 @@ std::pair<int, int> Coordinator::calculate_split_grid(int N)
             divisors.push_back(i);
     }
 
-    if (divisors.size() == 2)
+    if (divisors.size() % 2 == 0)
     {
-        return {1, N};
-    }
-    else if (divisors.size() % 2 == 1)
-    {
-        int mid = divisors.size() / 2;
-        return {divisors[mid], divisors[mid]};
+        return {divisors[(divisors.size() / 2) - 1],divisors[divisors.size() / 2]};
     }
     else
     {
-        int mid = divisors.size() / 2;
-        return {divisors[mid - 1], divisors[mid]};
+    	return {divisors[divisors.size() / 2], divisors[divisors.size() / 2]};
     }
 }
 
@@ -187,7 +209,7 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
 
 void Coordinator::split_scheduling()
 {
-    auto avail_nodes = get_N_available();
+    auto avail_nodes = cached_available_nodes_;
     std::sort(avail_nodes.begin(), avail_nodes.end());
 
     if (avail_nodes.empty()) {
@@ -232,9 +254,9 @@ void Coordinator::split_scheduling()
             total_roi_msg.data.insert(total_roi_msg.data.end(), {node_index, x_offset, y_offset, crop_w, crop_h});
 
             //ready flag 초기화
-            if (node_status_map_.find(node_index) != node_status_map_.end()) 
+            if (ready_map_.find(node_index) != ready_map_.end()) 
             {
-                node_status_map_[node_index].ready = false;
+                ready_map_[node_index] = false;
             }
             count++;
         }
