@@ -1,0 +1,13 @@
+[0.026s] Invoking command in '/home/avees/coordinator/build/coordinator': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator/build/coordinator -- -j6 -l6
+[0.139s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.241s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[0.242s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o[0m
+[4.787s] [01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kvoid Coordinator::update_available_nodes()[m[K’:
+[4.788s] [01m[K/home/avees/coordinator/src/coordinator.cpp:106:25:[m[K [01;31m[Kerror: [m[K‘[01m[KHB_TIMEOUT_NS[m[K’ was not declared in this scope; did you mean ‘[01m[KHB_TIMEOUT_MS[m[K’?
+[4.788s]   106 |             if (delta < [01;31m[KHB_TIMEOUT_NS[m[K)
+[4.788s]       |                         [01;31m[K^~~~~~~~~~~~~[m[K
+[4.788s]       |                         [32m[KHB_TIMEOUT_MS[m[K
+[9.985s] make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+[9.986s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+[9.986s] make: *** [Makefile:141: all] Error 2
+[9.992s] Invoked command in '/home/avees/coordinator/build/coordinator' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator/build/coordinator -- -j6 -l6

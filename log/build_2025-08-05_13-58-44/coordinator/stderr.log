@@ -1,0 +1,17 @@
+[01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K In constructor ‘[01m[KCoordinator::Coordinator()[m[K’:
+[01m[K/home/avees/coordinator/src/coordinator.cpp:11:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kcallback_group_reentrant_[m[K’ was not declared in this scope
+   11 |     [01;31m[Kcallback_group_reentrant_[m[K = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:[m[K In lambda function:
+[01m[K/home/avees/coordinator/src/coordinator.cpp:53:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kcallback_group_reentrant_[m[K’ is not captured
+   53 |                         [01;31m[Kcallback_group_reentrant_[m[K
+      |                         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:38:27:[m[K [01;36m[Knote: [m[Kthe lambda has no capture-default
+   38 |             [this, node_id[01;36m[K][m[K(std_msgs::msg::Bool::SharedPtr msg)
+      |                           [01;36m[K^[m[K
+[01m[K/home/avees/coordinator/src/coordinator.cpp:11:5:[m[K [01;36m[Knote: [m[K‘[01m[K<typeprefixerror>callback_group_reentrant_[m[K’ declared here
+   11 |     [01;36m[Kcallback_group_reentrant_[m[K = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

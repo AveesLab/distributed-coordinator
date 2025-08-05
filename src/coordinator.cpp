@@ -7,7 +7,12 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
 	this->LoadParams();
 	
 	cam_.setCallback(std::bind(&Coordinator::FrameCallback, this, _1));
-    //status_subscriber_ = this->create_subscription<std_msgs::msg::Int32>("/node_status", 50, std::bind(&Coordinator::SaveStatus, this, _1));
+    
+    callback_group_reentrant_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
+
+    rclcpp::SubscriptionOptions sub_opt;
+    sub_opt.callback_group = callback_group_reentrant_;
+
     //Heartbeat subscriber (1~5: computing(1~4), aggregation(5))
     for (int node_id = 1; node_id <= 5; ++node_id)
     {
@@ -17,11 +22,11 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
             [this, node_id](std_msgs::msg::Bool::SharedPtr msg)
             {
                 if (msg->data){
-                    //node_status_map_[node_id].alive = true;
+                    std::lock_guard<std::mutex> lock(map_mutex_);
                     last_hb_map_[node_id] = this->get_clock()->now();
-                    update_available_nodes();
+                    //update_available_nodes();
                 }
-            });
+            }, sub_opt);
     }
 
     // Ready flag subscriber (1~4: computing node only)
@@ -32,12 +37,14 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
             ready_topic, 10,
             [this, node_id](std_msgs::msg::Bool::SharedPtr msg)
             {
-                ready_map_[node_id] = msg->data;
+                {
+                    std::lock_guard<std::mutex> lock(map_mutex_); 
+                    ready_map_[node_id] = msg->data;
+                }
 
                 if (msg->data && !ready_waiting_)
 				{
 				    ready_waiting_ = true;
-				    // 50ms 대기 후 split scheduling 수행
 				    ready_wait_timer_ = this->create_wall_timer(
 				        std::chrono::milliseconds(50),
 				        [this]()
@@ -45,10 +52,11 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
 				            update_available_nodes();  // 가장 최신 frame 정보 사용
 				            ready_waiting_ = false;
 				            ready_wait_timer_->cancel();
-				        }
+                        },
+                        callback_group_reentrant_
 				    );
 				}
-            });
+            }, sub_opt);
     }
 
 	for (int i = 1; i <= 4; ++i)
@@ -89,6 +97,7 @@ void Coordinator::Start()
 
 void Coordinator::update_available_nodes()
 {
+    std::lock_guard<std::mutex> lock(map_mutex_);
     rclcpp::Time now = this->get_clock()->now();
     std::vector<int> result;
 
@@ -116,58 +125,6 @@ void Coordinator::update_available_nodes()
     cached_available_nodes_ = result;
 }
 
-/*
-std::vector<int> Coordinator::get_N_alive()
-{
-    std::vector<int> result;
-    rclcpp::Time now = rclcpp::Clock(RCL_SYSTEM_TIME).now();
-    for (const auto& [node_id, status] : node_status_map_)
-    {
-        //rclcpp::Time last_hb_time = rclcpp::Time(status.last_hb);
-        rclcpp::Time last_hb_time(status.last_hb.nanoseconds(),RCL_SYSTEM_TIME);
-
-        if (last_hb_time.nanoseconds() == 0) continue;
-
-        if ((now - last_hb_time) < HB_TIMEOUT_MS)
-        {
-            result.push_back(node_id);
-        }
-    }
-    return result;
-}
-
-std::vector<int> Coordinator::get_N_ready()
-{
-    std::vector<int> result;
-
-    for (const auto& [node_id, status] : node_status_map_)
-    {
-        if (node_id <= 4 && status.ready)  // node 1~4만 체크
-        {
-            result.push_back(node_id);
-        }
-    }
-    return result;
-}
-
-std::vector<int> Coordinator::get_N_available()
-{
-    auto n_alive = get_N_alive();
-    auto n_ready = get_N_ready();
-
-    std::unordered_set<int> ready_set(n_ready.begin(), n_ready.end());
-    std::vector<int> result;
-
-    for (int node_id : n_alive)
-    {
-        if (node_id <= 4 && ready_set.count(node_id))
-        {
-            result.push_back(node_id);
-        }
-    }
-    return result;
-}*/
-
 std::pair<int, int> Coordinator::calculate_split_grid(int N)
 {
     std::vector<int> divisors;
@@ -194,23 +151,28 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
     vimba_frame_ptr->GetTimestamp(ts);
     rclcpp::Time frame_time = rclcpp::Time(cam_.getTimestampRealTime(ts) * 1e9);
     //RCLCPP_INFO(this->get_logger(), "Frame timestamp: %.6f", frame_time.seconds());
+    {
+        std::lock_guard<std::mutex> lock(map_mutex_);
+        saved_time_ = frame_time;
 
-    saved_time_ = frame_time;
-
-    VmbUint32_t w, h;
-    vimba_frame_ptr->GetWidth(w);
-    vimba_frame_ptr->GetHeight(h);
-    width_  = w;
-    height_ = h;
-
+        VmbUint32_t w, h;
+        vimba_frame_ptr->GetWidth(w);
+        vimba_frame_ptr->GetHeight(h);
+        width_  = w;
+        height_ = h;
+    }
+    
     split_scheduling();
 }
 
 
 void Coordinator::split_scheduling()
 {
-    auto avail_nodes = cached_available_nodes_;
-    std::sort(avail_nodes.begin(), avail_nodes.end());
+    std::vector<int> avail_nodes;
+    {
+        std::lock_guard<std::mutex> lock(map_mutex_);  // 🔐 읽기 보호
+        avail_nodes = cached_available_nodes_;
+    }
 
     if (avail_nodes.empty()) {
         //RCLCPP_WARN(this->get_logger(), "No available nodes for split.");

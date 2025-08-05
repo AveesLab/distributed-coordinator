@@ -366,6 +366,12 @@ functional
 coordinator/coordinator.hpp
 /home/avees/coordinator/src/coordinator/coordinator.hpp
 
+/home/avees/coordinator/src/main.cpp
+rclcpp/rclcpp.hpp
+/home/avees/coordinator/src/rclcpp/rclcpp.hpp
+coordinator/coordinator.hpp
+/home/avees/coordinator/src/coordinator/coordinator.hpp
+
 /opt/ros/foxy/include/builtin_interfaces/msg/detail/duration__builder.hpp
 builtin_interfaces/msg/detail/duration__struct.hpp
 /opt/ros/foxy/include/builtin_interfaces/msg/detail/builtin_interfaces/msg/detail/duration__struct.hpp

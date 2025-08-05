@@ -43,6 +43,8 @@ private:
 	int32_t ptp_offset_;
 	double acquisition_fps_;
 	
+    rclcpp::CallbackGroup::SharedPtr callback_group_reentrant_;
+
 	void LoadParams();
 	void FrameCallback(const FramePtr& vimba_frame_ptr);
     //void SaveStatus(const std_msgs::msg::Int32::SharedPtr msg);
@@ -52,15 +54,21 @@ private:
     std::vector<int> get_N_available();
     std::pair<int, int> calculate_split_grid(int N);
     void split_scheduling();
+    void update_available_nodes();
 
 	rclcpp::TimerBase::SharedPtr alive_timer_;
 	rclcpp::Time saved_time_;
 	
 	rclcpp::TimerBase::SharedPtr ready_wait_timer_;
 	std::atomic<bool> ready_waiting_{false};
+    std::mutex map_mutex_;
 	
     // 하트비트 저장: 노드 인덱스 → 시간 로그
     std::unordered_map<int, NodeStatus> node_status_map_;
+    std::unordered_map<int, bool> ready_map_;   
+    std::unordered_map<int, rclcpp::Time> last_hb_map_;
+    std::vector<int> cached_available_nodes_;
+
 
     // ROS2 인터페이스
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr camera_subscriber_;
@@ -72,7 +80,7 @@ private:
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr roi_total_publisher_;
 
     // 파라미터 설정
-    const rclcpp::Duration HB_TIMEOUT_MS = rclcpp::Duration::from_seconds(0.05);
+    const rclcpp::Duration HB_TIMEOUT_NS = rclcpp::Duration::from_seconds(0.05);
     int width_ = 0;
     int height_ = 0;
 };
