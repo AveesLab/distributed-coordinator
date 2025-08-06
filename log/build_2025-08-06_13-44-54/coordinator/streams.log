@@ -1,0 +1,31 @@
+[0.028s] Invoking command in '/home/avees/coordinator/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator/build/coordinator -- -j6 -l6
+[0.139s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.233s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[0.234s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o[0m
+[16.566s] [  9%] [32m[1mLinking CXX executable coordinator_node[0m
+[17.676s] [100%] Built target coordinator_node
+[17.704s] Invoked command in '/home/avees/coordinator/build/coordinator' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator/build/coordinator -- -j6 -l6
+[17.734s] Invoking command in '/home/avees/coordinator/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/avees/coordinator/build/coordinator
+[17.752s] -- Install configuration: ""
+[17.753s] -- Installing: /home/avees/coordinator/install/coordinator/lib/coordinator/coordinator_node
+[17.764s] -- Set runtime path of "/home/avees/coordinator/install/coordinator/lib/coordinator/coordinator_node" to ""
+[17.765s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/launch
+[17.765s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/launch/coordinator_launch.py
+[17.766s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/config
+[17.766s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/config/params.yaml
+[17.766s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/package_run_dependencies/coordinator
+[17.767s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/parent_prefix_path/coordinator
+[17.767s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/environment/ament_prefix_path.sh
+[17.767s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/environment/ament_prefix_path.dsv
+[17.767s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/environment/path.sh
+[17.768s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/environment/path.dsv
+[17.768s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.bash
+[17.768s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.sh
+[17.769s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.zsh
+[17.774s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.dsv
+[17.775s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/package.dsv
+[17.776s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/packages/coordinator
+[17.776s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/cmake/coordinatorConfig.cmake
+[17.776s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/cmake/coordinatorConfig-version.cmake
+[17.777s] -- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/package.xml
+[17.777s] Invoked command in '/home/avees/coordinator/build/coordinator' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/avees/coordinator/build/coordinator

@@ -40,6 +40,8 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
                 {
                     std::lock_guard<std::mutex> lock(map_mutex_); 
                     ready_map_[node_id] = msg->data;
+                    ts.end_ready_flag = get_time_in_ms();
+                    ts.ready_node_index = node_id;
                 }
 
                 if (msg->data && !ready_waiting_)
@@ -65,6 +67,24 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
 		roi_publishers_[i] = this->create_publisher<std_msgs::msg::Int32MultiArray>(topic, 10);
 	}	
     roi_total_publisher_ = this->create_publisher<std_msgs::msg::Int32MultiArray>("/assigned_roi_total", 10);
+
+
+struct TimestampData {
+    uint64_t end_ready_flag, ready_node_index;
+    uint64_t start_update, end_update;
+    uint64_t start_split, end_split;
+    uint64_t start_roi_ethernet, roi_node_index; 
+    uint64_t start_roi_total_ethernet;
+};
+
+    std::string filename = "Coordinator.csv";
+    csv_file_.open(filename, std::ios::out | std::ios::trunc);
+    if (csv_file_.is_open()) {
+        csv_file_ << "ready_flag_end,"
+				  << "node_update_start,node_update_time(us),node_update_end,"
+                  << "split_start,split_time(us),split_end,"
+                  << "roi_ethernet_start, roi_total_ethernet_start\n";
+    }
 
     RCLCPP_INFO(this->get_logger(), "Coordinator node initialized with standard ROS2 messages.");
 }
@@ -95,8 +115,15 @@ void Coordinator::Start()
   cam_.startImaging();
 }
 
+uint64_t Coordinator::get_time_in_ms() {
+  rclcpp::Time now = this->get_clock()->now();
+  uint64_t nanosecond = now.nanoseconds(); 
+  return nanosecond/1000;
+}
+
 void Coordinator::update_available_nodes()
 {
+    ts.start_update = get_time_in_ms();
     std::lock_guard<std::mutex> lock(map_mutex_);
     rclcpp::Time now = this->get_clock()->now();
     std::vector<int> result;
@@ -114,7 +141,6 @@ void Coordinator::update_available_nodes()
             rclcpp::Duration delta = now - it_hb->second;
             if (delta < HB_TIMEOUT_NS)
                 is_alive = true;
-                //std::cout << "Delta: " << delta << " HB_TIMEOUT_NS: " << HB_TIMEOUT_NS << std::endl;
         }
 
         if (is_ready && is_alive)
@@ -123,6 +149,7 @@ void Coordinator::update_available_nodes()
 
     std::sort(result.begin(), result.end());
     cached_available_nodes_ = result;
+    ts.end_update = get_time_in_ms();
 }
 
 std::pair<int, int> Coordinator::calculate_split_grid(int N)
@@ -179,6 +206,15 @@ void Coordinator::split_scheduling()
         return;
     }
 
+    {
+        std::lock_guard<std::mutex> lock(map_mutex_);
+        for (int id : avail_nodes) {
+            ready_map_[id] = false;
+        }
+    }
+    
+    ts.start_split = get_time_in_ms();
+    
     int N = static_cast<int>(avail_nodes.size());
     auto [cols,rows] = calculate_split_grid(N);
 
@@ -214,18 +250,16 @@ void Coordinator::split_scheduling()
             
             roi_msgs[node_index] = roi_msg; 
             total_roi_msg.data.insert(total_roi_msg.data.end(), {node_index, x_offset, y_offset, crop_w, crop_h});
-
-            //ready flag 초기화
-            if (ready_map_.find(node_index) != ready_map_.end()) 
-            {
-                ready_map_[node_index] = false;
-            }
+            
             count++;
         }
     }
-    
+    ts.end_split = get_time_in_ms();
+
+    ts.start_roi_ethernet = get_time_in_ms();
     for (const auto& [node_index, msg] : roi_msgs)
     {
+        ts.roi_node_index = node_index;
         if (roi_publishers_.count(node_index))
             roi_publishers_[node_index]->publish(msg);
 
@@ -233,9 +267,30 @@ void Coordinator::split_scheduling()
                     msg.data[0], msg.data[1], msg.data[2], msg.data[3], msg.data[4]);
     }
     
+    ts.start_roi_ethernet = get_time_in_ms();
     roi_total_publisher_->publish(total_roi_msg);
+    {
+        std::lock_guard<std::mutex> lock(map_mutex_);
+        cached_available_nodes_.clear();
+    }
     //RCLCPP_INFO(this->get_logger(), "Total ROI map sent (N=%d regions)", count);
+    SaveTimestamp(ts);
 
 }
 
+void Coordinator::SaveTimestamp(const TimestampData &data) {
+    if (csv_file_.is_open()) {
+        csv_file_ << data.end_ready_flag << ","
+				  << data.start_update << ","
+                  << (data.end_update - data.start_update) << ","
+                  << data.end_update << ","
+                  << data.start_split << ","
+                  << (data.end_split - data.start_split) << ","
+                  << data.end_split << ","
+                  << data.start_roi_ethernet << ","
+                  << data.start_roi_total_ethernet << ","
+                  << "\n";
+        csv_file_.flush();
+    }
+}
 

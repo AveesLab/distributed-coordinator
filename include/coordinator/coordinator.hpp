@@ -23,6 +23,15 @@ struct NodeStatus {
     rclcpp::Time last_hb;
 };
 
+struct TimestampData {
+    uint64_t end_ready_flag, ready_node_index;
+    uint64_t start_update, end_update;
+    uint64_t start_split, end_split;
+    uint64_t start_roi_ethernet, roi_node_index; 
+    uint64_t start_roi_total_ethernet;
+};
+
+
 class Coordinator : public rclcpp::Node, public std::enable_shared_from_this<Coordinator>
 {
 public:
@@ -30,6 +39,7 @@ public:
     ~Coordinator();
 
 	void Start();
+    uint64_t get_time_in_ms();
 
 private:
 	// GigE Camera
@@ -55,6 +65,7 @@ private:
     std::pair<int, int> calculate_split_grid(int N);
     void split_scheduling();
     void update_available_nodes();
+    void SaveTimestamp(const TimestampData &data);
 
 	rclcpp::TimerBase::SharedPtr alive_timer_;
 	rclcpp::Time saved_time_;
@@ -78,6 +89,12 @@ private:
 
     std::map<int, rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr> roi_publishers_;
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr roi_total_publisher_;
+
+
+    //save result for csv
+    std::ofstream csv_file_;
+    TimestampData ts;
+    std::mutex ts_mutex_;
 
     // 파라미터 설정
     const rclcpp::Duration HB_TIMEOUT_NS = rclcpp::Duration::from_seconds(0.05);

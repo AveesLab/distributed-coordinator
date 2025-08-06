@@ -1,0 +1,27 @@
+[35m[1mScanning dependencies of target coordinator_node[0m
+[  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o[0m
+[  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[  9%] [32m[1mLinking CXX executable coordinator_node[0m
+[100%] Built target coordinator_node
+-- Install configuration: ""
+-- Installing: /home/avees/coordinator/install/coordinator/lib/coordinator/coordinator_node
+-- Set runtime path of "/home/avees/coordinator/install/coordinator/lib/coordinator/coordinator_node" to ""
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/launch
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/launch/coordinator_launch.py
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/config
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/config/params.yaml
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/package_run_dependencies/coordinator
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/parent_prefix_path/coordinator
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/environment/ament_prefix_path.sh
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/environment/path.sh
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/environment/path.dsv
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.bash
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.sh
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.zsh
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.dsv
+-- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/package.dsv
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/packages/coordinator
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/cmake/coordinatorConfig.cmake
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/cmake/coordinatorConfig-version.cmake
+-- Up-to-date: /home/avees/coordinator/install/coordinator/share/coordinator/package.xml
