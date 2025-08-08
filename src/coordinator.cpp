@@ -37,27 +37,36 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
             ready_topic, 10,
             [this, node_id](std_msgs::msg::Bool::SharedPtr msg)
             {
+                uint64_t now = get_time_in_ms();  // 현재 시간 (ms)
+
                 {
                     std::lock_guard<std::mutex> lock(map_mutex_); 
                     ready_map_[node_id] = msg->data;
-                    ts.end_ready_flag = get_time_in_ms();
-                    ts.ready_node_index = node_id;
+
+                    if (ts.end_ready_flag == 0) {
+                        ts.end_ready_flag = now;
+                        ts.ready_node_index = node_id;
+                    }
                 }
 
+                RCLCPP_INFO(this->get_logger(),
+                            "[ReadyFlag] node_%d ready received at %lu ms",
+                            node_id, now);
+
                 if (msg->data && !ready_waiting_)
-				{
-				    ready_waiting_ = true;
-				    ready_wait_timer_ = this->create_wall_timer(
-				        std::chrono::milliseconds(50),
-				        [this]()
-				        {
-				            update_available_nodes();  // 가장 최신 frame 정보 사용
-				            ready_waiting_ = false;
-				            ready_wait_timer_->cancel();
+                {
+                    ready_waiting_ = true;
+                    ready_wait_timer_ = this->create_wall_timer(
+                        std::chrono::milliseconds(50),
+                        [this]()
+                        {
+                            update_available_nodes();  // 가장 최신 frame 정보 사용
+                            ready_waiting_ = false;
+                            ready_wait_timer_->cancel();
                         },
                         callback_group_reentrant_
-				    );
-				}
+                    );
+                }
             }, sub_opt);
     }
 
@@ -67,21 +76,13 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
 		roi_publishers_[i] = this->create_publisher<std_msgs::msg::Int32MultiArray>(topic, 10);
 	}	
     roi_total_publisher_ = this->create_publisher<std_msgs::msg::Int32MultiArray>("/assigned_roi_total", 10);
-
-
-struct TimestampData {
-    uint64_t end_ready_flag, ready_node_index;
-    uint64_t start_update, end_update;
-    uint64_t start_split, end_split;
-    uint64_t start_roi_ethernet, roi_node_index; 
-    uint64_t start_roi_total_ethernet;
-};
-
-    std::string filename = "Coordinator.csv";
+    
+    std::string filename = "coordinator_node.csv";
     csv_file_.open(filename, std::ios::out | std::ios::trunc);
     if (csv_file_.is_open()) {
-        csv_file_ << "ready_flag_end,"
+        csv_file_ << "framecallback_start, ready_flag_end,"
 				  << "node_update_start,node_update_time(us),node_update_end,"
+                  << "split_preprocess_start,split_preprocess_time(us),split_preprocess_end,"
                   << "split_start,split_time(us),split_end,"
                   << "roi_ethernet_start, roi_total_ethernet_start\n";
     }
@@ -174,6 +175,7 @@ std::pair<int, int> Coordinator::calculate_split_grid(int N)
 void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
 {
     //rclcpp::Time frame_time = msg->header.stamp;
+    ts.start_framecallback = get_time_in_ms();
     VmbUint64_t ts;
     vimba_frame_ptr->GetTimestamp(ts);
     rclcpp::Time frame_time = rclcpp::Time(cam_.getTimestampRealTime(ts) * 1e9);
@@ -195,6 +197,7 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
 
 void Coordinator::split_scheduling()
 {
+    ts.start_split_preprocess = get_time_in_ms();
     std::vector<int> avail_nodes;
     {
         std::lock_guard<std::mutex> lock(map_mutex_);  // 🔐 읽기 보호
@@ -212,6 +215,7 @@ void Coordinator::split_scheduling()
             ready_map_[id] = false;
         }
     }
+    ts.end_split_preprocess = get_time_in_ms();
     
     ts.start_split = get_time_in_ms();
     
@@ -267,7 +271,7 @@ void Coordinator::split_scheduling()
                     msg.data[0], msg.data[1], msg.data[2], msg.data[3], msg.data[4]);
     }
     
-    ts.start_roi_ethernet = get_time_in_ms();
+    ts.start_roi_total_ethernet = get_time_in_ms();
     roi_total_publisher_->publish(total_roi_msg);
     {
         std::lock_guard<std::mutex> lock(map_mutex_);
@@ -280,10 +284,14 @@ void Coordinator::split_scheduling()
 
 void Coordinator::SaveTimestamp(const TimestampData &data) {
     if (csv_file_.is_open()) {
-        csv_file_ << data.end_ready_flag << ","
+        csv_file_ << data. start_framecallback << ","
+                  << data.end_ready_flag << ","
 				  << data.start_update << ","
                   << (data.end_update - data.start_update) << ","
                   << data.end_update << ","
+                  << data.start_split_preprocess << ","
+                  << (data.end_split_preprocess - data.start_split_preprocess) << ","
+                  << data.end_split_preprocess << ","
                   << data.start_split << ","
                   << (data.end_split - data.start_split) << ","
                   << data.end_split << ","

@@ -24,13 +24,13 @@ struct NodeStatus {
 };
 
 struct TimestampData {
-    uint64_t end_ready_flag, ready_node_index;
+    uint64_t end_ready_flag, ready_node_index, start_framecallback;
     uint64_t start_update, end_update;
+    uint64_t start_split_preprocess,end_split_preprocess;
     uint64_t start_split, end_split;
     uint64_t start_roi_ethernet, roi_node_index; 
     uint64_t start_roi_total_ethernet;
 };
-
 
 class Coordinator : public rclcpp::Node, public std::enable_shared_from_this<Coordinator>
 {
