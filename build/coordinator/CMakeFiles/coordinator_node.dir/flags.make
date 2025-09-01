@@ -6,5 +6,5 @@ CXX_FLAGS =   -Wall -Wextra -Wpedantic -std=gnu++17
 
 CXX_DEFINES = -DDEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp -DRCUTILS_ENABLE_FAULT_INJECTION -DSPDLOG_COMPILED_LIB
 
-CXX_INCLUDES = -I/home/avees/coordinator/include -I/opt/Vimba_6_0/VimbaCPP/Include -I/opt/Vimba_6_0/VimbaC/Include -I/opt/ros/foxy/opt/yaml_cpp_vendor/include -isystem /usr/include/opencv4 -isystem /opt/ros/foxy/include 
+CXX_INCLUDES = -I/home/avees/coordinator/include -I/opt/Vimba_6_0/VimbaCPP/Include -I/opt/Vimba_6_0/VimbaC/Include -I/opt/ros/foxy/opt/yaml_cpp_vendor/include -isystem /usr/include/opencv4 -isystem /home/avees/data-domain/install/avt_vimba_camera/include -isystem /opt/ros/foxy/include 
 

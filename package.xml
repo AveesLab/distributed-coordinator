@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>coordinator</name>
   <version>0.0.0</version>
@@ -8,13 +7,13 @@
   <maintainer email="geunu6319@kookmin.ac.kr">avees</maintainer>
   <license>MIT</license>
 
+  <!-- build tool -->
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <build_depend>rosidl_default_generators</build_depend>
+  <!-- runtime for using generated interfaces -->
   <exec_depend>rosidl_default_runtime</exec_depend>
-  <exec_depend>launch</exec_depend>
-  <exec_depend>launch_ros</exec_depend>
 
+  <!-- ROS deps -->
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>
   <depend>sensor_msgs</depend>
@@ -22,7 +21,15 @@
   <depend>diagnostic_msgs</depend>
   <depend>cv_bridge</depend>
   <depend>image_transport</depend>
+
+  <!-- 메시지 제공 패키지(PartialImage) -->
+  <depend>avt_vimba_camera</depend>
+
+  <!-- OpenCV는 시스템 의존성(rosdep)로 처리됩니다. 그대로 둬도 무방 -->
   <depend>OpenCV</depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

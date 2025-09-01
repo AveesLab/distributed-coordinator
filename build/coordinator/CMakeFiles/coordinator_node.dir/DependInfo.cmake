@@ -51,6 +51,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/Vimba_6_0/VimbaC/Include"
   "/opt/ros/foxy/opt/yaml_cpp_vendor/include"
   "/usr/include/opencv4"
+  "/home/avees/data-domain/install/avt_vimba_camera/include"
   "/opt/ros/foxy/include"
   )
 

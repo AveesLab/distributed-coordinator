@@ -1,0 +1,210 @@
+[0.025s] Invoking command in '/home/avees/coordinator/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/avees/coordinator -DCMAKE_INSTALL_PREFIX=/home/avees/coordinator/install/coordinator
+[0.067s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.120s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.535s] -- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.596s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.602s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.835s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.925s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.928s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.186s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[1.388s] -- Found camera_info_manager: 2.4.0 (/opt/ros/foxy/share/camera_info_manager/cmake)
+[1.423s] -- Setting yaml-cpp_DIR to: '/opt/ros/foxy/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/lib/cmake/yaml-cpp'
+[1.500s] -- Found diagnostic_msgs: 2.0.5 (/opt/ros/foxy/share/diagnostic_msgs/cmake)
+[1.560s] -- Found image_transport: 2.4.0 (/opt/ros/foxy/share/image_transport/cmake)
+[1.629s] -- Found cv_bridge: 3.0.7 (/opt/ros/foxy/share/cv_bridge/cmake)
+[1.663s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[1.680s] -- Found avt_vimba_camera: 2001.1.0 (/home/avees/data-domain/install/avt_vimba_camera/share/avt_vimba_camera/cmake)
+[2.545s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[2.717s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.835s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.836s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/avees/coordinator/include>
+[2.836s] -- Configured cppcheck exclude dirs and/or files: 
+[2.948s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.949s] -- Configured cpplint exclude dirs and/or files: 
+[2.960s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.991s] -- Added test 'lint_cmake' to check CMake code style
+[3.008s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[3.113s] -- Added test 'uncrustify' to check C / C++ code style
+[3.114s] -- Configured uncrustify additional arguments: 
+[3.129s] -- Added test 'xmllint' to check XML markup files
+[3.139s] -- Configuring done
+[3.188s] -- Generating done
+[3.208s] -- Build files have been written to: /home/avees/coordinator/build/coordinator
+[3.232s] Invoked command in '/home/avees/coordinator/build/coordinator' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/avees/coordinator -DCMAKE_INSTALL_PREFIX=/home/avees/coordinator/install/coordinator
+[3.241s] Invoking command in '/home/avees/coordinator/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator/build/coordinator -- -j6 -l6
+[3.337s] [35m[1mScanning dependencies of target coordinator_node[0m
+[3.525s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o[0m
+[3.525s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.o[0m
+[3.531s] [  9%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[3.540s] [ 12%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.o[0m
+[3.543s] [ 16%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.o[0m
+[3.557s] [ 19%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.o[0m
+[3.617s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:28:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+[3.617s]    28 | #pragma warning(disable:4996)
+[3.618s]       | 
+[3.696s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:30:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+[3.697s]    30 | #pragma warning(default:4996)
+[3.697s]       | 
+[4.638s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/AncillaryData.cpp:[m[K In copy constructor ‘[01m[KAVT::VmbAPI::AncillaryData::AncillaryData(const AVT::VmbAPI::AncillaryData&)[m[K’:
+[4.640s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/AncillaryData.cpp:46:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::BasicLockable[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+[4.640s]    46 | [01;35m[KAncillaryData[m[K::AncillaryData( const AncillaryData& )
+[4.640s]       | [01;35m[K^~~~~~~~~~~~~[m[K
+[4.641s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/AncillaryData.cpp:46:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::FeatureContainer[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+[4.713s] In file included from [01m[K/home/avees/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:29[m[K:
+[4.714s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/BaseFeature.h:[m[K In constructor ‘[01m[KAVT::VmbAPI::BaseFeature::BaseFeature(const VmbFeatureInfo_t*, AVT::VmbAPI::FeatureContainer*)[m[K’:
+[4.714s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/BaseFeature.h:118:11:[m[K [01;35m[Kwarning: [m[K‘[01m[KAVT::VmbAPI::BaseFeature::m_pImpl[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+[4.714s]   118 |     Impl *[01;35m[Km_pImpl[m[K;
+[4.714s]       |           [01;35m[K^~~~~~~[m[K
+[4.714s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/BaseFeature.h:108:23:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KAVT::VmbAPI::FeatureContainer* AVT::VmbAPI::BaseFeature::m_pFeatureContainer[m[K’ [[01;35m[K-Wreorder[m[K]
+[4.714s]   108 |     FeatureContainer *[01;35m[Km_pFeatureContainer[m[K;
+[4.715s]       |                       [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.715s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:55:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+[4.715s]    55 | [01;35m[KBaseFeature[m[K::BaseFeature( const VmbFeatureInfo_t *pFeatureInfo, FeatureContainer *pFeatureContainer )
+[4.715s]       | [01;35m[K^~~~~~~~~~~[m[K
+[4.729s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:[m[K In copy constructor ‘[01m[KAVT::VmbAPI::BaseFeature::BaseFeature(const AVT::VmbAPI::BaseFeature&)[m[K’:
+[4.729s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:98:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::BasicLockable[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+[4.730s]    98 | [01;35m[KBaseFeature[m[K::BaseFeature( const BaseFeature& )
+[4.730s]       | [01;35m[K^~~~~~~~~~~[m[K
+[4.912s] [ 22%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.o[0m
+[5.325s] [ 25%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.o[0m
+[5.585s] [ 29%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.o[0m
+[5.612s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Camera.cpp:27:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+[5.612s]    27 | #pragma warning(disable:4996)
+[5.612s]       | 
+[5.712s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Camera.cpp:29:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+[5.712s]    29 | #pragma warning(default:4996)
+[5.712s]       | 
+[6.397s] [ 32%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.o[0m
+[6.515s] [ 35%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.o[0m
+[6.529s] [ 38%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.o[0m
+[6.813s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Camera.cpp:[m[K In copy constructor ‘[01m[KAVT::VmbAPI::Camera::Camera(const AVT::VmbAPI::Camera&)[m[K’:
+[6.813s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Camera.cpp:490:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::BasicLockable[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+[6.813s]   490 | [01;35m[KCamera[m[K::Camera( const Camera& )
+[6.814s]       | [01;35m[K^~~~~~[m[K
+[6.814s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Camera.cpp:490:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::FeatureContainer[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+[7.147s] In file included from [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Condition.cpp:29[m[K:
+[7.147s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Condition.h:[m[K In constructor ‘[01m[KAVT::VmbAPI::Condition::Condition()[m[K’:
+[7.148s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Condition.h:44:29:[m[K [01;35m[Kwarning: [m[K‘[01m[KAVT::VmbAPI::Condition::m_nWaiterNumber[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+[7.148s]    44 |     unsigned long           [01;35m[Km_nWaiterNumber[m[K;
+[7.148s]       |                             [01;35m[K^~~~~~~~~~~~~~~[m[K
+[7.148s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Condition.h:43:29:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Klong unsigned int AVT::VmbAPI::Condition::m_nReleaseNumber[m[K’ [[01;35m[K-Wreorder[m[K]
+[7.148s]    43 |     unsigned long           [01;35m[Km_nReleaseNumber[m[K;
+[7.149s]       |                             [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[7.149s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Condition.cpp:34:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+[7.149s]    34 | [01;35m[KCondition[m[K::Condition()
+[7.150s]       | [01;35m[K^~~~~~~~~[m[K
+[7.437s] [ 41%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.o[0m
+[7.761s] [ 45%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.o[0m
+[8.044s] [ 48%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.o[0m
+[8.111s] In file included from [01m[K/home/avees/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp:29[m[K:
+[8.112s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/ConditionHelper.h:[m[K In constructor ‘[01m[KAVT::VmbAPI::ConditionHelper::ConditionHelper()[m[K’:
+[8.112s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/ConditionHelper.h:63:41:[m[K [01;35m[Kwarning: [m[K‘[01m[KAVT::VmbAPI::ConditionHelper::m_nNumListReads[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+[8.112s]    63 |     int                                 [01;35m[Km_nNumListReads[m[K;
+[8.112s]       |                                         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[8.112s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/ConditionHelper.h:61:41:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AVT::VmbAPI::ConditionHelper::m_bIsWritingList[m[K’ [[01;35m[K-Wreorder[m[K]
+[8.113s]    61 |     bool                                [01;35m[Km_bIsWritingList[m[K;
+[8.113s]       |                                         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[8.113s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp:36:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+[8.113s]    36 | [01;35m[KConditionHelper[m[K::ConditionHelper()
+[8.113s]       | [01;35m[K^~~~~~~~~~~~~~~[m[K
+[8.282s] [ 51%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.o[0m
+[8.704s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/EnumEntry.cpp:[m[K In constructor ‘[01m[KAVT::VmbAPI::EnumEntry::PrivateImpl::PrivateImpl(const char*, const char*, const char*, const char*, const char*, VmbFeatureVisibility_t, VmbInt64_t)[m[K’:
+[8.704s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/EnumEntry.cpp:41:33:[m[K [01;35m[Kwarning: [m[K‘[01m[KAVT::VmbAPI::EnumEntry::PrivateImpl::m_nValue[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+[8.704s]    41 |     VmbInt64_t                  [01;35m[Km_nValue[m[K;
+[8.705s]       |                                 [01;35m[K^~~~~~~~[m[K
+[8.705s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/EnumEntry.cpp:40:33:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KVmbFeatureVisibilityType AVT::VmbAPI::EnumEntry::PrivateImpl::m_Visibility[m[K’ [[01;35m[K-Wreorder[m[K]
+[8.705s]    40 |     VmbFeatureVisibilityType    [01;35m[Km_Visibility[m[K;
+[8.705s]       |                                 [01;35m[K^~~~~~~~~~~~[m[K
+[8.706s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/EnumEntry.cpp:42:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+[8.706s]    42 |     [01;35m[KPrivateImpl[m[K(    const char              *pStrName,
+[8.706s]       |     [01;35m[K^~~~~~~~~~~[m[K
+[8.963s] [ 54%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.o[0m
+[9.066s] [ 58%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.o[0m
+[9.080s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Feature.cpp:29:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+[9.080s]    29 | #pragma warning(disable:4996)
+[9.080s]       | 
+[9.081s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Feature.cpp:31:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+[9.081s]    31 | #pragma warning(default:4996)
+[9.085s]       | 
+[9.681s] [ 61%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.o[0m
+[9.830s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Feature.cpp:[m[K In member function ‘[01m[KVmbErrorType AVT::VmbAPI::Feature::SetValue(const VmbInt32_t&)[m[K’:
+[9.830s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Feature.cpp:115:49:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on cast result type [[01;35m[K-Wignored-qualifiers[m[K]
+[9.831s]   115 |     return m_pImpl->SetValue( (const VmbInt64_t)[01;35m[KrnValue[m[K );
+[9.831s]       |                                                 [01;35m[K^~~~~~~[m[K
+[10.091s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp:[m[K In copy constructor ‘[01m[KAVT::VmbAPI::FeatureContainer::FeatureContainer(const AVT::VmbAPI::FeatureContainer&)[m[K’:
+[10.091s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp:53:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::BasicLockable[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+[10.092s]    53 | [01;35m[KFeatureContainer[m[K::FeatureContainer( const FeatureContainer& )
+[10.093s]       | [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[10.154s] [ 64%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.o[0m
+[11.094s] [ 67%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.o[0m
+[11.147s] [ 70%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.o[0m
+[11.169s] [ 74%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.o[0m
+[12.197s] In file included from [01m[K/home/avees/coordinator/include/VimbaCPP/Source/FrameHandler.cpp:28[m[K:
+[12.197s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/FrameHandler.h:[m[K In constructor ‘[01m[KAVT::VmbAPI::FrameHandler::FrameHandler(AVT::VmbAPI::FramePtr, AVT::VmbAPI::IFrameObserverPtr)[m[K’:
+[12.197s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/FrameHandler.h:56:29:[m[K [01;35m[Kwarning: [m[K‘[01m[KAVT::VmbAPI::FrameHandler::m_pFrame[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+[12.198s]    56 |     FramePtr                [01;35m[Km_pFrame[m[K;
+[12.198s]       |                             [01;35m[K^~~~~~~~[m[K
+[12.198s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/FrameHandler.h:55:29:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KAVT::VmbAPI::IFrameObserverPtr AVT::VmbAPI::FrameHandler::m_pObserver[m[K’ [[01;35m[K-Wreorder[m[K]
+[12.198s]    55 |     IFrameObserverPtr       [01;35m[Km_pObserver[m[K;
+[12.198s]       |                             [01;35m[K^~~~~~~~~~~[m[K
+[12.198s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/FrameHandler.cpp:36:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+[12.198s]    36 | [01;35m[KFrameHandler[m[K::FrameHandler( FramePtr pFrame, IFrameObserverPtr pFrameObserver )
+[12.199s]       | [01;35m[K^~~~~~~~~~~~[m[K
+[12.449s] [ 77%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.o[0m
+[12.474s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Interface.cpp:27:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+[12.475s]    27 | #pragma warning(disable:4996)
+[12.475s]       | 
+[12.514s] [ 80%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.o[0m
+[12.552s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Interface.cpp:29:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+[12.553s]    29 | #pragma warning(default:4996)
+[12.553s]       | 
+[12.579s] [ 83%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.o[0m
+[13.279s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Interface.cpp:[m[K In copy constructor ‘[01m[KAVT::VmbAPI::Interface::Interface(const AVT::VmbAPI::Interface&)[m[K’:
+[13.280s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Interface.cpp:54:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::BasicLockable[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+[13.280s]    54 | [01;35m[KInterface[m[K::Interface( const Interface& )
+[13.280s]       | [01;35m[K^~~~~~~~~[m[K
+[13.280s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Interface.cpp:54:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::FeatureContainer[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+[13.617s] [ 87%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.o[0m
+[13.954s] [ 90%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.o[0m
+[14.207s] [ 93%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.o[0m
+[14.795s] [ 96%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.o[0m
+[15.463s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Semaphore.cpp:[m[K In constructor ‘[01m[KAVT::VmbAPI::Semaphore::Semaphore(int, int)[m[K’:
+[15.465s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/Semaphore.cpp:37:38:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KnMax[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[15.465s]    37 | Semaphore::Semaphore( int nInit, [01;35m[Kint nMax[m[K )
+[15.465s]       |                                  [01;35m[K~~~~^~~~[m[K
+[16.221s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp:[m[K In copy constructor ‘[01m[KAVT::VmbAPI::VimbaSystem::VimbaSystem(const AVT::VmbAPI::VimbaSystem&)[m[K’:
+[16.222s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp:970:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::BasicLockable[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+[16.222s]   970 | [01;35m[KVimbaSystem[m[K::VimbaSystem( const VimbaSystem& )
+[16.222s]       | [01;35m[K^~~~~~~~~~~[m[K
+[16.222s] [01m[K/home/avees/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp:970:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::FeatureContainer[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+[28.143s] [100%] [32m[1mLinking CXX executable coordinator_node[0m
+[29.901s] /usr/bin/ld: warning: libopencv_imgcodecs.so.4.2, needed by /opt/ros/foxy/lib/libcv_bridge.so, may conflict with libopencv_imgcodecs.so.4.5
+[29.901s] /usr/bin/ld: warning: libopencv_core.so.4.2, needed by /opt/ros/foxy/lib/libcv_bridge.so, may conflict with libopencv_core.so.4.5
+[29.928s] [100%] Built target coordinator_node
+[29.957s] Invoked command in '/home/avees/coordinator/build/coordinator' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator/build/coordinator -- -j6 -l6
+[29.991s] Invoking command in '/home/avees/coordinator/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/avees/coordinator/build/coordinator
+[30.012s] -- Install configuration: ""
+[30.013s] -- Installing: /home/avees/coordinator/install/coordinator/lib/coordinator/coordinator_node
+[30.023s] -- Set runtime path of "/home/avees/coordinator/install/coordinator/lib/coordinator/coordinator_node" to ""
+[30.023s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/launch
+[30.023s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/launch/coordinator_launch.py
+[30.024s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/config
+[30.024s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/config/params.yaml
+[30.024s] -- Installing: /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/package_run_dependencies/coordinator
+[30.024s] -- Installing: /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/parent_prefix_path/coordinator
+[30.027s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/environment/ament_prefix_path.sh
+[30.028s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/environment/ament_prefix_path.dsv
+[30.028s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/environment/path.sh
+[30.028s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/environment/path.dsv
+[30.028s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.bash
+[30.028s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.sh
+[30.028s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.zsh
+[30.029s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.dsv
+[30.029s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/package.dsv
+[30.029s] -- Installing: /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/packages/coordinator
+[30.030s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/cmake/ament_cmake_export_dependencies-extras.cmake
+[30.030s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/cmake/coordinatorConfig.cmake
+[30.030s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/cmake/coordinatorConfig-version.cmake
+[30.030s] -- Installing: /home/avees/coordinator/install/coordinator/share/coordinator/package.xml
+[30.035s] Invoked command in '/home/avees/coordinator/build/coordinator' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/avees/coordinator/build/coordinator

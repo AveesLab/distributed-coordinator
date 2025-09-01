@@ -281,7 +281,7 @@ TINYXML2_LIBRARY:FILEPATH=/usr/lib/aarch64-linux-gnu/libtinyxml2.so
 TinyXML2_DIR:PATH=TinyXML2_DIR-NOTFOUND
 
 //Path to a library.
-_lib:FILEPATH=/opt/ros/foxy/lib/libcv_bridge.so
+_lib:FILEPATH=/home/avees/data-domain/install/avt_vimba_camera/lib/libavt_vimba_camera__rosidl_typesupport_fastrtps_cpp.so
 
 //The directory containing a CMake configuration file for ament_cmake.
 ament_cmake_DIR:PATH=/opt/ros/foxy/share/ament_cmake/cmake
@@ -385,6 +385,12 @@ ament_uncrustify_BIN:FILEPATH=/opt/ros/foxy/bin/ament_uncrustify
 //Path to a program.
 ament_xmllint_BIN:FILEPATH=/opt/ros/foxy/bin/ament_xmllint
 
+//The directory containing a CMake configuration file for avt_vimba_camera.
+avt_vimba_camera_DIR:PATH=/home/avees/data-domain/install/avt_vimba_camera/share/avt_vimba_camera/cmake
+
+//The directory containing a CMake configuration file for avt_vimba_camera_msgs.
+avt_vimba_camera_msgs_DIR:PATH=/home/avees/data-domain/install/avt_vimba_camera_msgs/share/avt_vimba_camera_msgs/cmake
+
 //The directory containing a CMake configuration file for builtin_interfaces.
 builtin_interfaces_DIR:PATH=/opt/ros/foxy/share/builtin_interfaces/cmake
 
@@ -396,6 +402,9 @@ camera_info_manager_DIR:PATH=/opt/ros/foxy/share/camera_info_manager/cmake
 
 //The directory containing a CMake configuration file for class_loader.
 class_loader_DIR:PATH=/opt/ros/foxy/share/class_loader/cmake
+
+//The directory containing a CMake configuration file for composition_interfaces.
+composition_interfaces_DIR:PATH=/opt/ros/foxy/share/composition_interfaces/cmake
 
 //The directory containing a CMake configuration file for console_bridge.
 console_bridge_DIR:PATH=/opt/ros/foxy/lib/aarch64-linux-gnu/console_bridge/cmake
@@ -411,6 +420,9 @@ cv_bridge_DIR:PATH=/opt/ros/foxy/share/cv_bridge/cmake
 
 //The directory containing a CMake configuration file for diagnostic_msgs.
 diagnostic_msgs_DIR:PATH=/opt/ros/foxy/share/diagnostic_msgs/cmake
+
+//The directory containing a CMake configuration file for diagnostic_updater.
+diagnostic_updater_DIR:PATH=/opt/ros/foxy/share/diagnostic_updater/cmake
 
 //The directory containing a CMake configuration file for fastcdr.
 fastcdr_DIR:PATH=/opt/ros/foxy/lib/cmake/fastcdr
@@ -463,6 +475,12 @@ rcl_yaml_param_parser_DIR:PATH=/opt/ros/foxy/share/rcl_yaml_param_parser/cmake
 //The directory containing a CMake configuration file for rclcpp.
 rclcpp_DIR:PATH=/opt/ros/foxy/share/rclcpp/cmake
 
+//The directory containing a CMake configuration file for rclcpp_components.
+rclcpp_components_DIR:PATH=/opt/ros/foxy/share/rclcpp_components/cmake
+
+//The directory containing a CMake configuration file for rclpy.
+rclpy_DIR:PATH=/opt/ros/foxy/share/rclpy/cmake
+
 //The directory containing a CMake configuration file for rcpputils.
 rcpputils_DIR:PATH=/opt/ros/foxy/share/rcpputils/cmake
 
@@ -487,6 +505,9 @@ rosidl_adapter_DIR:PATH=/opt/ros/foxy/share/rosidl_adapter/cmake
 //The directory containing a CMake configuration file for rosidl_cmake.
 rosidl_cmake_DIR:PATH=/opt/ros/foxy/share/rosidl_cmake/cmake
 
+//The directory containing a CMake configuration file for rosidl_default_generators.
+rosidl_default_generators_DIR:PATH=/opt/ros/foxy/share/rosidl_default_generators/cmake
+
 //The directory containing a CMake configuration file for rosidl_default_runtime.
 rosidl_default_runtime_DIR:PATH=/opt/ros/foxy/share/rosidl_default_runtime/cmake
 
@@ -495,6 +516,9 @@ rosidl_generator_c_DIR:PATH=/opt/ros/foxy/share/rosidl_generator_c/cmake
 
 //The directory containing a CMake configuration file for rosidl_generator_cpp.
 rosidl_generator_cpp_DIR:PATH=/opt/ros/foxy/share/rosidl_generator_cpp/cmake
+
+//The directory containing a CMake configuration file for rosidl_generator_py.
+rosidl_generator_py_DIR:PATH=/opt/ros/foxy/share/rosidl_generator_py/cmake
 
 //The directory containing a CMake configuration file for rosidl_runtime_c.
 rosidl_runtime_c_DIR:PATH=/opt/ros/foxy/share/rosidl_runtime_c/cmake
@@ -538,11 +562,17 @@ statistics_msgs_DIR:PATH=/opt/ros/foxy/share/statistics_msgs/cmake
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/foxy/share/std_msgs/cmake
 
+//The directory containing a CMake configuration file for std_srvs.
+std_srvs_DIR:PATH=/opt/ros/foxy/share/std_srvs/cmake
+
 //The directory containing a CMake configuration file for tinyxml2_vendor.
 tinyxml2_vendor_DIR:PATH=/opt/ros/foxy/share/tinyxml2_vendor/cmake
 
 //The directory containing a CMake configuration file for tracetools.
 tracetools_DIR:PATH=/opt/ros/foxy/share/tracetools/cmake
+
+//The directory containing a CMake configuration file for vision_msgs.
+vision_msgs_DIR:PATH=/opt/ros/foxy/share/vision_msgs/cmake
 
 //Path to a program.
 xmllint_BIN:FILEPATH=/usr/bin/xmllint
@@ -712,7 +742,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding FastRTPS
 FIND_PACKAGE_MESSAGE_DETAILS_FastRTPS:INTERNAL=[/opt/ros/foxy/include][/opt/ros/foxy/lib/libfastrtps.so;/opt/ros/foxy/lib/libfastcdr.so][v()]
 //Details about finding OpenCV
-FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr][v4.5.4(4)]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr][v4.5.4()]
 //Details about finding OpenSSL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/usr/lib/aarch64-linux-gnu/libcrypto.so][/usr/include][c ][v1.1.1f()]
 //Details about finding PythonInterp

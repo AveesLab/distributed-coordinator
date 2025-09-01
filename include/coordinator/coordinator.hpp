@@ -7,6 +7,11 @@
 #include "std_msgs/msg/int32.hpp"
 #include "std_msgs/msg/int32_multi_array.hpp"
 #include "std_msgs/msg/bool.hpp"
+#include <cv_bridge/cv_bridge.h>
+#include <sensor_msgs/image_encodings.hpp>
+#include <opencv2/opencv.hpp>
+//#include "coordinator/msg/partial_image.hpp"
+#include "avt_vimba_camera/msg/partial_image.hpp"
 
 // Vimba API
 #include "coordinator/avt_vimba_api.hpp"
@@ -86,8 +91,7 @@ private:
     rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr status_subscriber_;
     std::map<int, rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr> hb_subscribers_;
     std::map<int, rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr> ready_subscribers_;
-
-    std::map<int, rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr> roi_publishers_;
+    std::map<int, rclcpp::Publisher<avt_vimba_camera::msg::PartialImage>::SharedPtr> roi_publishers_;
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr roi_total_publisher_;
 
 
@@ -100,6 +104,7 @@ private:
     const rclcpp::Duration HB_TIMEOUT_NS = rclcpp::Duration::from_seconds(0.05);
     int width_ = 0;
     int height_ = 0;
+    sensor_msgs::msg::Image raw_image;
 };
 
 #endif

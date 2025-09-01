@@ -113,4 +113,6 @@
     feature/TriggerSource: Freerun
     # feature/UserSetDefaultSelector: Default
     # feature/UserSetSelector: Default
-    # feature/Width: 2064
+    feature/Width: 1280
+    feature/Height: 720
+    

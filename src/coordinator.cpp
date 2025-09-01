@@ -71,10 +71,10 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
     }
 
 	for (int i = 1; i <= 4; ++i)
-	{
-		std::string topic = "/assigned_roi/node_" + std::to_string(i);
-		roi_publishers_[i] = this->create_publisher<std_msgs::msg::Int32MultiArray>(topic, 10);
-	}	
+    {
+        std::string topic = "/assigned_roi/node_" + std::to_string(i);
+        roi_publishers_[i] = this->create_publisher<avt_vimba_camera::msg::PartialImage>(topic, 10);
+    }
     roi_total_publisher_ = this->create_publisher<std_msgs::msg::Int32MultiArray>("/assigned_roi_total", 10);
     
     std::string filename = "coordinator_node.csv";
@@ -111,7 +111,7 @@ void Coordinator::Start()
   // Start Vimba & list all available cameras
   api_.start();
 
-  // Start camera
+  // Start camera`
   cam_.start(ip_, guid_, frame_id_, camera_info_url_);
   cam_.startImaging();
 }
@@ -174,11 +174,14 @@ std::pair<int, int> Coordinator::calculate_split_grid(int N)
 
 void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
 {
-    //rclcpp::Time frame_time = msg->header.stamp;
     ts.start_framecallback = get_time_in_ms();
-    VmbUint64_t ts;
-    vimba_frame_ptr->GetTimestamp(ts);
-    rclcpp::Time frame_time = rclcpp::Time(cam_.getTimestampRealTime(ts) * 1e9);
+
+    sensor_msgs::msg::Image img;
+    VmbUint64_t vimba_ts = 0;
+    api_.frameToImage(vimba_frame_ptr, img);
+    vimba_frame_ptr->GetTimestamp(vimba_ts);
+    
+    rclcpp::Time frame_time = rclcpp::Time(cam_.getTimestampRealTime(vimba_ts) * 1e9);
     //RCLCPP_INFO(this->get_logger(), "Frame timestamp: %.6f", frame_time.seconds());
     {
         std::lock_guard<std::mutex> lock(map_mutex_);
@@ -189,8 +192,15 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
         vimba_frame_ptr->GetHeight(h);
         width_  = w;
         height_ = h;
+
+        img.header.stamp    = saved_time_;
+        img.header.frame_id = "camera";
+        raw_image = img; 
+        
+        RCLCPP_INFO(this->get_logger(), "Image info: w=%d h=%d step=%d encoding=%s",
+            raw_image.width, raw_image.height, raw_image.step, raw_image.encoding.c_str());
     }
-    
+
     split_scheduling();
 }
 
@@ -222,22 +232,41 @@ void Coordinator::split_scheduling()
     int N = static_cast<int>(avail_nodes.size());
     auto [cols,rows] = calculate_split_grid(N);
 
-    int crop_w = width_ / cols;
-    int crop_h = height_ / rows;
+    sensor_msgs::msg::Image full_img;
+    {
+        std::lock_guard<std::mutex> lock(map_mutex_);
+        full_img = raw_image;
+    }
 
-	// rows, cols, crop_w, crop_h 정의 이후
-	std::ostringstream oss;
-	oss << "Available Node: ";
-	for (size_t i = 0; i < avail_nodes.size(); ++i) {
-		oss << avail_nodes[i];
-		if (i != avail_nodes.size() - 1) oss << ", ";
-	}
-	oss << " | Split grid: " << rows << " * " << cols << " (" << crop_w << " * " << crop_h << ")";
-	std::cout << oss.str() << std::endl;
+    // sensor_msgs::Image -> cv::Mat
+    cv_bridge::CvImagePtr cv_ptr;
+    cv::Mat raw_image;
+    cv::Mat color_image;
+  
+    //cv_ptr = cv_bridge::toCvCopy(full_img, sensor_msgs::image_encodings::MONO8);
+    //cv::cvtColor(cv_ptr->image, color_image, cv::COLOR_BayerRG2BGR);
+    
+    raw_image = cv::imread("/home/avees/coordinator/test_img/output_img/test_car.jpg", cv::IMREAD_COLOR);
+    color_image = raw_image;
+
+    cv::imwrite("original_image.png", color_image);
+    
+    //int crop_w = width_ / cols;
+    //int crop_h = height_ / rows;
+    const int img_w = color_image.cols;
+    const int img_h = color_image.rows;
+    const int crop_w = std::max(1, img_w / cols);
+    const int crop_h = std::max(1, img_h / rows);
+
+    std::cout << "Available Node: ";
+    for (size_t i = 0; i < avail_nodes.size(); ++i) {
+        std::cout << avail_nodes[i];
+        if (i != avail_nodes.size() - 1) std::cout << ", ";
+    }
+    std::cout << " | Split grid: " << rows << " * " << cols << " (" << crop_w << " * " << crop_h << ")" << std::endl;
 
     int count = 0;
     std_msgs::msg::Int32MultiArray total_roi_msg;
-	std::unordered_map<int, std_msgs::msg::Int32MultiArray> roi_msgs;
 	
     for (int r = 0; r < rows; ++r)
     {
@@ -248,28 +277,55 @@ void Coordinator::split_scheduling()
             int node_index = avail_nodes[count];
             int x_offset = c * crop_w;
             int y_offset = r * crop_h;
+            int w = std::min(crop_w, width_  - x_offset);
+            int h = std::min(crop_h, height_ - y_offset);
 
-            std_msgs::msg::Int32MultiArray roi_msg;
-            roi_msg.data = {node_index, x_offset, y_offset, crop_w, crop_h};
+            if (x_offset + w > color_image.cols || y_offset + h > color_image.rows) 
+            {
+                RCLCPP_ERROR(this->get_logger(), "ROI out of range (img=%dx%d, roi=(%d,%d,%d,%d))",
+                color_image.cols, color_image.rows, x_offset, y_offset, w, h);
+                continue;
+            }
+
+            cv::Rect roi(x_offset, y_offset, w, h);
+            cv::Mat cv_crop = color_image(roi).clone();
+
+            cv::imwrite("roi_node_" + std::to_string(node_index) + ".png", cv_crop);
+
+            auto cv_msg = cv_bridge::CvImage(full_img.header, sensor_msgs::image_encodings::BGR8, cv_crop).toImageMsg();
+            cv_msg->header.stamp = saved_time_;
+            cv_msg->header.frame_id = "camera";
             
-            roi_msgs[node_index] = roi_msg; 
-            total_roi_msg.data.insert(total_roi_msg.data.end(), {node_index, x_offset, y_offset, crop_w, crop_h});
+            avt_vimba_camera::msg::PartialImage partial_msg;
+            partial_msg.header = full_img.header;     // 타임스탬프/프레임ID 유지
+            partial_msg.image  = *cv_msg;             // 잘린 이미지
+            partial_msg.node_index = node_index;
+            partial_msg.x_offset   = x_offset;
+            partial_msg.y_offset   = y_offset;
+            partial_msg.width      = w;
+            partial_msg.height     = h;
+
+            total_roi_msg.data.insert(total_roi_msg.data.end(), {node_index, x_offset, y_offset, w, h});
+            
+            if (count == 0) 
+            {
+                ts.roi_node_index = node_index;
+                ts.start_roi_ethernet = get_time_in_ms();
+            }
+
+            // 퍼블리시
+            if (roi_publishers_.count(node_index)) 
+            {
+                roi_publishers_[node_index]->publish(partial_msg);
+            }
+
+            RCLCPP_INFO(this->get_logger(), "PartialImage sent to node_%d: x=%d y=%d w=%d h=%d", node_index, x_offset, y_offset, w, h);
             
             count++;
         }
     }
+
     ts.end_split = get_time_in_ms();
-
-    ts.start_roi_ethernet = get_time_in_ms();
-    for (const auto& [node_index, msg] : roi_msgs)
-    {
-        ts.roi_node_index = node_index;
-        if (roi_publishers_.count(node_index))
-            roi_publishers_[node_index]->publish(msg);
-
-        RCLCPP_INFO(this->get_logger(), "ROI sent to node_%d: x=%d y=%d w=%d h=%d",
-                    msg.data[0], msg.data[1], msg.data[2], msg.data[3], msg.data[4]);
-    }
     
     ts.start_roi_total_ethernet = get_time_in_ms();
     roi_total_publisher_->publish(total_roi_msg);

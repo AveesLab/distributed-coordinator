@@ -16,15 +16,15 @@ find_package(camera_info_manager REQUIRED)
 find_package(diagnostic_msgs REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(cv_bridge REQUIRED)
-find_package(OpenCV 4 REQUIRED)
+find_package(OpenCV REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+# ✅ 메시지 패키지 찾기 (중요)
+find_package(avt_vimba_camera REQUIRED)
 
 file(GLOB VIMBA_CPP_SOURCE_FILES
   "${CMAKE_CURRENT_SOURCE_DIR}/include/VimbaCPP/Source/*.cpp"
 )
 
-
-# -------------------------------------------------
-# 1) 실행 파일
 add_executable(coordinator_node
   src/main.cpp
   src/coordinator.cpp
@@ -32,7 +32,6 @@ add_executable(coordinator_node
   src/frame_observer.cpp
   ${VIMBA_CPP_SOURCE_FILES}
 )
-# -------------------------------------------------
 
 target_include_directories(coordinator_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -45,6 +44,7 @@ target_include_directories(coordinator_node PUBLIC
 target_link_libraries(coordinator_node
   /opt/Vimba_6_0/VimbaCPP/DynamicLib/arm_64bit/libVimbaCPP.so
   /opt/Vimba_6_0/VimbaC/DynamicLib/arm_64bit/libVimbaC.so
+  ${OpenCV_LIBS}
 )
 
 ament_target_dependencies(coordinator_node
@@ -55,7 +55,10 @@ ament_target_dependencies(coordinator_node
   diagnostic_msgs
   image_transport
   cv_bridge
+  # OpenCV는 ament 패키지가 아니라 여기 안 넣어도 됩니다
+  avt_vimba_camera     # ✅ 여기서도 참조
 )
+
 
 install(TARGETS coordinator_node
   DESTINATION lib/${PROJECT_NAME}
@@ -66,6 +69,8 @@ install(DIRECTORY
   config
   DESTINATION share/${PROJECT_NAME}
 )
+
+ament_export_dependencies(rosidl_default_runtime)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

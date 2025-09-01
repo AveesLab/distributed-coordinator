@@ -1,0 +1,55 @@
+[0.032s] Invoking command in '/home/avees/coordinator/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/avees/coordinator -DCMAKE_INSTALL_PREFIX=/home/avees/coordinator/install/coordinator
+[0.161s] -- The C compiler identification is GNU 9.4.0
+[0.356s] -- The CXX compiler identification is GNU 9.4.0
+[0.366s] -- Check for working C compiler: /usr/bin/cc
+[0.580s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.581s] -- Detecting C compiler ABI info
+[0.730s] -- Detecting C compiler ABI info - done
+[0.761s] -- Detecting C compile features
+[0.762s] -- Detecting C compile features - done
+[0.767s] -- Check for working CXX compiler: /usr/bin/c++
+[0.927s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.929s] -- Detecting CXX compiler ABI info
+[1.097s] -- Detecting CXX compiler ABI info - done
+[1.117s] -- Detecting CXX compile features
+[1.118s] -- Detecting CXX compile features - done
+[1.123s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[1.174s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[1.174s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.614s] -- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+[1.703s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.716s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[1.918s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[1.999s] -- Found FastRTPS: /opt/ros/foxy/include  
+[2.157s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.269s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[2.271s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.273s] -- Looking for pthread.h
+[2.429s] -- Looking for pthread.h - found
+[2.429s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.598s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[2.598s] -- Looking for pthread_create in pthreads
+[2.734s] -- Looking for pthread_create in pthreads - not found
+[2.734s] -- Looking for pthread_create in pthread
+[2.895s] -- Looking for pthread_create in pthread - found
+[2.897s] -- Found Threads: TRUE  
+[3.184s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[3.423s] -- Found camera_info_manager: 2.4.0 (/opt/ros/foxy/share/camera_info_manager/cmake)
+[3.465s] -- Setting yaml-cpp_DIR to: '/opt/ros/foxy/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/lib/cmake/yaml-cpp'
+[3.547s] -- Found diagnostic_msgs: 2.0.5 (/opt/ros/foxy/share/diagnostic_msgs/cmake)
+[3.611s] -- Found image_transport: 2.4.0 (/opt/ros/foxy/share/image_transport/cmake)
+[3.695s] -- Found cv_bridge: 3.0.7 (/opt/ros/foxy/share/cv_bridge/cmake)
+[3.731s] -- Found OpenCV: /usr (found version "4.5.4") 
+[3.733s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[3.754s] -- Found avt_vimba_camera: 2001.1.0 (/home/avees/data-domain/install/avt_vimba_camera/share/avt_vimba_camera/cmake)
+[4.618s] CMake Error at /opt/ros/foxy/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:40 (message):
+[4.618s]   rosidl_target_interfaces() the second argument 'avt_vimba_camera' must be a
+[4.618s]   valid target name
+[4.619s] Call Stack (most recent call first):
+[4.619s]   CMakeLists.txt:63 (rosidl_target_interfaces)
+[4.619s] 
+[4.619s] 
+[4.623s] -- Configuring incomplete, errors occurred!
+[4.623s] See also "/home/avees/coordinator/build/coordinator/CMakeFiles/CMakeOutput.log".
+[4.623s] See also "/home/avees/coordinator/build/coordinator/CMakeFiles/CMakeError.log".
+[4.648s] Invoked command in '/home/avees/coordinator/build/coordinator' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/avees/coordinator -DCMAKE_INSTALL_PREFIX=/home/avees/coordinator/install/coordinator

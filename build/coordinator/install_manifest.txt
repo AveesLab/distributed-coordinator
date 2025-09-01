@@ -13,6 +13,7 @@
 /home/avees/coordinator/install/coordinator/share/coordinator/local_setup.dsv
 /home/avees/coordinator/install/coordinator/share/coordinator/package.dsv
 /home/avees/coordinator/install/coordinator/share/ament_index/resource_index/packages/coordinator
+/home/avees/coordinator/install/coordinator/share/coordinator/cmake/ament_cmake_export_dependencies-extras.cmake
 /home/avees/coordinator/install/coordinator/share/coordinator/cmake/coordinatorConfig.cmake
 /home/avees/coordinator/install/coordinator/share/coordinator/cmake/coordinatorConfig-version.cmake
 /home/avees/coordinator/install/coordinator/share/coordinator/package.xml
