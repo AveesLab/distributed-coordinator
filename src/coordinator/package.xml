@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>coordinator</name>
+  <version>0.0.0</version>
+  <description>Coordinator node for AVT Vimba camera</description>
+
+  <maintainer email="geunu6319@kookmin.ac.kr">avees</maintainer>
+  <license>MIT</license>
+
+  <!-- build tool -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- runtime for using generated interfaces -->
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <!-- ROS deps -->
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>camera_info_manager</depend>
+  <depend>diagnostic_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+  <depend>avt_vimba_camera_msgs</depend>
+
+  <!-- OpenCV는 시스템 의존성(rosdep)로 처리됩니다. 그대로 둬도 무방 -->
+  <depend>OpenCV</depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
+
