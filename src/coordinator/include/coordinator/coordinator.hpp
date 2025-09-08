@@ -103,7 +103,10 @@ private:
     const rclcpp::Duration HB_TIMEOUT_NS = rclcpp::Duration::from_seconds(0.05);
     int width_ = 0;
     int height_ = 0;
+    int synchronization_cnt_;
+    bool cluster_flag_;
     sensor_msgs::msg::Image raw_image;
+    cv::Mat raw_image_;
 };
 
 #endif
