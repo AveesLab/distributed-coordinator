@@ -17,14 +17,11 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
     for (int node_id = 1; node_id <= 5; ++node_id)
     {
         std::string hb_topic = "/hb/node_" + std::to_string(node_id);
-        hb_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Bool>(
-            hb_topic, 10,
-            [this, node_id](std_msgs::msg::Bool::SharedPtr msg)
-            {
+        hb_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Bool>(hb_topic, 10,
+            [this, node_id](std_msgs::msg::Bool::SharedPtr msg){
                 if (msg->data){
                     std::lock_guard<std::mutex> lock(map_mutex_);
                     last_hb_map_[node_id] = this->get_clock()->now();
-                    //update_available_nodes();
                 }
             }, sub_opt);
     }
@@ -33,31 +30,60 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
     for (int node_id = 1; node_id <= 4; ++node_id)
     {
         std::string ready_topic = "/ready_flag/node_" + std::to_string(node_id);
-        ready_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Bool>(ready_topic, 10,
-            [this, node_id](std_msgs::msg::Bool::SharedPtr msg)
+        ready_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Header>(ready_topic, 10,
+            [this, node_id](std_msgs::msg::Header::SharedPtr msg)
             {
-                uint64_t now = get_time_in_ms();  // 현재 시간 (ms)
+                //rclcpp::Time ready_frame_(msg->stamp.sec, msg->stamp.nanosec, RCL_ROS_TIME);
+                uint64_t ready_frame_ = (uint64_t)msg->stamp.sec * 1000000000ULL + msg->stamp.nanosec;
+                int node_index = std::stoi(msg->frame_id);
+                uint64_t new_frame_ = new_frame_ns_.load(std::memory_order_relaxed);
+                uint64_t current_frame_ = current_frame_ns_.load(std::memory_order_relaxed);
+                //rclcpp::Time new_frame_(ns);
+                //rclcpp::Time current_frame_(cur_ns);
+
+                if (ready_frame_ != new_frame_)
                 {
-                    std::lock_guard<std::mutex> lock(map_mutex_); 
-                    ready_map_[node_id] = msg->data;
-                    ts.end_ready_flag = now;
-                    ts.ready_node_index = node_id;
+                    return; 
                 }
-
-                RCLCPP_INFO(this->get_logger(),"[ReadyFlag] node_%d ready received at %lu ms", node_id, now);
-
-                if (msg->data && !ready_waiting_)
+                else //(ready_frame_ == new_frame_)
                 {
-                    ready_waiting_ = true;
-                    ready_wait_timer_ = this->create_wall_timer(std::chrono::milliseconds(35),
-                        [this]()
+                    std::cout << "current frame: " << current_frame_ << "| new frame: " << new_frame_ << std::endl;
+                    if(current_frame_ == 0 || current_frame_ == new_frame_)
+                    {                            
                         {
-                            update_available_nodes();  // 가장 최신 frame 정보 사용
-                            ready_waiting_ = false;
-                            ready_wait_timer_->cancel();
-                        },
-                        callback_group_reentrant_
-                    );
+                            std::lock_guard<std::mutex> lock(map_mutex_);
+                            ready_node[node_index] = 1;
+                            current_frame_ns_.store(new_frame_, std::memory_order_relaxed);
+                            current_frame_ = new_frame_;
+
+                            if( ready_node == hb_check() )  
+                            {
+                                split_scheduling(ready_node, current_frame_);
+                                std::fill(ready_node.begin(), ready_node.end(), 0);
+                                std::fill(pre_ready_node.begin(), pre_ready_node.end(), 0);
+                                current_frame_ns_ = 0;
+                            }
+                            else pre_ready_node[node_index] = 1;
+                        }
+                    
+                    }                        
+                    else //(current_frame_ != 0 && current_frame_ != new_frame_)
+                    {
+                        if(reset_flag == 0) 
+                        { 
+                            std::fill(ready_node.begin(), ready_node.end(), 0); 
+                            reset_flag = 1; 
+                        }
+                        ready_node[node_index] = 1;
+                        if(ready_node == vector_AND(pre_ready_node, hb_check())) 
+                        {
+                            reset_flag = 0;
+                            split_scheduling(ready_node, current_frame_);
+                            std::fill(ready_node.begin(), ready_node.end(), 0);
+                            std::fill(pre_ready_node.begin(), pre_ready_node.end(), 0);
+                            current_frame_ns_ = 0;
+                        }
+                    }
                 }
             }, sub_opt);
     }
@@ -65,9 +91,9 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
 	for (int i = 1; i <= 4; ++i)
     {
         std::string topic = "/assigned_roi/node_" + std::to_string(i);
-        roi_publishers_[i] = this->create_publisher<avt_vimba_camera_msgs::msg::PartialImage>(topic, 10);
+        roi_publishers_[i] = this->create_publisher<std_msgs::msg::Int64MultiArray>(topic, 10);
     }
-    roi_total_publisher_ = this->create_publisher<std_msgs::msg::Int32MultiArray>("/assigned_roi_total", 10);
+    roi_total_publisher_ = this->create_publisher<std_msgs::msg::Int64MultiArray>("/assigned_roi_total", 10);
     
     this->synchronization_cnt_ = 0;
 	this->cluster_flag_ = false;
@@ -75,14 +101,14 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
     std::string filename = "coordinator_node.csv";
     csv_file_.open(filename, std::ios::out | std::ios::trunc);
     if (csv_file_.is_open()) {
-        csv_file_ << "framecallback_start, ready_flag_end,"
+        csv_file_ << "framesensor_start,framecallback_start, ready_flag_end,"
 				  << "node_update_start,node_update_time(us),node_update_end,"
                   << "split_preprocess_start,split_preprocess_time(us),split_preprocess_end,"
                   << "split_start,split_time(us),split_end,"
                   << "roi_ethernet_start, roi_total_ethernet_start\n";
     }
 
-    raw_image_ = cv::imread("/home/avees/coordinator_node/src/coordinator/test_img/output_img/test_car.jpg", cv::IMREAD_COLOR);
+    load_image_ = cv::imread("/home/avees/coordinator_node/src/coordinator/test_img/output_img/test_car.jpg", cv::IMREAD_COLOR);
     RCLCPP_INFO(this->get_logger(), "Coordinator node initialized with standard ROS2 messages.");
 }
 
@@ -118,37 +144,34 @@ uint64_t Coordinator::get_time_in_ms() {
   return nanosecond/1000;
 }
 
-void Coordinator::update_available_nodes()
-{
-    ts.start_update = get_time_in_ms();
-    std::lock_guard<std::mutex> lock(map_mutex_);
-    rclcpp::Time now = this->get_clock()->now();
-    RCLCPP_INFO(this->get_logger(), "[Update available_nodes] Timestamp: %.6f", now.seconds());
 
-    std::vector<int> result;
+std::vector<int> Coordinator::vector_AND(const std::vector<int>& a, const std::vector<int>& b) {
+    size_t n = std::min(a.size(), b.size());
+    std::vector<int> result(n, 0);
+    for (size_t i = 0; i < n; ++i) {
+        result[i] = a[i] * b[i];              
+    }
+    return result;
+}
+
+std::vector<int> Coordinator::hb_check()
+{   
+    rclcpp::Time now = this->get_clock()->now();
 
     for (int node_id = 1; node_id <= 4; ++node_id)
     {
-        auto it_hb = last_hb_map_.find(node_id);
-        auto it_ready = ready_map_.find(node_id);
-
-        bool is_ready = (it_ready != ready_map_.end()) && it_ready->second;
+        auto hb_timestamp = last_hb_map_.find(node_id);
         bool is_alive = false;
 
-        if (it_hb != last_hb_map_.end())
+        if (hb_timestamp != last_hb_map_.end())
         {
-            rclcpp::Duration delta = now - it_hb->second;
+            rclcpp::Duration delta = now - hb_timestamp->second;
             if (delta < HB_TIMEOUT_NS)
                 is_alive = true;
         }
-
-        if (is_ready && is_alive)
-            result.push_back(node_id);
+        hb_node[node_id] = is_alive ? 1 : 0;
     }
-
-    std::sort(result.begin(), result.end());
-    cached_available_nodes_ = result;
-    ts.end_update = get_time_in_ms();
+    return hb_node;   
 }
 
 std::pair<int, int> Coordinator::calculate_split_grid(int N)
@@ -159,7 +182,6 @@ std::pair<int, int> Coordinator::calculate_split_grid(int N)
         if (N % i == 0)
             divisors.push_back(i);
     }
-
     if (divisors.size() % 2 == 0)
     {
         return {divisors[(divisors.size() / 2) - 1],divisors[divisors.size() / 2]};
@@ -175,12 +197,16 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
     ts.start_framecallback = get_time_in_ms();
 
     sensor_msgs::msg::Image img;
-    VmbUint64_t vimba_ts = 0;
+    VmbUint64_t vimba_ts;
+
     api_.frameToImage(vimba_frame_ptr, img);
     vimba_frame_ptr->GetTimestamp(vimba_ts);
-    
     rclcpp::Time frame_time = rclcpp::Time(cam_.getTimestampRealTime(vimba_ts) * 1e9);
-    //RCLCPP_INFO(this->get_logger(), "Frame timestamp: %.6f", frame_time.seconds());
+    new_frame_ns_.store(frame_time.nanoseconds(), std::memory_order_relaxed);
+    
+    ts.start_framesensor = frame_time.nanoseconds() / 1000;
+
+    RCLCPP_INFO(this->get_logger(), "Frame timestamp: %.6f", frame_time.seconds());
     {
         std::lock_guard<std::mutex> lock(map_mutex_);
         saved_time_ = frame_time;
@@ -197,142 +223,48 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
         
         //RCLCPP_INFO(this->get_logger(), "Image info: w=%d h=%d step=%d encoding=%s",raw_image.width, raw_image.height, raw_image.step, raw_image.encoding.c_str());
     }
-    
-    if(!this->cluster_flag_)
-    {   
-        if(this->synchronization_cnt_ == 20)
-        {
-            std::lock_guard<std::mutex> lock(map_mutex_);
-            rclcpp::Time now = this->get_clock()->now();
-            std::vector<int> result;
-
-            for (int node_id = 1; node_id <= 4; ++node_id)
-            {
-                auto it_hb = last_hb_map_.find(node_id);
-                bool is_alive = false;
-
-                if (it_hb != last_hb_map_.end())
-                {
-                    rclcpp::Duration delta = now - it_hb->second;
-                    if (delta < HB_TIMEOUT_NS)
-                        is_alive = true;
-                }
-
-                if (is_alive)
-                    result.push_back(node_id);
-            }
-
-            std::sort(result.begin(), result.end());
-            std::cout << "[Sync] Alive nodes: ";
-            for (int id : result) std::cout << id << ' ';
-            std::cout << std::endl;
-            cached_available_nodes_ = result;
-            this->cluster_flag_ = true;
-
-            ts.end_update = get_time_in_ms();
-        }
-        else if (this->synchronization_cnt_ < 20)
-        {
-            std::lock_guard<std::mutex> lock(map_mutex_);
-            rclcpp::Time now = this->get_clock()->now();
-            std::vector<int> result;
-
-            for (int node_id = 1; node_id <= 4; ++node_id)
-            {
-                auto it_hb = last_hb_map_.find(node_id);
-                bool is_alive = false;
-
-                if (it_hb != last_hb_map_.end())
-                {
-                    rclcpp::Duration delta = now - it_hb->second;
-                    if (delta < HB_TIMEOUT_NS)
-                        is_alive = true;
-                }
-
-                if (is_alive)
-                    result.push_back(node_id);
-            }
-
-            std::sort(result.begin(), result.end());
-            std::cout << "[Sync] Alive nodes: ";
-            for (int id : result) std::cout << id << ' ';
-            std::cout << std::endl;
-            this->synchronization_cnt_ += 1;
-        }
-    }
-    else { split_scheduling(); }
-    
 }
 
-
-void Coordinator::split_scheduling()
+void Coordinator::split_scheduling(const std::vector<int>& ready_node, uint64_t frame_time)
 {
     ts.start_split_preprocess = get_time_in_ms();
-    std::vector<int> avail_nodes;
-    {
-        std::lock_guard<std::mutex> lock(map_mutex_);  // 🔐 읽기 보호
-        avail_nodes = cached_available_nodes_;
-    }
+    std::vector<int> avail_nodes = ready_node;
+    //int64_t frame_us = frame_time;
 
     if (avail_nodes.empty()) {
         //RCLCPP_WARN(this->get_logger(), "No available nodes for split.");
         return;
     }
 
-    {
-        std::lock_guard<std::mutex> lock(map_mutex_);
-        for (int id : avail_nodes) {
-            ready_map_[id] = false;
-        }
-    }
     ts.end_split_preprocess = get_time_in_ms();
     
     ts.start_split = get_time_in_ms();
-    RCLCPP_INFO(this->get_logger(), "Start N_avail Load");
 
     int N = static_cast<int>(avail_nodes.size());
     auto [cols,rows] = calculate_split_grid(N);
 
-
-    sensor_msgs::msg::Image full_img;
-    {
-        std::lock_guard<std::mutex> lock(map_mutex_);
-        full_img = raw_image;
-    }
-
     // sensor_msgs::Image -> cv::Mat
     cv_bridge::CvImagePtr cv_ptr;
-    //cv::Mat raw_image_;
     cv::Mat color_image;
-  
+
+    //Load Camera Data from Sensor
     //cv_ptr = cv_bridge::toCvCopy(full_img, sensor_msgs::image_encodings::MONO8);
     //cv::cvtColor(cv_ptr->image, color_image, cv::COLOR_BayerRG2BGR);
-    
-    //raw_image = cv::imread("/home/avees/coordinator_node/src/coordinator/test_img/output_img/test_car.jpg", cv::IMREAD_COLOR);
-    color_image = raw_image_;
 
-    RCLCPP_INFO(this->get_logger(), "Finish IMG Load & print result");
-    //cv::imwrite("original_image.png", color_image);
-    
-    //int crop_w = width_ / cols;
-    //int crop_h = height_ / rows;
-    const int img_w = color_image.cols;
-    const int img_h = color_image.rows;
+    //Load Camera Data from workspace
+    color_image = load_image_;
+
+    const int img_w = width_;
+    const int img_h = height_;
     const int crop_w = std::max(1, img_w / cols);
     const int crop_h = std::max(1, img_h / rows);
 
-    std::cout << "Available Node: ";
-    for (size_t i = 0; i < avail_nodes.size(); ++i) {
-        std::cout << avail_nodes[i];
-        if (i != avail_nodes.size() - 1) std::cout << ", ";
-    }
-    std::cout << " | Split grid: " << rows << " * " << cols << " (" << crop_w << " * " << crop_h << ")" << std::endl;
-
-    std::vector<std::pair<int, avt_vimba_camera_msgs::msg::PartialImage>> pending;
-    pending.reserve(N);
+    std::vector<std::pair<int, std_msgs::msg::Int64MultiArray>> roi_msg;
+    roi_msg.reserve(N);
+    std_msgs::msg::Int64MultiArray total_roi_msg;
+    
     int count = 0;
-    std_msgs::msg::Int32MultiArray total_roi_msg;
-	RCLCPP_INFO(this->get_logger(), "Start Image Split");
+	//RCLCPP_INFO(this->get_logger(), "Start Image Split");
 
     for (int r = 0; r < rows; ++r)
     {
@@ -343,63 +275,48 @@ void Coordinator::split_scheduling()
             int node_index = avail_nodes[count];
             int x_offset = c * crop_w;
             int y_offset = r * crop_h;
-            int w = std::min(crop_w, width_  - x_offset);
-            int h = std::min(crop_h, height_ - y_offset);
+            int w_offset = std::min(crop_w, img_w - x_offset);
+            int h_offset = std::min(crop_h, img_h - y_offset);
 
-            cv::Rect roi(x_offset, y_offset, w, h);
-            cv::Mat cv_crop = color_image(roi).clone();
-            //cv::imwrite("roi_node_" + std::to_string(node_index) + ".png", cv_crop);
+            std_msgs::msg::Int64MultiArray roi_;
+            roi_.data = {frame_time, x_offset, y_offset, w_offset, h_offset};
 
-            auto cv_msg = cv_bridge::CvImage(full_img.header, sensor_msgs::image_encodings::BGR8, cv_crop).toImageMsg();
-            cv_msg->header.stamp = saved_time_;
-            cv_msg->header.frame_id = "camera";
-            
-            avt_vimba_camera_msgs::msg::PartialImage partial_msg;
-            partial_msg.header = full_img.header;     // 타임스탬프/프레임ID 유지
-            partial_msg.image  = *cv_msg;             // 잘린 이미지
-            partial_msg.node_index = node_index;
-            partial_msg.x_offset   = x_offset;
-            partial_msg.y_offset   = y_offset;
-            partial_msg.width      = w;
-            partial_msg.height     = h;
+            roi_msg.emplace_back(node_index, roi_);    
 
-            pending.emplace_back(node_index, std::move(partial_msg));
-            total_roi_msg.data.insert(total_roi_msg.data.end(), {node_index, x_offset, y_offset, w, h});
+            total_roi_msg.data.insert(total_roi_msg.data.end(), {frame_time, x_offset, y_offset, w_offset, h_offset});
             
             if (count == 0) 
             {
                 ts.roi_node_index = node_index;
             }
-            RCLCPP_INFO(this->get_logger(), "PartialImage sent to node_%d: x=%d y=%d w=%d h=%d", node_index, x_offset, y_offset, w, h);
-            
+            //RCLCPP_INFO(this->get_logger(), "PartialImage sent to node_%d: x=%d y=%d w=%d h=%d", node_index, x_offset, y_offset, w_offset, h_offset);
             count++;
         }
     }
     ts.end_split = get_time_in_ms();
     
     ts.start_roi_ethernet = get_time_in_ms();
-    for (const auto& item : pending) {
-        int node_index = item.first;
-        const auto& msg = item.second;
+    for (const auto& ROI : roi_msg) {
+        int node_index = ROI.first;
         auto it = roi_publishers_.find(node_index);
-        if (it != roi_publishers_.end()) it->second->publish(msg);
-        RCLCPP_INFO(this->get_logger(), "ROI sent to node_%d", node_index);
+        if (it != roi_publishers_.end()) 
+        {
+            it->second->publish(ROI.second);
+        }
+        //RCLCPP_INFO(this->get_logger(), "ROI sent to node_%d", node_index);
     }
 
     ts.start_roi_total_ethernet = get_time_in_ms();
     roi_total_publisher_->publish(total_roi_msg);
-    {
-        std::lock_guard<std::mutex> lock(map_mutex_);
-        cached_available_nodes_.clear();
-    }
+
     //RCLCPP_INFO(this->get_logger(), "Total ROI map sent (N=%d regions)", count);
     SaveTimestamp(ts);
-
 }
 
 void Coordinator::SaveTimestamp(const TimestampData &data) {
     if (csv_file_.is_open()) {
         csv_file_ << data. start_framecallback << ","
+                  << data. start_framesensor << ","
                   << data.end_ready_flag << ","
 				  << data.start_update << ","
                   << (data.end_update - data.start_update) << ","

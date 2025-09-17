@@ -6,6 +6,7 @@
 #include "sensor_msgs/msg/image.hpp"
 #include "std_msgs/msg/int32.hpp"
 #include "std_msgs/msg/int32_multi_array.hpp"
+#include "std_msgs/msg/int64_multi_array.hpp"
 #include "std_msgs/msg/bool.hpp"
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.hpp>
@@ -17,7 +18,7 @@
 #include "coordinator/avt_vimba_camera.hpp"
 
 #include <unordered_map>
-#include <unordered_set>   
+#include <unordered_set>  
 #include <deque>
 #include <vector>
 
@@ -28,7 +29,7 @@ struct NodeStatus {
 };
 
 struct TimestampData {
-    uint64_t end_ready_flag, ready_node_index, start_framecallback;
+    uint64_t end_ready_flag, ready_node_index, start_framecallback,start_framesensor;
     uint64_t start_update, end_update;
     uint64_t start_split_preprocess,end_split_preprocess;
     uint64_t start_split, end_split;
@@ -61,15 +62,13 @@ private:
 
 	void LoadParams();
 	void FrameCallback(const FramePtr& vimba_frame_ptr);
-    //void SaveStatus(const std_msgs::msg::Int32::SharedPtr msg);
-    //void CheckAlive(const rclcpp::Time& frame_time);
-    std::vector<int> get_N_alive();
-    std::vector<int> get_N_ready();
-    std::vector<int> get_N_available();
     std::pair<int, int> calculate_split_grid(int N);
-    void split_scheduling();
+    std::vector<int> hb_check();
+    void split_scheduling(const std::vector<int>& ready_node, uint64_t frame_time);
     void update_available_nodes();
     void SaveTimestamp(const TimestampData &data);
+    std::vector<int> vector_AND(const std::vector<int>& a, const std::vector<int>& b);
+
 
 	rclcpp::TimerBase::SharedPtr alive_timer_;
 	rclcpp::Time saved_time_;
@@ -89,9 +88,9 @@ private:
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr camera_subscriber_;
     rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr status_subscriber_;
     std::map<int, rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr> hb_subscribers_;
-    std::map<int, rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr> ready_subscribers_;
-    std::map<int, rclcpp::Publisher<avt_vimba_camera_msgs::msg::PartialImage>::SharedPtr> roi_publishers_;
-    rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr roi_total_publisher_;
+    std::map<int, rclcpp::Subscription<std_msgs::msg::Header>::SharedPtr> ready_subscribers_;
+    std::map<int, rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::SharedPtr> roi_publishers_;
+    rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::SharedPtr roi_total_publisher_;
 
 
     //save result for csv
@@ -100,13 +99,29 @@ private:
     std::mutex ts_mutex_;
 
     // 파라미터 설정
+    static constexpr int MAX_NODES = 10;
+    std::vector<int> ready_node = std::vector<int>(MAX_NODES, 0);
+    std::vector<int> pre_ready_node = std::vector<int>(MAX_NODES, 0);
+    std::vector<int> hb_node = std::vector<int>(MAX_NODES, 0);
+
     const rclcpp::Duration HB_TIMEOUT_NS = rclcpp::Duration::from_seconds(0.05);
     int width_ = 0;
     int height_ = 0;
     int synchronization_cnt_;
     bool cluster_flag_;
     sensor_msgs::msg::Image raw_image;
-    cv::Mat raw_image_;
+    cv::Mat load_image_;
+    bool frame_active_{false};
+    rclcpp::Time frame_started_at_;
+    std::vector<int> frame_alive_nodes_;
+    std::unordered_set<int> frame_ready_nodes_;
+    rclcpp::TimerBase::SharedPtr frame_timer_; 
+    bool do_split = true;
+    //rclcpp::Time new_frame_;
+    //rclcpp::Time current_frame_ = 0;
+    std::atomic<uint64_t> new_frame_ns_;
+    std::atomic<uint64_t> current_frame_ns_{0};
+    std::atomic<int> reset_flag = 0;
 };
 
 #endif
