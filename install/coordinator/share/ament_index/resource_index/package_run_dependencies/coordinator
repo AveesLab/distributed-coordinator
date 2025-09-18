@@ -1,1 +1,1 @@
-rclcpp;std_msgs;sensor_msgs;camera_info_manager;diagnostic_msgs;cv_bridge;image_transport;avt_vimba_camera;OpenCV;rosidl_default_runtime;launch;launch_ros;ament_lint_auto;ament_lint_common
+rclcpp;std_msgs;sensor_msgs;camera_info_manager;diagnostic_msgs;cv_bridge;image_transport;avt_vimba_camera_msgs;OpenCV;rosidl_default_runtime;launch;launch_ros;ament_lint_auto;ament_lint_common

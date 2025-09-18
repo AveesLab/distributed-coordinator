@@ -1,0 +1,34 @@
+[0.033s] Invoking command in '/home/avees/coordinator_node/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6
+[0.146s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.273s] [  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[0.276s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o[0m
+[23.980s] [  9%] [32m[1mLinking CXX executable coordinator_node[0m
+[26.511s] /usr/bin/ld: warning: libopencv_imgcodecs.so.4.2, needed by /opt/ros/foxy/lib/libcv_bridge.so, may conflict with libopencv_imgcodecs.so.4.5
+[26.512s] /usr/bin/ld: warning: libopencv_core.so.4.2, needed by /opt/ros/foxy/lib/libcv_bridge.so, may conflict with libopencv_core.so.4.5
+[26.536s] [100%] Built target coordinator_node
+[26.566s] Invoked command in '/home/avees/coordinator_node/build/coordinator' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6
+[26.598s] Invoking command in '/home/avees/coordinator_node/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/avees/coordinator_node/build/coordinator
+[26.617s] -- Install configuration: ""
+[26.618s] -- Installing: /home/avees/coordinator_node/install/coordinator/lib/coordinator/coordinator_node
+[26.630s] -- Set runtime path of "/home/avees/coordinator_node/install/coordinator/lib/coordinator/coordinator_node" to ""
+[26.632s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/launch
+[26.632s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/launch/coordinator_launch.py
+[26.633s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/config
+[26.633s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/config/params.yaml
+[26.633s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/ament_index/resource_index/package_run_dependencies/coordinator
+[26.633s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/ament_index/resource_index/parent_prefix_path/coordinator
+[26.634s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/ament_prefix_path.sh
+[26.634s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/ament_prefix_path.dsv
+[26.634s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/path.sh
+[26.635s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/path.dsv
+[26.635s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.bash
+[26.635s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.sh
+[26.636s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.zsh
+[26.636s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.dsv
+[26.639s] -- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/package.dsv
+[26.640s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/ament_index/resource_index/packages/coordinator
+[26.640s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/cmake/ament_cmake_export_dependencies-extras.cmake
+[26.641s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/cmake/coordinatorConfig.cmake
+[26.641s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/cmake/coordinatorConfig-version.cmake
+[26.642s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/package.xml
+[26.643s] Invoked command in '/home/avees/coordinator_node/build/coordinator' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/avees/coordinator_node/build/coordinator

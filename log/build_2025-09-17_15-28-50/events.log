@@ -1,0 +1,190 @@
+[0.000000] (-) TimerEvent: {}
+[0.000579] (coordinator) JobQueued: {'identifier': 'coordinator', 'dependencies': OrderedDict()}
+[0.001141] (coordinator) JobStarted: {'identifier': 'coordinator'}
+[0.024262] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'cmake'}
+[0.025734] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'build'}
+[0.027294] (coordinator) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avees/coordinator_node/build/coordinator', '--', '-j6', '-l6'], 'cwd': '/home/avees/coordinator_node/build/coordinator', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'avees'), ('SSH_AGENT_PID', '2693'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/avees/data-domain/install/monitor/lib:/home/avees/data-domain/install/avt_vimba_camera/lib:/home/avees/data-domain/install/avt_vimba_camera_msgs/lib:/usr/local/cuda-11.4/lib64:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/opt/Vimba_6_0/VimbaC/DynamicLib/arm_64bit:/opt/Vimba_6_0/VimbaCPP/DynamicLib/arm_64bit'), ('HOME', '/home/avees'), ('OLDPWD', '/home/avees'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2502'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3907'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/avees/coordinator_node/install:/home/avees/data-domain/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'avees'), ('JOURNAL_STREAM', '8:61829'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'avees'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.4/bin:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2728,unix/ubuntu:/tmp/.ICE-unix/2728'), ('INVOCATION_ID', '5a8ec2e1fb98494c8eb2d25b50085b29'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '103'), ('AMENT_PREFIX_PATH', '/home/avees/data-domain/install/monitor:/home/avees/data-domain/install/avt_vimba_camera:/home/avees/data-domain/install/avt_vimba_camera_msgs:/home/avees/coordinator_node/install/coordinator:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9deb70b4-5cb9-4e87-b4cb-2d9e1e38fd0b'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/avees/coordinator_node/build/coordinator'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/avees/data-domain/install/avt_vimba_camera_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', ':/opt/Vimba_6_0/VimbaGigETL/CTI/arm_64bit'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/avees/data-domain/install/monitor:/home/avees/data-domain/install/avt_vimba_camera:/home/avees/data-domain/install/avt_vimba_camera_msgs:/home/avees/coordinator_node/install/coordinator:/opt/ros/foxy')]), 'shell': False}
+[0.099488] (-) TimerEvent: {}
+[0.161667] (coordinator) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target coordinator_node\x1b[0m\n'}
+[0.199871] (-) TimerEvent: {}
+[0.275821] (coordinator) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o\x1b[0m\n'}
+[0.300148] (-) TimerEvent: {}
+[0.400824] (-) TimerEvent: {}
+[0.501502] (-) TimerEvent: {}
+[0.602179] (-) TimerEvent: {}
+[0.702987] (-) TimerEvent: {}
+[0.803726] (-) TimerEvent: {}
+[0.904416] (-) TimerEvent: {}
+[1.005121] (-) TimerEvent: {}
+[1.106055] (-) TimerEvent: {}
+[1.206783] (-) TimerEvent: {}
+[1.307466] (-) TimerEvent: {}
+[1.408161] (-) TimerEvent: {}
+[1.508860] (-) TimerEvent: {}
+[1.609556] (-) TimerEvent: {}
+[1.710240] (-) TimerEvent: {}
+[1.810956] (-) TimerEvent: {}
+[1.911662] (-) TimerEvent: {}
+[2.012337] (-) TimerEvent: {}
+[2.113048] (-) TimerEvent: {}
+[2.213774] (-) TimerEvent: {}
+[2.314526] (-) TimerEvent: {}
+[2.415207] (-) TimerEvent: {}
+[2.515899] (-) TimerEvent: {}
+[2.616607] (-) TimerEvent: {}
+[2.717307] (-) TimerEvent: {}
+[2.817999] (-) TimerEvent: {}
+[2.918869] (-) TimerEvent: {}
+[3.019683] (-) TimerEvent: {}
+[3.120657] (-) TimerEvent: {}
+[3.221348] (-) TimerEvent: {}
+[3.322988] (-) TimerEvent: {}
+[3.423673] (-) TimerEvent: {}
+[3.524363] (-) TimerEvent: {}
+[3.625080] (-) TimerEvent: {}
+[3.726232] (-) TimerEvent: {}
+[3.826925] (-) TimerEvent: {}
+[3.927634] (-) TimerEvent: {}
+[4.028350] (-) TimerEvent: {}
+[4.129117] (-) TimerEvent: {}
+[4.230100] (-) TimerEvent: {}
+[4.331079] (-) TimerEvent: {}
+[4.431761] (-) TimerEvent: {}
+[4.532712] (-) TimerEvent: {}
+[4.633660] (-) TimerEvent: {}
+[4.734633] (-) TimerEvent: {}
+[4.835572] (-) TimerEvent: {}
+[4.936520] (-) TimerEvent: {}
+[5.037499] (-) TimerEvent: {}
+[5.138423] (-) TimerEvent: {}
+[5.239391] (-) TimerEvent: {}
+[5.340329] (-) TimerEvent: {}
+[5.441238] (-) TimerEvent: {}
+[5.542145] (-) TimerEvent: {}
+[5.643116] (-) TimerEvent: {}
+[5.744020] (-) TimerEvent: {}
+[5.844963] (-) TimerEvent: {}
+[5.945919] (-) TimerEvent: {}
+[6.046878] (-) TimerEvent: {}
+[6.147811] (-) TimerEvent: {}
+[6.248739] (-) TimerEvent: {}
+[6.349680] (-) TimerEvent: {}
+[6.450408] (-) TimerEvent: {}
+[6.551119] (-) TimerEvent: {}
+[6.651823] (-) TimerEvent: {}
+[6.752516] (-) TimerEvent: {}
+[6.853193] (-) TimerEvent: {}
+[6.953861] (-) TimerEvent: {}
+[7.054571] (-) TimerEvent: {}
+[7.155250] (-) TimerEvent: {}
+[7.198825] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/client.hpp:32\x1b[m\x1b[K,\n'}
+[7.199649] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:23\x1b[m\x1b[K,\n'}
+[7.199970] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[7.200279] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24\x1b[m\x1b[K,\n'}
+[7.200549] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.200808] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.201061] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor.hpp:33\x1b[m\x1b[K,\n'}
+[7.201311] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26\x1b[m\x1b[K,\n'}
+[7.201568] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.201804] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[7.202044] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[7.202314] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[7.202579] (coordinator) StderrLine: {'line': b'/opt/ros/foxy/include/rclcpp/function_traits.hpp: In instantiation of \xe2\x80\x98\x1b[01m\x1b[Kstruct rclcpp::function_traits::function_traits<Coordinator::Coordinator()::<lambda(auto:12)> >\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.202836] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/subscription_traits.hpp:97:8:\x1b[m\x1b[K   required from \xe2\x80\x98\x1b[01m\x1b[Kstruct rclcpp::subscription_traits::has_message_type<Coordinator::Coordinator()::<lambda(auto:12)>, std::allocator<void>, void, void, void, void>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.203084] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/node.hpp:204:5:\x1b[m\x1b[K   required by substitution of \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class CallbackMessageT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<SubscriptionT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::Header_<std::allocator<void> >; CallbackT = Coordinator::Coordinator()::<lambda(auto:12)>; AllocatorT = std::allocator<void>; CallbackMessageT = <missing>; SubscriptionT = <missing>; MessageMemoryStrategyT = <missing>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.203365] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:82:23:\x1b[m\x1b[K   required from here\n'}
+[7.203605] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/function_traits.hpp:51:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kdecltype cannot resolve address of overloaded function\n'}
+[7.203848] (coordinator) StderrLine: {'line': b'   51 |   using \x1b[01;31m\x1b[Karguments\x1b[m\x1b[K = typename tuple_tail<\n'}
+[7.204083] (coordinator) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.204321] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/function_traits.hpp:57:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kdecltype cannot resolve address of overloaded function\n'}
+[7.204559] (coordinator) StderrLine: {'line': b'   57 |   using \x1b[01;31m\x1b[Kargument_type\x1b[m\x1b[K = typename std::tuple_element<N, arguments>::type;\n'}
+[7.204793] (coordinator) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.205024] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/function_traits.hpp:59:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kdecltype cannot resolve address of overloaded function\n'}
+[7.205285] (coordinator) StderrLine: {'line': b'   59 |   using \x1b[01;31m\x1b[Kreturn_type\x1b[m\x1b[K = typename function_traits<decltype( &FunctionT::operator())>::return_type;\n'}
+[7.205523] (coordinator) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.205753] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KCoordinator::Coordinator()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.205987] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:82:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[KCoordinator::create_subscription<std_msgs::msg::Header>(std::string&, int, Coordinator::Coordinator()::<lambda(auto:12)>, rclcpp::SubscriptionOptions&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.206284] (coordinator) StderrLine: {'line': b'   82 |             }, sub_opt\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[7.206545] (coordinator) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.206780] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/node.hpp:1224\x1b[m\x1b[K,\n'}
+[7.207013] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[7.207268] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[7.207510] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[7.207766] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[7.208010] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[7.208243] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/node_impl.hpp:91:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class CallbackMessageT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<SubscriptionT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.208498] (coordinator) StderrLine: {'line': b'   91 | \x1b[01;36m\x1b[KNode\x1b[m\x1b[K::create_subscription(\n'}
+[7.208737] (coordinator) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[7.208972] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/node_impl.hpp:91:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  substitution of deduced template arguments resulted in errors seen above\n'}
+[7.244071] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::hb_check()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.244719] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:162:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kit_hb\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.244988] (coordinator) StderrLine: {'line': b'  162 |             rclcpp::Duration delta = now - \x1b[01;31m\x1b[Kit_hb\x1b[m\x1b[K->second;\n'}
+[7.245226] (coordinator) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[7.255331] (-) TimerEvent: {}
+[7.355917] (-) TimerEvent: {}
+[7.456732] (-) TimerEvent: {}
+[7.557578] (-) TimerEvent: {}
+[7.658443] (-) TimerEvent: {}
+[7.759271] (-) TimerEvent: {}
+[7.860118] (-) TimerEvent: {}
+[7.960958] (-) TimerEvent: {}
+[8.061806] (-) TimerEvent: {}
+[8.162660] (-) TimerEvent: {}
+[8.263498] (-) TimerEvent: {}
+[8.364304] (-) TimerEvent: {}
+[8.465080] (-) TimerEvent: {}
+[8.565906] (-) TimerEvent: {}
+[8.666776] (-) TimerEvent: {}
+[8.767584] (-) TimerEvent: {}
+[8.868383] (-) TimerEvent: {}
+[8.969208] (-) TimerEvent: {}
+[9.070045] (-) TimerEvent: {}
+[9.170922] (-) TimerEvent: {}
+[9.271777] (-) TimerEvent: {}
+[9.372608] (-) TimerEvent: {}
+[9.473417] (-) TimerEvent: {}
+[9.574253] (-) TimerEvent: {}
+[9.675122] (-) TimerEvent: {}
+[9.775938] (-) TimerEvent: {}
+[9.876773] (-) TimerEvent: {}
+[9.977586] (-) TimerEvent: {}
+[10.078423] (-) TimerEvent: {}
+[10.179265] (-) TimerEvent: {}
+[10.280119] (-) TimerEvent: {}
+[10.380941] (-) TimerEvent: {}
+[10.481765] (-) TimerEvent: {}
+[10.582623] (-) TimerEvent: {}
+[10.683442] (-) TimerEvent: {}
+[10.784149] (-) TimerEvent: {}
+[10.885006] (-) TimerEvent: {}
+[10.985871] (-) TimerEvent: {}
+[11.086765] (-) TimerEvent: {}
+[11.187840] (-) TimerEvent: {}
+[11.288696] (-) TimerEvent: {}
+[11.389535] (-) TimerEvent: {}
+[11.490386] (-) TimerEvent: {}
+[11.591217] (-) TimerEvent: {}
+[11.692066] (-) TimerEvent: {}
+[11.792892] (-) TimerEvent: {}
+[11.893744] (-) TimerEvent: {}
+[11.994606] (-) TimerEvent: {}
+[12.095460] (-) TimerEvent: {}
+[12.196294] (-) TimerEvent: {}
+[12.297029] (-) TimerEvent: {}
+[12.397716] (-) TimerEvent: {}
+[12.498446] (-) TimerEvent: {}
+[12.599314] (-) TimerEvent: {}
+[12.700169] (-) TimerEvent: {}
+[12.801014] (-) TimerEvent: {}
+[12.901844] (-) TimerEvent: {}
+[13.002692] (-) TimerEvent: {}
+[13.103542] (-) TimerEvent: {}
+[13.204382] (-) TimerEvent: {}
+[13.305222] (-) TimerEvent: {}
+[13.367291] (coordinator) StderrLine: {'line': b'make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1\n'}
+[13.368035] (coordinator) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2\n'}
+[13.368717] (coordinator) StderrLine: {'line': b'make: *** [Makefile:141: all] Error 2\n'}
+[13.375011] (coordinator) CommandEnded: {'returncode': 2}
+[13.406128] (-) TimerEvent: {}
+[13.410036] (coordinator) JobEnded: {'identifier': 'coordinator', 'rc': 2}
+[13.421334] (-) EventReactorShutdown: {}

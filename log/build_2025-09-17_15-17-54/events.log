@@ -1,0 +1,360 @@
+[0.000000] (-) TimerEvent: {}
+[0.000673] (coordinator) JobQueued: {'identifier': 'coordinator', 'dependencies': OrderedDict()}
+[0.001216] (coordinator) JobStarted: {'identifier': 'coordinator'}
+[0.025754] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'cmake'}
+[0.027453] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'build'}
+[0.028921] (coordinator) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avees/coordinator_node/build/coordinator', '--', '-j6', '-l6'], 'cwd': '/home/avees/coordinator_node/build/coordinator', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'avees'), ('SSH_AGENT_PID', '2693'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/avees/data-domain/install/monitor/lib:/home/avees/data-domain/install/avt_vimba_camera/lib:/home/avees/data-domain/install/avt_vimba_camera_msgs/lib:/usr/local/cuda-11.4/lib64:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/opt/Vimba_6_0/VimbaC/DynamicLib/arm_64bit:/opt/Vimba_6_0/VimbaCPP/DynamicLib/arm_64bit'), ('HOME', '/home/avees'), ('OLDPWD', '/home/avees'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2502'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3907'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/avees/coordinator_node/install:/home/avees/data-domain/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'avees'), ('JOURNAL_STREAM', '8:61829'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'avees'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.4/bin:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2728,unix/ubuntu:/tmp/.ICE-unix/2728'), ('INVOCATION_ID', '5a8ec2e1fb98494c8eb2d25b50085b29'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '103'), ('AMENT_PREFIX_PATH', '/home/avees/data-domain/install/monitor:/home/avees/data-domain/install/avt_vimba_camera:/home/avees/data-domain/install/avt_vimba_camera_msgs:/home/avees/coordinator_node/install/coordinator:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9deb70b4-5cb9-4e87-b4cb-2d9e1e38fd0b'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/avees/coordinator_node/build/coordinator'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/avees/data-domain/install/avt_vimba_camera_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', ':/opt/Vimba_6_0/VimbaGigETL/CTI/arm_64bit'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/avees/data-domain/install/monitor:/home/avees/data-domain/install/avt_vimba_camera:/home/avees/data-domain/install/avt_vimba_camera_msgs:/home/avees/coordinator_node/install/coordinator:/opt/ros/foxy')]), 'shell': False}
+[0.099338] (-) TimerEvent: {}
+[0.165049] (coordinator) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target coordinator_node\x1b[0m\n'}
+[0.199516] (-) TimerEvent: {}
+[0.277324] (coordinator) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o\x1b[0m\n'}
+[0.277857] (coordinator) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o\x1b[0m\n'}
+[0.299701] (-) TimerEvent: {}
+[0.400415] (-) TimerEvent: {}
+[0.501086] (-) TimerEvent: {}
+[0.601781] (-) TimerEvent: {}
+[0.702454] (-) TimerEvent: {}
+[0.803146] (-) TimerEvent: {}
+[0.903844] (-) TimerEvent: {}
+[1.004582] (-) TimerEvent: {}
+[1.105280] (-) TimerEvent: {}
+[1.205978] (-) TimerEvent: {}
+[1.306694] (-) TimerEvent: {}
+[1.407406] (-) TimerEvent: {}
+[1.508211] (-) TimerEvent: {}
+[1.608917] (-) TimerEvent: {}
+[1.709627] (-) TimerEvent: {}
+[1.810355] (-) TimerEvent: {}
+[1.911048] (-) TimerEvent: {}
+[2.011741] (-) TimerEvent: {}
+[2.112455] (-) TimerEvent: {}
+[2.213143] (-) TimerEvent: {}
+[2.313825] (-) TimerEvent: {}
+[2.414525] (-) TimerEvent: {}
+[2.515218] (-) TimerEvent: {}
+[2.615889] (-) TimerEvent: {}
+[2.716637] (-) TimerEvent: {}
+[2.817370] (-) TimerEvent: {}
+[2.918117] (-) TimerEvent: {}
+[3.018861] (-) TimerEvent: {}
+[3.119553] (-) TimerEvent: {}
+[3.220290] (-) TimerEvent: {}
+[3.320986] (-) TimerEvent: {}
+[3.421679] (-) TimerEvent: {}
+[3.522391] (-) TimerEvent: {}
+[3.623110] (-) TimerEvent: {}
+[3.723922] (-) TimerEvent: {}
+[3.824642] (-) TimerEvent: {}
+[3.925370] (-) TimerEvent: {}
+[4.026067] (-) TimerEvent: {}
+[4.126766] (-) TimerEvent: {}
+[4.227478] (-) TimerEvent: {}
+[4.328212] (-) TimerEvent: {}
+[4.429209] (-) TimerEvent: {}
+[4.529919] (-) TimerEvent: {}
+[4.630617] (-) TimerEvent: {}
+[4.731309] (-) TimerEvent: {}
+[4.831991] (-) TimerEvent: {}
+[4.933041] (-) TimerEvent: {}
+[5.034020] (-) TimerEvent: {}
+[5.135026] (-) TimerEvent: {}
+[5.235731] (-) TimerEvent: {}
+[5.336466] (-) TimerEvent: {}
+[5.437182] (-) TimerEvent: {}
+[5.537883] (-) TimerEvent: {}
+[5.638570] (-) TimerEvent: {}
+[5.739255] (-) TimerEvent: {}
+[5.839933] (-) TimerEvent: {}
+[5.940655] (-) TimerEvent: {}
+[6.041334] (-) TimerEvent: {}
+[6.142030] (-) TimerEvent: {}
+[6.242749] (-) TimerEvent: {}
+[6.343472] (-) TimerEvent: {}
+[6.444216] (-) TimerEvent: {}
+[6.544910] (-) TimerEvent: {}
+[6.645607] (-) TimerEvent: {}
+[6.746313] (-) TimerEvent: {}
+[6.847000] (-) TimerEvent: {}
+[6.947705] (-) TimerEvent: {}
+[7.048437] (-) TimerEvent: {}
+[7.149106] (-) TimerEvent: {}
+[7.249741] (-) TimerEvent: {}
+[7.350395] (-) TimerEvent: {}
+[7.400183] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/main.cpp:2\x1b[m\x1b[K:\n'}
+[7.400780] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:100:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Knon-static data member \xe2\x80\x98\x1b[01m\x1b[KMAX_NODES\x1b[m\x1b[K\xe2\x80\x99 declared \xe2\x80\x98\x1b[01m\x1b[Kconstexpr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.400964] (coordinator) StderrLine: {'line': b'  100 |     \x1b[01;31m\x1b[Kconstexpr\x1b[m\x1b[K int MAX_NODES = 10;\n'}
+[7.401117] (coordinator) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.403006] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:101:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMAX_NODES\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[7.403188] (coordinator) StderrLine: {'line': b'  101 |     std::vector<int> ready_node(\x1b[01;31m\x1b[KMAX_NODES\x1b[m\x1b[K, 0);\n'}
+[7.403336] (coordinator) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.403473] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:101:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected identifier before numeric constant\n'}
+[7.403611] (coordinator) StderrLine: {'line': b'  101 |     std::vector<int> ready_node(MAX_NODES, \x1b[01;31m\x1b[K0\x1b[m\x1b[K);\n'}
+[7.403743] (coordinator) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.403874] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:101:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before numeric constant\n'}
+[7.404020] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:102:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMAX_NODES\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[7.404185] (coordinator) StderrLine: {'line': b'  102 |     std::vector<int> pre_ready_node(\x1b[01;31m\x1b[KMAX_NODES\x1b[m\x1b[K, 0);\n'}
+[7.404327] (coordinator) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.404457] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:102:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected identifier before numeric constant\n'}
+[7.404587] (coordinator) StderrLine: {'line': b'  102 |     std::vector<int> pre_ready_node(MAX_NODES, \x1b[01;31m\x1b[K0\x1b[m\x1b[K);\n'}
+[7.404713] (coordinator) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.404839] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:102:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before numeric constant\n'}
+[7.404967] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:103:30:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMAX_NODES\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[7.405096] (coordinator) StderrLine: {'line': b'  103 |     std::vector<int> hb_node(\x1b[01;31m\x1b[KMAX_NODES\x1b[m\x1b[K, 0);\n'}
+[7.405221] (coordinator) StderrLine: {'line': b'      |                              \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.405347] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:103:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected identifier before numeric constant\n'}
+[7.405498] (coordinator) StderrLine: {'line': b'  103 |     std::vector<int> hb_node(MAX_NODES, \x1b[01;31m\x1b[K0\x1b[m\x1b[K);\n'}
+[7.405625] (coordinator) StderrLine: {'line': b'      |                                         \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.405748] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:103:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before numeric constant\n'}
+[7.450542] (-) TimerEvent: {}
+[7.551249] (-) TimerEvent: {}
+[7.569985] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[7.570540] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:100:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Knon-static data member \xe2\x80\x98\x1b[01m\x1b[KMAX_NODES\x1b[m\x1b[K\xe2\x80\x99 declared \xe2\x80\x98\x1b[01m\x1b[Kconstexpr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.570726] (coordinator) StderrLine: {'line': b'  100 |     \x1b[01;31m\x1b[Kconstexpr\x1b[m\x1b[K int MAX_NODES = 10;\n'}
+[7.570874] (coordinator) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.571010] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:101:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMAX_NODES\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[7.571178] (coordinator) StderrLine: {'line': b'  101 |     std::vector<int> ready_node(\x1b[01;31m\x1b[KMAX_NODES\x1b[m\x1b[K, 0);\n'}
+[7.571314] (coordinator) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.571453] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:101:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected identifier before numeric constant\n'}
+[7.571592] (coordinator) StderrLine: {'line': b'  101 |     std::vector<int> ready_node(MAX_NODES, \x1b[01;31m\x1b[K0\x1b[m\x1b[K);\n'}
+[7.571744] (coordinator) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.571875] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:101:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before numeric constant\n'}
+[7.572026] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:102:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMAX_NODES\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[7.572233] (coordinator) StderrLine: {'line': b'  102 |     std::vector<int> pre_ready_node(\x1b[01;31m\x1b[KMAX_NODES\x1b[m\x1b[K, 0);\n'}
+[7.572373] (coordinator) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.572502] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:102:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected identifier before numeric constant\n'}
+[7.572628] (coordinator) StderrLine: {'line': b'  102 |     std::vector<int> pre_ready_node(MAX_NODES, \x1b[01;31m\x1b[K0\x1b[m\x1b[K);\n'}
+[7.572752] (coordinator) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.572877] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:102:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before numeric constant\n'}
+[7.573018] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:103:30:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMAX_NODES\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[7.573145] (coordinator) StderrLine: {'line': b'  103 |     std::vector<int> hb_node(\x1b[01;31m\x1b[KMAX_NODES\x1b[m\x1b[K, 0);\n'}
+[7.573270] (coordinator) StderrLine: {'line': b'      |                              \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[7.573393] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:103:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected identifier before numeric constant\n'}
+[7.573521] (coordinator) StderrLine: {'line': b'  103 |     std::vector<int> hb_node(MAX_NODES, \x1b[01;31m\x1b[K0\x1b[m\x1b[K);\n'}
+[7.573644] (coordinator) StderrLine: {'line': b'      |                                         \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.573768] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:103:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before numeric constant\n'}
+[7.650635] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:\x1b[m\x1b[K In lambda function:\n'}
+[7.651329] (-) TimerEvent: {}
+[7.651658] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:38:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Knew_frame_ns_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Knew_frame_ns\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[7.651885] (coordinator) StderrLine: {'line': b'   38 |                 uint64_t ns = \x1b[01;31m\x1b[Knew_frame_ns_\x1b[m\x1b[K.load(std::memory_order_relaxed);\n'}
+[7.652046] (coordinator) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.652242] (coordinator) StderrLine: {'line': b'      |                               \x1b[32m\x1b[Knew_frame_ns\x1b[m\x1b[K\n'}
+[7.652390] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:53:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid types \xe2\x80\x98\x1b[01m\x1b[K<unresolved overloaded function type>[int]\x1b[m\x1b[K\xe2\x80\x99 for array subscript\n'}
+[7.652538] (coordinator) StderrLine: {'line': b'   53 |                             ready_node[node_index\x1b[01;31m\x1b[K]\x1b[m\x1b[K = 1;\n'}
+[7.652674] (coordinator) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.653004] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:56:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of non-static member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::ready_node(int, int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.653459] (coordinator) StderrLine: {'line': b'   56 |                             if( \x1b[01;31m\x1b[Kready_node == hb_check()\x1b[m\x1b[K )\n'}
+[7.653602] (coordinator) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K~~~~~~~~~~~^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.653734] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[7.654100] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:101:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[7.654259] (coordinator) StderrLine: {'line': b'  101 |     std::vector<int> \x1b[01;36m\x1b[Kready_node\x1b[m\x1b[K(MAX_NODES, 0);\n'}
+[7.654394] (coordinator) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.654525] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:58:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of non-static member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::ready_node(int, int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.654653] (coordinator) StderrLine: {'line': b'   58 |                                 split_scheduling(\x1b[01;31m\x1b[Kready_node\x1b[m\x1b[K);\n'}
+[7.654780] (coordinator) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.654904] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[7.655044] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:101:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[7.655171] (coordinator) StderrLine: {'line': b'  101 |     std::vector<int> \x1b[01;36m\x1b[Kready_node\x1b[m\x1b[K(MAX_NODES, 0);\n'}
+[7.655313] (coordinator) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.655440] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:59:43:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::ready_node(int, int)\x1b[m\x1b[K\xe2\x80\x99 (did you forget the \xe2\x80\x98\x1b[01m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99 ?)\n'}
+[7.655575] (coordinator) StderrLine: {'line': b'   59 |                                 std::fill(\x1b[01;31m\x1b[Kready_node\x1b[m\x1b[K.begin(), ready_node.end(), 0);\n'}
+[7.655701] (coordinator) StderrLine: {'line': b'      |                                           \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.655824] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:59:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::ready_node(int, int)\x1b[m\x1b[K\xe2\x80\x99 (did you forget the \xe2\x80\x98\x1b[01m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99 ?)\n'}
+[7.655951] (coordinator) StderrLine: {'line': b'   59 |                                 std::fill(ready_node.begin(), \x1b[01;31m\x1b[Kready_node\x1b[m\x1b[K.end(), 0);\n'}
+[7.656077] (coordinator) StderrLine: {'line': b'      |                                                               \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.656253] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:60:43:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::pre_ready_node(int, int)\x1b[m\x1b[K\xe2\x80\x99 (did you forget the \xe2\x80\x98\x1b[01m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99 ?)\n'}
+[7.656395] (coordinator) StderrLine: {'line': b'   60 |                                 std::fill(\x1b[01;31m\x1b[Kpre_ready_node\x1b[m\x1b[K.begin(), pre_ready_node.end(), 0);\n'}
+[7.656525] (coordinator) StderrLine: {'line': b'      |                                           \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.656649] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:60:67:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::pre_ready_node(int, int)\x1b[m\x1b[K\xe2\x80\x99 (did you forget the \xe2\x80\x98\x1b[01m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99 ?)\n'}
+[7.656794] (coordinator) StderrLine: {'line': b'   60 |                                 std::fill(pre_ready_node.begin(), \x1b[01;31m\x1b[Kpre_ready_node\x1b[m\x1b[K.end(), 0);\n'}
+[7.656922] (coordinator) StderrLine: {'line': b'      |                                                                   \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.657049] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:62:59:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid types \xe2\x80\x98\x1b[01m\x1b[K<unresolved overloaded function type>[int]\x1b[m\x1b[K\xe2\x80\x99 for array subscript\n'}
+[7.657185] (coordinator) StderrLine: {'line': b'   62 |                             else pre_ready_node[node_index\x1b[01;31m\x1b[K]\x1b[m\x1b[K = 1;\n'}
+[7.657310] (coordinator) StderrLine: {'line': b'      |                                                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.657437] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:70:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::ready_node(int, int)\x1b[m\x1b[K\xe2\x80\x99 (did you forget the \xe2\x80\x98\x1b[01m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99 ?)\n'}
+[7.657563] (coordinator) StderrLine: {'line': b'   70 |                             std::fill(\x1b[01;31m\x1b[Kready_node\x1b[m\x1b[K.begin(), ready_node.end(), 0);\n'}
+[7.657686] (coordinator) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.657811] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:70:59:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::ready_node(int, int)\x1b[m\x1b[K\xe2\x80\x99 (did you forget the \xe2\x80\x98\x1b[01m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99 ?)\n'}
+[7.657950] (coordinator) StderrLine: {'line': b'   70 |                             std::fill(ready_node.begin(), \x1b[01;31m\x1b[Kready_node\x1b[m\x1b[K.end(), 0);\n'}
+[7.658075] (coordinator) StderrLine: {'line': b'      |                                                           \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.658201] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:73:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid types \xe2\x80\x98\x1b[01m\x1b[K<unresolved overloaded function type>[int]\x1b[m\x1b[K\xe2\x80\x99 for array subscript\n'}
+[7.658328] (coordinator) StderrLine: {'line': b'   73 |                         ready_node[node_index\x1b[01;31m\x1b[K]\x1b[m\x1b[K = 1;\n'}
+[7.658450] (coordinator) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.669965] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:74:42:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvector_AND\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.670645] (coordinator) StderrLine: {'line': b'   74 |                         if(ready_node == \x1b[01;31m\x1b[Kvector_AND\x1b[m\x1b[K(pre_ready_node, hb_check()))\n'}
+[7.670820] (coordinator) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.670993] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:77:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of non-static member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::ready_node(int, int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.671154] (coordinator) StderrLine: {'line': b'   77 |                             split_scheduling(\x1b[01;31m\x1b[Kready_node\x1b[m\x1b[K);\n'}
+[7.671308] (coordinator) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.671439] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[7.671566] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:101:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[7.671695] (coordinator) StderrLine: {'line': b'  101 |     std::vector<int> \x1b[01;36m\x1b[Kready_node\x1b[m\x1b[K(MAX_NODES, 0);\n'}
+[7.671823] (coordinator) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.671946] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:78:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::ready_node(int, int)\x1b[m\x1b[K\xe2\x80\x99 (did you forget the \xe2\x80\x98\x1b[01m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99 ?)\n'}
+[7.672092] (coordinator) StderrLine: {'line': b'   78 |                             std::fill(\x1b[01;31m\x1b[Kready_node\x1b[m\x1b[K.begin(), ready_node.end(), 0);\n'}
+[7.672274] (coordinator) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.672406] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:78:59:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of member function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> Coordinator::ready_node(int, int)\x1b[m\x1b[K\xe2\x80\x99 (did you forget the \xe2\x80\x98\x1b[01m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99 ?)\n'}
+[7.672538] (coordinator) StderrLine: {'line': b'   78 |                             std::fill(ready_node.begin(), \x1b[01;31m\x1b[Kready_node\x1b[m\x1b[K.end(), 0);\n'}
+[7.672663] (coordinator) StderrLine: {'line': b'      |                                                           \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.712671] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KCoordinator::Coordinator()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.713665] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:83:16:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno match for \xe2\x80\x98\x1b[01m\x1b[Koperator=\x1b[m\x1b[K\xe2\x80\x99 (operand types are \xe2\x80\x98\x1b[01m\x1b[Kstd::map<int, std::shared_ptr<rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > > > >::mapped_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Subscription<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void>, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[7.713917] (coordinator) StderrLine: {'line': b'   83 |         sub_opt\x1b[01;31m\x1b[K)\x1b[m\x1b[K\n'}
+[7.714063] (coordinator) StderrLine: {'line': b'      |                \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.714195] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/memory:81\x1b[m\x1b[K,\n'}
+[7.714327] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[7.714456] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[7.714617] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[7.714761] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:309:19:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Tp>&) [with _Tp = rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.714896] (coordinator) StderrLine: {'line': b'  309 |       shared_ptr& \x1b[01;36m\x1b[Koperator\x1b[m\x1b[K=(const shared_ptr&) noexcept = default;\n'}
+[7.715022] (coordinator) StderrLine: {'line': b'      |                   \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[7.715148] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:309:29:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Subscription<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void>, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst std::shared_ptr<rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > > >&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.715288] (coordinator) StderrLine: {'line': b'  309 |       shared_ptr& operator=(\x1b[01;36m\x1b[Kconst shared_ptr&\x1b[m\x1b[K) noexcept = default;\n'}
+[7.715413] (coordinator) StderrLine: {'line': b'      |                             \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.715540] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:313:2:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<const std::shared_ptr<_Yp>&> std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Yp>&) [with _Yp = _Yp; _Tp = rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.715708] (coordinator) StderrLine: {'line': b'  313 |  \x1b[01;36m\x1b[Koperator\x1b[m\x1b[K=(const shared_ptr<_Yp>& __r) noexcept\n'}
+[7.715838] (coordinator) StderrLine: {'line': b'      |  \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[7.715961] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:313:2:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[7.716091] (coordinator) StderrLine: {'line': b'/usr/include/c++/9/bits/shared_ptr.h: In substitution of \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp> template<class _Arg> using _Assignable = typename std::enable_if<std::is_assignable<std::__shared_ptr<_Tp>&, _Arg>::value, std::shared_ptr<_Tp>&>::type [with _Arg = const std::shared_ptr<rclcpp::Subscription<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void>, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void> > > >&; _Tp = rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > >]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.716279] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:313:2:\x1b[m\x1b[K   required by substitution of \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp> std::shared_ptr<rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > > >::_Assignable<const std::shared_ptr<_Tp>&> std::shared_ptr<rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > > >::operator=<_Yp>(const std::shared_ptr<_Tp>&) [with _Yp = rclcpp::Subscription<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void>, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void> > >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.716418] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:83:16:\x1b[m\x1b[K   required from here\n'}
+[7.716561] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:111:8:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno type named \xe2\x80\x98\x1b[01m\x1b[Ktype\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kstruct std::enable_if<false, std::shared_ptr<rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > > >&>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.716692] (coordinator) StderrLine: {'line': b'  111 |  using \x1b[01;31m\x1b[K_Assignable\x1b[m\x1b[K = typename enable_if<\n'}
+[7.716818] (coordinator) StderrLine: {'line': b'      |        \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.716942] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:324:2:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::auto_ptr<_Up> > std::shared_ptr<_Tp>::operator=(std::auto_ptr<_Up>&&) [with _Yp = _Yp; _Tp = rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.717078] (coordinator) StderrLine: {'line': b'  324 |  \x1b[01;36m\x1b[Koperator\x1b[m\x1b[K=(auto_ptr<_Yp>&& __r)\n'}
+[7.717213] (coordinator) StderrLine: {'line': b'      |  \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[7.717338] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:324:2:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[7.717467] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:83:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Subscription<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void>, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kstd::auto_ptr<_Up>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.717597] (coordinator) StderrLine: {'line': b'   83 |         sub_opt\x1b[01;36m\x1b[K)\x1b[m\x1b[K\n'}
+[7.717722] (coordinator) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[7.717846] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/memory:81\x1b[m\x1b[K,\n'}
+[7.717972] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[7.718097] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[7.718221] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[7.718343] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:333:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Tp>&&) [with _Tp = rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.718473] (coordinator) StderrLine: {'line': b'  333 |       \x1b[01;36m\x1b[Koperator\x1b[m\x1b[K=(shared_ptr&& __r) noexcept\n'}
+[7.718603] (coordinator) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[7.718728] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:333:30:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Subscription<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void>, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > > >&&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.718895] (coordinator) StderrLine: {'line': b'  333 |       operator=(\x1b[01;36m\x1b[Kshared_ptr&& __r\x1b[m\x1b[K) noexcept\n'}
+[7.719024] (coordinator) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[7.719150] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:341:2:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::shared_ptr<_Yp> > std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Yp>&&) [with _Yp = _Yp; _Tp = rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.719288] (coordinator) StderrLine: {'line': b'  341 |  \x1b[01;36m\x1b[Koperator\x1b[m\x1b[K=(shared_ptr<_Yp>&& __r) noexcept\n'}
+[7.719415] (coordinator) StderrLine: {'line': b'      |  \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[7.719539] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:341:2:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[7.719664] (coordinator) StderrLine: {'line': b'/usr/include/c++/9/bits/shared_ptr.h: In substitution of \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp> template<class _Arg> using _Assignable = typename std::enable_if<std::is_assignable<std::__shared_ptr<_Tp>&, _Arg>::value, std::shared_ptr<_Tp>&>::type [with _Arg = std::shared_ptr<rclcpp::Subscription<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void>, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void> > > >; _Tp = rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > >]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.719795] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:341:2:\x1b[m\x1b[K   required by substitution of \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp> std::shared_ptr<rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > > >::_Assignable<std::shared_ptr<_Tp> > std::shared_ptr<rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > > >::operator=<_Yp>(std::shared_ptr<_Tp>&&) [with _Yp = rclcpp::Subscription<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void>, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void> > >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.719927] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:83:16:\x1b[m\x1b[K   required from here\n'}
+[7.720069] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:111:8:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno type named \xe2\x80\x98\x1b[01m\x1b[Ktype\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kstruct std::enable_if<false, std::shared_ptr<rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > > >&>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.720256] (coordinator) StderrLine: {'line': b'  111 |  using \x1b[01;31m\x1b[K_Assignable\x1b[m\x1b[K = typename enable_if<\n'}
+[7.720389] (coordinator) StderrLine: {'line': b'      |        \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.720515] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:349:2:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Yp, class _Del> std::shared_ptr<_Tp>::_Assignable<std::unique_ptr<_Up, _Ep> > std::shared_ptr<_Tp>::operator=(std::unique_ptr<_Up, _Ep>&&) [with _Yp = _Yp; _Del = _Del; _Tp = rclcpp::Subscription<std_msgs::msg::Bool_<std::allocator<void> > >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.720648] (coordinator) StderrLine: {'line': b'  349 |  \x1b[01;36m\x1b[Koperator\x1b[m\x1b[K=(unique_ptr<_Yp, _Del>&& __r)\n'}
+[7.720774] (coordinator) StderrLine: {'line': b'      |  \x1b[01;36m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[7.720899] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/shared_ptr.h:349:2:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[7.721036] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:83:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Subscription<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void>, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::Header_<std::allocator<void> >, std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kstd::unique_ptr<_Tp, _Dp>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.721168] (coordinator) StderrLine: {'line': b'   83 |         sub_opt\x1b[01;36m\x1b[K)\x1b[m\x1b[K\n'}
+[7.721293] (coordinator) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[7.748235] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<int> hb_check()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.748771] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:154:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[7.748985] (coordinator) StderrLine: {'line': b'  154 |     rclcpp::Time now = \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_clock()->now();\n'}
+[7.749126] (coordinator) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[7.751424] (-) TimerEvent: {}
+[7.762044] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:158:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Klast_hb_map_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.762535] (coordinator) StderrLine: {'line': b'  158 |         auto hb_timestamp = \x1b[01;31m\x1b[Klast_hb_map_\x1b[m\x1b[K.find(node_id);\n'}
+[7.762698] (coordinator) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.769224] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:163:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kit_hb\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.769644] (coordinator) StderrLine: {'line': b'  163 |             rclcpp::Duration delta = now - \x1b[01;31m\x1b[Kit_hb\x1b[m\x1b[K->second;\n'}
+[7.769809] (coordinator) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[7.782588] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:164:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KHB_TIMEOUT_NS\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.783047] (coordinator) StderrLine: {'line': b'  164 |             if (delta < \x1b[01;31m\x1b[KHB_TIMEOUT_NS\x1b[m\x1b[K)\n'}
+[7.783208] (coordinator) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.790744] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:167:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Khb_node\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.791232] (coordinator) StderrLine: {'line': b'  167 |         \x1b[01;31m\x1b[Khb_node\x1b[m\x1b[K[node_id] = is_alive ? 1 : 0;\n'}
+[7.791416] (coordinator) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.798436] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:169:12:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Khb_node\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.798823] (coordinator) StderrLine: {'line': b'  169 |     return \x1b[01;31m\x1b[Khb_node\x1b[m\x1b[K;\n'}
+[7.798977] (coordinator) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.815230] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Coordinator::FrameCallback(const FramePtr&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.815757] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:200:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Knew_frame_ns_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Knew_frame_ns\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[7.815963] (coordinator) StderrLine: {'line': b'  200 |     \x1b[01;31m\x1b[Knew_frame_ns_\x1b[m\x1b[K.store(frame_time.nanoseconds(), std::memory_order_relaxed);\n'}
+[7.816112] (coordinator) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.816316] (coordinator) StderrLine: {'line': b'      |     \x1b[32m\x1b[Knew_frame_ns\x1b[m\x1b[K\n'}
+[7.851603] (-) TimerEvent: {}
+[7.952259] (-) TimerEvent: {}
+[8.052979] (-) TimerEvent: {}
+[8.153691] (-) TimerEvent: {}
+[8.254435] (-) TimerEvent: {}
+[8.355134] (-) TimerEvent: {}
+[8.455850] (-) TimerEvent: {}
+[8.556612] (-) TimerEvent: {}
+[8.657300] (-) TimerEvent: {}
+[8.757981] (-) TimerEvent: {}
+[8.858676] (-) TimerEvent: {}
+[8.959384] (-) TimerEvent: {}
+[9.060084] (-) TimerEvent: {}
+[9.160806] (-) TimerEvent: {}
+[9.261479] (-) TimerEvent: {}
+[9.362149] (-) TimerEvent: {}
+[9.462807] (-) TimerEvent: {}
+[9.563485] (-) TimerEvent: {}
+[9.664182] (-) TimerEvent: {}
+[9.764848] (-) TimerEvent: {}
+[9.865524] (-) TimerEvent: {}
+[9.966202] (-) TimerEvent: {}
+[10.066910] (-) TimerEvent: {}
+[10.167595] (-) TimerEvent: {}
+[10.268295] (-) TimerEvent: {}
+[10.368968] (-) TimerEvent: {}
+[10.469658] (-) TimerEvent: {}
+[10.570336] (-) TimerEvent: {}
+[10.671008] (-) TimerEvent: {}
+[10.771685] (-) TimerEvent: {}
+[10.872387] (-) TimerEvent: {}
+[10.900069] (coordinator) StderrLine: {'line': b'make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:63: CMakeFiles/coordinator_node.dir/src/main.cpp.o] Error 1\n'}
+[10.900651] (coordinator) StderrLine: {'line': b'make[2]: *** Waiting for unfinished jobs....\n'}
+[10.972552] (-) TimerEvent: {}
+[11.073253] (-) TimerEvent: {}
+[11.173985] (-) TimerEvent: {}
+[11.274723] (-) TimerEvent: {}
+[11.375450] (-) TimerEvent: {}
+[11.476196] (-) TimerEvent: {}
+[11.576922] (-) TimerEvent: {}
+[11.677622] (-) TimerEvent: {}
+[11.778318] (-) TimerEvent: {}
+[11.879028] (-) TimerEvent: {}
+[11.979719] (-) TimerEvent: {}
+[12.080492] (-) TimerEvent: {}
+[12.181343] (-) TimerEvent: {}
+[12.282054] (-) TimerEvent: {}
+[12.382741] (-) TimerEvent: {}
+[12.483430] (-) TimerEvent: {}
+[12.584158] (-) TimerEvent: {}
+[12.684826] (-) TimerEvent: {}
+[12.785497] (-) TimerEvent: {}
+[12.886167] (-) TimerEvent: {}
+[12.986869] (-) TimerEvent: {}
+[13.087613] (-) TimerEvent: {}
+[13.188340] (-) TimerEvent: {}
+[13.289064] (-) TimerEvent: {}
+[13.389772] (-) TimerEvent: {}
+[13.490465] (-) TimerEvent: {}
+[13.591199] (-) TimerEvent: {}
+[13.691867] (-) TimerEvent: {}
+[13.792554] (-) TimerEvent: {}
+[13.893230] (-) TimerEvent: {}
+[13.993903] (-) TimerEvent: {}
+[14.094621] (-) TimerEvent: {}
+[14.195353] (-) TimerEvent: {}
+[14.296051] (-) TimerEvent: {}
+[14.396958] (-) TimerEvent: {}
+[14.497650] (-) TimerEvent: {}
+[14.598340] (-) TimerEvent: {}
+[14.699007] (-) TimerEvent: {}
+[14.799687] (-) TimerEvent: {}
+[14.900377] (-) TimerEvent: {}
+[14.969042] (coordinator) StderrLine: {'line': b'make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1\n'}
+[14.969761] (coordinator) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2\n'}
+[14.970187] (coordinator) StderrLine: {'line': b'make: *** [Makefile:141: all] Error 2\n'}
+[14.976865] (coordinator) CommandEnded: {'returncode': 2}
+[15.000919] (-) TimerEvent: {}
+[15.016604] (coordinator) JobEnded: {'identifier': 'coordinator', 'rc': 2}
+[15.027855] (-) EventReactorShutdown: {}

@@ -1,0 +1,42 @@
+[0.036s] Invoking command in '/home/avees/coordinator_node/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6
+[0.150s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.260s] [  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[7.426s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kvoid Coordinator::split_scheduling(const std::vector<int>&, uint64_t)[m[K’:
+[7.427s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:285:26:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_time[m[K’ from ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} to ‘[01m[Klong int[m[K’ [[01;35m[K-Wnarrowing[m[K]
+[7.427s]   285 |             roi_.data = {[01;35m[Kframe_time[m[K, x_offset, y_offset, w_offset, h_offset};
+[7.428s]       |                          [01;35m[K^~~~~~~~~~[m[K
+[7.428s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:285:26:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_time[m[K’ from ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} to ‘[01m[Klong int[m[K’ [[01;35m[K-Wnarrowing[m[K]
+[7.431s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:289:66:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_time[m[K’ from ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} to ‘[01m[Klong int[m[K’ [[01;35m[K-Wnarrowing[m[K]
+[7.432s]   289 |             total_roi_msg.data.insert(total_roi_msg.data.end(), {[01;35m[Kframe_time[m[K, x_offset, y_offset, w_offset, h_offset});
+[7.432s]       |                                                                  [01;35m[K^~~~~~~~~~[m[K
+[7.432s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:289:66:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_time[m[K’ from ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} to ‘[01m[Klong int[m[K’ [[01;35m[K-Wnarrowing[m[K]
+[22.582s] [  6%] [32m[1mLinking CXX executable coordinator_node[0m
+[24.398s] /usr/bin/ld: warning: libopencv_imgcodecs.so.4.2, needed by /opt/ros/foxy/lib/libcv_bridge.so, may conflict with libopencv_imgcodecs.so.4.5
+[24.398s] /usr/bin/ld: warning: libopencv_core.so.4.2, needed by /opt/ros/foxy/lib/libcv_bridge.so, may conflict with libopencv_core.so.4.5
+[24.423s] [100%] Built target coordinator_node
+[24.448s] Invoked command in '/home/avees/coordinator_node/build/coordinator' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6
+[24.480s] Invoking command in '/home/avees/coordinator_node/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/avees/coordinator_node/build/coordinator
+[24.497s] -- Install configuration: ""
+[24.498s] -- Installing: /home/avees/coordinator_node/install/coordinator/lib/coordinator/coordinator_node
+[24.509s] -- Set runtime path of "/home/avees/coordinator_node/install/coordinator/lib/coordinator/coordinator_node" to ""
+[24.510s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/launch
+[24.510s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/launch/coordinator_launch.py
+[24.512s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/config
+[24.512s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/config/params.yaml
+[24.512s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/ament_index/resource_index/package_run_dependencies/coordinator
+[24.513s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/ament_index/resource_index/parent_prefix_path/coordinator
+[24.513s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/ament_prefix_path.sh
+[24.513s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/ament_prefix_path.dsv
+[24.513s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/path.sh
+[24.514s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/path.dsv
+[24.514s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.bash
+[24.514s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.sh
+[24.515s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.zsh
+[24.519s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.dsv
+[24.519s] -- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/package.dsv
+[24.519s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/ament_index/resource_index/packages/coordinator
+[24.520s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/cmake/ament_cmake_export_dependencies-extras.cmake
+[24.520s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/cmake/coordinatorConfig.cmake
+[24.521s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/cmake/coordinatorConfig-version.cmake
+[24.521s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/package.xml
+[24.522s] Invoked command in '/home/avees/coordinator_node/build/coordinator' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/avees/coordinator_node/build/coordinator

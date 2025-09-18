@@ -63,7 +63,10 @@ private:
 	void LoadParams();
 	void FrameCallback(const FramePtr& vimba_frame_ptr);
     std::pair<int, int> calculate_split_grid(int N);
-    std::vector<int> hb_check();
+    void hb_check(std_msgs::msg::Int32::SharedPtr msg);
+    std::vector<int> hb_update();
+    void ready_check(std_msgs::msg::Header::SharedPtr msg);
+
     void split_scheduling(const std::vector<int>& ready_node, uint64_t frame_time);
     void update_available_nodes();
     void SaveTimestamp(const TimestampData &data);
@@ -77,9 +80,7 @@ private:
 	std::atomic<bool> ready_waiting_{false};
     std::mutex map_mutex_;
 	
-    // 하트비트 저장: 노드 인덱스 → 시간 로그
-    std::unordered_map<int, NodeStatus> node_status_map_;
-    std::unordered_map<int, bool> ready_map_;   
+    // 하트비트 저장: 노드 인덱스 → 시간 로그 
     std::unordered_map<int, rclcpp::Time> last_hb_map_;
     std::vector<int> cached_available_nodes_;
 
@@ -87,7 +88,7 @@ private:
     // ROS2 인터페이스
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr camera_subscriber_;
     rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr status_subscriber_;
-    std::map<int, rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr> hb_subscribers_;
+    std::map<int, rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr> hb_subscribers_;
     std::map<int, rclcpp::Subscription<std_msgs::msg::Header>::SharedPtr> ready_subscribers_;
     std::map<int, rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::SharedPtr> roi_publishers_;
     rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::SharedPtr roi_total_publisher_;
@@ -97,9 +98,10 @@ private:
     std::ofstream csv_file_;
     TimestampData ts;
     std::mutex ts_mutex_;
+    std::mutex ready_mutex;
 
     // 파라미터 설정
-    static constexpr int MAX_NODES = 10;
+    static constexpr int MAX_NODES = 4;
     std::vector<int> ready_node = std::vector<int>(MAX_NODES, 0);
     std::vector<int> pre_ready_node = std::vector<int>(MAX_NODES, 0);
     std::vector<int> hb_node = std::vector<int>(MAX_NODES, 0);
@@ -113,14 +115,13 @@ private:
     cv::Mat load_image_;
     bool frame_active_{false};
     rclcpp::Time frame_started_at_;
-    std::vector<int> frame_alive_nodes_;
     std::unordered_set<int> frame_ready_nodes_;
     rclcpp::TimerBase::SharedPtr frame_timer_; 
     bool do_split = true;
     //rclcpp::Time new_frame_;
     //rclcpp::Time current_frame_ = 0;
     std::atomic<uint64_t> new_frame_ns_;
-    std::atomic<uint64_t> current_frame_ns_{0};
+    std::atomic<uint64_t> current_frame_{0};
     std::atomic<int> reset_flag = 0;
 };
 

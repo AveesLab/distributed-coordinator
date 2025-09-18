@@ -1,0 +1,116 @@
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:28:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+   28 | #pragma warning(disable:4996)
+      | 
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:30:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+   30 | #pragma warning(default:4996)
+      | 
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/AncillaryData.cpp:[m[K In copy constructor ‘[01m[KAVT::VmbAPI::AncillaryData::AncillaryData(const AVT::VmbAPI::AncillaryData&)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/AncillaryData.cpp:46:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::BasicLockable[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+   46 | [01;35m[KAncillaryData[m[K::AncillaryData( const AncillaryData& )
+      | [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/AncillaryData.cpp:46:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::FeatureContainer[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+In file included from [01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:29[m[K:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.h:[m[K In constructor ‘[01m[KAVT::VmbAPI::BaseFeature::BaseFeature(const VmbFeatureInfo_t*, AVT::VmbAPI::FeatureContainer*)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.h:118:11:[m[K [01;35m[Kwarning: [m[K‘[01m[KAVT::VmbAPI::BaseFeature::m_pImpl[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+  118 |     Impl *[01;35m[Km_pImpl[m[K;
+      |           [01;35m[K^~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.h:108:23:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KAVT::VmbAPI::FeatureContainer* AVT::VmbAPI::BaseFeature::m_pFeatureContainer[m[K’ [[01;35m[K-Wreorder[m[K]
+  108 |     FeatureContainer *[01;35m[Km_pFeatureContainer[m[K;
+      |                       [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:55:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+   55 | [01;35m[KBaseFeature[m[K::BaseFeature( const VmbFeatureInfo_t *pFeatureInfo, FeatureContainer *pFeatureContainer )
+      | [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:[m[K In copy constructor ‘[01m[KAVT::VmbAPI::BaseFeature::BaseFeature(const AVT::VmbAPI::BaseFeature&)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:98:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::BasicLockable[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+   98 | [01;35m[KBaseFeature[m[K::BaseFeature( const BaseFeature& )
+      | [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp:27:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+   27 | #pragma warning(disable:4996)
+      | 
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp:29:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+   29 | #pragma warning(default:4996)
+      | 
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp:[m[K In copy constructor ‘[01m[KAVT::VmbAPI::Camera::Camera(const AVT::VmbAPI::Camera&)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp:490:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::BasicLockable[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+  490 | [01;35m[KCamera[m[K::Camera( const Camera& )
+      | [01;35m[K^~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp:490:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::FeatureContainer[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+In file included from [01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.cpp:29[m[K:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.h:[m[K In constructor ‘[01m[KAVT::VmbAPI::Condition::Condition()[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.h:44:29:[m[K [01;35m[Kwarning: [m[K‘[01m[KAVT::VmbAPI::Condition::m_nWaiterNumber[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+   44 |     unsigned long           [01;35m[Km_nWaiterNumber[m[K;
+      |                             [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.h:43:29:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Klong unsigned int AVT::VmbAPI::Condition::m_nReleaseNumber[m[K’ [[01;35m[K-Wreorder[m[K]
+   43 |     unsigned long           [01;35m[Km_nReleaseNumber[m[K;
+      |                             [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.cpp:34:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+   34 | [01;35m[KCondition[m[K::Condition()
+      | [01;35m[K^~~~~~~~~[m[K
+In file included from [01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp:29[m[K:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.h:[m[K In constructor ‘[01m[KAVT::VmbAPI::ConditionHelper::ConditionHelper()[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.h:63:41:[m[K [01;35m[Kwarning: [m[K‘[01m[KAVT::VmbAPI::ConditionHelper::m_nNumListReads[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+   63 |     int                                 [01;35m[Km_nNumListReads[m[K;
+      |                                         [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.h:61:41:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool AVT::VmbAPI::ConditionHelper::m_bIsWritingList[m[K’ [[01;35m[K-Wreorder[m[K]
+   61 |     bool                                [01;35m[Km_bIsWritingList[m[K;
+      |                                         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp:36:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+   36 | [01;35m[KConditionHelper[m[K::ConditionHelper()
+      | [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Feature.cpp:29:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+   29 | #pragma warning(disable:4996)
+      | 
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Feature.cpp:31:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+   31 | #pragma warning(default:4996)
+      | 
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumEntry.cpp:[m[K In constructor ‘[01m[KAVT::VmbAPI::EnumEntry::PrivateImpl::PrivateImpl(const char*, const char*, const char*, const char*, const char*, VmbFeatureVisibility_t, VmbInt64_t)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumEntry.cpp:41:33:[m[K [01;35m[Kwarning: [m[K‘[01m[KAVT::VmbAPI::EnumEntry::PrivateImpl::m_nValue[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+   41 |     VmbInt64_t                  [01;35m[Km_nValue[m[K;
+      |                                 [01;35m[K^~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumEntry.cpp:40:33:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KVmbFeatureVisibilityType AVT::VmbAPI::EnumEntry::PrivateImpl::m_Visibility[m[K’ [[01;35m[K-Wreorder[m[K]
+   40 |     VmbFeatureVisibilityType    [01;35m[Km_Visibility[m[K;
+      |                                 [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumEntry.cpp:42:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+   42 |     [01;35m[KPrivateImpl[m[K(    const char              *pStrName,
+      |     [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Feature.cpp:[m[K In member function ‘[01m[KVmbErrorType AVT::VmbAPI::Feature::SetValue(const VmbInt32_t&)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Feature.cpp:115:49:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on cast result type [[01;35m[K-Wignored-qualifiers[m[K]
+  115 |     return m_pImpl->SetValue( (const VmbInt64_t)[01;35m[KrnValue[m[K );
+      |                                                 [01;35m[K^~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp:[m[K In copy constructor ‘[01m[KAVT::VmbAPI::FeatureContainer::FeatureContainer(const AVT::VmbAPI::FeatureContainer&)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp:53:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::BasicLockable[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+   53 | [01;35m[KFeatureContainer[m[K::FeatureContainer( const FeatureContainer& )
+      | [01;35m[K^~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.cpp:28[m[K:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.h:[m[K In constructor ‘[01m[KAVT::VmbAPI::FrameHandler::FrameHandler(AVT::VmbAPI::FramePtr, AVT::VmbAPI::IFrameObserverPtr)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.h:56:29:[m[K [01;35m[Kwarning: [m[K‘[01m[KAVT::VmbAPI::FrameHandler::m_pFrame[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+   56 |     FramePtr                [01;35m[Km_pFrame[m[K;
+      |                             [01;35m[K^~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.h:55:29:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KAVT::VmbAPI::IFrameObserverPtr AVT::VmbAPI::FrameHandler::m_pObserver[m[K’ [[01;35m[K-Wreorder[m[K]
+   55 |     IFrameObserverPtr       [01;35m[Km_pObserver[m[K;
+      |                             [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.cpp:36:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+   36 | [01;35m[KFrameHandler[m[K::FrameHandler( FramePtr pFrame, IFrameObserverPtr pFrameObserver )
+      | [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp:27:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+   27 | #pragma warning(disable:4996)
+      | 
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp:29:[m[K [01;35m[Kwarning: [m[Kignoring #pragma warning  [[01;35m[K-Wunknown-pragmas[m[K]
+   29 | #pragma warning(default:4996)
+      | 
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp:[m[K In copy constructor ‘[01m[KAVT::VmbAPI::Interface::Interface(const AVT::VmbAPI::Interface&)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp:54:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::BasicLockable[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+   54 | [01;35m[KInterface[m[K::Interface( const Interface& )
+      | [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp:54:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::FeatureContainer[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Semaphore.cpp:[m[K In constructor ‘[01m[KAVT::VmbAPI::Semaphore::Semaphore(int, int)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Semaphore.cpp:37:38:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KnMax[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   37 | Semaphore::Semaphore( int nInit, [01;35m[Kint nMax[m[K )
+      |                                  [01;35m[K~~~~^~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp:[m[K In copy constructor ‘[01m[KAVT::VmbAPI::VimbaSystem::VimbaSystem(const AVT::VmbAPI::VimbaSystem&)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp:970:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::BasicLockable[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+  970 | [01;35m[KVimbaSystem[m[K::VimbaSystem( const VimbaSystem& )
+      | [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp:970:1:[m[K [01;35m[Kwarning: [m[Kbase class ‘[01m[Kclass AVT::VmbAPI::FeatureContainer[m[K’ should be explicitly initialized in the copy constructor [[01;35m[K-Wextra[m[K]
+/usr/bin/ld: warning: libopencv_imgcodecs.so.4.2, needed by /opt/ros/foxy/lib/libcv_bridge.so, may conflict with libopencv_imgcodecs.so.4.5
+/usr/bin/ld: warning: libopencv_core.so.4.2, needed by /opt/ros/foxy/lib/libcv_bridge.so, may conflict with libopencv_core.so.4.5

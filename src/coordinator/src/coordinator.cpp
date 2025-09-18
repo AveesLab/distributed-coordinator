@@ -17,75 +17,15 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
     for (int node_id = 1; node_id <= 5; ++node_id)
     {
         std::string hb_topic = "/hb/node_" + std::to_string(node_id);
-        hb_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Bool>(hb_topic, 10,
-            [this, node_id](std_msgs::msg::Bool::SharedPtr msg){
-                if (msg->data){
-                    std::lock_guard<std::mutex> lock(map_mutex_);
-                    last_hb_map_[node_id] = this->get_clock()->now();
-                }
-            }, sub_opt);
+        hb_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Int32>(hb_topic, 10, std::bind(&Coordinator::hb_check, this, _1),sub_opt);
     }
 
     // Ready flag subscriber (1~4: computing node only)
     for (int node_id = 1; node_id <= 4; ++node_id)
-    {
+    {   
+        std::lock_guard<std::mutex> lock(ready_mutex);
         std::string ready_topic = "/ready_flag/node_" + std::to_string(node_id);
-        ready_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Header>(ready_topic, 10,
-            [this, node_id](std_msgs::msg::Header::SharedPtr msg)
-            {
-                //rclcpp::Time ready_frame_(msg->stamp.sec, msg->stamp.nanosec, RCL_ROS_TIME);
-                uint64_t ready_frame_ = (uint64_t)msg->stamp.sec * 1000000000ULL + msg->stamp.nanosec;
-                int node_index = std::stoi(msg->frame_id);
-                uint64_t new_frame_ = new_frame_ns_.load(std::memory_order_relaxed);
-                uint64_t current_frame_ = current_frame_ns_.load(std::memory_order_relaxed);
-                //rclcpp::Time new_frame_(ns);
-                //rclcpp::Time current_frame_(cur_ns);
-
-                if (ready_frame_ != new_frame_)
-                {
-                    return; 
-                }
-                else //(ready_frame_ == new_frame_)
-                {
-                    std::cout << "current frame: " << current_frame_ << "| new frame: " << new_frame_ << std::endl;
-                    if(current_frame_ == 0 || current_frame_ == new_frame_)
-                    {                            
-                        {
-                            std::lock_guard<std::mutex> lock(map_mutex_);
-                            ready_node[node_index] = 1;
-                            current_frame_ns_.store(new_frame_, std::memory_order_relaxed);
-                            current_frame_ = new_frame_;
-
-                            if( ready_node == hb_check() )  
-                            {
-                                split_scheduling(ready_node, current_frame_);
-                                std::fill(ready_node.begin(), ready_node.end(), 0);
-                                std::fill(pre_ready_node.begin(), pre_ready_node.end(), 0);
-                                current_frame_ns_ = 0;
-                            }
-                            else pre_ready_node[node_index] = 1;
-                        }
-                    
-                    }                        
-                    else //(current_frame_ != 0 && current_frame_ != new_frame_)
-                    {
-                        if(reset_flag == 0) 
-                        { 
-                            std::fill(ready_node.begin(), ready_node.end(), 0); 
-                            reset_flag = 1; 
-                        }
-                        ready_node[node_index] = 1;
-                        if(ready_node == vector_AND(pre_ready_node, hb_check())) 
-                        {
-                            reset_flag = 0;
-                            split_scheduling(ready_node, current_frame_);
-                            std::fill(ready_node.begin(), ready_node.end(), 0);
-                            std::fill(pre_ready_node.begin(), pre_ready_node.end(), 0);
-                            current_frame_ns_ = 0;
-                        }
-                    }
-                }
-            }, sub_opt);
+        ready_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Header>(ready_topic, 10, std::bind(&Coordinator::ready_check, this, _1),sub_opt);
     }
 
 	for (int i = 1; i <= 4; ++i)
@@ -154,24 +94,76 @@ std::vector<int> Coordinator::vector_AND(const std::vector<int>& a, const std::v
     return result;
 }
 
-std::vector<int> Coordinator::hb_check()
+void Coordinator::hb_check(std_msgs::msg::Int32::SharedPtr msg) 
+{
+    if (msg->data) {
+        int node_id = msg->data;
+        hb_node[node_id] = 1;
+        last_hb_map_[node_id] = this->get_clock()->now();
+    }
+}
+
+std::vector<int> Coordinator::hb_update()
 {   
     rclcpp::Time now = this->get_clock()->now();
-
-    for (int node_id = 1; node_id <= 4; ++node_id)
-    {
-        auto hb_timestamp = last_hb_map_.find(node_id);
-        bool is_alive = false;
-
-        if (hb_timestamp != last_hb_map_.end())
-        {
-            rclcpp::Duration delta = now - hb_timestamp->second;
-            if (delta < HB_TIMEOUT_NS)
-                is_alive = true;
+    for (int node_id = 1; node_id <= MAX_NODES; ++node_id) {
+        auto it = last_hb_map_.find(node_id);
+        if (it != last_hb_map_.end()) {
+            rclcpp::Duration delta = now - it->second;
+            if (delta > HB_TIMEOUT_NS) {
+                hb_node[node_id] = 0;
+            }
         }
-        hb_node[node_id] = is_alive ? 1 : 0;
     }
     return hb_node;   
+}
+
+void Coordinator::ready_check(std_msgs::msg::Header::SharedPtr msg)
+{
+    //rclcpp::Time ready_frame_(msg->stamp.sec, msg->stamp.nanosec, RCL_ROS_TIME);
+    uint64_t ready_frame_ = (uint64_t)msg->stamp.sec * 1000000000ULL + msg->stamp.nanosec;
+    uint64_t new_frame_ = new_frame_ns_.load(std::memory_order_relaxed);
+    int node_index = std::stoi(msg->frame_id);
+    RCLCPP_INFO(this->get_logger(), "ReadyFlag from node_%d, frame_id=%s, ready_frame=%lu new_frame=%lu current_frame=%lu ",node_index, msg->frame_id.c_str(), ready_frame_, new_frame_);    
+    if (ready_frame_ != new_frame_)
+    {
+        return; 
+    }
+    else //(ready_frame_ == new_frame_)
+    {
+        
+        if(current_frame_ == 0 || current_frame_ == new_frame_)
+        {                            
+                ready_node[node_index] = 1;
+                current_frame_.store(new_frame_, std::memory_order_relaxed);
+
+                if( ready_node == hb_update() )  
+                {
+                    split_scheduling(ready_node, current_frame_);
+                    std::fill(ready_node.begin(), ready_node.end(), 0);
+                    std::fill(pre_ready_node.begin(), pre_ready_node.end(), 0);
+                    current_frame_.store(0, std::memory_order_relaxed);
+                }
+                else pre_ready_node[node_index] = 1;  
+        }                        
+        else //(current_frame_ != 0 && current_frame_ != new_frame_)
+        {
+            if(reset_flag == 0) 
+            { 
+                std::fill(ready_node.begin(), ready_node.end(), 0); 
+                reset_flag = 1; 
+            }
+            ready_node[node_index] = 1;
+            if(ready_node == vector_AND(pre_ready_node, hb_update())) 
+            {
+                reset_flag = 0;
+                split_scheduling(ready_node, current_frame_);
+                std::fill(ready_node.begin(), ready_node.end(), 0);
+                std::fill(pre_ready_node.begin(), pre_ready_node.end(), 0);
+                current_frame_.store(0, std::memory_order_relaxed);
+            }
+        }
+    }
 }
 
 std::pair<int, int> Coordinator::calculate_split_grid(int N)
@@ -206,7 +198,7 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
     
     ts.start_framesensor = frame_time.nanoseconds() / 1000;
 
-    RCLCPP_INFO(this->get_logger(), "Frame timestamp: %.6f", frame_time.seconds());
+    //RCLCPP_INFO(this->get_logger(), "Frame timestamp: %.6f", frame_time.seconds());
     {
         std::lock_guard<std::mutex> lock(map_mutex_);
         saved_time_ = frame_time;
@@ -229,6 +221,8 @@ void Coordinator::split_scheduling(const std::vector<int>& ready_node, uint64_t 
 {
     ts.start_split_preprocess = get_time_in_ms();
     std::vector<int> avail_nodes = ready_node;
+    std::vector<int> avail_nodes_index;  
+
     //int64_t frame_us = frame_time;
 
     if (avail_nodes.empty()) {
@@ -240,8 +234,15 @@ void Coordinator::split_scheduling(const std::vector<int>& ready_node, uint64_t 
     
     ts.start_split = get_time_in_ms();
 
-    int N = static_cast<int>(avail_nodes.size());
+    int N = static_cast<int>(std::count(avail_nodes.begin(), avail_nodes.end(), 1));
     auto [cols,rows] = calculate_split_grid(N);
+    std::cout << "Num of availnode : " << N << std::endl;
+
+    for (size_t i = 0; i < avail_nodes.size(); i++) {
+        if (avail_nodes[i] == 1) {
+            avail_nodes_index.push_back(i);
+        }
+    }
 
     // sensor_msgs::Image -> cv::Mat
     cv_bridge::CvImagePtr cv_ptr;
@@ -270,21 +271,18 @@ void Coordinator::split_scheduling(const std::vector<int>& ready_node, uint64_t 
     {
         for (int c = 0; c < cols; ++c)
         {
-            if (count >= N) break;
 
-            int node_index = avail_nodes[count];
+            int node_index = avail_nodes_index[count];
             int x_offset = c * crop_w;
             int y_offset = r * crop_h;
             int w_offset = std::min(crop_w, img_w - x_offset);
             int h_offset = std::min(crop_h, img_h - y_offset);
 
             std_msgs::msg::Int64MultiArray roi_;
-            roi_.data = {frame_time, x_offset, y_offset, w_offset, h_offset};
+            roi_.data = {static_cast<int64_t>(frame_time), x_offset, y_offset, w_offset, h_offset};
+            roi_msg.emplace_back(node_index, roi_);
+            total_roi_msg.data.insert(total_roi_msg.data.end(), {static_cast<int64_t>(frame_time), x_offset, y_offset, w_offset, h_offset});
 
-            roi_msg.emplace_back(node_index, roi_);    
-
-            total_roi_msg.data.insert(total_roi_msg.data.end(), {frame_time, x_offset, y_offset, w_offset, h_offset});
-            
             if (count == 0) 
             {
                 ts.roi_node_index = node_index;
@@ -293,6 +291,7 @@ void Coordinator::split_scheduling(const std::vector<int>& ready_node, uint64_t 
             count++;
         }
     }
+    
     ts.end_split = get_time_in_ms();
     
     ts.start_roi_ethernet = get_time_in_ms();

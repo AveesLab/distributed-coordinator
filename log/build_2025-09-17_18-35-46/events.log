@@ -1,0 +1,446 @@
+[0.000000] (-) TimerEvent: {}
+[0.000634] (coordinator) JobQueued: {'identifier': 'coordinator', 'dependencies': OrderedDict()}
+[0.001246] (coordinator) JobStarted: {'identifier': 'coordinator'}
+[0.025166] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'cmake'}
+[0.026832] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'build'}
+[0.028481] (coordinator) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avees/coordinator_node/build/coordinator', '--', '-j6', '-l6'], 'cwd': '/home/avees/coordinator_node/build/coordinator', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'avees'), ('SSH_AGENT_PID', '2693'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/avees/data-domain/install/monitor/lib:/home/avees/data-domain/install/avt_vimba_camera/lib:/home/avees/data-domain/install/avt_vimba_camera_msgs/lib:/usr/local/cuda-11.4/lib64:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/opt/Vimba_6_0/VimbaC/DynamicLib/arm_64bit:/opt/Vimba_6_0/VimbaCPP/DynamicLib/arm_64bit'), ('HOME', '/home/avees'), ('OLDPWD', '/home/avees'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2502'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3907'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/avees/coordinator_node/install:/home/avees/data-domain/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'avees'), ('JOURNAL_STREAM', '8:61829'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'avees'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.4/bin:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2728,unix/ubuntu:/tmp/.ICE-unix/2728'), ('INVOCATION_ID', '5a8ec2e1fb98494c8eb2d25b50085b29'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '103'), ('AMENT_PREFIX_PATH', '/home/avees/data-domain/install/monitor:/home/avees/data-domain/install/avt_vimba_camera:/home/avees/data-domain/install/avt_vimba_camera_msgs:/home/avees/coordinator_node/install/coordinator:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9deb70b4-5cb9-4e87-b4cb-2d9e1e38fd0b'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/avees/coordinator_node/build/coordinator'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/avees/data-domain/install/avt_vimba_camera_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', ':/opt/Vimba_6_0/VimbaGigETL/CTI/arm_64bit'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/avees/data-domain/install/monitor:/home/avees/data-domain/install/avt_vimba_camera:/home/avees/data-domain/install/avt_vimba_camera_msgs:/home/avees/coordinator_node/install/coordinator:/opt/ros/foxy')]), 'shell': False}
+[0.099491] (-) TimerEvent: {}
+[0.156435] (coordinator) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target coordinator_node\x1b[0m\n'}
+[0.199627] (-) TimerEvent: {}
+[0.269386] (coordinator) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o\x1b[0m\n'}
+[0.299973] (-) TimerEvent: {}
+[0.400659] (-) TimerEvent: {}
+[0.501374] (-) TimerEvent: {}
+[0.602117] (-) TimerEvent: {}
+[0.702818] (-) TimerEvent: {}
+[0.803553] (-) TimerEvent: {}
+[0.904366] (-) TimerEvent: {}
+[1.005068] (-) TimerEvent: {}
+[1.105841] (-) TimerEvent: {}
+[1.206633] (-) TimerEvent: {}
+[1.307514] (-) TimerEvent: {}
+[1.408360] (-) TimerEvent: {}
+[1.509074] (-) TimerEvent: {}
+[1.609798] (-) TimerEvent: {}
+[1.710759] (-) TimerEvent: {}
+[1.811629] (-) TimerEvent: {}
+[1.912542] (-) TimerEvent: {}
+[2.013428] (-) TimerEvent: {}
+[2.114312] (-) TimerEvent: {}
+[2.215180] (-) TimerEvent: {}
+[2.316047] (-) TimerEvent: {}
+[2.416941] (-) TimerEvent: {}
+[2.517844] (-) TimerEvent: {}
+[2.618742] (-) TimerEvent: {}
+[2.719632] (-) TimerEvent: {}
+[2.820495] (-) TimerEvent: {}
+[2.921289] (-) TimerEvent: {}
+[3.022279] (-) TimerEvent: {}
+[3.123132] (-) TimerEvent: {}
+[3.223956] (-) TimerEvent: {}
+[3.324983] (-) TimerEvent: {}
+[3.425834] (-) TimerEvent: {}
+[3.526682] (-) TimerEvent: {}
+[3.627422] (-) TimerEvent: {}
+[3.728169] (-) TimerEvent: {}
+[3.829041] (-) TimerEvent: {}
+[3.929807] (-) TimerEvent: {}
+[4.030500] (-) TimerEvent: {}
+[4.131196] (-) TimerEvent: {}
+[4.231956] (-) TimerEvent: {}
+[4.332662] (-) TimerEvent: {}
+[4.433488] (-) TimerEvent: {}
+[4.534403] (-) TimerEvent: {}
+[4.635225] (-) TimerEvent: {}
+[4.736144] (-) TimerEvent: {}
+[4.836998] (-) TimerEvent: {}
+[4.937730] (-) TimerEvent: {}
+[5.038546] (-) TimerEvent: {}
+[5.139306] (-) TimerEvent: {}
+[5.240185] (-) TimerEvent: {}
+[5.341040] (-) TimerEvent: {}
+[5.441890] (-) TimerEvent: {}
+[5.542723] (-) TimerEvent: {}
+[5.643558] (-) TimerEvent: {}
+[5.744411] (-) TimerEvent: {}
+[5.845214] (-) TimerEvent: {}
+[5.946038] (-) TimerEvent: {}
+[6.046841] (-) TimerEvent: {}
+[6.147697] (-) TimerEvent: {}
+[6.248567] (-) TimerEvent: {}
+[6.349408] (-) TimerEvent: {}
+[6.450234] (-) TimerEvent: {}
+[6.551076] (-) TimerEvent: {}
+[6.651956] (-) TimerEvent: {}
+[6.752819] (-) TimerEvent: {}
+[6.853676] (-) TimerEvent: {}
+[6.954512] (-) TimerEvent: {}
+[7.055348] (-) TimerEvent: {}
+[7.156226] (-) TimerEvent: {}
+[7.257053] (-) TimerEvent: {}
+[7.272445] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Coordinator::split_scheduling(const std::vector<int>&, const rclcpp::Time&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.273561] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:297:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<std_msgs::msg::Int64MultiArray_<std::allocator<void> > >::publish(const std_msgs::msg::Int32MultiArray_<std::allocator<void> >&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.273912] (coordinator) StderrLine: {'line': b'  297 |         if (it != roi_publishers_.end()) it->second->publish(msg\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[7.274168] (coordinator) StderrLine: {'line': b'      |                                                                 \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[7.274404] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31\x1b[m\x1b[K,\n'}
+[7.274634] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[7.274857] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[7.275065] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24\x1b[m\x1b[K,\n'}
+[7.275267] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[7.275466] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[7.275666] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor.hpp:33\x1b[m\x1b[K,\n'}
+[7.275934] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26\x1b[m\x1b[K,\n'}
+[7.276192] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[7.276428] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[7.276667] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[7.276900] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[7.277134] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/publisher.hpp:185:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(std::unique_ptr<MessageT, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Alloc>::rebind_traits<MessageT>::allocator_type>::rebind_alloc<MessageT>, typename std::allocator<void>::rebind<_Tp1>::other>::value, std::default_delete<_Tp>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Alloc>::rebind_traits<MessageT>::allocator_type> >::type>) [with MessageT = std_msgs::msg::Int64MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>; typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Alloc>::rebind_traits<MessageT>::allocator_type>::rebind_alloc<MessageT>, typename std::allocator<void>::rebind<_Tp1>::other>::value, std::default_delete<_Tp>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Alloc>::rebind_traits<MessageT>::allocator_type> >::type = std::default_delete<std_msgs::msg::Int64MultiArray_<std::allocator<void> > >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.277414] (coordinator) StderrLine: {'line': b'  185 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(std::unique_ptr<MessageT, MessageDeleter> msg)\n'}
+[7.277650] (coordinator) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.277911] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/publisher.hpp:185:53:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kstd::unique_ptr<std_msgs::msg::Int64MultiArray_<std::allocator<void> >, std::default_delete<std_msgs::msg::Int64MultiArray_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.278164] (coordinator) StderrLine: {'line': b'  185 |   publish(\x1b[01;36m\x1b[Kstd::unique_ptr<MessageT, MessageDeleter> msg\x1b[m\x1b[K)\n'}
+[7.278426] (coordinator) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[7.278666] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/publisher.hpp:209:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const MessageT&) [with MessageT = std_msgs::msg::Int64MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.278939] (coordinator) StderrLine: {'line': b'  209 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const MessageT & msg)\n'}
+[7.279176] (coordinator) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.279408] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/publisher.hpp:209:28:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst std_msgs::msg::Int64MultiArray_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.279678] (coordinator) StderrLine: {'line': b'  209 |   publish(\x1b[01;36m\x1b[Kconst MessageT & msg\x1b[m\x1b[K)\n'}
+[7.279960] (coordinator) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[7.280203] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/publisher.hpp:226:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rcl_serialized_message_t&) [with MessageT = std_msgs::msg::Int64MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>; rcl_serialized_message_t = rcutils_uint8_array_t]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.280460] (coordinator) StderrLine: {'line': b'  226 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const rcl_serialized_message_t & serialized_msg)\n'}
+[7.280697] (coordinator) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.280929] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/publisher.hpp:226:44:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst rcl_serialized_message_t&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kconst rcutils_uint8_array_t&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[7.281175] (coordinator) StderrLine: {'line': b'  226 |   publish(\x1b[01;36m\x1b[Kconst rcl_serialized_message_t & serialized_msg\x1b[m\x1b[K)\n'}
+[7.281408] (coordinator) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.281639] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/publisher.hpp:232:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rclcpp::SerializedMessage&) [with MessageT = std_msgs::msg::Int64MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.281877] (coordinator) StderrLine: {'line': b'  232 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(const SerializedMessage & serialized_msg)\n'}
+[7.282133] (coordinator) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.282364] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/publisher.hpp:232:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst rclcpp::SerializedMessage&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.282600] (coordinator) StderrLine: {'line': b'  232 |   publish(\x1b[01;36m\x1b[Kconst SerializedMessage & serialized_msg\x1b[m\x1b[K)\n'}
+[7.282831] (coordinator) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.283064] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/publisher.hpp:246:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(rclcpp::LoanedMessage<MessageT, AllocatorT>&&) [with MessageT = std_msgs::msg::Int64MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.283305] (coordinator) StderrLine: {'line': b'  246 |   \x1b[01;36m\x1b[Kpublish\x1b[m\x1b[K(rclcpp::LoanedMessage<MessageT, AllocatorT> && loaned_msg)\n'}
+[7.283539] (coordinator) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.283788] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/publisher.hpp:246:58:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::LoanedMessage<std_msgs::msg::Int64MultiArray_<std::allocator<void> >, std::allocator<void> >&&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[7.284068] (coordinator) StderrLine: {'line': b'  246 |   publish(\x1b[01;36m\x1b[Krclcpp::LoanedMessage<MessageT, AllocatorT> && loaned_msg\x1b[m\x1b[K)\n'}
+[7.284307] (coordinator) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.357252] (-) TimerEvent: {}
+[7.458089] (-) TimerEvent: {}
+[7.558951] (-) TimerEvent: {}
+[7.659831] (-) TimerEvent: {}
+[7.760653] (-) TimerEvent: {}
+[7.861477] (-) TimerEvent: {}
+[7.962297] (-) TimerEvent: {}
+[8.063134] (-) TimerEvent: {}
+[8.164036] (-) TimerEvent: {}
+[8.264893] (-) TimerEvent: {}
+[8.365747] (-) TimerEvent: {}
+[8.466563] (-) TimerEvent: {}
+[8.567454] (-) TimerEvent: {}
+[8.668354] (-) TimerEvent: {}
+[8.769185] (-) TimerEvent: {}
+[8.869888] (-) TimerEvent: {}
+[8.970604] (-) TimerEvent: {}
+[9.071351] (-) TimerEvent: {}
+[9.172205] (-) TimerEvent: {}
+[9.272937] (-) TimerEvent: {}
+[9.373638] (-) TimerEvent: {}
+[9.474445] (-) TimerEvent: {}
+[9.575146] (-) TimerEvent: {}
+[9.636858] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33\x1b[m\x1b[K,\n'}
+[9.637409] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/bits/allocator.h:46\x1b[m\x1b[K,\n'}
+[9.637635] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:63\x1b[m\x1b[K,\n'}
+[9.637798] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.637947] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.638086] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.638221] (coordinator) StderrLine: {'line': b'/usr/include/c++/9/ext/new_allocator.h: In instantiation of \xe2\x80\x98\x1b[01m\x1b[Kvoid __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >; _Args = {int&, std_msgs::msg::Int64MultiArray_<std::allocator<void> >&}; _Tp = std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.638422] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/alloc_traits.h:483:4:\x1b[m\x1b[K   required from \xe2\x80\x98\x1b[01m\x1b[Kstatic void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >; _Args = {int&, std_msgs::msg::Int64MultiArray_<std::allocator<void> >&}; _Tp = std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >; std::allocator_traits<std::allocator<_Tp1> >::allocator_type = std::allocator<std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > > >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.638600] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/vector.tcc:115:30:\x1b[m\x1b[K   required from \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::emplace_back(_Args&& ...) [with _Args = {int&, std_msgs::msg::Int64MultiArray_<std::allocator<void> >&}; _Tp = std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >; _Alloc = std::allocator<std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > > >; std::vector<_Tp, _Alloc>::reference = std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >&]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.638748] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:278:50:\x1b[m\x1b[K   required from here\n'}
+[9.638885] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/ext/new_allocator.h:146:4:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::pair(int&, std_msgs::msg::Int64MultiArray_<std::allocator<void> >&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.639030] (coordinator) StderrLine: {'line': b'  146 |  { \x1b[01;31m\x1b[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)\x1b[m\x1b[K; }\n'}
+[9.639160] (coordinator) StderrLine: {'line': b'      |    \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.639305] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/bits/stl_algobase.h:64\x1b[m\x1b[K,\n'}
+[9.639437] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:62\x1b[m\x1b[K,\n'}
+[9.639597] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.639735] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.640092] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.640249] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:436:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class ... _Args1, long unsigned int ..._Indexes1, class ... _Args2, long unsigned int ..._Indexes2> std::pair<_T1, _T2>::pair(std::tuple<_Args1 ...>&, std::tuple<_Args2 ...>&, std::_Index_tuple<_Indexes1 ...>, std::_Index_tuple<_Indexes2 ...>)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.640397] (coordinator) StderrLine: {'line': b'  436 |         \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(tuple<_Args1...>&, tuple<_Args2...>&,\n'}
+[9.640532] (coordinator) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.640731] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:436:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.640911] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33\x1b[m\x1b[K,\n'}
+[9.641717] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/bits/allocator.h:46\x1b[m\x1b[K,\n'}
+[9.641862] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:63\x1b[m\x1b[K,\n'}
+[9.641996] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.642142] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.642274] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.642400] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/ext/new_allocator.h:146:4:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  mismatched types \xe2\x80\x98\x1b[01m\x1b[Kstd::tuple<_Tps ...>\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.642535] (coordinator) StderrLine: {'line': b'  146 |  { \x1b[01;36m\x1b[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)\x1b[m\x1b[K; }\n'}
+[9.642660] (coordinator) StderrLine: {'line': b'      |    \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.642785] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/bits/stl_algobase.h:64\x1b[m\x1b[K,\n'}
+[9.642910] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:62\x1b[m\x1b[K,\n'}
+[9.643033] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.643154] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.643292] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.643433] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:375:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class ... _Args1, class ... _Args2> std::pair<_T1, _T2>::pair(std::piecewise_construct_t, std::tuple<_Args1 ...>, std::tuple<_Args2 ...>)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.643564] (coordinator) StderrLine: {'line': b'  375 |         \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);\n'}
+[9.643688] (coordinator) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.643846] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:375:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.643979] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33\x1b[m\x1b[K,\n'}
+[9.644107] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/bits/allocator.h:46\x1b[m\x1b[K,\n'}
+[9.644231] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:63\x1b[m\x1b[K,\n'}
+[9.644355] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.644480] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.644605] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.644741] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/ext/new_allocator.h:146:4:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Int64MultiArray_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99 is not derived from \xe2\x80\x98\x1b[01m\x1b[Kstd::tuple<_Tps ...>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.644871] (coordinator) StderrLine: {'line': b'  146 |  { \x1b[01;36m\x1b[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)\x1b[m\x1b[K; }\n'}
+[9.644996] (coordinator) StderrLine: {'line': b'      |    \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.645118] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/bits/stl_algobase.h:64\x1b[m\x1b[K,\n'}
+[9.645242] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:62\x1b[m\x1b[K,\n'}
+[9.645363] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.645487] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.645611] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.645739] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:370:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_MoveConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(std::pair<_U1, _U2>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.645885] (coordinator) StderrLine: {'line': b'  370 |  explicit constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(pair<_U1, _U2>&& __p)\n'}
+[9.646009] (coordinator) StderrLine: {'line': b'      |                     \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.646149] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:370:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.646277] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33\x1b[m\x1b[K,\n'}
+[9.646405] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/bits/allocator.h:46\x1b[m\x1b[K,\n'}
+[9.646530] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:63\x1b[m\x1b[K,\n'}
+[9.646653] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.646777] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.646900] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.647023] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/ext/new_allocator.h:146:4:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  mismatched types \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<_T1, _T2>\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.647149] (coordinator) StderrLine: {'line': b'  146 |  { \x1b[01;36m\x1b[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)\x1b[m\x1b[K; }\n'}
+[9.647287] (coordinator) StderrLine: {'line': b'      |    \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.647410] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/bits/stl_algobase.h:64\x1b[m\x1b[K,\n'}
+[9.647532] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:62\x1b[m\x1b[K,\n'}
+[9.647667] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.647804] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.647953] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.648077] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:360:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(std::pair<_U1, _U2>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.648223] (coordinator) StderrLine: {'line': b'  360 |  constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(pair<_U1, _U2>&& __p)\n'}
+[9.648346] (coordinator) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.648467] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:360:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.648594] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33\x1b[m\x1b[K,\n'}
+[9.648719] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/bits/allocator.h:46\x1b[m\x1b[K,\n'}
+[9.648845] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:63\x1b[m\x1b[K,\n'}
+[9.648971] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.649091] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.649213] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.649334] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/ext/new_allocator.h:146:4:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  mismatched types \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<_T1, _T2>\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.649461] (coordinator) StderrLine: {'line': b'  146 |  { \x1b[01;36m\x1b[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)\x1b[m\x1b[K; }\n'}
+[9.649586] (coordinator) StderrLine: {'line': b'      |    \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.649707] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/bits/stl_algobase.h:64\x1b[m\x1b[K,\n'}
+[9.649827] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:62\x1b[m\x1b[K,\n'}
+[9.649959] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.650078] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.650199] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.650321] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:350:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U1, class _U2, typename std::enable_if<(_MoveConstructiblePair<_U1, _U2>() && (! _ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.650469] (coordinator) StderrLine: {'line': b'  350 |  explicit constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(_U1&& __x, _U2&& __y)\n'}
+[9.650596] (coordinator) StderrLine: {'line': b'      |                     \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.650717] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:350:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.650841] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:349:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno type named \xe2\x80\x98\x1b[01m\x1b[Ktype\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kstruct std::enable_if<false, bool>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.650967] (coordinator) StderrLine: {'line': b'  349 |                          bool>::type=\x1b[01;31m\x1b[Kfalse\x1b[m\x1b[K>\n'}
+[9.651090] (coordinator) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[9.651211] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:341:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U1, class _U2, typename std::enable_if<(_MoveConstructiblePair<_U1, _U2>() && _ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.651339] (coordinator) StderrLine: {'line': b'  341 |  constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(_U1&& __x, _U2&& __y)\n'}
+[9.651462] (coordinator) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.651584] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:341:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.651708] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:340:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno type named \xe2\x80\x98\x1b[01m\x1b[Ktype\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kstruct std::enable_if<false, bool>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.651907] (coordinator) StderrLine: {'line': b'  340 |                          bool>::type=\x1b[01;31m\x1b[Ktrue\x1b[m\x1b[K>\n'}
+[9.652054] (coordinator) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.652184] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:332:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U2, typename std::enable_if<_CopyMovePair<false, int, _U2>(), bool>::type <anonymous> > std::pair<_T1, _T2>::pair(const _T1&, _U2&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.652315] (coordinator) StderrLine: {'line': b'  332 |        explicit \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(const _T1& __x, _U2&& __y)\n'}
+[9.652440] (coordinator) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.652564] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:332:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.652706] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:331:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno type named \xe2\x80\x98\x1b[01m\x1b[Ktype\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kstruct std::enable_if<false, bool>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.652833] (coordinator) StderrLine: {'line': b'  331 |                          bool>::type=\x1b[01;31m\x1b[Kfalse\x1b[m\x1b[K>\n'}
+[9.652957] (coordinator) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[9.653080] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:325:18:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U2, typename std::enable_if<_CopyMovePair<true, int, _U2>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, _U2&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.653212] (coordinator) StderrLine: {'line': b'  325 |        constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(const _T1& __x, _U2&& __y)\n'}
+[9.653338] (coordinator) StderrLine: {'line': b'      |                  \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.653459] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:325:18:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.653583] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:324:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno type named \xe2\x80\x98\x1b[01m\x1b[Ktype\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kstruct std::enable_if<false, bool>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.653703] (coordinator) StderrLine: {'line': b'  324 |                          bool>::type=\x1b[01;31m\x1b[Ktrue\x1b[m\x1b[K>\n'}
+[9.653822] (coordinator) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.653951] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:318:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U1, typename std::enable_if<_MoveCopyPair<false, _U1, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, const _T2&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.654090] (coordinator) StderrLine: {'line': b'  318 |        explicit constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(_U1&& __x, const _T2& __y)\n'}
+[9.654408] (coordinator) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.654591] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:318:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.654736] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:317:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno type named \xe2\x80\x98\x1b[01m\x1b[Ktype\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kstruct std::enable_if<false, bool>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.654869] (coordinator) StderrLine: {'line': b'  317 |                          bool>::type=\x1b[01;31m\x1b[Kfalse\x1b[m\x1b[K>\n'}
+[9.654996] (coordinator) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[9.655119] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:311:18:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U1, typename std::enable_if<_MoveCopyPair<true, _U1, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, const _T2&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.655253] (coordinator) StderrLine: {'line': b'  311 |        constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(_U1&& __x, const _T2& __y)\n'}
+[9.655406] (coordinator) StderrLine: {'line': b'      |                  \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.655533] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:311:18:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.655656] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33\x1b[m\x1b[K,\n'}
+[9.655812] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/bits/allocator.h:46\x1b[m\x1b[K,\n'}
+[9.655956] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:63\x1b[m\x1b[K,\n'}
+[9.656084] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.656210] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.656335] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.656460] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/ext/new_allocator.h:146:4:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  cannot convert \xe2\x80\x98\x1b[01m\x1b[Kstd::forward<std_msgs::msg::Int64MultiArray_<std::allocator<void> >&>((* & __args#1))\x1b[m\x1b[K\xe2\x80\x99 (type \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Int64MultiArray_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99) to type \xe2\x80\x98\x1b[01m\x1b[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.656648] (coordinator) StderrLine: {'line': b'  146 |  { \x1b[01;36m\x1b[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)\x1b[m\x1b[K; }\n'}
+[9.656773] (coordinator) StderrLine: {'line': b'      |    \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.656899] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/bits/stl_algobase.h:64\x1b[m\x1b[K,\n'}
+[9.657019] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:62\x1b[m\x1b[K,\n'}
+[9.657142] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.657261] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.657381] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.657503] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:304:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<_T1, _T2>::pair(std::pair<_T1, _T2>&&) [with _T1 = int; _T2 = std_msgs::msg::Int32MultiArray_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.657631] (coordinator) StderrLine: {'line': b'  304 |       constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(pair&&) = default;\n'}
+[9.657748] (coordinator) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.657866] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:304:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[9.657988] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:303:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<_T1, _T2>::pair(const std::pair<_T1, _T2>&) [with _T1 = int; _T2 = std_msgs::msg::Int32MultiArray_<std::allocator<void> >]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.658131] (coordinator) StderrLine: {'line': b'  303 |       constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(const pair&) = default;\n'}
+[9.658251] (coordinator) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.658370] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:303:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[9.658492] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:300:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_ConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.658642] (coordinator) StderrLine: {'line': b'  300 |  explicit constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(const pair<_U1, _U2>& __p)\n'}
+[9.658768] (coordinator) StderrLine: {'line': b'      |                     \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.658891] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:300:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.659016] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33\x1b[m\x1b[K,\n'}
+[9.659140] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/bits/allocator.h:46\x1b[m\x1b[K,\n'}
+[9.659266] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:63\x1b[m\x1b[K,\n'}
+[9.659388] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.659509] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.659632] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.659753] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/ext/new_allocator.h:146:4:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  mismatched types \xe2\x80\x98\x1b[01m\x1b[Kconst std::pair<_T1, _T2>\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.659907] (coordinator) StderrLine: {'line': b'  146 |  { \x1b[01;36m\x1b[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)\x1b[m\x1b[K; }\n'}
+[9.660031] (coordinator) StderrLine: {'line': b'      |    \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.660155] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/bits/stl_algobase.h:64\x1b[m\x1b[K,\n'}
+[9.660278] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:62\x1b[m\x1b[K,\n'}
+[9.660399] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.660521] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.660645] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.660782] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:291:19:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_ConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.660963] (coordinator) StderrLine: {'line': b'  291 |         constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(const pair<_U1, _U2>& __p)\n'}
+[9.661091] (coordinator) StderrLine: {'line': b'      |                   \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.661218] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:291:19:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.661341] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33\x1b[m\x1b[K,\n'}
+[9.661463] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/bits/allocator.h:46\x1b[m\x1b[K,\n'}
+[9.661587] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:63\x1b[m\x1b[K,\n'}
+[9.661708] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.661830] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.661951] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.662075] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/ext/new_allocator.h:146:4:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  mismatched types \xe2\x80\x98\x1b[01m\x1b[Kconst std::pair<_T1, _T2>\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.662198] (coordinator) StderrLine: {'line': b'  146 |  { \x1b[01;36m\x1b[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)\x1b[m\x1b[K; }\n'}
+[9.662330] (coordinator) StderrLine: {'line': b'      |    \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.662454] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/bits/stl_algobase.h:64\x1b[m\x1b[K,\n'}
+[9.662578] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:62\x1b[m\x1b[K,\n'}
+[9.662699] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.662820] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.662943] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.663065] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:269:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U1, class _U2, typename std::enable_if<(_ConstructiblePair<_U1, _U2>() && (! _ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, const _T2&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.663193] (coordinator) StderrLine: {'line': b'  269 |       explicit constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(const _T1& __a, const _T2& __b)\n'}
+[9.663330] (coordinator) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.663455] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:269:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.663577] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:268:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno type named \xe2\x80\x98\x1b[01m\x1b[Ktype\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kstruct std::enable_if<false, bool>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.663700] (coordinator) StderrLine: {'line': b'  268 |                          bool>::type=\x1b[01;31m\x1b[Kfalse\x1b[m\x1b[K>\n'}
+[9.663863] (coordinator) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[9.663993] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:260:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U1, class _U2, typename std::enable_if<(_ConstructiblePair<_U1, _U2>() && _ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, const _T2&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.664123] (coordinator) StderrLine: {'line': b'  260 |       constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K(const _T1& __a, const _T2& __b)\n'}
+[9.664248] (coordinator) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.664374] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:260:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.664499] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33\x1b[m\x1b[K,\n'}
+[9.664620] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/bits/allocator.h:46\x1b[m\x1b[K,\n'}
+[9.664739] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:63\x1b[m\x1b[K,\n'}
+[9.664878] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.665000] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.665136] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.665258] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/ext/new_allocator.h:146:4:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  cannot convert \xe2\x80\x98\x1b[01m\x1b[Kstd::forward<std_msgs::msg::Int64MultiArray_<std::allocator<void> >&>((* & __args#1))\x1b[m\x1b[K\xe2\x80\x99 (type \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Int64MultiArray_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99) to type \xe2\x80\x98\x1b[01m\x1b[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.665388] (coordinator) StderrLine: {'line': b'  146 |  { \x1b[01;36m\x1b[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)\x1b[m\x1b[K; }\n'}
+[9.665510] (coordinator) StderrLine: {'line': b'      |    \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.665629] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/bits/stl_algobase.h:64\x1b[m\x1b[K,\n'}
+[9.665751] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:62\x1b[m\x1b[K,\n'}
+[9.665874] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.665995] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.666126] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.666248] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:242:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U1, class _U2, typename std::enable_if<std::__and_<std::is_default_constructible<_Tp>, std::is_default_constructible<_Dp>, std::__not_<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> > > >::value, bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.666389] (coordinator) StderrLine: {'line': b'  242 |       explicit constexpr \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K()\n'}
+[9.666514] (coordinator) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.666639] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:242:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.666766] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33\x1b[m\x1b[K,\n'}
+[9.666889] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/bits/allocator.h:46\x1b[m\x1b[K,\n'}
+[9.667009] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:63\x1b[m\x1b[K,\n'}
+[9.667129] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.667249] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.667370] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.667488] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/ext/new_allocator.h:146:4:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 0 arguments, 2 provided\n'}
+[9.667610] (coordinator) StderrLine: {'line': b'  146 |  { \x1b[01;36m\x1b[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)\x1b[m\x1b[K; }\n'}
+[9.667733] (coordinator) StderrLine: {'line': b'      |    \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.667876] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/9/bits/stl_algobase.h:64\x1b[m\x1b[K,\n'}
+[9.668002] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:62\x1b[m\x1b[K,\n'}
+[9.668126] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.668247] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.668369] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.668492] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:229:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _U1, class _U2, typename std::enable_if<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> >::value, bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[9.668620] (coordinator) StderrLine: {'line': b'  229 |       _GLIBCXX_CONSTEXPR \x1b[01;36m\x1b[Kpair\x1b[m\x1b[K()\n'}
+[9.668740] (coordinator) StderrLine: {'line': b'      |                          \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.668873] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/bits/stl_pair.h:229:26:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[9.668997] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33\x1b[m\x1b[K,\n'}
+[9.669118] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/bits/allocator.h:46\x1b[m\x1b[K,\n'}
+[9.669238] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/9/memory:63\x1b[m\x1b[K,\n'}
+[9.669370] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144\x1b[m\x1b[K,\n'}
+[9.669492] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5\x1b[m\x1b[K,\n'}
+[9.669637] (coordinator) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1\x1b[m\x1b[K:\n'}
+[9.669763] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/9/ext/new_allocator.h:146:4:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 0 arguments, 2 provided\n'}
+[9.669887] (coordinator) StderrLine: {'line': b'  146 |  { \x1b[01;36m\x1b[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)\x1b[m\x1b[K; }\n'}
+[9.670009] (coordinator) StderrLine: {'line': b'      |    \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.675330] (-) TimerEvent: {}
+[9.776115] (-) TimerEvent: {}
+[9.876824] (-) TimerEvent: {}
+[9.977549] (-) TimerEvent: {}
+[10.078318] (-) TimerEvent: {}
+[10.179087] (-) TimerEvent: {}
+[10.280096] (-) TimerEvent: {}
+[10.380788] (-) TimerEvent: {}
+[10.481992] (-) TimerEvent: {}
+[10.582732] (-) TimerEvent: {}
+[10.683904] (-) TimerEvent: {}
+[10.784601] (-) TimerEvent: {}
+[10.885327] (-) TimerEvent: {}
+[10.986057] (-) TimerEvent: {}
+[11.086757] (-) TimerEvent: {}
+[11.187480] (-) TimerEvent: {}
+[11.288712] (-) TimerEvent: {}
+[11.389477] (-) TimerEvent: {}
+[11.490209] (-) TimerEvent: {}
+[11.590933] (-) TimerEvent: {}
+[11.691671] (-) TimerEvent: {}
+[11.792388] (-) TimerEvent: {}
+[11.893101] (-) TimerEvent: {}
+[11.994032] (-) TimerEvent: {}
+[12.094809] (-) TimerEvent: {}
+[12.195531] (-) TimerEvent: {}
+[12.296233] (-) TimerEvent: {}
+[12.396921] (-) TimerEvent: {}
+[12.497667] (-) TimerEvent: {}
+[12.598398] (-) TimerEvent: {}
+[12.699141] (-) TimerEvent: {}
+[12.799853] (-) TimerEvent: {}
+[12.900554] (-) TimerEvent: {}
+[13.001243] (-) TimerEvent: {}
+[13.101994] (-) TimerEvent: {}
+[13.202712] (-) TimerEvent: {}
+[13.303419] (-) TimerEvent: {}
+[13.404490] (-) TimerEvent: {}
+[13.505269] (-) TimerEvent: {}
+[13.605999] (-) TimerEvent: {}
+[13.706736] (-) TimerEvent: {}
+[13.807462] (-) TimerEvent: {}
+[13.908268] (-) TimerEvent: {}
+[14.009027] (-) TimerEvent: {}
+[14.109820] (-) TimerEvent: {}
+[14.210674] (-) TimerEvent: {}
+[14.311388] (-) TimerEvent: {}
+[14.412114] (-) TimerEvent: {}
+[14.431854] (coordinator) StderrLine: {'line': b'make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1\n'}
+[14.433096] (coordinator) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2\n'}
+[14.433915] (coordinator) StderrLine: {'line': b'make: *** [Makefile:141: all] Error 2\n'}
+[14.440132] (coordinator) CommandEnded: {'returncode': 2}
+[14.468679] (coordinator) JobEnded: {'identifier': 'coordinator', 'rc': 2}
+[14.479922] (-) EventReactorShutdown: {}

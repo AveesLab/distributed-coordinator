@@ -1,0 +1,33 @@
+[0.036s] Invoking command in '/home/avees/coordinator_node/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6
+[0.150s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.261s] [  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[22.668s] [  6%] [32m[1mLinking CXX executable coordinator_node[0m
+[25.045s] /usr/bin/ld: warning: libopencv_imgcodecs.so.4.2, needed by /opt/ros/foxy/lib/libcv_bridge.so, may conflict with libopencv_imgcodecs.so.4.5
+[25.046s] /usr/bin/ld: warning: libopencv_core.so.4.2, needed by /opt/ros/foxy/lib/libcv_bridge.so, may conflict with libopencv_core.so.4.5
+[25.075s] [100%] Built target coordinator_node
+[25.135s] Invoked command in '/home/avees/coordinator_node/build/coordinator' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6
+[25.190s] Invoking command in '/home/avees/coordinator_node/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/avees/coordinator_node/build/coordinator
+[25.227s] -- Install configuration: ""
+[25.228s] -- Installing: /home/avees/coordinator_node/install/coordinator/lib/coordinator/coordinator_node
+[25.238s] -- Set runtime path of "/home/avees/coordinator_node/install/coordinator/lib/coordinator/coordinator_node" to ""
+[25.238s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/launch
+[25.238s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/launch/coordinator_launch.py
+[25.239s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/config
+[25.239s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/config/params.yaml
+[25.239s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/ament_index/resource_index/package_run_dependencies/coordinator
+[25.239s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/ament_index/resource_index/parent_prefix_path/coordinator
+[25.252s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/ament_prefix_path.sh
+[25.253s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/ament_prefix_path.dsv
+[25.253s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/path.sh
+[25.253s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/path.dsv
+[25.253s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.bash
+[25.254s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.sh
+[25.254s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.zsh
+[25.254s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.dsv
+[25.254s] -- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/package.dsv
+[25.254s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/ament_index/resource_index/packages/coordinator
+[25.255s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/cmake/ament_cmake_export_dependencies-extras.cmake
+[25.255s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/cmake/coordinatorConfig.cmake
+[25.255s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/cmake/coordinatorConfig-version.cmake
+[25.255s] -- Up-to-date: /home/avees/coordinator_node/install/coordinator/share/coordinator/package.xml
+[25.260s] Invoked command in '/home/avees/coordinator_node/build/coordinator' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/avees/coordinator_node/build/coordinator

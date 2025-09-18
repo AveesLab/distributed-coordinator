@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/avees/coordinator
+CMAKE_SOURCE_DIR = /home/avees/coordinator_node/src/coordinator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/avees/coordinator/build/coordinator
+CMAKE_BINARY_DIR = /home/avees/coordinator_node/build/coordinator
 
 # Include any dependencies generated for this target.
 include CMakeFiles/coordinator_node.dir/depend.make
@@ -58,394 +58,394 @@ include CMakeFiles/coordinator_node.dir/progress.make
 include CMakeFiles/coordinator_node.dir/flags.make
 
 CMakeFiles/coordinator_node.dir/src/main.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/src/main.cpp.o: ../../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/src/main.cpp.o -c /home/avees/coordinator/src/main.cpp
+CMakeFiles/coordinator_node.dir/src/main.cpp.o: /home/avees/coordinator_node/src/coordinator/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/src/main.cpp.o -c /home/avees/coordinator_node/src/coordinator/src/main.cpp
 
 CMakeFiles/coordinator_node.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/src/main.cpp > CMakeFiles/coordinator_node.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/src/main.cpp > CMakeFiles/coordinator_node.dir/src/main.cpp.i
 
 CMakeFiles/coordinator_node.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/src/main.cpp -o CMakeFiles/coordinator_node.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/src/main.cpp -o CMakeFiles/coordinator_node.dir/src/main.cpp.s
 
 CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o: ../../src/coordinator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o -c /home/avees/coordinator/src/coordinator.cpp
+CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o: /home/avees/coordinator_node/src/coordinator/src/coordinator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o -c /home/avees/coordinator_node/src/coordinator/src/coordinator.cpp
 
 CMakeFiles/coordinator_node.dir/src/coordinator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/src/coordinator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/src/coordinator.cpp > CMakeFiles/coordinator_node.dir/src/coordinator.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/src/coordinator.cpp > CMakeFiles/coordinator_node.dir/src/coordinator.cpp.i
 
 CMakeFiles/coordinator_node.dir/src/coordinator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/src/coordinator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/src/coordinator.cpp -o CMakeFiles/coordinator_node.dir/src/coordinator.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/src/coordinator.cpp -o CMakeFiles/coordinator_node.dir/src/coordinator.cpp.s
 
 CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.o: ../../src/avt_vimba_camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.o -c /home/avees/coordinator/src/avt_vimba_camera.cpp
+CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.o: /home/avees/coordinator_node/src/coordinator/src/avt_vimba_camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.o -c /home/avees/coordinator_node/src/coordinator/src/avt_vimba_camera.cpp
 
 CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/src/avt_vimba_camera.cpp > CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/src/avt_vimba_camera.cpp > CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.i
 
 CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/src/avt_vimba_camera.cpp -o CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/src/avt_vimba_camera.cpp -o CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.s
 
 CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.o: ../../src/frame_observer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.o -c /home/avees/coordinator/src/frame_observer.cpp
+CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.o: /home/avees/coordinator_node/src/coordinator/src/frame_observer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.o -c /home/avees/coordinator_node/src/coordinator/src/frame_observer.cpp
 
 CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/src/frame_observer.cpp > CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/src/frame_observer.cpp > CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.i
 
 CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/src/frame_observer.cpp -o CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/src/frame_observer.cpp -o CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.o: ../../include/VimbaCPP/Source/AncillaryData.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/AncillaryData.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/AncillaryData.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/AncillaryData.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/AncillaryData.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/AncillaryData.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/AncillaryData.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/AncillaryData.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.o: ../../include/VimbaCPP/Source/BaseFeature.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/BaseFeature.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/BaseFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/BaseFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.o: ../../include/VimbaCPP/Source/BasicLockable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/BasicLockable.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BasicLockable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BasicLockable.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/BasicLockable.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BasicLockable.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/BasicLockable.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BasicLockable.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.o: ../../include/VimbaCPP/Source/BoolFeature.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/BoolFeature.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BoolFeature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BoolFeature.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/BoolFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BoolFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/BoolFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BoolFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.o: ../../include/VimbaCPP/Source/Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/Camera.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/Camera.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/Camera.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.o: ../../include/VimbaCPP/Source/Clock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/Clock.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Clock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Clock.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/Clock.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Clock.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/Clock.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Clock.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.o: ../../include/VimbaCPP/Source/CommandFeature.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/CommandFeature.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/CommandFeature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/CommandFeature.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/CommandFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/CommandFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/CommandFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/CommandFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.o: ../../include/VimbaCPP/Source/Condition.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/Condition.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/Condition.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/Condition.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.o: ../../include/VimbaCPP/Source/ConditionHelper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.o: ../../include/VimbaCPP/Source/DefaultCameraFactory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/DefaultCameraFactory.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/DefaultCameraFactory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/DefaultCameraFactory.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/DefaultCameraFactory.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/DefaultCameraFactory.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/DefaultCameraFactory.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/DefaultCameraFactory.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.o: ../../include/VimbaCPP/Source/EnumEntry.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/EnumEntry.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumEntry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumEntry.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/EnumEntry.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumEntry.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/EnumEntry.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumEntry.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.o: ../../include/VimbaCPP/Source/EnumFeature.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/EnumFeature.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumFeature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumFeature.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/EnumFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/EnumFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.o: ../../include/VimbaCPP/Source/Feature.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/Feature.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Feature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Feature.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/Feature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Feature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/Feature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Feature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.o: ../../include/VimbaCPP/Source/FeatureContainer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.o: ../../include/VimbaCPP/Source/FileLogger.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/FileLogger.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FileLogger.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FileLogger.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/FileLogger.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FileLogger.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/FileLogger.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FileLogger.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.o: ../../include/VimbaCPP/Source/FloatFeature.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/FloatFeature.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FloatFeature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FloatFeature.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/FloatFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FloatFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/FloatFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FloatFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.o: ../../include/VimbaCPP/Source/Frame.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/Frame.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Frame.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Frame.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/Frame.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Frame.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/Frame.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Frame.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.o: ../../include/VimbaCPP/Source/FrameHandler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/FrameHandler.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/FrameHandler.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/FrameHandler.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.o: ../../include/VimbaCPP/Source/IntFeature.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/IntFeature.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/IntFeature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/IntFeature.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/IntFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/IntFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/IntFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/IntFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.o: ../../include/VimbaCPP/Source/Interface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/Interface.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/Interface.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/Interface.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.o: ../../include/VimbaCPP/Source/Mutex.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/Mutex.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Mutex.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Mutex.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/Mutex.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Mutex.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/Mutex.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Mutex.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.o: ../../include/VimbaCPP/Source/MutexGuard.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/MutexGuard.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/MutexGuard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/MutexGuard.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/MutexGuard.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/MutexGuard.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/MutexGuard.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/MutexGuard.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.o: ../../include/VimbaCPP/Source/RawFeature.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/RawFeature.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/RawFeature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/RawFeature.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/RawFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/RawFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/RawFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/RawFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.o: ../../include/VimbaCPP/Source/Semaphore.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/Semaphore.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Semaphore.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Semaphore.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/Semaphore.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Semaphore.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/Semaphore.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Semaphore.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.o: ../../include/VimbaCPP/Source/StringFeature.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/StringFeature.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/StringFeature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/StringFeature.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/StringFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/StringFeature.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/StringFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/StringFeature.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.s
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.o: CMakeFiles/coordinator_node.dir/flags.make
-CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.o: ../../include/VimbaCPP/Source/VimbaSystem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.o -c /home/avees/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp
+CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.o: /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.o -c /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp > CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.i
 
 CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp -o CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.s
 
 # Object files for target coordinator_node
 coordinator_node_OBJECTS = \
@@ -520,10 +520,10 @@ coordinator_node: /opt/ros/foxy/lib/libdiagnostic_msgs__rosidl_typesupport_intro
 coordinator_node: /opt/ros/foxy/lib/libdiagnostic_msgs__rosidl_typesupport_c.so
 coordinator_node: /opt/ros/foxy/lib/libdiagnostic_msgs__rosidl_typesupport_introspection_cpp.so
 coordinator_node: /opt/ros/foxy/lib/libdiagnostic_msgs__rosidl_typesupport_cpp.so
-coordinator_node: /home/avees/data-domain/install/avt_vimba_camera/lib/libavt_vimba_camera__rosidl_typesupport_introspection_c.so
-coordinator_node: /home/avees/data-domain/install/avt_vimba_camera/lib/libavt_vimba_camera__rosidl_typesupport_c.so
-coordinator_node: /home/avees/data-domain/install/avt_vimba_camera/lib/libavt_vimba_camera__rosidl_typesupport_introspection_cpp.so
-coordinator_node: /home/avees/data-domain/install/avt_vimba_camera/lib/libavt_vimba_camera__rosidl_typesupport_cpp.so
+coordinator_node: /home/avees/data-domain/install/avt_vimba_camera_msgs/lib/libavt_vimba_camera_msgs__rosidl_typesupport_introspection_c.so
+coordinator_node: /home/avees/data-domain/install/avt_vimba_camera_msgs/lib/libavt_vimba_camera_msgs__rosidl_typesupport_c.so
+coordinator_node: /home/avees/data-domain/install/avt_vimba_camera_msgs/lib/libavt_vimba_camera_msgs__rosidl_typesupport_introspection_cpp.so
+coordinator_node: /home/avees/data-domain/install/avt_vimba_camera_msgs/lib/libavt_vimba_camera_msgs__rosidl_typesupport_cpp.so
 coordinator_node: /opt/ros/foxy/lib/libament_index_cpp.so
 coordinator_node: /opt/ros/foxy/lib/libcamera_calibration_parsers.so
 coordinator_node: /opt/ros/foxy/opt/yaml_cpp_vendor/lib/libyaml-cpp.so.0.6.2
@@ -590,7 +590,7 @@ coordinator_node: /opt/ros/foxy/lib/libyaml.so
 coordinator_node: /opt/ros/foxy/lib/librosgraph_msgs__rosidl_generator_c.so
 coordinator_node: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_generator_c.so
 coordinator_node: /opt/ros/foxy/lib/libdiagnostic_msgs__rosidl_generator_c.so
-coordinator_node: /home/avees/data-domain/install/avt_vimba_camera/lib/libavt_vimba_camera__rosidl_generator_c.so
+coordinator_node: /home/avees/data-domain/install/avt_vimba_camera_msgs/lib/libavt_vimba_camera_msgs__rosidl_generator_c.so
 coordinator_node: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so
 coordinator_node: /opt/ros/foxy/lib/libsensor_msgs__rosidl_generator_c.so
 coordinator_node: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_c.so
@@ -620,7 +620,7 @@ coordinator_node: /opt/ros/foxy/lib/aarch64-linux-gnu/libconsole_bridge.so.1.0
 coordinator_node: /opt/ros/foxy/lib/librcpputils.so
 coordinator_node: /opt/ros/foxy/lib/librcutils.so
 coordinator_node: CMakeFiles/coordinator_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/avees/coordinator/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX executable coordinator_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/avees/coordinator_node/build/coordinator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX executable coordinator_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/coordinator_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -633,6 +633,6 @@ CMakeFiles/coordinator_node.dir/clean:
 .PHONY : CMakeFiles/coordinator_node.dir/clean
 
 CMakeFiles/coordinator_node.dir/depend:
-	cd /home/avees/coordinator/build/coordinator && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/avees/coordinator /home/avees/coordinator /home/avees/coordinator/build/coordinator /home/avees/coordinator/build/coordinator /home/avees/coordinator/build/coordinator/CMakeFiles/coordinator_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/avees/coordinator_node/build/coordinator && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/avees/coordinator_node/src/coordinator /home/avees/coordinator_node/src/coordinator /home/avees/coordinator_node/build/coordinator /home/avees/coordinator_node/build/coordinator /home/avees/coordinator_node/build/coordinator/CMakeFiles/coordinator_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/coordinator_node.dir/depend
 

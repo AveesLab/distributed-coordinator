@@ -1,0 +1,128 @@
+[35m[1mScanning dependencies of target coordinator_node[0m
+[  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o[0m
+[  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+In file included from [01m[K/home/avees/coordinator_node/src/coordinator/src/main.cpp:2[m[K:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:91:52:[m[K [01;31m[Kerror: [m[K‘[01m[KInt64MultiArray[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[KInt32MultiArray[m[K’?
+   91 |     std::map<int, rclcpp::Publisher<std_msgs::msg::[01;31m[KInt64MultiArray[m[K>::SharedPtr> roi_publishers_;
+      |                                                    [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                                    [32m[KInt32MultiArray[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:91:67:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   91 |     std::map<int, rclcpp::Publisher<std_msgs::msg::Int64MultiArray[01;31m[K>[m[K::SharedPtr> roi_publishers_;
+      |                                                                   [01;31m[K^[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:91:79:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+   91 |     std::map<int, rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::SharedPtr[01;31m[K>[m[K roi_publishers_;
+      |                                                                               [01;31m[K^[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:91:79:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:92:38:[m[K [01;31m[Kerror: [m[K‘[01m[KInt64MultiArray[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[KInt32MultiArray[m[K’?
+   92 |     rclcpp::Publisher<std_msgs::msg::[01;31m[KInt64MultiArray[m[K>::SharedPtr roi_total_publisher_;
+      |                                      [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                      [32m[KInt32MultiArray[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:92:53:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   92 |     rclcpp::Publisher<std_msgs::msg::Int64MultiArray[01;31m[K>[m[K::SharedPtr roi_total_publisher_;
+      |                                                     [01;31m[K^[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:92:56:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   92 |     rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::[01;31m[KSharedPtr[m[K roi_total_publisher_;
+      |                                                        [01;31m[K^~~~~~~~~[m[K
+      |                                                                 [32m[K;[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:92:66:[m[K [01;31m[Kerror: [m[K‘[01m[Kroi_total_publisher_[m[K’ does not name a type
+   92 |     rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::SharedPtr [01;31m[Kroi_total_publisher_[m[K;
+      |                                                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:91:52:[m[K [01;31m[Kerror: [m[K‘[01m[KInt64MultiArray[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[KInt32MultiArray[m[K’?
+   91 |     std::map<int, rclcpp::Publisher<std_msgs::msg::[01;31m[KInt64MultiArray[m[K>::SharedPtr> roi_publishers_;
+      |                                                    [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                                    [32m[KInt32MultiArray[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:91:67:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   91 |     std::map<int, rclcpp::Publisher<std_msgs::msg::Int64MultiArray[01;31m[K>[m[K::SharedPtr> roi_publishers_;
+      |                                                                   [01;31m[K^[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:91:79:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+   91 |     std::map<int, rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::SharedPtr[01;31m[K>[m[K roi_publishers_;
+      |                                                                               [01;31m[K^[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:91:79:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:92:38:[m[K [01;31m[Kerror: [m[K‘[01m[KInt64MultiArray[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[KInt32MultiArray[m[K’?
+   92 |     rclcpp::Publisher<std_msgs::msg::[01;31m[KInt64MultiArray[m[K>::SharedPtr roi_total_publisher_;
+      |                                      [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                      [32m[KInt32MultiArray[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:92:53:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   92 |     rclcpp::Publisher<std_msgs::msg::Int64MultiArray[01;31m[K>[m[K::SharedPtr roi_total_publisher_;
+      |                                                     [01;31m[K^[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:92:56:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   92 |     rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::[01;31m[KSharedPtr[m[K roi_total_publisher_;
+      |                                                        [01;31m[K^~~~~~~~~[m[K
+      |                                                                 [32m[K;[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:92:66:[m[K [01;31m[Kerror: [m[K‘[01m[Kroi_total_publisher_[m[K’ does not name a type
+   92 |     rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::SharedPtr [01;31m[Kroi_total_publisher_[m[K;
+      |                                                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In constructor ‘[01m[KCoordinator::Coordinator()[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:88:26:[m[K [01;31m[Kerror: [m[Kinvalid types ‘[01m[Kint[int][m[K’ for array subscript
+   88 |         roi_publishers_[i[01;31m[K][m[K = this->create_publisher<std_msgs::msg::Int64MultiArray>(topic, 10);
+      |                          [01;31m[K^[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:88:68:[m[K [01;31m[Kerror: [m[K‘[01m[KInt64MultiArray[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[KInt32MultiArray[m[K’?
+   88 |         roi_publishers_[i] = this->create_publisher<std_msgs::msg::[01;31m[KInt64MultiArray[m[K>(topic, 10);
+      |                                                                    [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                                                    [32m[KInt32MultiArray[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:88:94:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KCoordinator::create_publisher<<expression error> >(std::string&, int)[m[K’
+   88 |         roi_publishers_[i] = this->create_publisher<std_msgs::msg::Int64MultiArray>(topic, 10[01;31m[K)[m[K;
+      |                                                                                              [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+                 from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[01m[K/opt/ros/foxy/include/rclcpp/node.hpp:184:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  184 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/foxy/include/rclcpp/node.hpp:184:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:88:94:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   88 |         roi_publishers_[i] = this->create_publisher<std_msgs::msg::Int64MultiArray>(topic, 10[01;31m[K)[m[K;
+      |                                                                                              [01;31m[K^[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:90:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kroi_total_publisher_[m[K’ was not declared in this scope; did you mean ‘[01m[Kroi_publishers_[m[K’?
+   90 |     [01;31m[Kroi_total_publisher_[m[K = this->create_publisher<std_msgs::msg::Int64MultiArray>("/assigned_roi_total", 10);
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |     [32m[Kroi_publishers_[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:90:66:[m[K [01;31m[Kerror: [m[K‘[01m[KInt64MultiArray[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[KInt32MultiArray[m[K’?
+   90 |     roi_total_publisher_ = this->create_publisher<std_msgs::msg::[01;31m[KInt64MultiArray[m[K>("/assigned_roi_total", 10);
+      |                                                                  [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                                                  [32m[KInt32MultiArray[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:90:108:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KCoordinator::create_publisher<<expression error> >(const char [20], int)[m[K’
+   90 |     roi_total_publisher_ = this->create_publisher<std_msgs::msg::Int64MultiArray>("/assigned_roi_total", 10[01;31m[K)[m[K;
+      |                                                                                                            [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+                 from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[01m[K/opt/ros/foxy/include/rclcpp/node.hpp:184:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  184 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/foxy/include/rclcpp/node.hpp:184:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:90:108:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   90 |     roi_total_publisher_ = this->create_publisher<std_msgs::msg::Int64MultiArray>("/assigned_roi_total", 10[01;31m[K)[m[K;
+      |                                                                                                            [01;31m[K^[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kvoid Coordinator::split_scheduling(const std::vector<int>&, const rclcpp::Time&)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:275:28:[m[K [01;31m[Kerror: [m[K‘[01m[KInt64MultiArray[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[KInt32MultiArray[m[K’?
+  275 |             std_msgs::msg::[01;31m[KInt64MultiArray[m[K roi_;
+      |                            [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                            [32m[KInt32MultiArray[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:276:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kroi_[m[K’ was not declared in this scope
+  276 |             [01;31m[Kroi_[m[K.data = {frame_us, x_offset, y_offset, w_offset, h_offset};
+      |             [01;31m[K^~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:280:66:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_us[m[K’ from ‘[01m[Kint64_t[m[K’ {aka ‘[01m[Klong int[m[K’} to ‘[01m[Kint[m[K’ [[01;35m[K-Wnarrowing[m[K]
+  280 |             total_roi_msg.data.insert(total_roi_msg.data.end(), {[01;35m[Kframe_us[m[K, x_offset, y_offset, w_offset, h_offset});
+      |                                                                  [01;35m[K^~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:280:66:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_us[m[K’ from ‘[01m[Kint64_t[m[K’ {aka ‘[01m[Klong int[m[K’} to ‘[01m[Kint[m[K’ [[01;35m[K-Wnarrowing[m[K]
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:296:35:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kfind[m[K’ in ‘[01m[K((Coordinator*)this)->Coordinator::roi_publishers_[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+  296 |         auto it = roi_publishers_.[01;31m[Kfind[m[K(node_index);
+      |                                   [01;31m[K^~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:297:35:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kend[m[K’ in ‘[01m[K((Coordinator*)this)->Coordinator::roi_publishers_[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+  297 |         if (it != roi_publishers_.[01;31m[Kend[m[K()) it->second->publish(msg);
+      |                                   [01;31m[K^~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:302:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kroi_total_publisher_[m[K’ was not declared in this scope; did you mean ‘[01m[Kroi_publishers_[m[K’?
+  302 |     [01;31m[Kroi_total_publisher_[m[K->publish(total_roi_msg);
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |     [32m[Kroi_publishers_[m[K
+make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:63: CMakeFiles/coordinator_node.dir/src/main.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,19 @@
+[35m[1mScanning dependencies of target coordinator_node[0m
+[  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In lambda function:
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:50:39:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Knanoseconds[m[K’ in ‘[01m[Kcurrent_frame_[m[K’, which is of non-class type ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+   50 |                     if(current_frame_.[01;31m[Knanoseconds[m[K() == 0 || current_frame_ == new_frame_)
+      |                                       [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:55:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kns[m[K’ was not declared in this scope; did you mean ‘[01m[Kts[m[K’?
+   55 |                             current_frame_ns_.store([01;31m[Kns[m[K, std::memory_order_relaxed);
+      |                                                     [01;31m[K^~[m[K
+      |                                                     [32m[Kts[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:59:75:[m[K [01;31m[Kerror: [m[K‘[01m[Kcur_ns[m[K’ was not declared in this scope
+   59 |                                 split_scheduling(ready_node, rclcpp::Time([01;31m[Kcur_ns[m[K));
+      |                                                                           [01;31m[K^~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:78:71:[m[K [01;31m[Kerror: [m[K‘[01m[Kcur_ns[m[K’ was not declared in this scope
+   78 |                             split_scheduling(ready_node, rclcpp::Time([01;31m[Kcur_ns[m[K));
+      |                                                                       [01;31m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

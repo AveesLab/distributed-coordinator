@@ -1,0 +1,17 @@
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kvoid Coordinator::split_scheduling(const std::vector<int>&, uint64_t)[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:277:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kcx[m[K’ was not declared in this scope; did you mean ‘[01m[Kcv[m[K’?
+  277 |             int node_index =     [01;31m[Kcx[m[K[count];
+      |                                  [01;31m[K^~[m[K
+      |                                  [32m[Kcv[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:284:26:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_time[m[K’ from ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} to ‘[01m[Klong int[m[K’ [[01;35m[K-Wnarrowing[m[K]
+  284 |             roi_.data = {[01;35m[Kframe_time[m[K, x_offset, y_offset, w_offset, h_offset};
+      |                          [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:284:26:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_time[m[K’ from ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} to ‘[01m[Klong int[m[K’ [[01;35m[K-Wnarrowing[m[K]
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:288:66:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_time[m[K’ from ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} to ‘[01m[Klong int[m[K’ [[01;35m[K-Wnarrowing[m[K]
+  288 |         total_roi_msg.data.insert(total_roi_msg.data.end(), {[01;35m[Kframe_time[m[K, x_offset, y_offset, w_offset, h_offset});
+      |                                                              [01;35m[K^~~~~~~~~~[m[K
+
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:288:66:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_time[m[K’ from ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} to ‘[01m[Klong int[m[K’ [[01;35m[K-Wnarrowing[m[K]
+make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

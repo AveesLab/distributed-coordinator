@@ -1,0 +1,11 @@
+[0.031s] Invoking command in '/home/avees/coordinator_node/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6
+[0.152s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.263s] [  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[7.625s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In lambda function:
+[7.626s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:50:39:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Knanoseconds[m[K’ in ‘[01m[Kcurrent_frame_[m[K’, which is of non-class type ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+[7.626s]    50 |                     if(current_frame_.[01;31m[Knanoseconds[m[K() == 0 || current_frame_ == new_frame_)
+[7.626s]       |                                       [01;31m[K^~~~~~~~~~~[m[K
+[14.949s] make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+[14.950s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+[14.951s] make: *** [Makefile:141: all] Error 2
+[14.957s] Invoked command in '/home/avees/coordinator_node/build/coordinator' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6

@@ -1,0 +1,507 @@
+[0.000000] (-) TimerEvent: {}
+[0.000665] (coordinator) JobQueued: {'identifier': 'coordinator', 'dependencies': OrderedDict()}
+[0.001253] (coordinator) JobStarted: {'identifier': 'coordinator'}
+[0.022073] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'cmake'}
+[0.023642] (coordinator) Command: {'cmd': ['/usr/bin/cmake', '/home/avees/coordinator_node/src/coordinator', '-DCMAKE_INSTALL_PREFIX=/home/avees/coordinator_node/install/coordinator'], 'cwd': '/home/avees/coordinator_node/build/coordinator', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'avees'), ('SSH_AGENT_PID', '2693'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/avees/data-domain/install/monitor/lib:/home/avees/data-domain/install/avt_vimba_camera/lib:/home/avees/data-domain/install/avt_vimba_camera_msgs/lib:/usr/local/cuda-11.4/lib64:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/opt/Vimba_6_0/VimbaC/DynamicLib/arm_64bit:/opt/Vimba_6_0/VimbaCPP/DynamicLib/arm_64bit'), ('HOME', '/home/avees'), ('OLDPWD', '/home/avees'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2502'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3907'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/avees/data-domain/install:/home/avees/coordinator_node/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'avees'), ('JOURNAL_STREAM', '8:61829'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'avees'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.4/bin:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2728,unix/ubuntu:/tmp/.ICE-unix/2728'), ('INVOCATION_ID', '5a8ec2e1fb98494c8eb2d25b50085b29'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '103'), ('AMENT_PREFIX_PATH', '/home/avees/data-domain/install/monitor:/home/avees/data-domain/install/avt_vimba_camera:/home/avees/data-domain/install/avt_vimba_camera_msgs:/home/avees/coordinator_node/install/coordinator:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9deb70b4-5cb9-4e87-b4cb-2d9e1e38fd0b'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/avees/coordinator_node/build/coordinator'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/avees/data-domain/install/avt_vimba_camera_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', ':/opt/Vimba_6_0/VimbaGigETL/CTI/arm_64bit'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/avees/data-domain/install/monitor:/home/avees/data-domain/install/avt_vimba_camera:/home/avees/data-domain/install/avt_vimba_camera_msgs:/home/avees/coordinator_node/install/coordinator:/opt/ros/foxy')]), 'shell': False}
+[0.061961] (coordinator) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.099336] (-) TimerEvent: {}
+[0.107368] (coordinator) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.199490] (-) TimerEvent: {}
+[0.300133] (-) TimerEvent: {}
+[0.400890] (-) TimerEvent: {}
+[0.494158] (coordinator) StdoutLine: {'line': b'-- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)\n'}
+[0.501021] (-) TimerEvent: {}
+[0.556196] (coordinator) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.561994] (coordinator) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[0.601181] (-) TimerEvent: {}
+[0.701841] (-) TimerEvent: {}
+[0.794314] (coordinator) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.801954] (-) TimerEvent: {}
+[0.882832] (coordinator) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)\n'}
+[0.885420] (coordinator) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.902100] (-) TimerEvent: {}
+[1.002812] (-) TimerEvent: {}
+[1.103666] (-) TimerEvent: {}
+[1.136834] (coordinator) StdoutLine: {'line': b'-- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)\n'}
+[1.203848] (-) TimerEvent: {}
+[1.304679] (-) TimerEvent: {}
+[1.335437] (coordinator) StdoutLine: {'line': b'-- Found camera_info_manager: 2.4.0 (/opt/ros/foxy/share/camera_info_manager/cmake)\n'}
+[1.369204] (coordinator) StdoutLine: {'line': b"-- Setting yaml-cpp_DIR to: '/opt/ros/foxy/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/lib/cmake/yaml-cpp'\n"}
+[1.404854] (-) TimerEvent: {}
+[1.443651] (coordinator) StdoutLine: {'line': b'-- Found diagnostic_msgs: 2.0.5 (/opt/ros/foxy/share/diagnostic_msgs/cmake)\n'}
+[1.501739] (coordinator) StdoutLine: {'line': b'-- Found image_transport: 2.4.0 (/opt/ros/foxy/share/image_transport/cmake)\n'}
+[1.504938] (-) TimerEvent: {}
+[1.569851] (coordinator) StdoutLine: {'line': b'-- Found cv_bridge: 3.0.7 (/opt/ros/foxy/share/cv_bridge/cmake)\n'}
+[1.603832] (coordinator) StdoutLine: {'line': b'-- Found avt_vimba_camera_msgs: 2001.1.0 (/home/avees/data-domain/install/avt_vimba_camera_msgs/share/avt_vimba_camera_msgs/cmake)\n'}
+[1.605048] (-) TimerEvent: {}
+[1.705662] (-) TimerEvent: {}
+[1.806505] (-) TimerEvent: {}
+[1.891148] (coordinator) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)\n'}
+[1.906630] (-) TimerEvent: {}
+[2.007222] (-) TimerEvent: {}
+[2.079519] (coordinator) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[2.089280] (coordinator) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[2.090034] (coordinator) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/avees/coordinator_node/src/coordinator/include>\n'}
+[2.090403] (coordinator) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[2.098806] (coordinator) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[2.099139] (coordinator) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[2.100981] (coordinator) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[2.103905] (coordinator) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.105843] (coordinator) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the style conventions in PEP 257\n"}
+[2.107302] (-) TimerEvent: {}
+[2.115119] (coordinator) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[2.115449] (coordinator) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[2.117214] (coordinator) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.125491] (coordinator) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.174305] (coordinator) StdoutLine: {'line': b'-- Generating done\n'}
+[2.193847] (coordinator) StdoutLine: {'line': b'-- Build files have been written to: /home/avees/coordinator_node/build/coordinator\n'}
+[2.207491] (-) TimerEvent: {}
+[2.215414] (coordinator) CommandEnded: {'returncode': 0}
+[2.217505] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'build'}
+[2.219319] (coordinator) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/avees/coordinator_node/build/coordinator', '--', '-j6', '-l6'], 'cwd': '/home/avees/coordinator_node/build/coordinator', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'avees'), ('SSH_AGENT_PID', '2693'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/avees/data-domain/install/monitor/lib:/home/avees/data-domain/install/avt_vimba_camera/lib:/home/avees/data-domain/install/avt_vimba_camera_msgs/lib:/usr/local/cuda-11.4/lib64:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/opt/Vimba_6_0/VimbaC/DynamicLib/arm_64bit:/opt/Vimba_6_0/VimbaCPP/DynamicLib/arm_64bit'), ('HOME', '/home/avees'), ('OLDPWD', '/home/avees'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2502'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3907'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/avees/data-domain/install:/home/avees/coordinator_node/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'avees'), ('JOURNAL_STREAM', '8:61829'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'avees'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.4/bin:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2728,unix/ubuntu:/tmp/.ICE-unix/2728'), ('INVOCATION_ID', '5a8ec2e1fb98494c8eb2d25b50085b29'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '103'), ('AMENT_PREFIX_PATH', '/home/avees/data-domain/install/monitor:/home/avees/data-domain/install/avt_vimba_camera:/home/avees/data-domain/install/avt_vimba_camera_msgs:/home/avees/coordinator_node/install/coordinator:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9deb70b4-5cb9-4e87-b4cb-2d9e1e38fd0b'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/avees/coordinator_node/build/coordinator'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/avees/data-domain/install/avt_vimba_camera_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', ':/opt/Vimba_6_0/VimbaGigETL/CTI/arm_64bit'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/avees/data-domain/install/monitor:/home/avees/data-domain/install/avt_vimba_camera:/home/avees/data-domain/install/avt_vimba_camera_msgs:/home/avees/coordinator_node/install/coordinator:/opt/ros/foxy')]), 'shell': False}
+[2.307720] (-) TimerEvent: {}
+[2.321092] (coordinator) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target coordinator_node\x1b[0m\n'}
+[2.407889] (-) TimerEvent: {}
+[2.501614] (coordinator) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o\x1b[0m\n'}
+[2.502283] (coordinator) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/frame_observer.cpp.o\x1b[0m\n'}
+[2.502518] (coordinator) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/avt_vimba_camera.cpp.o\x1b[0m\n'}
+[2.503874] (coordinator) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o\x1b[0m\n'}
+[2.508126] (coordinator) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BaseFeature.cpp.o\x1b[0m\n'}
+[2.508541] (-) TimerEvent: {}
+[2.525609] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:28:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kignoring #pragma warning  [\x1b[01;35m\x1b[K-Wunknown-pragmas\x1b[m\x1b[K]\n'}
+[2.526211] (coordinator) StderrLine: {'line': b'   28 | #pragma warning(disable:4996)\n'}
+[2.526434] (coordinator) StderrLine: {'line': b'      | \n'}
+[2.526703] (coordinator) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/AncillaryData.cpp.o\x1b[0m\n'}
+[2.608812] (-) TimerEvent: {}
+[2.626850] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:30:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kignoring #pragma warning  [\x1b[01;35m\x1b[K-Wunknown-pragmas\x1b[m\x1b[K]\n'}
+[2.641202] (coordinator) StderrLine: {'line': b'   30 | #pragma warning(default:4996)\n'}
+[2.642032] (coordinator) StderrLine: {'line': b'      | \n'}
+[2.709064] (-) TimerEvent: {}
+[2.810106] (-) TimerEvent: {}
+[2.914021] (-) TimerEvent: {}
+[3.015320] (-) TimerEvent: {}
+[3.116373] (-) TimerEvent: {}
+[3.217986] (-) TimerEvent: {}
+[3.319081] (-) TimerEvent: {}
+[3.324256] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/AncillaryData.cpp:\x1b[m\x1b[K In copy constructor \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::AncillaryData::AncillaryData(const AVT::VmbAPI::AncillaryData&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.324876] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/AncillaryData.cpp:46:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kbase class \xe2\x80\x98\x1b[01m\x1b[Kclass AVT::VmbAPI::BasicLockable\x1b[m\x1b[K\xe2\x80\x99 should be explicitly initialized in the copy constructor [\x1b[01;35m\x1b[K-Wextra\x1b[m\x1b[K]\n'}
+[3.325095] (coordinator) StderrLine: {'line': b'   46 | \x1b[01;35m\x1b[KAncillaryData\x1b[m\x1b[K::AncillaryData( const AncillaryData& )\n'}
+[3.325264] (coordinator) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.325417] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/AncillaryData.cpp:46:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kbase class \xe2\x80\x98\x1b[01m\x1b[Kclass AVT::VmbAPI::FeatureContainer\x1b[m\x1b[K\xe2\x80\x99 should be explicitly initialized in the copy constructor [\x1b[01;35m\x1b[K-Wextra\x1b[m\x1b[K]\n'}
+[3.419283] (-) TimerEvent: {}
+[3.520368] (-) TimerEvent: {}
+[3.583279] (coordinator) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BasicLockable.cpp.o\x1b[0m\n'}
+[3.620690] (-) TimerEvent: {}
+[3.629302] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:29\x1b[m\x1b[K:\n'}
+[3.629939] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::BaseFeature::BaseFeature(const VmbFeatureInfo_t*, AVT::VmbAPI::FeatureContainer*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.630162] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.h:118:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::BaseFeature::m_pImpl\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[3.630333] (coordinator) StderrLine: {'line': b'  118 |     Impl *\x1b[01;35m\x1b[Km_pImpl\x1b[m\x1b[K;\n'}
+[3.630480] (coordinator) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[3.630620] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.h:108:23:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::FeatureContainer* AVT::VmbAPI::BaseFeature::m_pFeatureContainer\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[3.630776] (coordinator) StderrLine: {'line': b'  108 |     FeatureContainer *\x1b[01;35m\x1b[Km_pFeatureContainer\x1b[m\x1b[K;\n'}
+[3.630949] (coordinator) StderrLine: {'line': b'      |                       \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.631091] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:55:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[3.631233] (coordinator) StderrLine: {'line': b'   55 | \x1b[01;35m\x1b[KBaseFeature\x1b[m\x1b[K::BaseFeature( const VmbFeatureInfo_t *pFeatureInfo, FeatureContainer *pFeatureContainer )\n'}
+[3.631364] (coordinator) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.645136] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:\x1b[m\x1b[K In copy constructor \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::BaseFeature::BaseFeature(const AVT::VmbAPI::BaseFeature&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.645693] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/BaseFeature.cpp:98:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kbase class \xe2\x80\x98\x1b[01m\x1b[Kclass AVT::VmbAPI::BasicLockable\x1b[m\x1b[K\xe2\x80\x99 should be explicitly initialized in the copy constructor [\x1b[01;35m\x1b[K-Wextra\x1b[m\x1b[K]\n'}
+[3.645908] (coordinator) StderrLine: {'line': b'   98 | \x1b[01;35m\x1b[KBaseFeature\x1b[m\x1b[K::BaseFeature( const BaseFeature& )\n'}
+[3.646070] (coordinator) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.720898] (-) TimerEvent: {}
+[3.821895] (-) TimerEvent: {}
+[3.922927] (-) TimerEvent: {}
+[4.024050] (-) TimerEvent: {}
+[4.124910] (-) TimerEvent: {}
+[4.225962] (-) TimerEvent: {}
+[4.239399] (coordinator) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/BoolFeature.cpp.o\x1b[0m\n'}
+[4.326171] (-) TimerEvent: {}
+[4.427224] (-) TimerEvent: {}
+[4.528504] (-) TimerEvent: {}
+[4.561457] (coordinator) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Camera.cpp.o\x1b[0m\n'}
+[4.628711] (-) TimerEvent: {}
+[4.641924] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp:27:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kignoring #pragma warning  [\x1b[01;35m\x1b[K-Wunknown-pragmas\x1b[m\x1b[K]\n'}
+[4.645428] (coordinator) StderrLine: {'line': b'   27 | #pragma warning(disable:4996)\n'}
+[4.645979] (coordinator) StderrLine: {'line': b'      | \n'}
+[4.714218] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kignoring #pragma warning  [\x1b[01;35m\x1b[K-Wunknown-pragmas\x1b[m\x1b[K]\n'}
+[4.714806] (coordinator) StderrLine: {'line': b'   29 | #pragma warning(default:4996)\n'}
+[4.715021] (coordinator) StderrLine: {'line': b'      | \n'}
+[4.728917] (-) TimerEvent: {}
+[4.829909] (-) TimerEvent: {}
+[4.930643] (-) TimerEvent: {}
+[5.025920] (coordinator) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Clock.cpp.o\x1b[0m\n'}
+[5.030823] (-) TimerEvent: {}
+[5.115102] (coordinator) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/CommandFeature.cpp.o\x1b[0m\n'}
+[5.131015] (-) TimerEvent: {}
+[5.231822] (-) TimerEvent: {}
+[5.332535] (-) TimerEvent: {}
+[5.334185] (coordinator) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Condition.cpp.o\x1b[0m\n'}
+[5.432728] (-) TimerEvent: {}
+[5.533493] (-) TimerEvent: {}
+[5.634496] (-) TimerEvent: {}
+[5.700535] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp:\x1b[m\x1b[K In copy constructor \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::Camera::Camera(const AVT::VmbAPI::Camera&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.701166] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp:490:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kbase class \xe2\x80\x98\x1b[01m\x1b[Kclass AVT::VmbAPI::BasicLockable\x1b[m\x1b[K\xe2\x80\x99 should be explicitly initialized in the copy constructor [\x1b[01;35m\x1b[K-Wextra\x1b[m\x1b[K]\n'}
+[5.701408] (coordinator) StderrLine: {'line': b'  490 | \x1b[01;35m\x1b[KCamera\x1b[m\x1b[K::Camera( const Camera& )\n'}
+[5.701579] (coordinator) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.703154] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Camera.cpp:490:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kbase class \xe2\x80\x98\x1b[01m\x1b[Kclass AVT::VmbAPI::FeatureContainer\x1b[m\x1b[K\xe2\x80\x99 should be explicitly initialized in the copy constructor [\x1b[01;35m\x1b[K-Wextra\x1b[m\x1b[K]\n'}
+[5.734695] (-) TimerEvent: {}
+[5.835757] (-) TimerEvent: {}
+[5.874510] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.cpp:29\x1b[m\x1b[K:\n'}
+[5.875196] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::Condition::Condition()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.875425] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.h:44:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::Condition::m_nWaiterNumber\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[5.875607] (coordinator) StderrLine: {'line': b'   44 |     unsigned long           \x1b[01;35m\x1b[Km_nWaiterNumber\x1b[m\x1b[K;\n'}
+[5.875765] (coordinator) StderrLine: {'line': b'      |                             \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.875913] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.h:43:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int AVT::VmbAPI::Condition::m_nReleaseNumber\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[5.876204] (coordinator) StderrLine: {'line': b'   43 |     unsigned long           \x1b[01;35m\x1b[Km_nReleaseNumber\x1b[m\x1b[K;\n'}
+[5.876492] (coordinator) StderrLine: {'line': b'      |                             \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.876946] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Condition.cpp:34:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[5.877259] (coordinator) StderrLine: {'line': b'   34 | \x1b[01;35m\x1b[KCondition\x1b[m\x1b[K::Condition()\n'}
+[5.877528] (coordinator) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.935943] (-) TimerEvent: {}
+[6.036708] (-) TimerEvent: {}
+[6.049864] (coordinator) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/ConditionHelper.cpp.o\x1b[0m\n'}
+[6.055971] (coordinator) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/DefaultCameraFactory.cpp.o\x1b[0m\n'}
+[6.137031] (-) TimerEvent: {}
+[6.237758] (-) TimerEvent: {}
+[6.338558] (-) TimerEvent: {}
+[6.439325] (-) TimerEvent: {}
+[6.540071] (-) TimerEvent: {}
+[6.640846] (-) TimerEvent: {}
+[6.741575] (-) TimerEvent: {}
+[6.842357] (-) TimerEvent: {}
+[6.867120] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp:29\x1b[m\x1b[K:\n'}
+[6.870295] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::ConditionHelper::ConditionHelper()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[6.871923] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.h:63:41:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::ConditionHelper::m_nNumListReads\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[6.873110] (coordinator) StderrLine: {'line': b'   63 |     int                                 \x1b[01;35m\x1b[Km_nNumListReads\x1b[m\x1b[K;\n'}
+[6.874052] (coordinator) StderrLine: {'line': b'      |                                         \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.875067] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.h:61:41:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbool AVT::VmbAPI::ConditionHelper::m_bIsWritingList\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[6.876209] (coordinator) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumEntry.cpp.o\x1b[0m\n'}
+[6.877203] (coordinator) StderrLine: {'line': b'   61 |     bool                                \x1b[01;35m\x1b[Km_bIsWritingList\x1b[m\x1b[K;\n'}
+[6.878094] (coordinator) StderrLine: {'line': b'      |                                         \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.879106] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/ConditionHelper.cpp:36:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[6.879957] (coordinator) StderrLine: {'line': b'   36 | \x1b[01;35m\x1b[KConditionHelper\x1b[m\x1b[K::ConditionHelper()\n'}
+[6.880959] (coordinator) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.942557] (-) TimerEvent: {}
+[7.041032] (coordinator) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/EnumFeature.cpp.o\x1b[0m\n'}
+[7.042795] (-) TimerEvent: {}
+[7.057271] (coordinator) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Feature.cpp.o\x1b[0m\n'}
+[7.143056] (-) TimerEvent: {}
+[7.152724] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Feature.cpp:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kignoring #pragma warning  [\x1b[01;35m\x1b[K-Wunknown-pragmas\x1b[m\x1b[K]\n'}
+[7.153441] (coordinator) StderrLine: {'line': b'   29 | #pragma warning(disable:4996)\n'}
+[7.153700] (coordinator) StderrLine: {'line': b'      | \n'}
+[7.154278] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Feature.cpp:31:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kignoring #pragma warning  [\x1b[01;35m\x1b[K-Wunknown-pragmas\x1b[m\x1b[K]\n'}
+[7.154597] (coordinator) StderrLine: {'line': b'   31 | #pragma warning(default:4996)\n'}
+[7.154865] (coordinator) StderrLine: {'line': b'      | \n'}
+[7.243271] (-) TimerEvent: {}
+[7.344044] (-) TimerEvent: {}
+[7.348277] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumEntry.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::EnumEntry::PrivateImpl::PrivateImpl(const char*, const char*, const char*, const char*, const char*, VmbFeatureVisibility_t, VmbInt64_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.348942] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumEntry.cpp:41:33:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::EnumEntry::PrivateImpl::m_nValue\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[7.349149] (coordinator) StderrLine: {'line': b'   41 |     VmbInt64_t                  \x1b[01;35m\x1b[Km_nValue\x1b[m\x1b[K;\n'}
+[7.349305] (coordinator) StderrLine: {'line': b'      |                                 \x1b[01;35m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[7.349448] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumEntry.cpp:40:33:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[KVmbFeatureVisibilityType AVT::VmbAPI::EnumEntry::PrivateImpl::m_Visibility\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[7.349592] (coordinator) StderrLine: {'line': b'   40 |     VmbFeatureVisibilityType    \x1b[01;35m\x1b[Km_Visibility\x1b[m\x1b[K;\n'}
+[7.349729] (coordinator) StderrLine: {'line': b'      |                                 \x1b[01;35m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.349860] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/EnumEntry.cpp:42:5:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[7.349999] (coordinator) StderrLine: {'line': b'   42 |     \x1b[01;35m\x1b[KPrivateImpl\x1b[m\x1b[K(    const char              *pStrName,\n'}
+[7.350131] (coordinator) StderrLine: {'line': b'      |     \x1b[01;35m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.444268] (-) TimerEvent: {}
+[7.545045] (-) TimerEvent: {}
+[7.562058] (coordinator) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FeatureContainer.cpp.o\x1b[0m\n'}
+[7.645227] (-) TimerEvent: {}
+[7.745974] (-) TimerEvent: {}
+[7.843839] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Feature.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[KVmbErrorType AVT::VmbAPI::Feature::SetValue(const VmbInt32_t&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.844481] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Feature.cpp:115:49:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Ktype qualifiers ignored on cast result type [\x1b[01;35m\x1b[K-Wignored-qualifiers\x1b[m\x1b[K]\n'}
+[7.844719] (coordinator) StderrLine: {'line': b'  115 |     return m_pImpl->SetValue( (const VmbInt64_t)\x1b[01;35m\x1b[KrnValue\x1b[m\x1b[K );\n'}
+[7.844945] (coordinator) StderrLine: {'line': b'      |                                                 \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[7.849483] (-) TimerEvent: {}
+[7.950180] (-) TimerEvent: {}
+[8.051237] (-) TimerEvent: {}
+[8.151983] (-) TimerEvent: {}
+[8.167050] (coordinator) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FileLogger.cpp.o\x1b[0m\n'}
+[8.252179] (-) TimerEvent: {}
+[8.338670] (coordinator) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FloatFeature.cpp.o\x1b[0m\n'}
+[8.352382] (-) TimerEvent: {}
+[8.453171] (-) TimerEvent: {}
+[8.553960] (-) TimerEvent: {}
+[8.654696] (-) TimerEvent: {}
+[8.755496] (-) TimerEvent: {}
+[8.769602] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp:\x1b[m\x1b[K In copy constructor \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::FeatureContainer::FeatureContainer(const AVT::VmbAPI::FeatureContainer&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[8.770197] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FeatureContainer.cpp:53:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kbase class \xe2\x80\x98\x1b[01m\x1b[Kclass AVT::VmbAPI::BasicLockable\x1b[m\x1b[K\xe2\x80\x99 should be explicitly initialized in the copy constructor [\x1b[01;35m\x1b[K-Wextra\x1b[m\x1b[K]\n'}
+[8.770432] (coordinator) StderrLine: {'line': b'   53 | \x1b[01;35m\x1b[KFeatureContainer\x1b[m\x1b[K::FeatureContainer( const FeatureContainer& )\n'}
+[8.770600] (coordinator) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[8.855739] (-) TimerEvent: {}
+[8.956546] (-) TimerEvent: {}
+[9.057366] (-) TimerEvent: {}
+[9.158126] (-) TimerEvent: {}
+[9.259791] (-) TimerEvent: {}
+[9.307132] (coordinator) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Frame.cpp.o\x1b[0m\n'}
+[9.317791] (coordinator) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/FrameHandler.cpp.o\x1b[0m\n'}
+[9.360006] (-) TimerEvent: {}
+[9.461221] (-) TimerEvent: {}
+[9.546371] (coordinator) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/IntFeature.cpp.o\x1b[0m\n'}
+[9.561415] (-) TimerEvent: {}
+[9.662180] (-) TimerEvent: {}
+[9.763942] (-) TimerEvent: {}
+[9.865049] (-) TimerEvent: {}
+[9.966072] (-) TimerEvent: {}
+[10.067115] (-) TimerEvent: {}
+[10.167873] (-) TimerEvent: {}
+[10.268646] (-) TimerEvent: {}
+[10.369446] (-) TimerEvent: {}
+[10.470224] (-) TimerEvent: {}
+[10.543980] (coordinator) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.cpp:28\x1b[m\x1b[K:\n'}
+[10.544637] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::FrameHandler::FrameHandler(AVT::VmbAPI::FramePtr, AVT::VmbAPI::IFrameObserverPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[10.544856] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.h:56:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::FrameHandler::m_pFrame\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[10.545027] (coordinator) StderrLine: {'line': b'   56 |     FramePtr                \x1b[01;35m\x1b[Km_pFrame\x1b[m\x1b[K;\n'}
+[10.545178] (coordinator) StderrLine: {'line': b'      |                             \x1b[01;35m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[10.545321] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.h:55:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::IFrameObserverPtr AVT::VmbAPI::FrameHandler::m_pObserver\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[10.545581] (coordinator) StderrLine: {'line': b'   55 |     IFrameObserverPtr       \x1b[01;35m\x1b[Km_pObserver\x1b[m\x1b[K;\n'}
+[10.545846] (coordinator) StderrLine: {'line': b'      |                             \x1b[01;35m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[10.546225] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/FrameHandler.cpp:36:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K-Wreorder\x1b[m\x1b[K]\n'}
+[10.546556] (coordinator) StderrLine: {'line': b'   36 | \x1b[01;35m\x1b[KFrameHandler\x1b[m\x1b[K::FrameHandler( FramePtr pFrame, IFrameObserverPtr pFrameObserver )\n'}
+[10.546816] (coordinator) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[10.570424] (-) TimerEvent: {}
+[10.671198] (-) TimerEvent: {}
+[10.772004] (-) TimerEvent: {}
+[10.821222] (coordinator) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Interface.cpp.o\x1b[0m\n'}
+[10.860711] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp:27:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kignoring #pragma warning  [\x1b[01;35m\x1b[K-Wunknown-pragmas\x1b[m\x1b[K]\n'}
+[10.861309] (coordinator) StderrLine: {'line': b'   27 | #pragma warning(disable:4996)\n'}
+[10.861519] (coordinator) StderrLine: {'line': b'      | \n'}
+[10.872192] (-) TimerEvent: {}
+[10.882610] (coordinator) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Mutex.cpp.o\x1b[0m\n'}
+[10.884426] (coordinator) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/MutexGuard.cpp.o\x1b[0m\n'}
+[10.940033] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kignoring #pragma warning  [\x1b[01;35m\x1b[K-Wunknown-pragmas\x1b[m\x1b[K]\n'}
+[10.940741] (coordinator) StderrLine: {'line': b'   29 | #pragma warning(default:4996)\n'}
+[10.941183] (coordinator) StderrLine: {'line': b'      | \n'}
+[10.972401] (-) TimerEvent: {}
+[11.073412] (-) TimerEvent: {}
+[11.174152] (-) TimerEvent: {}
+[11.274894] (-) TimerEvent: {}
+[11.375645] (-) TimerEvent: {}
+[11.476429] (-) TimerEvent: {}
+[11.577230] (-) TimerEvent: {}
+[11.634334] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp:\x1b[m\x1b[K In copy constructor \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::Interface::Interface(const AVT::VmbAPI::Interface&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[11.634907] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp:54:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kbase class \xe2\x80\x98\x1b[01m\x1b[Kclass AVT::VmbAPI::BasicLockable\x1b[m\x1b[K\xe2\x80\x99 should be explicitly initialized in the copy constructor [\x1b[01;35m\x1b[K-Wextra\x1b[m\x1b[K]\n'}
+[11.635129] (coordinator) StderrLine: {'line': b'   54 | \x1b[01;35m\x1b[KInterface\x1b[m\x1b[K::Interface( const Interface& )\n'}
+[11.635298] (coordinator) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[11.635453] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Interface.cpp:54:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kbase class \xe2\x80\x98\x1b[01m\x1b[Kclass AVT::VmbAPI::FeatureContainer\x1b[m\x1b[K\xe2\x80\x99 should be explicitly initialized in the copy constructor [\x1b[01;35m\x1b[K-Wextra\x1b[m\x1b[K]\n'}
+[11.677424] (-) TimerEvent: {}
+[11.778128] (-) TimerEvent: {}
+[11.878915] (-) TimerEvent: {}
+[11.979690] (-) TimerEvent: {}
+[11.995548] (coordinator) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/RawFeature.cpp.o\x1b[0m\n'}
+[12.079911] (-) TimerEvent: {}
+[12.180681] (-) TimerEvent: {}
+[12.195836] (coordinator) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/Semaphore.cpp.o\x1b[0m\n'}
+[12.280890] (-) TimerEvent: {}
+[12.381605] (-) TimerEvent: {}
+[12.482337] (-) TimerEvent: {}
+[12.583080] (-) TimerEvent: {}
+[12.607337] (coordinator) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/StringFeature.cpp.o\x1b[0m\n'}
+[12.683305] (-) TimerEvent: {}
+[12.784087] (-) TimerEvent: {}
+[12.885121] (-) TimerEvent: {}
+[12.985853] (-) TimerEvent: {}
+[13.086820] (-) TimerEvent: {}
+[13.187603] (-) TimerEvent: {}
+[13.235830] (coordinator) StdoutLine: {'line': b'[ 96%] \x1b[32mBuilding CXX object CMakeFiles/coordinator_node.dir/include/VimbaCPP/Source/VimbaSystem.cpp.o\x1b[0m\n'}
+[13.287842] (-) TimerEvent: {}
+[13.389214] (-) TimerEvent: {}
+[13.490431] (-) TimerEvent: {}
+[13.528433] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Semaphore.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::Semaphore::Semaphore(int, int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[13.532578] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/Semaphore.cpp:37:38:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KnMax\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[13.533164] (coordinator) StderrLine: {'line': b'   37 | Semaphore::Semaphore( int nInit, \x1b[01;35m\x1b[Kint nMax\x1b[m\x1b[K )\n'}
+[13.533355] (coordinator) StderrLine: {'line': b'      |                                  \x1b[01;35m\x1b[K~~~~^~~~\x1b[m\x1b[K\n'}
+[13.592414] (-) TimerEvent: {}
+[13.693166] (-) TimerEvent: {}
+[13.793874] (-) TimerEvent: {}
+[13.894568] (-) TimerEvent: {}
+[13.995293] (-) TimerEvent: {}
+[14.096634] (-) TimerEvent: {}
+[14.197755] (-) TimerEvent: {}
+[14.298469] (-) TimerEvent: {}
+[14.399183] (-) TimerEvent: {}
+[14.499953] (-) TimerEvent: {}
+[14.600921] (-) TimerEvent: {}
+[14.603761] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp:\x1b[m\x1b[K In copy constructor \xe2\x80\x98\x1b[01m\x1b[KAVT::VmbAPI::VimbaSystem::VimbaSystem(const AVT::VmbAPI::VimbaSystem&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[14.604198] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp:970:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kbase class \xe2\x80\x98\x1b[01m\x1b[Kclass AVT::VmbAPI::BasicLockable\x1b[m\x1b[K\xe2\x80\x99 should be explicitly initialized in the copy constructor [\x1b[01;35m\x1b[K-Wextra\x1b[m\x1b[K]\n'}
+[14.604377] (coordinator) StderrLine: {'line': b'  970 | \x1b[01;35m\x1b[KVimbaSystem\x1b[m\x1b[K::VimbaSystem( const VimbaSystem& )\n'}
+[14.604537] (coordinator) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[14.604693] (coordinator) StderrLine: {'line': b'\x1b[01m\x1b[K/home/avees/coordinator_node/src/coordinator/include/VimbaCPP/Source/VimbaSystem.cpp:970:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kbase class \xe2\x80\x98\x1b[01m\x1b[Kclass AVT::VmbAPI::FeatureContainer\x1b[m\x1b[K\xe2\x80\x99 should be explicitly initialized in the copy constructor [\x1b[01;35m\x1b[K-Wextra\x1b[m\x1b[K]\n'}
+[14.701115] (-) TimerEvent: {}
+[14.801816] (-) TimerEvent: {}
+[14.902569] (-) TimerEvent: {}
+[15.003287] (-) TimerEvent: {}
+[15.104006] (-) TimerEvent: {}
+[15.204724] (-) TimerEvent: {}
+[15.305502] (-) TimerEvent: {}
+[15.406199] (-) TimerEvent: {}
+[15.506902] (-) TimerEvent: {}
+[15.607569] (-) TimerEvent: {}
+[15.708506] (-) TimerEvent: {}
+[15.809247] (-) TimerEvent: {}
+[15.909958] (-) TimerEvent: {}
+[16.010980] (-) TimerEvent: {}
+[16.111667] (-) TimerEvent: {}
+[16.212377] (-) TimerEvent: {}
+[16.313095] (-) TimerEvent: {}
+[16.413803] (-) TimerEvent: {}
+[16.514504] (-) TimerEvent: {}
+[16.615201] (-) TimerEvent: {}
+[16.715905] (-) TimerEvent: {}
+[16.816600] (-) TimerEvent: {}
+[16.917323] (-) TimerEvent: {}
+[17.018000] (-) TimerEvent: {}
+[17.118681] (-) TimerEvent: {}
+[17.219350] (-) TimerEvent: {}
+[17.320031] (-) TimerEvent: {}
+[17.420742] (-) TimerEvent: {}
+[17.521469] (-) TimerEvent: {}
+[17.622143] (-) TimerEvent: {}
+[17.723034] (-) TimerEvent: {}
+[17.824163] (-) TimerEvent: {}
+[17.924885] (-) TimerEvent: {}
+[18.025558] (-) TimerEvent: {}
+[18.126238] (-) TimerEvent: {}
+[18.226904] (-) TimerEvent: {}
+[18.327578] (-) TimerEvent: {}
+[18.428248] (-) TimerEvent: {}
+[18.528989] (-) TimerEvent: {}
+[18.629850] (-) TimerEvent: {}
+[18.730695] (-) TimerEvent: {}
+[18.831543] (-) TimerEvent: {}
+[18.932346] (-) TimerEvent: {}
+[19.033175] (-) TimerEvent: {}
+[19.134026] (-) TimerEvent: {}
+[19.234868] (-) TimerEvent: {}
+[19.335728] (-) TimerEvent: {}
+[19.436569] (-) TimerEvent: {}
+[19.537417] (-) TimerEvent: {}
+[19.638215] (-) TimerEvent: {}
+[19.739046] (-) TimerEvent: {}
+[19.839867] (-) TimerEvent: {}
+[19.940672] (-) TimerEvent: {}
+[20.041527] (-) TimerEvent: {}
+[20.142376] (-) TimerEvent: {}
+[20.243225] (-) TimerEvent: {}
+[20.344064] (-) TimerEvent: {}
+[20.444904] (-) TimerEvent: {}
+[20.545714] (-) TimerEvent: {}
+[20.646525] (-) TimerEvent: {}
+[20.747300] (-) TimerEvent: {}
+[20.848121] (-) TimerEvent: {}
+[20.948920] (-) TimerEvent: {}
+[21.049729] (-) TimerEvent: {}
+[21.150557] (-) TimerEvent: {}
+[21.251379] (-) TimerEvent: {}
+[21.352186] (-) TimerEvent: {}
+[21.452985] (-) TimerEvent: {}
+[21.553662] (-) TimerEvent: {}
+[21.654473] (-) TimerEvent: {}
+[21.755276] (-) TimerEvent: {}
+[21.856074] (-) TimerEvent: {}
+[21.956876] (-) TimerEvent: {}
+[22.057658] (-) TimerEvent: {}
+[22.158455] (-) TimerEvent: {}
+[22.259261] (-) TimerEvent: {}
+[22.360064] (-) TimerEvent: {}
+[22.460885] (-) TimerEvent: {}
+[22.561689] (-) TimerEvent: {}
+[22.662460] (-) TimerEvent: {}
+[22.763259] (-) TimerEvent: {}
+[22.864047] (-) TimerEvent: {}
+[22.964841] (-) TimerEvent: {}
+[23.065610] (-) TimerEvent: {}
+[23.166410] (-) TimerEvent: {}
+[23.267190] (-) TimerEvent: {}
+[23.367855] (-) TimerEvent: {}
+[23.468665] (-) TimerEvent: {}
+[23.569490] (-) TimerEvent: {}
+[23.670286] (-) TimerEvent: {}
+[23.771073] (-) TimerEvent: {}
+[23.871753] (-) TimerEvent: {}
+[23.972415] (-) TimerEvent: {}
+[24.073253] (-) TimerEvent: {}
+[24.174058] (-) TimerEvent: {}
+[24.274873] (-) TimerEvent: {}
+[24.375681] (-) TimerEvent: {}
+[24.476480] (-) TimerEvent: {}
+[24.577311] (-) TimerEvent: {}
+[24.678103] (-) TimerEvent: {}
+[24.778902] (-) TimerEvent: {}
+[24.879716] (-) TimerEvent: {}
+[24.980523] (-) TimerEvent: {}
+[25.081380] (-) TimerEvent: {}
+[25.182207] (-) TimerEvent: {}
+[25.283055] (-) TimerEvent: {}
+[25.383860] (-) TimerEvent: {}
+[25.484675] (-) TimerEvent: {}
+[25.585523] (-) TimerEvent: {}
+[25.686375] (-) TimerEvent: {}
+[25.787136] (-) TimerEvent: {}
+[25.887881] (-) TimerEvent: {}
+[25.988707] (-) TimerEvent: {}
+[26.089531] (-) TimerEvent: {}
+[26.190352] (-) TimerEvent: {}
+[26.291160] (-) TimerEvent: {}
+[26.391850] (-) TimerEvent: {}
+[26.492539] (-) TimerEvent: {}
+[26.593282] (-) TimerEvent: {}
+[26.693988] (-) TimerEvent: {}
+[26.794669] (-) TimerEvent: {}
+[26.895351] (-) TimerEvent: {}
+[26.996056] (-) TimerEvent: {}
+[27.096825] (-) TimerEvent: {}
+[27.197511] (-) TimerEvent: {}
+[27.298212] (-) TimerEvent: {}
+[27.315304] (coordinator) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable coordinator_node\x1b[0m\n'}
+[27.398418] (-) TimerEvent: {}
+[27.499257] (-) TimerEvent: {}
+[27.600111] (-) TimerEvent: {}
+[27.700938] (-) TimerEvent: {}
+[27.801723] (-) TimerEvent: {}
+[27.902495] (-) TimerEvent: {}
+[28.003322] (-) TimerEvent: {}
+[28.104146] (-) TimerEvent: {}
+[28.204965] (-) TimerEvent: {}
+[28.305816] (-) TimerEvent: {}
+[28.406643] (-) TimerEvent: {}
+[28.507476] (-) TimerEvent: {}
+[28.608312] (-) TimerEvent: {}
+[28.709179] (-) TimerEvent: {}
+[28.810007] (-) TimerEvent: {}
+[28.910842] (-) TimerEvent: {}
+[29.011665] (-) TimerEvent: {}
+[29.058048] (coordinator) StderrLine: {'line': b'/usr/bin/ld: warning: libopencv_imgcodecs.so.4.2, needed by /opt/ros/foxy/lib/libcv_bridge.so, may conflict with libopencv_imgcodecs.so.4.5\n'}
+[29.058715] (coordinator) StderrLine: {'line': b'/usr/bin/ld: warning: libopencv_core.so.4.2, needed by /opt/ros/foxy/lib/libcv_bridge.so, may conflict with libopencv_core.so.4.5\n'}
+[29.083694] (coordinator) StdoutLine: {'line': b'[100%] Built target coordinator_node\n'}
+[29.110958] (coordinator) CommandEnded: {'returncode': 0}
+[29.112441] (-) TimerEvent: {}
+[29.113692] (coordinator) JobProgress: {'identifier': 'coordinator', 'progress': 'install'}
+[29.139515] (coordinator) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/avees/coordinator_node/build/coordinator'], 'cwd': '/home/avees/coordinator_node/build/coordinator', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'avees'), ('SSH_AGENT_PID', '2693'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/avees/data-domain/install/monitor/lib:/home/avees/data-domain/install/avt_vimba_camera/lib:/home/avees/data-domain/install/avt_vimba_camera_msgs/lib:/usr/local/cuda-11.4/lib64:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/opt/Vimba_6_0/VimbaC/DynamicLib/arm_64bit:/opt/Vimba_6_0/VimbaCPP/DynamicLib/arm_64bit'), ('HOME', '/home/avees'), ('OLDPWD', '/home/avees'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2502'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3907'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/avees/data-domain/install:/home/avees/coordinator_node/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'avees'), ('JOURNAL_STREAM', '8:61829'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'avees'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda-11.4/bin:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2728,unix/ubuntu:/tmp/.ICE-unix/2728'), ('INVOCATION_ID', '5a8ec2e1fb98494c8eb2d25b50085b29'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '103'), ('AMENT_PREFIX_PATH', '/home/avees/data-domain/install/monitor:/home/avees/data-domain/install/avt_vimba_camera:/home/avees/data-domain/install/avt_vimba_camera_msgs:/home/avees/coordinator_node/install/coordinator:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9deb70b4-5cb9-4e87-b4cb-2d9e1e38fd0b'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/avees/coordinator_node/build/coordinator'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/avees/data-domain/install/avt_vimba_camera_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', ':/opt/Vimba_6_0/VimbaGigETL/CTI/arm_64bit'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/avees/data-domain/install/monitor:/home/avees/data-domain/install/avt_vimba_camera:/home/avees/data-domain/install/avt_vimba_camera_msgs:/home/avees/coordinator_node/install/coordinator:/opt/ros/foxy')]), 'shell': False}
+[29.162830] (coordinator) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[29.163678] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/lib/coordinator/coordinator_node\n'}
+[29.172236] (coordinator) StdoutLine: {'line': b'-- Set runtime path of "/home/avees/coordinator_node/install/coordinator/lib/coordinator/coordinator_node" to ""\n'}
+[29.173146] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/launch\n'}
+[29.173564] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/launch/coordinator_launch.py\n'}
+[29.173931] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/config\n'}
+[29.174273] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/config/params.yaml\n'}
+[29.174618] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/ament_index/resource_index/package_run_dependencies/coordinator\n'}
+[29.174957] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/ament_index/resource_index/parent_prefix_path/coordinator\n'}
+[29.175276] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/ament_prefix_path.sh\n'}
+[29.175592] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/ament_prefix_path.dsv\n'}
+[29.175945] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/path.sh\n'}
+[29.176276] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/environment/path.dsv\n'}
+[29.176590] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.bash\n'}
+[29.176928] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.sh\n'}
+[29.177242] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.zsh\n'}
+[29.177568] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/local_setup.dsv\n'}
+[29.177883] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/package.dsv\n'}
+[29.178183] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/ament_index/resource_index/packages/coordinator\n'}
+[29.178481] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[29.178735] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/cmake/coordinatorConfig.cmake\n'}
+[29.178985] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/cmake/coordinatorConfig-version.cmake\n'}
+[29.179236] (coordinator) StdoutLine: {'line': b'-- Installing: /home/avees/coordinator_node/install/coordinator/share/coordinator/package.xml\n'}
+[29.182263] (coordinator) CommandEnded: {'returncode': 0}
+[29.213707] (-) TimerEvent: {}
+[29.233503] (coordinator) JobEnded: {'identifier': 'coordinator', 'rc': 0}
+[29.236560] (-) EventReactorShutdown: {}

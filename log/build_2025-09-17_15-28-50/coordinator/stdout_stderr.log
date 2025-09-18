@@ -1,0 +1,48 @@
+[35m[1mScanning dependencies of target coordinator_node[0m
+[  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+In file included from [01m[K/opt/ros/foxy/include/rclcpp/client.hpp:32[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:23[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:33[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+                 from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+/opt/ros/foxy/include/rclcpp/function_traits.hpp: In instantiation of ‘[01m[Kstruct rclcpp::function_traits::function_traits<Coordinator::Coordinator()::<lambda(auto:12)> >[m[K’:
+[01m[K/opt/ros/foxy/include/rclcpp/subscription_traits.hpp:97:8:[m[K   required from ‘[01m[Kstruct rclcpp::subscription_traits::has_message_type<Coordinator::Coordinator()::<lambda(auto:12)>, std::allocator<void>, void, void, void, void>[m[K’
+[01m[K/opt/ros/foxy/include/rclcpp/node.hpp:204:5:[m[K   required by substitution of ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class CallbackMessageT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<SubscriptionT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::Header_<std::allocator<void> >; CallbackT = Coordinator::Coordinator()::<lambda(auto:12)>; AllocatorT = std::allocator<void>; CallbackMessageT = <missing>; SubscriptionT = <missing>; MessageMemoryStrategyT = <missing>][m[K’
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:82:23:[m[K   required from here
+[01m[K/opt/ros/foxy/include/rclcpp/function_traits.hpp:51:9:[m[K [01;31m[Kerror: [m[Kdecltype cannot resolve address of overloaded function
+   51 |   using [01;31m[Karguments[m[K = typename tuple_tail<
+      |         [01;31m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/foxy/include/rclcpp/function_traits.hpp:57:9:[m[K [01;31m[Kerror: [m[Kdecltype cannot resolve address of overloaded function
+   57 |   using [01;31m[Kargument_type[m[K = typename std::tuple_element<N, arguments>::type;
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/foxy/include/rclcpp/function_traits.hpp:59:9:[m[K [01;31m[Kerror: [m[Kdecltype cannot resolve address of overloaded function
+   59 |   using [01;31m[Kreturn_type[m[K = typename function_traits<decltype( &FunctionT::operator())>::return_type;
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In constructor ‘[01m[KCoordinator::Coordinator()[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:82:23:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KCoordinator::create_subscription<std_msgs::msg::Header>(std::string&, int, Coordinator::Coordinator()::<lambda(auto:12)>, rclcpp::SubscriptionOptions&)[m[K’
+   82 |             }, sub_opt[01;31m[K)[m[K;
+      |                       [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/foxy/include/rclcpp/node.hpp:1224[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+                 from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[01m[K/opt/ros/foxy/include/rclcpp/node_impl.hpp:91:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class CallbackMessageT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<SubscriptionT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+   91 | [01;36m[KNode[m[K::create_subscription(
+      | [01;36m[K^~~~[m[K
+[01m[K/opt/ros/foxy/include/rclcpp/node_impl.hpp:91:1:[m[K [01;36m[Knote: [m[K  substitution of deduced template arguments resulted in errors seen above
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kstd::vector<int> Coordinator::hb_check()[m[K’:
+[01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:162:44:[m[K [01;31m[Kerror: [m[K‘[01m[Kit_hb[m[K’ was not declared in this scope
+  162 |             rclcpp::Duration delta = now - [01;31m[Kit_hb[m[K->second;
+      |                                            [01;31m[K^~~~~[m[K
+make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

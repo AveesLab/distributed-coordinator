@@ -1,0 +1,15 @@
+[0.043s] Invoking command in '/home/avees/coordinator_node/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6
+[0.281s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.394s] [  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[7.618s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In lambda function:
+[7.619s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:44:22:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kdo_split[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+[7.619s]    44 |                 bool [01;35m[Kdo_split[m[K = false;
+[7.619s]       |                      [01;35m[K^~~~~~~~[m[K
+[7.691s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kvoid Coordinator::FrameCallback(const FramePtr&)[m[K’:
+[7.692s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:343:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdo_split[m[K’ was not declared in this scope
+[7.692s]   343 |             if ([01;31m[Kdo_split[m[K)
+[7.693s]       |                 [01;31m[K^~~~~~~~[m[K
+[14.008s] make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+[14.009s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+[14.010s] make: *** [Makefile:141: all] Error 2
+[14.016s] Invoked command in '/home/avees/coordinator_node/build/coordinator' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6

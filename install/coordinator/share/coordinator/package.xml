@@ -21,9 +21,7 @@
   <depend>diagnostic_msgs</depend>
   <depend>cv_bridge</depend>
   <depend>image_transport</depend>
-
-  <!-- 메시지 제공 패키지(PartialImage) -->
-  <depend>avt_vimba_camera</depend>
+  <depend>avt_vimba_camera_msgs</depend>
 
   <!-- OpenCV는 시스템 의존성(rosdep)로 처리됩니다. 그대로 둬도 무방 -->
   <depend>OpenCV</depend>

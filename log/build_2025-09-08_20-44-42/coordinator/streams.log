@@ -1,0 +1,12 @@
+[0.032s] Invoking command in '/home/avees/coordinator_node/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6
+[0.147s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.263s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[0.264s] [  6%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/main.cpp.o[0m
+[7.493s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kvoid Coordinator::start_frame_snapshot_locked(const rclcpp::Time&)[m[K’:
+[7.494s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:153:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kinclude_agg_in_sync_[m[K’ was not declared in this scope
+[7.495s]   153 |     const int max_id = [01;31m[Kinclude_agg_in_sync_[m[K ? 5 : 4;
+[7.496s]       |                        [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[13.856s] make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+[13.857s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+[13.857s] make: *** [Makefile:141: all] Error 2
+[13.865s] Invoked command in '/home/avees/coordinator_node/build/coordinator' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6

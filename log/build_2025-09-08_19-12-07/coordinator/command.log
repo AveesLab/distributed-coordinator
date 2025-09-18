@@ -1,0 +1,2 @@
+Invoking command in '/home/avees/coordinator_node/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/avees/coordinator_node/src/coordinator -DCMAKE_INSTALL_PREFIX=/home/avees/coordinator_node/install/coordinator
+Invoked command in '/home/avees/coordinator_node/build/coordinator' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/avees/coordinator_node/src/coordinator -DCMAKE_INSTALL_PREFIX=/home/avees/coordinator_node/install/coordinator

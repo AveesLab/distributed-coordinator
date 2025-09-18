@@ -1,0 +1,81 @@
+[0.024s] Invoking command in '/home/avees/coordinator_node/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6
+[0.137s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.247s] [  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[7.368s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In constructor ‘[01m[KCoordinator::Coordinator()[m[K’:
+[7.368s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:28:163:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KCoordinator::create_subscription<std_msgs::msg::Header>(std::string&, int, int, std::_Bind_helper<false, void (Coordinator::*)(std::shared_ptr<std_msgs::msg::Header_<std::allocator<void> > >), Coordinator*, const std::_Placeholder<1>&>::type, rclcpp::SubscriptionOptions&)[m[K’
+[7.368s]    28 |         ready_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Header>(ready_topic, 10, 10, std::bind(&Coordinator::ready_check, this, _1),sub_opt[01;31m[K)[m[K;
+[7.368s]       |                                                                                                                                                                   [01;31m[K^[m[K
+[7.369s] In file included from [01m[K/opt/ros/foxy/include/rclcpp/node.hpp:1224[m[K,
+[7.369s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[7.369s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:22[m[K,
+[7.369s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+[7.369s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[7.369s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[7.369s] [01m[K/opt/ros/foxy/include/rclcpp/node_impl.hpp:91:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class CallbackMessageT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<SubscriptionT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+[7.370s]    91 | [01;36m[KNode[m[K::create_subscription(
+[7.370s]       | [01;36m[K^~~~[m[K
+[7.370s] [01m[K/opt/ros/foxy/include/rclcpp/node_impl.hpp:91:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.370s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:28:163:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::_Bind_helper<false, void (Coordinator::*)(std::shared_ptr<std_msgs::msg::Header_<std::allocator<void> > >), Coordinator*, const std::_Placeholder<1>&>::type[m[K’ {aka ‘[01m[Kstd::_Bind<void (Coordinator::*(Coordinator*, std::_Placeholder<1>))(std::shared_ptr<std_msgs::msg::Header_<std::allocator<void> > >)>[m[K’} is not derived from ‘[01m[Kconst rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>[m[K’
+[7.370s]    28 |         ready_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Header>(ready_topic, 10, 10, std::bind(&Coordinator::ready_check, this, _1),sub_opt[01;36m[K)[m[K;
+[7.370s]       |                                                                                                                                                                   [01;36m[K^[m[K
+[7.384s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:30:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kroi_subscriber_[m[K’ was not declared in this scope; did you mean ‘[01m[Khb_subscribers_[m[K’?
+[7.384s]    30 |  [01;31m[Kroi_subscriber_[m[K = this->create_subscription<std_msgs::msg::Int64MultiArray>("/assigned_roi/node_" + std::to_string(this->node_index_),system_qos, std::bind(&MonoCameraNode::ROICallback, this, _1),sub_opt);
+[7.385s]       |  [01;31m[K^~~~~~~~~~~~~~~[m[K
+[7.385s]       |  [32m[Khb_subscribers_[m[K
+[7.385s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:30:123:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Coordinator[m[K’ has no member named ‘[01m[Knode_index_[m[K’
+[7.385s]    30 |  roi_subscriber_ = this->create_subscription<std_msgs::msg::Int64MultiArray>("/assigned_roi/node_" + std::to_string(this->[01;31m[Knode_index_[m[K),system_qos, std::bind(&MonoCameraNode::ROICallback, this, _1),sub_opt);
+[7.385s]       |                                                                                                                           [01;31m[K^~~~~~~~~~~[m[K
+[7.400s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:30:136:[m[K [01;31m[Kerror: [m[K‘[01m[Ksystem_qos[m[K’ was not declared in this scope; did you mean ‘[01m[Ksystem[m[K’?
+[7.400s]    30 |  roi_subscriber_ = this->create_subscription<std_msgs::msg::Int64MultiArray>("/assigned_roi/node_" + std::to_string(this->node_index_),[01;31m[Ksystem_qos[m[K, std::bind(&MonoCameraNode::ROICallback, this, _1),sub_opt);
+[7.401s]       |                                                                                                                                        [01;31m[K^~~~~~~~~~[m[K
+[7.401s]       |                                                                                                                                        [32m[Ksystem[m[K
+[7.401s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:30:159:[m[K [01;31m[Kerror: [m[K‘[01m[KMonoCameraNode[m[K’ has not been declared
+[7.401s]    30 |  roi_subscriber_ = this->create_subscription<std_msgs::msg::Int64MultiArray>("/assigned_roi/node_" + std::to_string(this->node_index_),system_qos, std::bind(&[01;31m[KMonoCameraNode[m[K::ROICallback, this, _1),sub_opt);
+[7.401s]       |                                                                                                                                                               [01;31m[K^~~~~~~~~~~~~~[m[K
+[7.448s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kstd::vector<int> Coordinator::hb_check(std_msgs::msg::Bool_<std::allocator<void> >::SharedPtr)[m[K’:
+[7.448s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:102:9:[m[K [01;31m[Kerror: [m[K‘[01m[Knode_id[m[K’ was not declared in this scope
+[7.449s]   102 |         [01;31m[Knode_id[m[K = msg->data;
+[7.449s]       |         [01;31m[K^~~~~~~[m[K
+[7.457s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:104:9:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_hb_map[m[K’ was not declared in this scope; did you mean ‘[01m[Klast_hb_map_[m[K’?
+[7.457s]   104 |         [01;31m[Klast_hb_map[m[K[node_id] = this->get_clock()->now();
+[7.457s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[7.457s]       |         [32m[Klast_hb_map_[m[K
+[7.458s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:106:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+[7.458s]   106 | [01;35m[K}[m[K
+[7.458s]       | [01;35m[K^[m[K
+[7.458s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kstd::vector<int> Coordinator::hb_update()[m[K’:
+[7.458s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:115:52:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[Krclcpp::Time[m[K’
+[7.458s]   115 |         rclcpp::Duration delta = now - hb_timestamp[01;31m[K->[m[Ksecond;
+[7.459s]       |                                                    [01;31m[K^~[m[K
+[7.476s] In file included from [01m[K/opt/ros/foxy/include/rclcpp/client.hpp:40[m[K,
+[7.477s]                  from [01m[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:23[m[K,
+[7.477s]                  from [01m[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20[m[K,
+[7.477s]                  from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24[m[K,
+[7.477s]                  from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18[m[K,
+[7.477s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20[m[K,
+[7.477s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:33[m[K,
+[7.478s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+[7.478s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+[7.478s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+[7.478s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[7.478s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[7.478s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kvoid Coordinator::ready_check(std_msgs::msg::Header_<std::allocator<void> >::SharedPtr)[m[K’:
+[7.478s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:127:125:[m[K [01;31m[Kerror: [m[K‘[01m[Knode_id[m[K’ was not declared in this scope
+[7.479s]   127 |     RCLCPP_INFO(this->get_logger(), "ReadyFlag from node_%d, frame_id=%s, ready_frame=%lu new_frame=%lu current_frame=%lu ",[01;31m[Knode_id[m[K, msg->frame_id.c_str(), ready_frame_, new_frame_);
+[7.479s]       |                                                                                                                             [01;31m[K^~~~~~~[m[K
+[7.496s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kvoid Coordinator::split_scheduling(const std::vector<int>&, uint64_t)[m[K’:
+[7.496s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:242:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[7.496s]   242 |     for (int i = 0; [01;35m[Ki < avail_nodes.size()[m[K; i++) {
+[7.496s]       |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~[m[K
+[7.519s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:283:26:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_time[m[K’ from ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} to ‘[01m[Klong int[m[K’ [[01;35m[K-Wnarrowing[m[K]
+[7.519s]   283 |             roi_.data = {[01;35m[Kframe_time[m[K, x_offset, y_offset, w_offset, h_offset};
+[7.519s]       |                          [01;35m[K^~~~~~~~~~[m[K
+[7.520s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:283:26:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_time[m[K’ from ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} to ‘[01m[Klong int[m[K’ [[01;35m[K-Wnarrowing[m[K]
+[7.525s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:287:66:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_time[m[K’ from ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} to ‘[01m[Klong int[m[K’ [[01;35m[K-Wnarrowing[m[K]
+[7.525s]   287 |             total_roi_msg.data.insert(total_roi_msg.data.end(), {[01;35m[Kframe_time[m[K, x_offset, y_offset, w_offset, h_offset});
+[7.525s]       |                                                                  [01;35m[K^~~~~~~~~~[m[K
+[7.526s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:287:66:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kframe_time[m[K’ from ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} to ‘[01m[Klong int[m[K’ [[01;35m[K-Wnarrowing[m[K]
+[13.699s] make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+[13.699s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+[13.700s] make: *** [Makefile:141: all] Error 2
+[13.705s] Invoked command in '/home/avees/coordinator_node/build/coordinator' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6

@@ -1,0 +1,299 @@
+[0.033s] Invoking command in '/home/avees/coordinator_node/build/coordinator': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6
+[0.148s] [35m[1mScanning dependencies of target coordinator_node[0m
+[0.258s] [  3%] [32mBuilding CXX object CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o[0m
+[7.303s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:[m[K In member function ‘[01m[Kvoid Coordinator::split_scheduling(const std::vector<int>&, const rclcpp::Time&)[m[K’:
+[7.304s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:299:43:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Publisher<std_msgs::msg::Int64MultiArray_<std::allocator<void> > >::publish(const std_msgs::msg::Int32MultiArray_<std::allocator<void> >&)[m[K’
+[7.304s]   299 |             it->second->publish(ROI.second[01;31m[K)[m[K;
+[7.304s]       |                                           [01;31m[K^[m[K
+[7.304s] In file included from [01m[K/opt/ros/foxy/include/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[7.305s]                  from [01m[K/opt/ros/foxy/include/rclcpp/subscription.hpp:50[m[K,
+[7.305s]                  from [01m[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:25[m[K,
+[7.305s]                  from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24[m[K,
+[7.305s]                  from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18[m[K,
+[7.305s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20[m[K,
+[7.305s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:33[m[K,
+[7.305s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+[7.306s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+[7.306s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+[7.306s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[7.306s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[7.306s] [01m[K/opt/ros/foxy/include/rclcpp/publisher.hpp:185:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(std::unique_ptr<MessageT, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Alloc>::rebind_traits<MessageT>::allocator_type>::rebind_alloc<MessageT>, typename std::allocator<void>::rebind<_Tp1>::other>::value, std::default_delete<_Tp>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Alloc>::rebind_traits<MessageT>::allocator_type> >::type>) [with MessageT = std_msgs::msg::Int64MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>; typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Alloc>::rebind_traits<MessageT>::allocator_type>::rebind_alloc<MessageT>, typename std::allocator<void>::rebind<_Tp1>::other>::value, std::default_delete<_Tp>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Alloc>::rebind_traits<MessageT>::allocator_type> >::type = std::default_delete<std_msgs::msg::Int64MultiArray_<std::allocator<void> > >][m[K’
+[7.306s]   185 |   [01;36m[Kpublish[m[K(std::unique_ptr<MessageT, MessageDeleter> msg)
+[7.307s]       |   [01;36m[K^~~~~~~[m[K
+[7.307s] [01m[K/opt/ros/foxy/include/rclcpp/publisher.hpp:185:53:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >[m[K’ to ‘[01m[Kstd::unique_ptr<std_msgs::msg::Int64MultiArray_<std::allocator<void> >, std::default_delete<std_msgs::msg::Int64MultiArray_<std::allocator<void> > > >[m[K’
+[7.307s]   185 |   publish([01;36m[Kstd::unique_ptr<MessageT, MessageDeleter> msg[m[K)
+[7.307s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[7.307s] [01m[K/opt/ros/foxy/include/rclcpp/publisher.hpp:209:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const MessageT&) [with MessageT = std_msgs::msg::Int64MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.307s]   209 |   [01;36m[Kpublish[m[K(const MessageT & msg)
+[7.308s]       |   [01;36m[K^~~~~~~[m[K
+[7.308s] [01m[K/opt/ros/foxy/include/rclcpp/publisher.hpp:209:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >[m[K’ to ‘[01m[Kconst std_msgs::msg::Int64MultiArray_<std::allocator<void> >&[m[K’
+[7.308s]   209 |   publish([01;36m[Kconst MessageT & msg[m[K)
+[7.308s]       |           [01;36m[K~~~~~~~~~~~~~~~~~^~~[m[K
+[7.308s] [01m[K/opt/ros/foxy/include/rclcpp/publisher.hpp:226:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rcl_serialized_message_t&) [with MessageT = std_msgs::msg::Int64MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>; rcl_serialized_message_t = rcutils_uint8_array_t][m[K’
+[7.309s]   226 |   [01;36m[Kpublish[m[K(const rcl_serialized_message_t & serialized_msg)
+[7.309s]       |   [01;36m[K^~~~~~~[m[K
+[7.309s] [01m[K/opt/ros/foxy/include/rclcpp/publisher.hpp:226:44:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >[m[K’ to ‘[01m[Kconst rcl_serialized_message_t&[m[K’ {aka ‘[01m[Kconst rcutils_uint8_array_t&[m[K’}
+[7.309s]   226 |   publish([01;36m[Kconst rcl_serialized_message_t & serialized_msg[m[K)
+[7.310s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[7.310s] [01m[K/opt/ros/foxy/include/rclcpp/publisher.hpp:232:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(const rclcpp::SerializedMessage&) [with MessageT = std_msgs::msg::Int64MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.310s]   232 |   [01;36m[Kpublish[m[K(const SerializedMessage & serialized_msg)
+[7.310s]       |   [01;36m[K^~~~~~~[m[K
+[7.311s] [01m[K/opt/ros/foxy/include/rclcpp/publisher.hpp:232:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >[m[K’ to ‘[01m[Kconst rclcpp::SerializedMessage&[m[K’
+[7.311s]   232 |   publish([01;36m[Kconst SerializedMessage & serialized_msg[m[K)
+[7.311s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[7.311s] [01m[K/opt/ros/foxy/include/rclcpp/publisher.hpp:246:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid rclcpp::Publisher<MessageT, AllocatorT>::publish(rclcpp::LoanedMessage<MessageT, AllocatorT>&&) [with MessageT = std_msgs::msg::Int64MultiArray_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K’
+[7.312s]   246 |   [01;36m[Kpublish[m[K(rclcpp::LoanedMessage<MessageT, AllocatorT> && loaned_msg)
+[7.312s]       |   [01;36m[K^~~~~~~[m[K
+[7.312s] [01m[K/opt/ros/foxy/include/rclcpp/publisher.hpp:246:58:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >[m[K’ to ‘[01m[Krclcpp::LoanedMessage<std_msgs::msg::Int64MultiArray_<std::allocator<void> >, std::allocator<void> >&&[m[K’
+[7.312s]   246 |   publish([01;36m[Krclcpp::LoanedMessage<MessageT, AllocatorT> && loaned_msg[m[K)
+[7.313s]       |           [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+[7.313s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:295:21:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmsg[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[7.313s]   295 |         const auto& [01;35m[Kmsg[m[K = ROI.second;
+[7.313s]       |                     [01;35m[K^~~[m[K
+[9.621s] In file included from [01m[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33[m[K,
+[9.623s]                  from [01m[K/usr/include/c++/9/bits/allocator.h:46[m[K,
+[9.623s]                  from [01m[K/usr/include/c++/9/memory:63[m[K,
+[9.623s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.623s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.624s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.624s] /usr/include/c++/9/ext/new_allocator.h: In instantiation of ‘[01m[Kvoid __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >; _Args = {int&, std_msgs::msg::Int64MultiArray_<std::allocator<void> >&}; _Tp = std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >][m[K’:
+[9.624s] [01m[K/usr/include/c++/9/bits/alloc_traits.h:483:4:[m[K   required from ‘[01m[Kstatic void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >; _Args = {int&, std_msgs::msg::Int64MultiArray_<std::allocator<void> >&}; _Tp = std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >; std::allocator_traits<std::allocator<_Tp1> >::allocator_type = std::allocator<std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > > >][m[K’
+[9.625s] [01m[K/usr/include/c++/9/bits/vector.tcc:115:30:[m[K   required from ‘[01m[Kstd::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::emplace_back(_Args&& ...) [with _Args = {int&, std_msgs::msg::Int64MultiArray_<std::allocator<void> >&}; _Tp = std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >; _Alloc = std::allocator<std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > > >; std::vector<_Tp, _Alloc>::reference = std::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >&][m[K’
+[9.625s] [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:278:50:[m[K   required from here
+[9.625s] [01m[K/usr/include/c++/9/ext/new_allocator.h:146:4:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::pair<int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::pair(int&, std_msgs::msg::Int64MultiArray_<std::allocator<void> >&)[m[K’
+[9.625s]   146 |  { [01;31m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[9.626s]       |    [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.626s] In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:64[m[K,
+[9.626s]                  from [01m[K/usr/include/c++/9/memory:62[m[K,
+[9.626s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.627s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.627s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.627s] [01m[K/usr/include/c++/9/bits/stl_pair.h:436:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ... _Args1, long unsigned int ..._Indexes1, class ... _Args2, long unsigned int ..._Indexes2> std::pair<_T1, _T2>::pair(std::tuple<_Args1 ...>&, std::tuple<_Args2 ...>&, std::_Index_tuple<_Indexes1 ...>, std::_Index_tuple<_Indexes2 ...>)[m[K’
+[9.627s]   436 |         [01;36m[Kpair[m[K(tuple<_Args1...>&, tuple<_Args2...>&,
+[9.628s]       |         [01;36m[K^~~~[m[K
+[9.628s] [01m[K/usr/include/c++/9/bits/stl_pair.h:436:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.628s] In file included from [01m[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33[m[K,
+[9.628s]                  from [01m[K/usr/include/c++/9/bits/allocator.h:46[m[K,
+[9.629s]                  from [01m[K/usr/include/c++/9/memory:63[m[K,
+[9.629s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.629s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.629s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.630s] [01m[K/usr/include/c++/9/ext/new_allocator.h:146:4:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::tuple<_Tps ...>[m[K’ and ‘[01m[Kint[m[K’
+[9.630s]   146 |  { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[9.630s]       |    [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.630s] In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:64[m[K,
+[9.631s]                  from [01m[K/usr/include/c++/9/memory:62[m[K,
+[9.631s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.631s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.631s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.632s] [01m[K/usr/include/c++/9/bits/stl_pair.h:375:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ... _Args1, class ... _Args2> std::pair<_T1, _T2>::pair(std::piecewise_construct_t, std::tuple<_Args1 ...>, std::tuple<_Args2 ...>)[m[K’
+[9.632s]   375 |         [01;36m[Kpair[m[K(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);
+[9.632s]       |         [01;36m[K^~~~[m[K
+[9.632s] [01m[K/usr/include/c++/9/bits/stl_pair.h:375:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.633s] In file included from [01m[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33[m[K,
+[9.633s]                  from [01m[K/usr/include/c++/9/bits/allocator.h:46[m[K,
+[9.633s]                  from [01m[K/usr/include/c++/9/memory:63[m[K,
+[9.633s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.633s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.634s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.634s] [01m[K/usr/include/c++/9/ext/new_allocator.h:146:4:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd_msgs::msg::Int64MultiArray_<std::allocator<void> >[m[K’ is not derived from ‘[01m[Kstd::tuple<_Tps ...>[m[K’
+[9.634s]   146 |  { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[9.634s]       |    [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.635s] In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:64[m[K,
+[9.635s]                  from [01m[K/usr/include/c++/9/memory:62[m[K,
+[9.635s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.635s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.636s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.636s] [01m[K/usr/include/c++/9/bits/stl_pair.h:370:21:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_MoveConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(std::pair<_U1, _U2>&&)[m[K’
+[9.636s]   370 |  explicit constexpr [01;36m[Kpair[m[K(pair<_U1, _U2>&& __p)
+[9.636s]       |                     [01;36m[K^~~~[m[K
+[9.637s] [01m[K/usr/include/c++/9/bits/stl_pair.h:370:21:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.637s] In file included from [01m[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33[m[K,
+[9.637s]                  from [01m[K/usr/include/c++/9/bits/allocator.h:46[m[K,
+[9.637s]                  from [01m[K/usr/include/c++/9/memory:63[m[K,
+[9.637s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.638s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.638s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.638s] [01m[K/usr/include/c++/9/ext/new_allocator.h:146:4:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::pair<_T1, _T2>[m[K’ and ‘[01m[Kint[m[K’
+[9.638s]   146 |  { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[9.639s]       |    [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.639s] In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:64[m[K,
+[9.639s]                  from [01m[K/usr/include/c++/9/memory:62[m[K,
+[9.639s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.640s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.640s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.640s] [01m[K/usr/include/c++/9/bits/stl_pair.h:360:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(std::pair<_U1, _U2>&&)[m[K’
+[9.640s]   360 |  constexpr [01;36m[Kpair[m[K(pair<_U1, _U2>&& __p)
+[9.641s]       |            [01;36m[K^~~~[m[K
+[9.641s] [01m[K/usr/include/c++/9/bits/stl_pair.h:360:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.641s] In file included from [01m[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33[m[K,
+[9.641s]                  from [01m[K/usr/include/c++/9/bits/allocator.h:46[m[K,
+[9.642s]                  from [01m[K/usr/include/c++/9/memory:63[m[K,
+[9.642s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.642s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.642s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.642s] [01m[K/usr/include/c++/9/ext/new_allocator.h:146:4:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::pair<_T1, _T2>[m[K’ and ‘[01m[Kint[m[K’
+[9.643s]   146 |  { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[9.643s]       |    [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.643s] In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:64[m[K,
+[9.643s]                  from [01m[K/usr/include/c++/9/memory:62[m[K,
+[9.644s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.644s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.644s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.644s] [01m[K/usr/include/c++/9/bits/stl_pair.h:350:21:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_MoveConstructiblePair<_U1, _U2>() && (! _ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&)[m[K’
+[9.645s]   350 |  explicit constexpr [01;36m[Kpair[m[K(_U1&& __x, _U2&& __y)
+[9.645s]       |                     [01;36m[K^~~~[m[K
+[9.645s] [01m[K/usr/include/c++/9/bits/stl_pair.h:350:21:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.645s] [01m[K/usr/include/c++/9/bits/stl_pair.h:349:38:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, bool>[m[K’
+[9.646s]   349 |                          bool>::type=[01;31m[Kfalse[m[K>
+[9.646s]       |                                      [01;31m[K^~~~~[m[K
+[9.646s] [01m[K/usr/include/c++/9/bits/stl_pair.h:341:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_MoveConstructiblePair<_U1, _U2>() && _ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&)[m[K’
+[9.646s]   341 |  constexpr [01;36m[Kpair[m[K(_U1&& __x, _U2&& __y)
+[9.647s]       |            [01;36m[K^~~~[m[K
+[9.647s] [01m[K/usr/include/c++/9/bits/stl_pair.h:341:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.647s] [01m[K/usr/include/c++/9/bits/stl_pair.h:340:38:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, bool>[m[K’
+[9.647s]   340 |                          bool>::type=[01;31m[Ktrue[m[K>
+[9.647s]       |                                      [01;31m[K^~~~[m[K
+[9.648s] [01m[K/usr/include/c++/9/bits/stl_pair.h:332:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U2, typename std::enable_if<_CopyMovePair<false, int, _U2>(), bool>::type <anonymous> > std::pair<_T1, _T2>::pair(const _T1&, _U2&&)[m[K’
+[9.648s]   332 |        explicit [01;36m[Kpair[m[K(const _T1& __x, _U2&& __y)
+[9.648s]       |                 [01;36m[K^~~~[m[K
+[9.648s] [01m[K/usr/include/c++/9/bits/stl_pair.h:332:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.649s] [01m[K/usr/include/c++/9/bits/stl_pair.h:331:38:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, bool>[m[K’
+[9.649s]   331 |                          bool>::type=[01;31m[Kfalse[m[K>
+[9.649s]       |                                      [01;31m[K^~~~~[m[K
+[9.649s] [01m[K/usr/include/c++/9/bits/stl_pair.h:325:18:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U2, typename std::enable_if<_CopyMovePair<true, int, _U2>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, _U2&&)[m[K’
+[9.650s]   325 |        constexpr [01;36m[Kpair[m[K(const _T1& __x, _U2&& __y)
+[9.650s]       |                  [01;36m[K^~~~[m[K
+[9.650s] [01m[K/usr/include/c++/9/bits/stl_pair.h:325:18:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.650s] [01m[K/usr/include/c++/9/bits/stl_pair.h:324:38:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, bool>[m[K’
+[9.650s]   324 |                          bool>::type=[01;31m[Ktrue[m[K>
+[9.651s]       |                                      [01;31m[K^~~~[m[K
+[9.651s] [01m[K/usr/include/c++/9/bits/stl_pair.h:318:27:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, typename std::enable_if<_MoveCopyPair<false, _U1, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, const _T2&)[m[K’
+[9.651s]   318 |        explicit constexpr [01;36m[Kpair[m[K(_U1&& __x, const _T2& __y)
+[9.651s]       |                           [01;36m[K^~~~[m[K
+[9.651s] [01m[K/usr/include/c++/9/bits/stl_pair.h:318:27:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.652s] [01m[K/usr/include/c++/9/bits/stl_pair.h:317:38:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, bool>[m[K’
+[9.652s]   317 |                          bool>::type=[01;31m[Kfalse[m[K>
+[9.652s]       |                                      [01;31m[K^~~~~[m[K
+[9.652s] [01m[K/usr/include/c++/9/bits/stl_pair.h:311:18:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, typename std::enable_if<_MoveCopyPair<true, _U1, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, const _T2&)[m[K’
+[9.653s]   311 |        constexpr [01;36m[Kpair[m[K(_U1&& __x, const _T2& __y)
+[9.653s]       |                  [01;36m[K^~~~[m[K
+[9.653s] [01m[K/usr/include/c++/9/bits/stl_pair.h:311:18:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.653s] In file included from [01m[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33[m[K,
+[9.653s]                  from [01m[K/usr/include/c++/9/bits/allocator.h:46[m[K,
+[9.654s]                  from [01m[K/usr/include/c++/9/memory:63[m[K,
+[9.654s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.654s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.654s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.654s] [01m[K/usr/include/c++/9/ext/new_allocator.h:146:4:[m[K [01;36m[Knote: [m[K  cannot convert ‘[01m[Kstd::forward<std_msgs::msg::Int64MultiArray_<std::allocator<void> >&>((* & __args#1))[m[K’ (type ‘[01m[Kstd_msgs::msg::Int64MultiArray_<std::allocator<void> >[m[K’) to type ‘[01m[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >&[m[K’
+[9.655s]   146 |  { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[9.655s]       |    [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.655s] In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:64[m[K,
+[9.655s]                  from [01m[K/usr/include/c++/9/memory:62[m[K,
+[9.655s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.656s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.656s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.656s] [01m[K/usr/include/c++/9/bits/stl_pair.h:304:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::pair<_T1, _T2>::pair(std::pair<_T1, _T2>&&) [with _T1 = int; _T2 = std_msgs::msg::Int32MultiArray_<std::allocator<void> >][m[K’
+[9.656s]   304 |       constexpr [01;36m[Kpair[m[K(pair&&) = default;
+[9.656s]       |                 [01;36m[K^~~~[m[K
+[9.656s] [01m[K/usr/include/c++/9/bits/stl_pair.h:304:17:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[9.657s] [01m[K/usr/include/c++/9/bits/stl_pair.h:303:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::pair<_T1, _T2>::pair(const std::pair<_T1, _T2>&) [with _T1 = int; _T2 = std_msgs::msg::Int32MultiArray_<std::allocator<void> >][m[K’
+[9.657s]   303 |       constexpr [01;36m[Kpair[m[K(const pair&) = default;
+[9.657s]       |                 [01;36m[K^~~~[m[K
+[9.657s] [01m[K/usr/include/c++/9/bits/stl_pair.h:303:17:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[9.657s] [01m[K/usr/include/c++/9/bits/stl_pair.h:300:21:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_ConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&)[m[K’
+[9.658s]   300 |  explicit constexpr [01;36m[Kpair[m[K(const pair<_U1, _U2>& __p)
+[9.658s]       |                     [01;36m[K^~~~[m[K
+[9.658s] [01m[K/usr/include/c++/9/bits/stl_pair.h:300:21:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.658s] In file included from [01m[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33[m[K,
+[9.658s]                  from [01m[K/usr/include/c++/9/bits/allocator.h:46[m[K,
+[9.658s]                  from [01m[K/usr/include/c++/9/memory:63[m[K,
+[9.659s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.659s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.659s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.659s] [01m[K/usr/include/c++/9/ext/new_allocator.h:146:4:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst std::pair<_T1, _T2>[m[K’ and ‘[01m[Kint[m[K’
+[9.659s]   146 |  { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[9.660s]       |    [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.660s] In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:64[m[K,
+[9.660s]                  from [01m[K/usr/include/c++/9/memory:62[m[K,
+[9.660s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.660s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.660s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.661s] [01m[K/usr/include/c++/9/bits/stl_pair.h:291:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_ConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<int, _U1>::value) || (! std::is_same<std_msgs::msg::Int32MultiArray_<std::allocator<void> >, _U2>::value)), int, std_msgs::msg::Int32MultiArray_<std::allocator<void> > >::_ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&)[m[K’
+[9.661s]   291 |         constexpr [01;36m[Kpair[m[K(const pair<_U1, _U2>& __p)
+[9.661s]       |                   [01;36m[K^~~~[m[K
+[9.661s] [01m[K/usr/include/c++/9/bits/stl_pair.h:291:19:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.661s] In file included from [01m[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33[m[K,
+[9.661s]                  from [01m[K/usr/include/c++/9/bits/allocator.h:46[m[K,
+[9.662s]                  from [01m[K/usr/include/c++/9/memory:63[m[K,
+[9.662s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.662s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.662s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.662s] [01m[K/usr/include/c++/9/ext/new_allocator.h:146:4:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst std::pair<_T1, _T2>[m[K’ and ‘[01m[Kint[m[K’
+[9.662s]   146 |  { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[9.663s]       |    [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.663s] In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:64[m[K,
+[9.663s]                  from [01m[K/usr/include/c++/9/memory:62[m[K,
+[9.663s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.663s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.663s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.663s] [01m[K/usr/include/c++/9/bits/stl_pair.h:269:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_ConstructiblePair<_U1, _U2>() && (! _ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, const _T2&)[m[K’
+[9.664s]   269 |       explicit constexpr [01;36m[Kpair[m[K(const _T1& __a, const _T2& __b)
+[9.664s]       |                          [01;36m[K^~~~[m[K
+[9.664s] [01m[K/usr/include/c++/9/bits/stl_pair.h:269:26:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.664s] [01m[K/usr/include/c++/9/bits/stl_pair.h:268:38:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, bool>[m[K’
+[9.664s]   268 |                          bool>::type=[01;31m[Kfalse[m[K>
+[9.664s]       |                                      [01;31m[K^~~~~[m[K
+[9.665s] [01m[K/usr/include/c++/9/bits/stl_pair.h:260:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_ConstructiblePair<_U1, _U2>() && _ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, const _T2&)[m[K’
+[9.665s]   260 |       constexpr [01;36m[Kpair[m[K(const _T1& __a, const _T2& __b)
+[9.665s]       |                 [01;36m[K^~~~[m[K
+[9.665s] [01m[K/usr/include/c++/9/bits/stl_pair.h:260:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.665s] In file included from [01m[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33[m[K,
+[9.665s]                  from [01m[K/usr/include/c++/9/bits/allocator.h:46[m[K,
+[9.665s]                  from [01m[K/usr/include/c++/9/memory:63[m[K,
+[9.666s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.666s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.666s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.666s] [01m[K/usr/include/c++/9/ext/new_allocator.h:146:4:[m[K [01;36m[Knote: [m[K  cannot convert ‘[01m[Kstd::forward<std_msgs::msg::Int64MultiArray_<std::allocator<void> >&>((* & __args#1))[m[K’ (type ‘[01m[Kstd_msgs::msg::Int64MultiArray_<std::allocator<void> >[m[K’) to type ‘[01m[Kconst std_msgs::msg::Int32MultiArray_<std::allocator<void> >&[m[K’
+[9.666s]   146 |  { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[9.666s]       |    [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.666s] In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:64[m[K,
+[9.667s]                  from [01m[K/usr/include/c++/9/memory:62[m[K,
+[9.667s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.667s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.667s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.667s] [01m[K/usr/include/c++/9/bits/stl_pair.h:242:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<std::__and_<std::is_default_constructible<_Tp>, std::is_default_constructible<_Dp>, std::__not_<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> > > >::value, bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair()[m[K’
+[9.667s]   242 |       explicit constexpr [01;36m[Kpair[m[K()
+[9.667s]       |                          [01;36m[K^~~~[m[K
+[9.668s] [01m[K/usr/include/c++/9/bits/stl_pair.h:242:26:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.668s] In file included from [01m[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33[m[K,
+[9.668s]                  from [01m[K/usr/include/c++/9/bits/allocator.h:46[m[K,
+[9.668s]                  from [01m[K/usr/include/c++/9/memory:63[m[K,
+[9.668s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.668s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.668s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.669s] [01m[K/usr/include/c++/9/ext/new_allocator.h:146:4:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 2 provided
+[9.669s]   146 |  { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[9.669s]       |    [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.669s] In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:64[m[K,
+[9.669s]                  from [01m[K/usr/include/c++/9/memory:62[m[K,
+[9.669s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.669s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.669s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.670s] [01m[K/usr/include/c++/9/bits/stl_pair.h:229:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> >::value, bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair()[m[K’
+[9.670s]   229 |       _GLIBCXX_CONSTEXPR [01;36m[Kpair[m[K()
+[9.670s]       |                          [01;36m[K^~~~[m[K
+[9.670s] [01m[K/usr/include/c++/9/bits/stl_pair.h:229:26:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[9.670s] In file included from [01m[K/usr/include/aarch64-linux-gnu/c++/9/bits/c++allocator.h:33[m[K,
+[9.670s]                  from [01m[K/usr/include/c++/9/bits/allocator.h:46[m[K,
+[9.670s]                  from [01m[K/usr/include/c++/9/memory:63[m[K,
+[9.671s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:144[m[K,
+[9.671s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/include/coordinator/coordinator.hpp:5[m[K,
+[9.671s]                  from [01m[K/home/avees/coordinator_node/src/coordinator/src/coordinator.cpp:1[m[K:
+[9.671s] [01m[K/usr/include/c++/9/ext/new_allocator.h:146:4:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 2 provided
+[9.671s]   146 |  { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[9.672s]       |    [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[14.235s] make[2]: *** [CMakeFiles/coordinator_node.dir/build.make:76: CMakeFiles/coordinator_node.dir/src/coordinator.cpp.o] Error 1
+[14.236s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/coordinator_node.dir/all] Error 2
+[14.236s] make: *** [Makefile:141: all] Error 2
+[14.243s] Invoked command in '/home/avees/coordinator_node/build/coordinator' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/avees/coordinator_node/build/coordinator -- -j6 -l6
