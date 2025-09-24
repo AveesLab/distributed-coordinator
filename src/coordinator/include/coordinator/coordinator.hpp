@@ -22,12 +22,6 @@
 #include <deque>
 #include <vector>
 
-struct NodeStatus {
-    bool alive = false;
-    bool ready = false;
-    rclcpp::Time last_hb;
-};
-
 struct TimestampData {
     uint64_t end_ready_flag, ready_node_index, start_framecallback,start_framesensor;
     uint64_t start_update, end_update;
@@ -62,36 +56,24 @@ private:
 
 	void LoadParams();
 	void FrameCallback(const FramePtr& vimba_frame_ptr);
-    std::pair<int, int> calculate_split_grid(int N);
     void hb_check(std_msgs::msg::Int32::SharedPtr msg);
+    void status_check(std_msgs::msg::Bool::ConstSharedPtr msg, int node_id);
+    std::pair<int, int> calculate_split_grid(int N);
     std::vector<int> hb_update();
-    void ready_check(std_msgs::msg::Header::SharedPtr msg);
 
-    void split_scheduling(const std::vector<int>& ready_node, uint64_t frame_time);
-    void update_available_nodes();
+    void split_scheduling(const std::vector<int>& ready_node);
     void SaveTimestamp(const TimestampData &data);
-    std::vector<int> vector_AND(const std::vector<int>& a, const std::vector<int>& b);
-
 
 	rclcpp::TimerBase::SharedPtr alive_timer_;
 	rclcpp::Time saved_time_;
-	
-	rclcpp::TimerBase::SharedPtr ready_wait_timer_;
-	std::atomic<bool> ready_waiting_{false};
-    std::mutex map_mutex_;
-	
-    // 하트비트 저장: 노드 인덱스 → 시간 로그 
-    std::unordered_map<int, rclcpp::Time> last_hb_map_;
-    std::vector<int> cached_available_nodes_;
-
 
     // ROS2 인터페이스
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr camera_subscriber_;
     rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr status_subscriber_;
     std::map<int, rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr> hb_subscribers_;
-    std::map<int, rclcpp::Subscription<std_msgs::msg::Header>::SharedPtr> ready_subscribers_;
+    std::map<int, rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr> status_subscribers_;
     std::map<int, rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::SharedPtr> roi_publishers_;
-    rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::SharedPtr roi_total_publisher_;
+    rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr roi_total_publisher_;
 
 
     //save result for csv
@@ -99,12 +81,16 @@ private:
     TimestampData ts;
     std::mutex ts_mutex_;
     std::mutex ready_mutex;
+    std::mutex hb_mutex;
+    std::mutex map_mutex_;
 
     // 파라미터 설정
     static constexpr int MAX_NODES = 4;
-    std::vector<int> ready_node = std::vector<int>(MAX_NODES, 0);
-    std::vector<int> pre_ready_node = std::vector<int>(MAX_NODES, 0);
-    std::vector<int> hb_node = std::vector<int>(MAX_NODES, 0);
+    std::vector<int> ready_node = std::vector<int>(MAX_NODES + 1, 0);
+    std::vector<int> hb_node = std::vector<int>(MAX_NODES + 1, 0);
+    std::vector<int> hb_temp = std::vector<int>(MAX_NODES + 1, 0);
+    std::vector<int> fail_node;
+    std::unordered_map<int, rclcpp::Time> last_hb_map_;
 
     const rclcpp::Duration HB_TIMEOUT_NS = rclcpp::Duration::from_seconds(0.05);
     int width_ = 0;
@@ -115,7 +101,6 @@ private:
     cv::Mat load_image_;
     bool frame_active_{false};
     rclcpp::Time frame_started_at_;
-    std::unordered_set<int> frame_ready_nodes_;
     rclcpp::TimerBase::SharedPtr frame_timer_; 
     bool do_split = true;
     //rclcpp::Time new_frame_;
