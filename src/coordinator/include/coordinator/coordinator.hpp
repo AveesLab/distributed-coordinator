@@ -57,7 +57,7 @@ private:
 	void LoadParams();
 	void FrameCallback(const FramePtr& vimba_frame_ptr);
     void hb_check(std_msgs::msg::Int32::SharedPtr msg);
-    void status_check(std_msgs::msg::Bool::ConstSharedPtr msg, int node_id);
+    void status_check(std_msgs::msg::Bool::SharedPtr msg, int node_id);
     std::pair<int, int> calculate_split_grid(int N);
     std::vector<int> hb_update();
 
@@ -80,7 +80,8 @@ private:
     std::ofstream csv_file_;
     TimestampData ts;
     std::mutex ts_mutex_;
-    std::mutex ready_mutex;
+    std::mutex status_true_mutex;
+    std::mutex status_false_mutex;
     std::mutex hb_mutex;
     std::mutex map_mutex_;
 
@@ -102,7 +103,7 @@ private:
     bool frame_active_{false};
     rclcpp::Time frame_started_at_;
     rclcpp::TimerBase::SharedPtr frame_timer_; 
-    bool do_split = true;
+    bool check = true;
     //rclcpp::Time new_frame_;
     //rclcpp::Time current_frame_ = 0;
     std::atomic<uint64_t> new_frame_ns_;

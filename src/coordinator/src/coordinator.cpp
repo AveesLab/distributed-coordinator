@@ -21,19 +21,11 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
         hb_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Int32>(hb_topic, 10, std::bind(&Coordinator::hb_check, this, _1),sub_opt);
     }
 
-    // Ready flag subscriber (1~4 (MAX_NODES): computing node only)
-    // for (int node_id = 1; node_id <= MAX_NODES; ++node_id)
-    // {   
-    //     std::string ready_topic = "/ready_flag/node_" + std::to_string(node_id);
-    //     ready_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Header>(ready_topic, 10, std::bind(&Coordinator::ready_check, this, _1),sub_opt);
-    // }
-
-    // Ready flag subscriber (1~4 (MAX_NODES): computing node only)
     for (int node_id = 1; node_id <= MAX_NODES; ++node_id)
     {   
         std::string status_topic = "/task_status/node_" + std::to_string(node_id);
         status_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Bool>(status_topic, 1, 
-                  [this, node_id](std_msgs::msg::Bool::ConstSharedPtr msg) {
+                  [this, node_id](std_msgs::msg::Bool::SharedPtr msg) {
                     this->status_check(msg, node_id);
                     }, sub_opt);
     }
@@ -123,45 +115,65 @@ std::vector<int> Coordinator::hb_update()
     return hb_node;   
 }
 
-void Coordinator::status_check(std_msgs::msg::Bool::ConstSharedPtr msg, int node_id)
+void Coordinator::status_check(std_msgs::msg::Bool::SharedPtr msg, int node_id)
 {
     int node_index = node_id;
-
     if(!msg->data)
     {
-        hb_temp = hb_update();
-        if (std::find(fail_node.begin(), fail_node.end(), node_index) == fail_node.end())
-        {
+        if(check)
+        {       
+            std::lock_guard<std::mutex> lock(status_false_mutex);
+            hb_temp = hb_update();
             ready_node[node_index] = 1;
+            for (int fail_id : fail_node) 
+            {
+                if (fail_id >= 1 && fail_id <= MAX_NODES) 
+                {
+                    hb_temp[fail_id] = 0;
+                }
+            }
+
+            std::cout << "[ReadyNode Update] node_" << node_index << std::endl;
+            std::cout << "ready_node : " << ready_node[1] << "," << ready_node[2] <<  "," << ready_node[3] << "," << ready_node[4] << std::endl;
+            std::cout << "hb_temp : " << hb_temp[1] <<  "," << hb_temp[2] <<  "," << hb_temp[3] <<  "," << hb_temp[4] << std::endl;
+            if( ready_node == hb_temp )  
+            {
+                split_scheduling(ready_node);
+                check = false;    
+                std::fill(ready_node.begin(), ready_node.end(), 0);
+                fail_node.clear();
+            }
         }
-        
-        std::cout << "ready_node : " << ready_node[1] << "," << ready_node[2] <<  "," << ready_node[3] << "," << ready_node[4] << std::endl;
-        std::cout << "hb_temp : " << hb_temp[1] <<  "," << hb_temp[2] <<  "," << hb_temp[3] <<  "," << hb_temp[4] << std::endl;
-        if( ready_node == hb_temp )  
-        {
-            split_scheduling(ready_node);       
-            std::fill(ready_node.begin(), ready_node.end(), 0);
-            fail_node.clear();
-        }
+        else return;
     }
     else
     {   
+        check = true;
+        std::lock_guard<std::mutex> lock(status_true_mutex);
         //task_status = true 온 경우
         hb_temp = hb_update();
+        std::cout << "[FailNode Update] node_" << node_index << std::endl;
         if(fail_node.empty())
         {
-            for(int i = 0; i<MAX_NODES; i++)
+            for(int i = 1; i <= MAX_NODES; i++)
             {
                 if (hb_temp[i] == 1)
                 {
                     fail_node.push_back(i);
                 }
             }
-        }
-
+        }       
         fail_node.erase(std::remove(fail_node.begin(), fail_node.end(), node_index),fail_node.end());
+
+        std::cout << "fail_node : ";
+        for (size_t i = 0; i < fail_node.size(); ++i) {
+            std::cout << fail_node[i];
+            if (i != fail_node.size() - 1) std::cout << ",";
+        }
+        std::cout << std::endl; 
     }
 }
+
 
 std::pair<int, int> Coordinator::calculate_split_grid(int N)
 {
@@ -183,7 +195,7 @@ std::pair<int, int> Coordinator::calculate_split_grid(int N)
 
 void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
 {
-    
+
     ts.start_framecallback = get_time_in_ms();
 
     sensor_msgs::msg::Image img;
@@ -210,12 +222,13 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
 
 void Coordinator::split_scheduling(const std::vector<int>& ready_node)
 {
+    rclcpp::Time now = this->get_clock()->now();
+    int64_t start_scheduling = now.nanoseconds();
+
     ts.start_split_preprocess = get_time_in_ms();
     std::vector<int> avail_nodes = ready_node;
     std::vector<int> avail_nodes_index;
-
-    //int64_t frame_us = frame_time;
-
+    
     if (avail_nodes.empty()) {
         //RCLCPP_WARN(this->get_logger(), "No available nodes for split.");
         return;
@@ -268,7 +281,7 @@ void Coordinator::split_scheduling(const std::vector<int>& ready_node)
             int h_offset = std::min(crop_h, img_h - y_offset);
 
             std_msgs::msg::Int64MultiArray assigned_roi_;
-            assigned_roi_.data = {tile_index, N/*size of avail nodes*/, x_offset, y_offset, w_offset, h_offset};
+            assigned_roi_.data = {start_scheduling, tile_index, N/*size of avail nodes*/, x_offset, y_offset, w_offset, h_offset};
             roi_msg.emplace_back(node_index, assigned_roi_);
             RCLCPP_INFO(this->get_logger(), "PartialImage sent to node_%d(%d of %d): x=%d y=%d w=%d h=%d", node_index, tile_index, N, x_offset, y_offset, w_offset, h_offset);
             
