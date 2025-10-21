@@ -5,6 +5,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/image.hpp"
 #include "std_msgs/msg/int32.hpp"
+#include "std_msgs/msg/int64.hpp"
 #include "std_msgs/msg/int32_multi_array.hpp"
 #include "std_msgs/msg/int64_multi_array.hpp"
 #include "std_msgs/msg/bool.hpp"
@@ -50,7 +51,7 @@ private:
 	std::string camera_info_url_;
 	std::string frame_id_;
 	int32_t ptp_offset_;
-	double acquisition_fps_;
+	int acquisition_fps_;
 	
     rclcpp::CallbackGroup::SharedPtr callback_group_reentrant_;
 
@@ -60,20 +61,19 @@ private:
     void status_check(std_msgs::msg::Bool::SharedPtr msg, int node_id);
     std::pair<int, int> calculate_split_grid(int N);
     std::vector<int> hb_update();
+    void timerCallback();
 
     void split_scheduling(const std::vector<int>& ready_node);
     void SaveTimestamp(const TimestampData &data);
-
-	rclcpp::TimerBase::SharedPtr alive_timer_;
-	rclcpp::Time saved_time_;
 
     // ROS2 인터페이스
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr camera_subscriber_;
     rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr status_subscriber_;
     std::map<int, rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr> hb_subscribers_;
     std::map<int, rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr> status_subscribers_;
-    std::map<int, rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::SharedPtr> roi_publishers_;
     rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr roi_total_publisher_;
+    std::map<int, rclcpp::Publisher<std_msgs::msg::Int64>::SharedPtr> time_publisher_ ;
+    rclcpp::TimerBase::SharedPtr timer_;
 
 
     //save result for csv
@@ -93,6 +93,11 @@ private:
     std::vector<int> fail_node;
     std::unordered_map<int, rclcpp::Time> last_hb_map_;
 
+    double interval_sec_;
+    std::vector<int> time_nodes_ = {1,2,3,4};
+    size_t current_index_ = 0;
+
+
     const rclcpp::Duration HB_TIMEOUT_NS = rclcpp::Duration::from_seconds(0.05);
     int width_ = 0;
     int height_ = 0;
@@ -101,8 +106,6 @@ private:
     sensor_msgs::msg::Image raw_image;
     cv::Mat load_image_;
     bool frame_active_{false};
-    rclcpp::Time frame_started_at_;
-    rclcpp::TimerBase::SharedPtr frame_timer_; 
     bool check = true;
     //rclcpp::Time new_frame_;
     //rclcpp::Time current_frame_ = 0;

@@ -30,16 +30,28 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
                     }, sub_opt);
     }
 
-
-	for (int i = 1; i <= MAX_NODES; ++i)
-    {
-        std::string topic = "/assigned_roi/node_" + std::to_string(i);
-        roi_publishers_[i] = this->create_publisher<std_msgs::msg::Int64MultiArray>(topic, 10);
-    }
     roi_total_publisher_ = this->create_publisher<std_msgs::msg::Int32>("/assigned_roi_total", 10);
     
     this->synchronization_cnt_ = 0;
 	this->cluster_flag_ = false;
+
+    double fps = acquisition_fps_;
+    int fps_per_node = static_cast<int>(fps / static_cast<double>(MAX_NODES));
+    //int fps_per_node = static_cast<int>(fps / 10);
+    if (fps_per_node <= 0) fps_per_node = 1;
+    double interval_sec_ = 1.0 / static_cast<double>(fps_per_node);
+    RCLCPP_INFO(this->get_logger(), "Each node interval: %.3f sec", interval_sec_);
+
+    for (int i = 1; i <= MAX_NODES; ++i)
+    {
+        std::string topic = "/trigger/node_" + std::to_string(i);
+        time_publisher_[i] = this->create_publisher<std_msgs::msg::Int64>(topic, 10);
+    }
+
+    timer_ = this->create_wall_timer(
+            std::chrono::duration<double>(interval_sec_),
+            std::bind(&Coordinator::timerCallback, this));
+    
 
     std::string filename = "coordinator_node.csv";
     csv_file_.open(filename, std::ios::out | std::ios::trunc);
@@ -55,6 +67,8 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
     width_  = load_image_.cols;
     height_ = load_image_.rows;
     RCLCPP_INFO(this->get_logger(), "Coordinator node initialized with standard ROS2 messages.");
+
+    
 }
 
 Coordinator::~Coordinator()
@@ -77,8 +91,7 @@ void Coordinator::Start()
 {
   // Start Vimba & list all available cameras
   api_.start();
-
-  // Start camera`
+  // Start camera
   cam_.start(ip_, guid_, frame_id_, camera_info_url_);
   cam_.startImaging();
 }
@@ -87,6 +100,24 @@ uint64_t Coordinator::get_time_in_ms() {
   rclcpp::Time now = this->get_clock()->now();
   uint64_t nanosecond = now.nanoseconds(); 
   return nanosecond/1000;
+}
+
+void Coordinator::timerCallback()
+{
+    rclcpp::Time now = this->get_clock()->now();
+    std_msgs::msg::Int64 msg;
+    msg.data = now.nanoseconds();
+
+    // Pick next node
+    int node_id = time_nodes_[current_index_];
+
+    // Publish
+    time_publisher_[node_id]->publish(msg);
+
+    RCLCPP_INFO(this->get_logger(), "Triggered node: %d", node_id);
+
+    // Move to next node (cyclic)
+    current_index_ = (current_index_ + 1) % time_nodes_.size();
 }
 
 void Coordinator::hb_check(std_msgs::msg::Int32::SharedPtr msg) 
@@ -138,7 +169,6 @@ void Coordinator::status_check(std_msgs::msg::Bool::SharedPtr msg, int node_id)
             std::cout << "hb_temp : " << hb_temp[1] <<  "," << hb_temp[2] <<  "," << hb_temp[3] <<  "," << hb_temp[4] << std::endl;
             if( ready_node == hb_temp )  
             {
-                split_scheduling(ready_node);
                 check = false;    
                 std::fill(ready_node.begin(), ready_node.end(), 0);
                 fail_node.clear();
@@ -174,25 +204,6 @@ void Coordinator::status_check(std_msgs::msg::Bool::SharedPtr msg, int node_id)
     }
 }
 
-
-std::pair<int, int> Coordinator::calculate_split_grid(int N)
-{
-    std::vector<int> divisors;
-    for (int i = 1; i <= N; ++i)
-    {
-        if (N % i == 0)
-            divisors.push_back(i);
-    }
-    if (divisors.size() % 2 == 0)
-    {
-        return {divisors[(divisors.size() / 2) - 1],divisors[divisors.size() / 2]};
-    }
-    else
-    {
-    	return {divisors[divisors.size() / 2], divisors[divisors.size() / 2]};
-    }
-}
-
 void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
 {
 
@@ -217,101 +228,6 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
         width_  = w;
         height_ = h;
     }
-
-}
-
-void Coordinator::split_scheduling(const std::vector<int>& ready_node)
-{
-    rclcpp::Time now = this->get_clock()->now();
-    int64_t start_scheduling = now.nanoseconds();
-
-    ts.start_split_preprocess = get_time_in_ms();
-    std::vector<int> avail_nodes = ready_node;
-    std::vector<int> avail_nodes_index;
-    
-    if (avail_nodes.empty()) {
-        //RCLCPP_WARN(this->get_logger(), "No available nodes for split.");
-        return;
-    }
-
-    ts.end_split_preprocess = get_time_in_ms();
-    
-    ts.start_split = get_time_in_ms();
-
-    int N = static_cast<int>(std::count(avail_nodes.begin(), avail_nodes.end(), 1));
-    auto [cols,rows] = calculate_split_grid(N);
-    std::cout << "Num of availnode : " << N << std::endl;
-
-    for (size_t i = 0; i < avail_nodes.size(); i++) {
-        if (avail_nodes[i] == 1) {
-            avail_nodes_index.push_back(i);
-        }
-    }
-
-    // sensor_msgs::Image -> cv::Mat
-    cv_bridge::CvImagePtr cv_ptr;
-    cv::Mat color_image;
-
-    //Load Camera Data from Sensor
-    //cv_ptr = cv_bridge::toCvCopy(full_img, sensor_msgs::image_encodings::MONO8);
-    //cv::cvtColor(cv_ptr->image, color_image, cv::COLOR_BayerRG2BGR);
-
-    //Load Camera Data from workspace
-    color_image = load_image_;
-    const int img_w = width_;
-    const int img_h = height_;
-    const int crop_w = std::max(1, img_w / cols);
-    const int crop_h = std::max(1, img_h / rows);
-    
-	//RCLCPP_INFO(this->get_logger(), "Start Image Split");
-
-    std::vector<std::pair<int, std_msgs::msg::Int64MultiArray>> roi_msg;
-    std_msgs::msg::Int32 total_roi_msg;
-    int count = 0;
-
-    for (int r = 0; r < rows; ++r)
-    {
-        for (int c = 0; c < cols; ++c)
-        {
-            int node_index = avail_nodes_index[count];
-            int tile_index = ++count;
-            int x_offset = c * crop_w;
-            int y_offset = r * crop_h;
-            int w_offset = std::min(crop_w, img_w - x_offset);
-            int h_offset = std::min(crop_h, img_h - y_offset);
-
-            std_msgs::msg::Int64MultiArray assigned_roi_;
-            assigned_roi_.data = {start_scheduling, tile_index, N/*size of avail nodes*/, x_offset, y_offset, w_offset, h_offset};
-            roi_msg.emplace_back(node_index, assigned_roi_);
-            RCLCPP_INFO(this->get_logger(), "PartialImage sent to node_%d(%d of %d): x=%d y=%d w=%d h=%d", node_index, tile_index, N, x_offset, y_offset, w_offset, h_offset);
-            
-            if (count == 0) 
-            {
-                ts.roi_node_index = node_index;
-            }
-        }
-    }
-
-
-    ts.end_split = get_time_in_ms();
-    ts.start_roi_ethernet = get_time_in_ms();
-    for (const auto& ROI : roi_msg) {
-        int node_index = ROI.first;
-        auto it = roi_publishers_.find(node_index);
-        if (it != roi_publishers_.end()) 
-        {
-            it->second->publish(ROI.second);
-        }
-        //RCLCPP_INFO(this->get_logger(), "ROI sent to node_%d", node_index);
-    }
-
-    ts.start_roi_total_ethernet = get_time_in_ms();
-    total_roi_msg.data = N;
-    roi_total_publisher_->publish(total_roi_msg);
-
-    //RCLCPP_INFO(this->get_logger(), "Total ROI map sent (N=%d regions)", count);
-    SaveTimestamp(ts);
-
 }
 
 void Coordinator::SaveTimestamp(const TimestampData &data) {
