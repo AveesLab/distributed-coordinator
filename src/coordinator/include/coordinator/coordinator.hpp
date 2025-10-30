@@ -12,7 +12,6 @@
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.hpp>
 #include <opencv2/opencv.hpp>
-#include "avt_vimba_camera_msgs/msg/partial_image.hpp"
 
 // Vimba API
 #include "coordinator/avt_vimba_api.hpp"
@@ -24,12 +23,9 @@
 #include <vector>
 
 struct TimestampData {
-    uint64_t end_ready_flag, ready_node_index, start_framecallback,start_framesensor;
-    uint64_t start_update, end_update;
-    uint64_t start_split_preprocess,end_split_preprocess;
-    uint64_t start_split, end_split;
-    uint64_t start_roi_ethernet, roi_node_index; 
-    uint64_t start_roi_total_ethernet;
+    int node_id;
+    uint64_t start_timer;
+    uint64_t start_publish;
 };
 
 class Coordinator : public rclcpp::Node, public std::enable_shared_from_this<Coordinator>

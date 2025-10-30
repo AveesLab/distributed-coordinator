@@ -56,19 +56,13 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
     std::string filename = "coordinator_node.csv";
     csv_file_.open(filename, std::ios::out | std::ios::trunc);
     if (csv_file_.is_open()) {
-        csv_file_ << "framesensor_start,framecallback_start, ready_flag_end,"
-				  << "node_update_start,node_update_time(us),node_update_end,"
-                  << "split_preprocess_start,split_preprocess_time(us),split_preprocess_end,"
-                  << "split_start,split_time(us),split_end,"
-                  << "roi_ethernet_start, roi_total_ethernet_start\n";
+        csv_file_ << "node_id, start_timer, start_publish\n";
     }
 
     load_image_ = cv::imread("/home/avees/coordinator_node/src/coordinator/test_img/output_img/test_car.jpg", cv::IMREAD_COLOR);
     width_  = load_image_.cols;
     height_ = load_image_.rows;
     RCLCPP_INFO(this->get_logger(), "Coordinator node initialized with standard ROS2 messages.");
-
-    
 }
 
 Coordinator::~Coordinator()
@@ -103,19 +97,22 @@ uint64_t Coordinator::get_time_in_ms() {
 }
 
 void Coordinator::timerCallback()
-{
+{   
+    ts.start_timer = get_time_in_ms();
     rclcpp::Time now = this->get_clock()->now();
     std_msgs::msg::Int64 msg;
     msg.data = now.nanoseconds();
 
     // Pick next node
     int node_id = time_nodes_[current_index_];
+    ts.node_id = node_id;
 
     // Publish
+    ts.start_publish = get_time_in_ms();
     time_publisher_[node_id]->publish(msg);
 
     RCLCPP_INFO(this->get_logger(), "Triggered node: %d", node_id);
-
+    SaveTimestamp(ts);
     // Move to next node (cyclic)
     current_index_ = (current_index_ + 1) % time_nodes_.size();
 }
@@ -207,8 +204,6 @@ void Coordinator::status_check(std_msgs::msg::Bool::SharedPtr msg, int node_id)
 void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
 {
 
-    ts.start_framecallback = get_time_in_ms();
-
     sensor_msgs::msg::Image img;
     VmbUint64_t vimba_ts;
 
@@ -216,10 +211,7 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
     vimba_frame_ptr->GetTimestamp(vimba_ts);
     rclcpp::Time frame_time = rclcpp::Time(cam_.getTimestampRealTime(vimba_ts) * 1e9);
     new_frame_ns_.store(frame_time.nanoseconds(), std::memory_order_relaxed);
-    
-    ts.start_framesensor = frame_time.nanoseconds() / 1000;
 
-    //RCLCPP_INFO(this->get_logger(), "Frame timestamp: %.6f", frame_time.seconds());
     {
         std::lock_guard<std::mutex> lock(map_mutex_);
         VmbUint32_t w, h;
@@ -232,20 +224,9 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
 
 void Coordinator::SaveTimestamp(const TimestampData &data) {
     if (csv_file_.is_open()) {
-        csv_file_ << data. start_framecallback << ","
-                  << data. start_framesensor << ","
-                  << data.end_ready_flag << ","
-				  << data.start_update << ","
-                  << (data.end_update - data.start_update) << ","
-                  << data.end_update << ","
-                  << data.start_split_preprocess << ","
-                  << (data.end_split_preprocess - data.start_split_preprocess) << ","
-                  << data.end_split_preprocess << ","
-                  << data.start_split << ","
-                  << (data.end_split - data.start_split) << ","
-                  << data.end_split << ","
-                  << data.start_roi_ethernet << ","
-                  << data.start_roi_total_ethernet << ","
+        csv_file_ << data.node_id << ","
+                  << data.start_timer << ","
+                  << data.start_publish << ","
                   << "\n";
         csv_file_.flush();
     }

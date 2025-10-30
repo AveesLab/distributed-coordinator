@@ -17,7 +17,6 @@ find_package(diagnostic_msgs REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(OpenCV REQUIRED)
-find_package(avt_vimba_camera_msgs REQUIRED)
 
 file(GLOB VIMBA_CPP_SOURCE_FILES
   "${CMAKE_CURRENT_SOURCE_DIR}/include/VimbaCPP/Source/*.cpp"
@@ -53,7 +52,6 @@ ament_target_dependencies(coordinator_node
   diagnostic_msgs
   image_transport
   cv_bridge
-  avt_vimba_camera_msgs     # ✅ 여기만 추가하면 됨
 )
 
 install(TARGETS coordinator_node
