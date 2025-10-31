@@ -3,11 +3,11 @@
 
 using namespace std::placeholders;
 
-Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_(std::shared_ptr<rclcpp::Node>(dynamic_cast<rclcpp::Node * >(this)))
+Coordinator::Coordinator() : Node("coordinator")
 {
 	this->LoadParams();
 	
-	cam_.setCallback(std::bind(&Coordinator::FrameCallback, this, _1));
+	//cam_.setCallback(std::bind(&Coordinator::FrameCallback, this, _1));
     
     callback_group_reentrant_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
 
@@ -67,27 +67,27 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
 
 Coordinator::~Coordinator()
 {
-  cam_.stop();
+  ///cam_.stop();
 }
 
 void Coordinator::LoadParams()
 {
-  ip_ = this->declare_parameter("ip", "192.168.2.89");
-  guid_ = this->declare_parameter("guid", "");
-  camera_info_url_ = this->declare_parameter("camera_info_url", "");
-  frame_id_ = this->declare_parameter("frame_id", "coordinator");
-  ptp_offset_ = this->declare_parameter("ptp_offset", 0);
-  acquisition_fps_ = this->declare_parameter("AcquisitionFrameRateAbs", 30.0);
+  //ip_ = this->declare_parameter("ip", "192.168.2.89");
+  //guid_ = this->declare_parameter("guid", "");
+  //camera_info_url_ = this->declare_parameter("camera_info_url", "");
+  //frame_id_ = this->declare_parameter("frame_id", "coordinator");
+  //ptp_offset_ = this->declare_parameter("ptp_offset", 0);
+  acquisition_fps_ = this->declare_parameter("AcquisitionFrameRateAbs", 60.0);
   RCLCPP_INFO(this->get_logger(), "[Initialize] Parameters loaded");
 }
 
 void Coordinator::Start()
 {
   // Start Vimba & list all available cameras
-  api_.start();
+  //api_.start();
   // Start camera
-  cam_.start(ip_, guid_, frame_id_, camera_info_url_);
-  cam_.startImaging();
+  //cam_.start(ip_, guid_, frame_id_, camera_info_url_);
+  //cam_.startImaging();
 }
 
 uint64_t Coordinator::get_time_in_ms() {
@@ -201,26 +201,26 @@ void Coordinator::status_check(std_msgs::msg::Bool::SharedPtr msg, int node_id)
     }
 }
 
-void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
-{
+// void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
+// {
 
-    sensor_msgs::msg::Image img;
-    VmbUint64_t vimba_ts;
+//     sensor_msgs::msg::Image img;
+//     VmbUint64_t vimba_ts;
 
-    api_.frameToImage(vimba_frame_ptr, img);
-    vimba_frame_ptr->GetTimestamp(vimba_ts);
-    rclcpp::Time frame_time = rclcpp::Time(cam_.getTimestampRealTime(vimba_ts) * 1e9);
-    new_frame_ns_.store(frame_time.nanoseconds(), std::memory_order_relaxed);
+//     api_.frameToImage(vimba_frame_ptr, img);
+//     vimba_frame_ptr->GetTimestamp(vimba_ts);
+//     rclcpp::Time frame_time = rclcpp::Time(cam_.getTimestampRealTime(vimba_ts) * 1e9);
+//     new_frame_ns_.store(frame_time.nanoseconds(), std::memory_order_relaxed);
 
-    {
-        std::lock_guard<std::mutex> lock(map_mutex_);
-        VmbUint32_t w, h;
-        vimba_frame_ptr->GetWidth(w);
-        vimba_frame_ptr->GetHeight(h);
-        width_  = w;
-        height_ = h;
-    }
-}
+//     {
+//         std::lock_guard<std::mutex> lock(map_mutex_);
+//         VmbUint32_t w, h;
+//         vimba_frame_ptr->GetWidth(w);
+//         vimba_frame_ptr->GetHeight(h);
+//         width_  = w;
+//         height_ = h;
+//     }
+// }
 
 void Coordinator::SaveTimestamp(const TimestampData &data) {
     if (csv_file_.is_open()) {
