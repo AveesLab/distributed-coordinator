@@ -3,11 +3,11 @@
 
 using namespace std::placeholders;
 
-Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_(std::shared_ptr<rclcpp::Node>(dynamic_cast<rclcpp::Node * >(this)))
+Coordinator::Coordinator() : Node("coordinator")
 {
 	this->LoadParams();
 	
-	cam_.setCallback(std::bind(&Coordinator::FrameCallback, this, _1));
+	//cam_.setCallback(std::bind(&Coordinator::FrameCallback, this, _1));
     
     callback_group_reentrant_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
 
@@ -51,7 +51,7 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
                   << "roi_ethernet_start, roi_total_ethernet_start\n";
     }
 
-    load_image_ = cv::imread("/home/avees/coordinator_node/src/coordinator/test_img/output_img/test_car.jpg", cv::IMREAD_COLOR);
+    load_image_ = cv::imread("/home/avees/data-coordinator/src/coordinator/src/coordinator/test_img/output_img/0025.jpg", cv::IMREAD_COLOR);
     width_  = load_image_.cols;
     height_ = load_image_.rows;
     RCLCPP_INFO(this->get_logger(), "Coordinator node initialized with standard ROS2 messages.");
@@ -59,7 +59,7 @@ Coordinator::Coordinator() : Node("coordinator"), api_(this->get_logger()), cam_
 
 Coordinator::~Coordinator()
 {
-  cam_.stop();
+  //cam_.stop();
 }
 
 void Coordinator::LoadParams()
@@ -76,11 +76,11 @@ void Coordinator::LoadParams()
 void Coordinator::Start()
 {
   // Start Vimba & list all available cameras
-  api_.start();
+  //api_.start();
 
   // Start camera`
-  cam_.start(ip_, guid_, frame_id_, camera_info_url_);
-  cam_.startImaging();
+  //cam_.start(ip_, guid_, frame_id_, camera_info_url_);
+  //cam_.startImaging();
 }
 
 uint64_t Coordinator::get_time_in_ms() {
@@ -193,7 +193,7 @@ std::pair<int, int> Coordinator::calculate_split_grid(int N)
     }
 }
 
-void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
+/*void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
 {
 
     ts.start_framecallback = get_time_in_ms();
@@ -218,7 +218,7 @@ void Coordinator::FrameCallback(const FramePtr& vimba_frame_ptr)
         height_ = h;
     }
 
-}
+}*/
 
 void Coordinator::split_scheduling(const std::vector<int>& ready_node)
 {

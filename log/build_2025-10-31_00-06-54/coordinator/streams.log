@@ -1,0 +1,6 @@
+[0.019s] Invoking command in '/home/avees/distributed-coordinator/build/coordinator': CMAKE_PREFIX_PATH=/opt/ros/foxy /home/avees/.local/bin/cmake --build /home/avees/distributed-coordinator/build/coordinator -- -j12 -l12
+[0.112s] [0mCMake Error: The current CMakeCache.txt directory /home/avees/distributed-coordinator/build/coordinator/CMakeCache.txt is different than the directory /home/avees/coordinator_node/build/coordinator where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt[0m
+[0.169s] CMake Error: The source directory "/home/avees/coordinator_node/src/coordinator" does not exist.
+[0.169s] Specify --help for usage, or press the help button on the CMake GUI.
+[0.170s] make: *** [Makefile:1136: cmake_check_build_system] Error 1
+[0.175s] Invoked command in '/home/avees/distributed-coordinator/build/coordinator' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /home/avees/.local/bin/cmake --build /home/avees/distributed-coordinator/build/coordinator -- -j12 -l12

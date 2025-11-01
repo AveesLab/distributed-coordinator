@@ -42,8 +42,8 @@ public:
 
 private:
 	// GigE Camera
-	avt_vimba_camera::AvtVimbaApi api_;
-	avt_vimba_camera::AvtVimbaCamera cam_;
+	//avt_vimba_camera::AvtVimbaApi api_;
+	//avt_vimba_camera::AvtVimbaCamera cam_;
 	
 	std::string ip_;
 	std::string guid_;
@@ -55,7 +55,7 @@ private:
     rclcpp::CallbackGroup::SharedPtr callback_group_reentrant_;
 
 	void LoadParams();
-	void FrameCallback(const FramePtr& vimba_frame_ptr);
+	//void FrameCallback(const FramePtr& vimba_frame_ptr);
     void hb_check(std_msgs::msg::Int32::SharedPtr msg);
     void status_check(std_msgs::msg::Bool::SharedPtr msg, int node_id);
     std::pair<int, int> calculate_split_grid(int N);
@@ -94,8 +94,8 @@ private:
     std::unordered_map<int, rclcpp::Time> last_hb_map_;
 
     const rclcpp::Duration HB_TIMEOUT_NS = rclcpp::Duration::from_seconds(0.05);
-    int width_ = 0;
-    int height_ = 0;
+    int width_ = 1280;
+    int height_ = 720;
     int synchronization_cnt_;
     bool cluster_flag_;
     sensor_msgs::msg::Image raw_image;

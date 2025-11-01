@@ -1,0 +1,4 @@
+[0mCMake Error: The current CMakeCache.txt directory /home/avees/distributed-coordinator/build/coordinator/CMakeCache.txt is different than the directory /home/avees/coordinator_node/build/coordinator where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt[0m
+CMake Error: The source directory "/home/avees/coordinator_node/src/coordinator" does not exist.
+Specify --help for usage, or press the help button on the CMake GUI.
+make: *** [Makefile:1136: cmake_check_build_system] Error 1
