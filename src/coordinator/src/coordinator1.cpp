@@ -9,11 +9,11 @@ Coordinator::Coordinator() : Node("coordinator")
 	
 	//cam_.setCallback(std::bind(&Coordinator::FrameCallback, this, _1));
     
-    callback_group_reentrant_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
+    callback_group_reentrant_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
 
     rclcpp::SubscriptionOptions sub_opt;
     sub_opt.callback_group = callback_group_reentrant_;
-    auto qos_feat  = rclcpp::SensorDataQoS().keep_last(64).reliable();
+
     //Heartbeat subscriber (1~5: computing(1~4(MAX_NODES)), aggregation(5: MAX_NODES + 1))
     for (int node_id = 1; node_id <= MAX_NODES + 1; ++node_id)
     {
@@ -21,12 +21,10 @@ Coordinator::Coordinator() : Node("coordinator")
         hb_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Int32>(hb_topic, 10, std::bind(&Coordinator::hb_check, this, _1),sub_opt);
     }
 
-
-
-    for (int node_id = 1; node_id <= MAX_NODES; ++node_id)
+    for (int node_id = 1; node_id <= MAX_NODES+1; ++node_id)
     {   
         std::string status_topic = "/task_status/node_" + std::to_string(node_id);
-        status_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Bool>(status_topic, qos_feat, 
+        status_subscribers_[node_id] = this->create_subscription<std_msgs::msg::Bool>(status_topic, 1, 
                   [this, node_id](std_msgs::msg::Bool::SharedPtr msg) {
                     this->status_check(msg, node_id);
                     }, sub_opt);
@@ -39,11 +37,6 @@ Coordinator::Coordinator() : Node("coordinator")
         roi_publishers_[i] = this->create_publisher<std_msgs::msg::Int64MultiArray>(topic, 10);
     }
     roi_total_publisher_ = this->create_publisher<std_msgs::msg::Int32>("/assigned_roi_total", 10);
-
-    wakeup_publisher_1 = this->create_publisher<std_msgs::msg::Bool>("/wakeup1", qos_feat);
-    wakeup_publisher_2 = this->create_publisher<std_msgs::msg::Bool>("/wakeup2", qos_feat);
-    wakeup_publisher_3 = this->create_publisher<std_msgs::msg::Bool>("/wakeup3", qos_feat);
-    wakeup_publisher_4 = this->create_publisher<std_msgs::msg::Bool>("/wakeup4", qos_feat);
     
     this->synchronization_cnt_ = 0;
 	this->cluster_flag_ = false;
@@ -62,20 +55,6 @@ Coordinator::Coordinator() : Node("coordinator")
     width_  = load_image_.cols;
     height_ = load_image_.rows;
     RCLCPP_INFO(this->get_logger(), "Coordinator node initialized with standard ROS2 messages.");
-
-    std_msgs::msg::Bool wakeup_msg;
-    wakeup_msg.data = true;
-    wakeup_publisher_1->publish(wakeup_msg);
-    std::this_thread::sleep_for(std::chrono::milliseconds(10));
-    wakeup_publisher_2->publish(wakeup_msg);
-    std::this_thread::sleep_for(std::chrono::milliseconds(10));
-    wakeup_publisher_3->publish(wakeup_msg);
-    std::this_thread::sleep_for(std::chrono::milliseconds(10));
-    wakeup_publisher_4->publish(wakeup_msg);
-    std::this_thread::sleep_for(std::chrono::milliseconds(10));
-    RCLCPP_INFO(this->get_logger(), "Wakeup message published: %d", wakeup_msg.data);
-
-
 }
 
 Coordinator::~Coordinator()
@@ -123,29 +102,40 @@ void Coordinator::hb_check(std_msgs::msg::Int32::SharedPtr msg)
 
 std::vector<int> Coordinator::hb_update()
 {   
+    rclcpp::Time now = this->get_clock()->now();
     for (int node_id = 1; node_id <= MAX_NODES; ++node_id) {
-        hb_node[node_id] = 1;
+        auto it = last_hb_map_.find(node_id);
+        if (it != last_hb_map_.end()) {
+            rclcpp::Duration delta = now - it->second;
+            if (delta > HB_TIMEOUT_NS) {
+                hb_node[node_id] = 0;
+            }
+        }
     }
-    //  for (int node_id = 1; node_id <= 2; ++node_id) {
-    //     hb_node[node_id] = 1;
-    // }
-
-    // rclcpp::Time now = this->get_clock()->now();
-    // for (int node_id = 1; node_id <= MAX_NODES; ++node_id) {
-    //     auto it = last_hb_map_.find(node_id);
-    //     if (it != last_hb_map_.end()) {
-    //         rclcpp::Duration delta = now - it->second;
-    //         if (delta > HB_TIMEOUT_NS) {
-    //             hb_node[node_id] = 0;
-    //         }
-    //     }
-    // }
     return hb_node;   
 }
 
 void Coordinator::status_check(std_msgs::msg::Bool::SharedPtr msg, int node_id)
 {
     int node_index = node_id;
+
+    // if(node_id == MAX_NODES+1){
+    //     agg_status = msg->data;
+    //     std::cout << "agg_status : " << agg_status << std::endl;
+
+    //     if( check && ready_node == hb_temp && agg_status == false)  
+    //     {
+    //         split_scheduling(ready_node);
+    //         check = false;    
+    //         std::fill(ready_node.begin(), ready_node.end(), 0);
+    //         fail_node.clear();
+    //     }
+
+
+    //     return;
+    // }
+
+
     if(!msg->data)
     {
         if(check)
@@ -164,42 +154,42 @@ void Coordinator::status_check(std_msgs::msg::Bool::SharedPtr msg, int node_id)
             std::cout << "[ReadyNode Update] node_" << node_index << std::endl;
             std::cout << "ready_node : " << ready_node[1] << "," << ready_node[2] <<  "," << ready_node[3] << "," << ready_node[4] << std::endl;
             std::cout << "hb_temp : " << hb_temp[1] <<  "," << hb_temp[2] <<  "," << hb_temp[3] <<  "," << hb_temp[4] << std::endl;
-            if( ready_node == hb_temp )  
+            if( ready_node == hb_temp) // && agg_status == false)  
             {
                 split_scheduling(ready_node);
-                // check = false;    
+                check = false;    
                 std::fill(ready_node.begin(), ready_node.end(), 0);
                 fail_node.clear();
             }
         }
         else return;
     }
-    // else
-    // {   
-    //     check = true;
-    //     std::lock_guard<std::mutex> lock(status_true_mutex);
-    //     //task_status = true 온 경우
-    //     hb_temp = hb_update();
-    //     std::cout << "[FailNode Update] node_" << node_index << std::endl;
-    //     if(fail_node.empty())
-    //     {
-    //         for(int i = 1; i <= MAX_NODES; i++)
-    //         {
-    //             if (hb_temp[i] == 1)
-    //             {
-    //                 fail_node.push_back(i);
-    //             }
-    //         }
-    //     }       
-    //     fail_node.erase(std::remove(fail_node.begin(), fail_node.end(), node_index),fail_node.end());
+    else
+    {   
+        check = true;
+        std::lock_guard<std::mutex> lock(status_true_mutex);
+        //task_status = true 온 경우
+        hb_temp = hb_update();
+        std::cout << "[FailNode Update] node_" << node_index << std::endl;
+        if(fail_node.empty())
+        {
+            for(int i = 1; i <= MAX_NODES; i++)
+            {
+                if (hb_temp[i] == 1)
+                {
+                    fail_node.push_back(i);
+                }
+            }
+        }       
+        fail_node.erase(std::remove(fail_node.begin(), fail_node.end(), node_index),fail_node.end());
 
-    //     std::cout << "fail_node : ";
-    //     for (size_t i = 0; i < fail_node.size(); ++i) {
-    //         std::cout << fail_node[i];
-    //         if (i != fail_node.size() - 1) std::cout << ",";
-    //     }
-    //     std::cout << std::endl; 
-    // }
+        std::cout << "fail_node : ";
+        for (size_t i = 0; i < fail_node.size(); ++i) {
+            std::cout << fail_node[i];
+            if (i != fail_node.size() - 1) std::cout << ",";
+        }
+        std::cout << std::endl; 
+    }
 }
 
 
@@ -250,7 +240,6 @@ std::pair<int, int> Coordinator::calculate_split_grid(int N)
 
 void Coordinator::split_scheduling(const std::vector<int>& ready_node)
 {
-    
     rclcpp::Time now = this->get_clock()->now();
     int64_t start_scheduling = now.nanoseconds();
 
@@ -324,7 +313,6 @@ void Coordinator::split_scheduling(const std::vector<int>& ready_node)
 
     ts.end_split = get_time_in_ms();
     ts.start_roi_ethernet = get_time_in_ms();
-    
     for (const auto& ROI : roi_msg) {
         int node_index = ROI.first;
         auto it = roi_publishers_.find(node_index);

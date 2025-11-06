@@ -21,6 +21,8 @@
 #include <unordered_set>  
 #include <deque>
 #include <vector>
+#include <thread>
+#include <chrono> 
 
 struct TimestampData {
     uint64_t end_ready_flag, ready_node_index, start_framecallback,start_framesensor;
@@ -74,6 +76,10 @@ private:
     std::map<int, rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr> status_subscribers_;
     std::map<int, rclcpp::Publisher<std_msgs::msg::Int64MultiArray>::SharedPtr> roi_publishers_;
     rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr roi_total_publisher_;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr wakeup_publisher_1;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr wakeup_publisher_2;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr wakeup_publisher_3;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr wakeup_publisher_4;
 
 
     //save result for csv
@@ -104,6 +110,7 @@ private:
     rclcpp::Time frame_started_at_;
     rclcpp::TimerBase::SharedPtr frame_timer_; 
     bool check = true;
+    bool agg_status = false;
     //rclcpp::Time new_frame_;
     //rclcpp::Time current_frame_ = 0;
     std::atomic<uint64_t> new_frame_ns_;
